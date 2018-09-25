@@ -49,7 +49,7 @@ class Percolation {
             u.union(row * size + col, (row + 1) * size + col);
 
         }
-        if(col - 1 >= 0 && isOpen(row, col - 1)) {
+        if (col - 1 >= 0 && isOpen(row, col - 1)) {
             u.union(row * size + col, row * size + (col - 1));
 
         }
@@ -91,6 +91,12 @@ class Percolation {
  */
 
 public class Solution {
+    /**
+     * Constructs the object.
+     */
+    private Solution() {
+
+    }
     /**
      * { main method }.
      *
