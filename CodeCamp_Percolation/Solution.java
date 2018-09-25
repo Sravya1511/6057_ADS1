@@ -30,7 +30,8 @@ class Percolation {
         size = n;
     }
     /**
-     * { function to open the two dimensional boolean array and perform union operaions }.
+     * { function to open the two dimensional
+     *  boolean array and perform union operaions }.
      *
      * @param      row   The row
      * @param      col   The col
@@ -41,7 +42,7 @@ class Percolation {
             return;
         }
         arr[row][col] = true;
-        // opensites++;
+
         if (col + 1 < size && isOpen(row, col + 1)) {
             u.union(row * size + col, row * size + (col + 1));
         }
