@@ -23,8 +23,6 @@ class Solution {
       // open site (row, col) if it is not open already
       public static void open(int row, int col)   {
       	arr_2[row-1][col-1] = 1;
-  //     	for(int i = 0; i<3; i++)
-		// System.out.println(Arrays.toString(arr_2[i]));
       }
       // is site (row, col) open?
       public boolean isOpen(int row, int col) {
@@ -41,14 +39,18 @@ class Solution {
     	for(int i = 0; i<n; i++) {
     		for(int j = 0; j<n; j++) {
     			if(arr_2[i][j] == 1) {
-    				if (i < n-1 && j < n-1) {
+    				if (j < n-1) {
     					if(arr_2[i][j+1] == 1){
     						union(i*n+j, i*n+j+1);
     					}
-    					if(arr_2[i+1][j] == 1) {
+    				}
+    				if(i < n-1) {
+                        if(arr_2[i+1][j] == 1) {
     						union(i*n+j, (i+1)*n+j);
     					}
     				}
+
+
 
     			}
     		}
@@ -100,6 +102,5 @@ class Solution {
 	}
 		solution(n);
 		System.out.println(percolates(n));
-
 	}
 }
