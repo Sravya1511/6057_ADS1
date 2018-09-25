@@ -12,6 +12,9 @@ class Percolation {
      */
     private boolean[][] arr;
     // private int[] arr_1;
+     /**
+     * { var_description }.
+     */
     private int size;
 
     /**
@@ -20,7 +23,7 @@ class Percolation {
      * @param      n     { parameter_description }
      */
 
-    public Percolation(final int n) {
+    Percolation(final int n) {
         arr = new boolean[n][n];
         // arr_1 = new int[n*n];
         u = new WeightedQuickUnionUF(n * n + 2);
@@ -34,7 +37,9 @@ class Percolation {
      */
 
     public void open(final int row, final int col) {
-        if (arr[row][col]) return;
+        if (arr[row][col]) {
+            return;
+        }
         arr[row][col] = true;
         // opensites++;
         if (col + 1 < size && isOpen(row, col + 1)) {
