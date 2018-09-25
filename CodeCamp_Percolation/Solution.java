@@ -4,16 +4,16 @@ import java.util.Scanner;
  */
 class Percolation {
     /**
-     * { v }.
+     * { object creation for weightedQuick union }.
      */
     private WeightedQuickUnionUF u;
     /**
-     * { var_description }.
+     * { boolean array initialization }.
      */
     private boolean[][] arr;
     // private int[] arr_1;
      /**
-     * { var_description }.
+     * { size of the array(row and column) }.
      */
     private int size;
 
@@ -30,7 +30,7 @@ class Percolation {
         size = n;
     }
     /**
-     * { function_description }.
+     * { function to open the two dimensional boolean array and perform union operaions }.
      *
      * @param      row   The row
      * @param      col   The col
@@ -77,7 +77,7 @@ class Percolation {
 
     }
     /**
-     * { function_description }.
+     * { checks for percolation}.
      *
      * @return     { description_of_the_return_value }
      */
