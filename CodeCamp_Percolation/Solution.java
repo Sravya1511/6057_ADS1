@@ -4,9 +4,12 @@ import java.util.Scanner;
  */
 class Percolation {
     /**
-     * { v }
+     * { v }.
      */
     private WeightedQuickUnionUF u;
+    /**
+     * { var_description }.
+     */
     private boolean[][] arr;
     // private int[] arr_1;
     private int size;
@@ -17,7 +20,7 @@ class Percolation {
      * @param      n     { parameter_description }
      */
 
-    public Percolation(int n) {
+    public Percolation(final int n) {
         arr = new boolean[n][n];
         // arr_1 = new int[n*n];
         u = new WeightedQuickUnionUF(n * n + 2);
@@ -41,7 +44,7 @@ class Percolation {
             u.union(row * size + col, (row + 1) * size + col);
 
         }
-        if(col - 1 >= 0 && isOpen(row, col - 1)){
+        if(col - 1 >= 0 && isOpen(row, col - 1)) {
             u.union(row * size + col, row * size + (col - 1));
 
         }
@@ -82,7 +85,7 @@ class Percolation {
  * { item_description }.
  */
 
-public final class Solution {
+public class Solution {
     /**
      * { main method }.
      *
