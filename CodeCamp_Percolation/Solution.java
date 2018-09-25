@@ -90,7 +90,7 @@ class Percolation {
  * { item_description }.
  */
 
-public class Solution {
+public final class Solution {
     /**
      * Constructs the object.
      */
