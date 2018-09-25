@@ -25,9 +25,11 @@ class Percolation {
 		// System.out.println(Arrays.toString(arr_1));
     }
       // open site (row, col) if it is not open already
-      public void open(int row, int col)   {
+      public void open(int row, int col, int n)   {
       	arr_2[row-1][col-1] = 1;
-      }
+      	int i = row-1;
+      	int j = col-1;
+      	      }
       // is site (row, col) open?
       public boolean isOpen(int row, int col) {
       	return arr_2[row-1][col-1] == 1;
@@ -40,6 +42,9 @@ class Percolation {
     // 	for
     // }
     public void solution(int n) {
+    	// for(int i = 0; i<n; i++) {
+    	// 	System.out.println(Arrays.toString(arr_2[i]));
+    	// }
     	for(int i = 0; i<n; i++) {
     		for(int j = 0; j<n; j++) {
     			if(arr_2[i][j] == 1) {
@@ -48,9 +53,20 @@ class Percolation {
     						union(i*n+j, i*n+j+1);
     					}
     				}
-    				if(i < n-1) {
+    				if (i < n-1) {
                         if(arr_2[i+1][j] == 1) {
     						union(i*n+j, (i+1)*n+j);
+    					}
+    				}
+    				if(i>0) {
+    					if(arr_2[i-1][j] == 1) {
+    						union(i*n+j, (i-1)*n+j);
+    					}
+    				}
+
+    				if(j>0) {
+    					if(arr_2[i][j-1] == 1) {
+    						union(i*n+j, i*n+j-1);
     					}
     				}
 
@@ -61,25 +77,33 @@ class Percolation {
     	}
     	// System.out.println(Arrays.toString(arr_1));
     }
+    // public boolean connected(int p, int q) {
+    //     return find(p) == find(q);
+    // }
+    // public int find(int p) {
+    //     validate(p);
+    //     while (p != parent[p])
+    //         p = parent[p];
+    //     return p;
+    // }
 
     public boolean percolates(int n) {
     	int i = 0;
     	int j = n*n-n;
-    	if(n == 1) return false;
     	while(i<n && j<n*n) {
     		// System.out.println("h");
+
     		if (root(arr_1[i]) == root(arr_1[j])) {
     			// System.out.println("i");
     			return true;
     		}
-
     		else {
     			i++;
     			j++;
     		}
-
     	}
     	return false;
+
     }
     public int root(int i) {
     	while(i!=arr_1[i])
@@ -105,9 +129,9 @@ class Solution {
 		p.percolation(n);
 	while(input.hasNext()) {
 		String[] token = input.nextLine().split(" ");
-		p.open(Integer.parseInt(token[0]), Integer.parseInt(token[1]));
+		p.open(Integer.parseInt(token[0]), Integer.parseInt(token[1]), n);
 	}
-		p.solution(n);
+		// p.solution(n);
 		System.out.println(p.percolates(n));
 	}
 }
