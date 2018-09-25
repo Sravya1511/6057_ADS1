@@ -65,6 +65,7 @@ class Percolation {
     public boolean percolates(int n) {
     	int i = 0;
     	int j = n*n-n;
+    	if(n == 1) return false;
     	while(i<n && j<n*n) {
     		// System.out.println("h");
     		if (root(arr_1[i]) == root(arr_1[j])) {
