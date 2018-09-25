@@ -131,7 +131,7 @@ class Solution {
 		String[] token = input.nextLine().split(" ");
 		p.open(Integer.parseInt(token[0]), Integer.parseInt(token[1]), n);
 	}
-		// p.solution(n);
+		p.solution(n);
 		System.out.println(p.percolates(n));
 	}
 }
