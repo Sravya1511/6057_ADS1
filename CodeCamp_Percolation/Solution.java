@@ -1,11 +1,15 @@
 import java.util.*;
-class Solution {
-	static int arr_2[][];
-	static int arr_1[];
+class Percolation {
+	private int arr_2[][];
+	private int arr_1[];
 	// create n-by-n grid, with all sites blocked
-    public static void Percolation(int n) {
+	Percolation(int n) {
+     arr_2 = new int[n][n];
+     arr_1 = new int[n*n];
+	}
+    public void percolation(int n) {
 
-		arr_2 = new int[n][n];
+
 		// for(int i = 0; i<n; i++) {
 		// 	for(int j = 0; j<n; j++) {
 		// 		arr_2[i][j] = 0;
@@ -14,14 +18,14 @@ class Solution {
 		// for(int i = 0; i<n; i++)
 		// System.out.println(Arrays.toString(arr_2[i]));
 
-		arr_1 = new int[n*n];
+
 		for(int i = 0; i<n*n; i++) {
 			arr_1[i] = i;
 		}
 		// System.out.println(Arrays.toString(arr_1));
     }
       // open site (row, col) if it is not open already
-      public static void open(int row, int col)   {
+      public void open(int row, int col)   {
       	arr_2[row-1][col-1] = 1;
       }
       // is site (row, col) open?
@@ -35,7 +39,7 @@ class Solution {
     // public boolean percolates()  {
     // 	for
     // }
-    public static void solution(int n) {
+    public void solution(int n) {
     	for(int i = 0; i<n; i++) {
     		for(int j = 0; j<n; j++) {
     			if(arr_2[i][j] == 1) {
@@ -58,7 +62,7 @@ class Solution {
     	// System.out.println(Arrays.toString(arr_1));
     }
 
-    public static boolean percolates(int n) {
+    public boolean percolates(int n) {
     	int i = 0;
     	int j = n*n-n;
     	while(i<n && j<n*n) {
@@ -76,31 +80,35 @@ class Solution {
     	}
     	return false;
     }
-    public static int root(int i) {
+    public int root(int i) {
     	while(i!=arr_1[i])
     		i = arr_1[i];
     	return i;
 
     }
-    public static void union(int p, int q)   {
+    public void union(int p, int q)   {
     	int i = root(p);
     	int j = root(q);
     	arr_1[i] = j;
     }
+}
 
 
 
 // You can implement the above API to solve the problem
-
+class Solution {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		int n = Integer.parseInt(input.nextLine());
-		Percolation(n);
+		Percolation p = new Percolation(n);
+		p.percolation(n);
 	while(input.hasNext()) {
 		String[] token = input.nextLine().split(" ");
-		open(Integer.parseInt(token[0]), Integer.parseInt(token[1]));
+		p.open(Integer.parseInt(token[0]), Integer.parseInt(token[1]));
 	}
-		solution(n);
-		System.out.println(percolates(n));
+		p.solution(n);
+		System.out.println(p.percolates(n));
 	}
 }
+
+
