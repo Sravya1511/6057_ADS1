@@ -1,7 +1,13 @@
-import java.util.*;
+import java.util.Scanner;
+/**
+ * Class for percolation.
+ */
 class Percolation {
+    /**
+     * { v }
+     */
     private WeightedQuickUnionUF u;
-    private boolean[][] arr_2;
+    private boolean[][] arr;
     // private int[] arr_1;
     private int size;
 
@@ -12,7 +18,7 @@ class Percolation {
      */
 
     public Percolation(int n) {
-        arr_2 = new boolean[n][n];
+        arr = new boolean[n][n];
         // arr_1 = new int[n*n];
         u = new WeightedQuickUnionUF(n * n + 2);
         size = n;
@@ -24,9 +30,9 @@ class Percolation {
      * @param      col   The col
      */
 
-    public void open(int row, int col) {
-        if (arr_2[row][col]) return;
-        arr_2[row][col] = true;
+    public void open(final int row, final int col) {
+        if (arr[row][col]) return;
+        arr[row][col] = true;
         // opensites++;
         if (col + 1 < size && isOpen(row, col + 1)) {
             u.union(row * size + col, row * size + (col + 1));
@@ -58,8 +64,8 @@ class Percolation {
      * @return     True if open, False otherwise.
      */
 
-    public boolean isOpen(int row, int col) {
-        return arr_2[row][col];
+    public boolean isOpen(final int row, final int col) {
+        return arr[row][col];
 
     }
     /**
@@ -83,7 +89,7 @@ public final class Solution {
      * @param      args  The arguments
      */
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         Scanner input = new Scanner(System.in);
         int n = input.nextInt();
         Percolation p = new Percolation(n);
