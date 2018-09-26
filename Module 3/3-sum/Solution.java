@@ -16,18 +16,11 @@ class Solution {
 		// System.out.println(Arrays.toString(array));
 
 		int count = 0;
-		for(int i = 0; i<n; i++) {
+		for(int i = 0; i<n; i+=2) {
 			// System.out.println("a");
-			for(int j = i+1; j<n; j++) {
-				// long sum = 0;
-				// System.out.println(sum);
-				for(int k = j+1; k<n; k++) {
-					long sum = array[i]+array[j]+array[k];
-					// System.out.println(sum);
-					if(sum == 0) {
-						count++;
-						// break;
-					}
+			for(int j=i+2; j<n;j++) {
+				if (array[i]+array[i+1]+array[j] == 0) {
+					count++;
 				}
 			}
 
