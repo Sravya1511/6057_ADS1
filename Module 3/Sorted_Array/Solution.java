@@ -15,10 +15,11 @@ class Solution {
 		}
 		else {
 			array2 = new int[s.length];
-		}
-		for(int i = 0; i<t.length; i++) {
+			for(int i = 0; i<t.length; i++) {
 			array1[i] = Integer.parseInt(t[i]);
 		}
+		}
+
 		for(int i = 0; i<s.length; i++) {
 			array2[i] = Integer.parseInt(s[i]);
 		}
