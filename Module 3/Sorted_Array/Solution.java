@@ -3,12 +3,11 @@ import java.util.Arrays;
 /**
  * Class for solution.
  */
-class Solution {
+final class Solution {
     /**
-     * { function_description }.
-     *
-     * @param      args  The arguments
+     * Constructs the object.
      */
+
     private Solution() {
 
     }
