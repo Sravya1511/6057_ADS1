@@ -10,7 +10,7 @@ class Solution {
 		array1 = new int[t.length];
 		int[] array2;
 
-		if(s[0].equals("")) {
+		if(s.length == 0) {
 			array2 = new int[]{0};
 		}
 		else {
