@@ -12,7 +12,7 @@ class Solution {
 		array2 = new int[s.length];
 
 		if(t[0].equals("")) {
-			array1 = new int[]{0};
+			array1 = new int[0];
 		}
 		else {
 			array1 = new int[t.length];
