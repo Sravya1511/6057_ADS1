@@ -53,9 +53,9 @@ class Solution {
 		// System.out.println(Arrays.toString(array));
 
 		int count = 0;
-		for(int i = 0; i<n-2; i++) {
+		for(int i = 0; i<n-1; i++) {
 			// System.out.println("a");
-			for(int j = i+1; j<n-1; j++) {
+			for(int j = i+1; j<n; j++) {
 				long sum = 0;
 				// System.out.println(sum);
 				if(array.contains(-(array.get(i)+array.get(j)))) {
