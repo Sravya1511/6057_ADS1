@@ -16,7 +16,7 @@ class Solution {
 		// System.out.println(Arrays.toString(array));
 
 		int count = 0;
-		for(int i = 0; i<n; i++) {
+		for(int i = 0; i<n; i+=2) {
 			// System.out.println("a");
 			for(int j = i+1; j<n; j++) {
 				// long sum = 0;
