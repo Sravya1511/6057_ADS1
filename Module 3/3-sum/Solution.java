@@ -13,7 +13,7 @@ class solution {
 	}
 
 	public static void threesum(int[] array, int n) {
-		System.out.println(Arrays.toString(array));
+		// System.out.println(Arrays.toString(array));
 
 		int count = 0;
 		for(int i = 0; i<n-2; i++) {
