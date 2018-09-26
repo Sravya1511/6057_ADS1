@@ -137,7 +137,7 @@ class Percolation {
 
 
 // You can implement the above API to solve the problem
-class Solution {
+class Codecamp {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		int n = Integer.parseInt(input.nextLine());
