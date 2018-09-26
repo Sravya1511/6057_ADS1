@@ -1,28 +1,71 @@
 import java.util.*;
+// class Solution {
+// 	public static void main(String[] args) {
+// 		Scanner input = new Scanner(System.in);
+// 		int n = input.nextInt();
+// 		long [] array;
+// 		array = new long[n];
+// 		for(int i= 0; i<n; i++) {
+// 			array[i] = input.nextInt();
+// 		}
+// 		Arrays.sort(array);
+// 		threesum(array, n);
+// 	}
+
+// 	public static void threesum(long[] array, int n) {
+// 		// System.out.println(Arrays.toString(array));
+
+// 		int count = 0;
+// 		for(int i = 0; i<n-2; i++) {
+// 			// System.out.println("a");
+// 			for(int j = i+1; j<n-1; j++) {
+// 				long sum = 0;
+// 				// System.out.println(sum);
+// 				for(int k = j+1; k<n; k++) {
+// 					sum = array[i]+array[j]+array[k];
+// 					// System.out.println(sum);
+// 					if(sum == 0) {
+// 						count++;
+// 						// break;
+// 					}
+// 				}
+// 			}
+
+// 		}
+// 		System.out.println(count);
+// 	}
+// }
+//
 class Solution {
 	public static void main(String[] args) {
+		ArrayList<Integer> arr = new ArrayList<Integer>();
 		Scanner input = new Scanner(System.in);
 		int n = input.nextInt();
-		long [] array;
-		array = new long[n];
+		// long [] array;
+		// array = new long[n];
 		for(int i= 0; i<n; i++) {
-			array[i] = input.nextInt();
+			arr.add(input.nextInt());
 		}
-		Arrays.sort(array);
-		threesum(array, n);
+		// Arrays.sort(array);
+		threesum(arr, n);
 	}
-
-	public static void threesum(long[] array, int n) {
+	public static void threesum(ArrayList<Integer> array, int n) {
 		// System.out.println(Arrays.toString(array));
 
 		int count = 0;
-		for(int i = 0; i<n; i+=2) {
+		for(int i = 0; i<n-2; i++) {
 			// System.out.println("a");
-			for(int j=i+2; j<n;j++) {
-				if (array[i]+array[i+1]+array[j] == 0) {
+			for(int j = i+1; j<n-1; j++) {
+				long sum = 0;
+				// System.out.println(sum);
+				if(array.contains(-(array.get(i)+array.get(j)))) {
 					count++;
 				}
+
+						// break;
 			}
+
+
 
 		}
 		System.out.println(count);
