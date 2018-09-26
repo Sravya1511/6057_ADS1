@@ -1,5 +1,5 @@
 import java.util.*;
-class solution {
+class Solution {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		int n = input.nextInt();
@@ -26,7 +26,7 @@ class solution {
 					// System.out.println(sum);
 					if(sum == 0) {
 						count++;
-						break;
+						// break;
 					}
 				}
 			}
