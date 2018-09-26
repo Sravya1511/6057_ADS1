@@ -5,7 +5,7 @@ class Solution {
 		int n = input.nextInt();
 		int [] array;
 		array = new int[n];
-		for(int i= 0; i<n; i++) {
+		for(int i= 0; i < n; i++) {
 			array[i] = input.nextInt();
 		}
 		Arrays.sort(array);
@@ -19,8 +19,8 @@ class Solution {
             for (int j = i+1; j < n; j++) {
                 int k = Arrays.binarySearch(array, -(array[i] + array[j]));
                 // if (k > j) StdOut.println(a[i] + " " + a[j] + " " + a[k]);
-                int sum = array[i] + array[j]+k;
-                if(sum == 0) {
+                // int sum = array[i] + array[j] + k;
+                if (k>j) {
                 	count++;
                 }
             }
