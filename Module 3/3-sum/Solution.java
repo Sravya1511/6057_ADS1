@@ -20,9 +20,10 @@ class Solution {
                 int k = Arrays.binarySearch(array, -(array[i] + array[j]));
                 // if (k > j) StdOut.println(a[i] + " " + a[j] + " " + a[k]);
                 // int sum = array[i] + array[j] + k;
-                if (k>j) {
+                // int a = array[k]
+                if(array[i] + array[j]+array[k] == 0)
                 	count++;
-                }
+
             }
         }
 
