@@ -9,7 +9,13 @@ class Solution {
 		int[] array1;
 		array1 = new int[t.length];
 		int[] array2;
-		array2 = new int[s.length];
+
+		if(s[0].equals("")) {
+			array2 = new int[]{0};
+		}
+		else {
+			array2 = new int[s.length];
+		}
 		for(int i = 0; i<t.length; i++) {
 			array1[i] = Integer.parseInt(t[i]);
 		}
