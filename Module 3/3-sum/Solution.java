@@ -1,14 +1,17 @@
 import java.util.Scanner;
 import java.util.Arrays;
 /**
- * input reading
+ * input reading.
  */
 final class Solution {
+	/**
+	 * Constructs the object.
+	 */
 	private Solution() {
 
 	}
 	/**
-	 * { function_description }
+	 * { function_description }.
 	 *
 	 * @param      args  The arguments
 	 */
@@ -27,7 +30,7 @@ final class Solution {
 		threesum(array, n);
 	}
 	/**
-	 * {three sum function
+	 * {three sum function.
 	 *
 	 * @param      array  The array
 	 * @param      n      { parameter_description }
