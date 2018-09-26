@@ -11,60 +11,60 @@ class Solution {
 	 */
 	public static void main(final String[] args) {
 		Scanner input = new Scanner(System.in);
-		int a = Integer.parseInt(input.nextLine());
-		int b = Integer.parseInt(input.nextLine());
+		int x = Integer.parseInt(input.nextLine());
+		int y = Integer.parseInt(input.nextLine());
 		String[] t = input.nextLine().split(",");
 		String[] s = input.nextLine().split(",");
-		int[] array1;
+		int[] sort1;
 
-		int[] array2;
-		array2 = new int[s.length];
+		int[] sort2;
+		sort2 = new int[y];
 
 		if (t[0].equals("")) {
-			array1 = new int[0];
+			sort1 = new int[0];
 		} else {
-			array1 = new int[t.length];
-			for (int i = 0; i < t.length; i++) {
-			array1[i] = Integer.parseInt(t[i]);
+			sort1 = new int[x];
+			for (int i = 0; i < x; i++) {
+			sort1[i] = Integer.parseInt(t[i]);
 		}
 
 		}
-		for (int i = 0; i < s.length; i++) {
-			array2[i] = Integer.parseInt(s[i]);
+		for (int i = 0; i < y; i++) {
+			sort2[i] = Integer.parseInt(s[i]);
 		}
 
 
-		// System.out.println(Arrays.toString(array1));
-		// System.out.println(Arrays.toString(array2));
-		sort(array1, array2);
+		// System.out.println(Arrays.toString(sort1));
+		// System.out.println(Arrays.toString(sort2));
+		sort(sort1, sort2);
 
 	}
 	/**
 	 * { function_description }.
 	 *
-	 * @param      array1  The array 1
-	 * @param      array2  The array 2
+	 * @param      sort1  The array 1
+	 * @param      sort2  The array 2
 	 */
 
-	public static void sort(final int[] array1, final int[] array2) {
+	public static void sort(final int[] sort1, final int[] sort2) {
 		int i = 0;
 		int j = 0;
-		int [] result;
-		result = new int[array1.length + array2.length];
-		for (int k = 0; k < result.length; k++) {
-			if (i < array1.length && j < array2.length) {
-				if (array1[i] < array2[j]) {
-					result[k] = array1[i++];
+		int [] array;
+		array = new int[sort1.length + sort2.length];
+		for (int k = 0; k < array.length; k++) {
+			if (i < sort1.length && j < sort2.length) {
+				if (sort1[i] < sort2[j]) {
+					array[k] = sort1[i++];
 				} else {
-					result[k] = array2[j++];
+					array[k] = sort2[j++];
 				}
-			} else if (i >= array1.length) {
-				result[k] = array2[j++];
-			} else if (j >= array2.length) {
-				result[k] = array1[i++];
+			} else if (i >= sort1.length) {
+				array[k] = sort2[j++];
+			} else if (j >= sort2.length) {
+				array[k] = sort1[i++];
 			}
 		}
-		System.out.println(Arrays.toString(result).replace("[", "").replace("]", "").replace(" ", ""));
+		System.out.println(Arrays.toString(array).replace("[", "").replace("]", "").replace(" ", ""));
 	}
 
 }
