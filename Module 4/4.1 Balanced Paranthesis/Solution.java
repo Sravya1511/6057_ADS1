@@ -24,7 +24,7 @@ final class StackArray {
 	 * @param      item  The item
 	 */
 
-	public void push(String item) {
+	public void push(final String item) {
 		array[size++] = item;
 	}
 	/**
@@ -54,7 +54,7 @@ final class StackArray {
 	 * @return     { description_of_the_return_value }
 	 */
 	public String peek() {
-		int a = size-1;
+		int a = size - 1;
 		return array[a];
 	}
 }
@@ -62,11 +62,22 @@ final class StackArray {
  * Class for solution.
  * reads input.
  */
-class Solution {
-	public static void main(String[] args) {
+final class Solution {
+	/**
+	 * Constructs the object.
+	 */
+	private Solution() {
+
+	}
+	/**
+	 * reads input.
+	 *
+	 * @param      args  The arguments
+	 */
+	public static void main(final String[] args) {
 		Scanner scn = new Scanner(System.in);
 		int lines = Integer.parseInt(scn.nextLine());
-		for(int i = 0; i<lines; i++) {
+		for (int i = 0; i < lines; i++) {
 			String[] tokens = scn.nextLine().split("");
 			paranthesis(tokens);
 		}
@@ -92,17 +103,17 @@ class Solution {
 		        }
 		        String a = str.peek();
 		        // System.out.println(a);
-		        if (a.equals("(") && (tokens[m].equals("]") || tokens[m].equals("}"))) {
+if (a.equals("(") && (tokens[m].equals("]") || tokens[m].equals("}"))) {
 		        	System.out.println("NO");
 		        	x = true;
 		        	break;
 		        }
-		        if (a.equals("{") && (tokens[m].equals("]") || tokens[m].equals(")"))) {
+if (a.equals("{") && (tokens[m].equals("]") || tokens[m].equals(")"))) {
 		        	System.out.println("NO");
 		        	x = true;
 		        	break;
 		        }
-		        if (a.equals("[") && (tokens[m].equals(")") || tokens[m].equals("}"))) {
+if (a.equals("[") && (tokens[m].equals(")") || tokens[m].equals("}"))) {
 		        	System.out.println("NO");
 		        	x = true;
 		        	break;
