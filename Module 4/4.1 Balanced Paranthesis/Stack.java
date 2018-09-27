@@ -2,6 +2,36 @@ import java.util.Stack;
 import java.util.Scanner;
 import java.util.Arrays;
 
+class StackArray {
+	String[] array;
+	int size;
+
+	StackArray(int n) {
+		array = new String[n];
+		size = 0;
+	}
+
+	public void push(String item) {
+		array[size++] = item;
+	}
+
+	public void pop() {
+		array[size] = null;
+		size--;
+	}
+	public boolean isEmpty() {
+		if (size == 0) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	public String peek() {
+		return array[size];
+	}
+}
+
 class Solution {
 	public static void main(String[] args) {
 		Scanner scn = new Scanner(System.in);
@@ -14,16 +44,18 @@ class Solution {
 
 	public static void paranthesis(String[] tokens) {
 		boolean x = false;
-		Stack<String> str = new Stack<>();
+		StackArray str = new StackArray(tokens.length);
 		for(int j = 0; j<tokens.length; j++) {
 		    if(tokens[j].equals("}") || tokens[j].equals("]") || tokens[j].equals(")")) {
-
 		        if(str.isEmpty()) {
 		        	System.out.println("NO");
 		        	x = true;
 		        	break;
+		        }
+		        // if(str.peep().equals(tokens[j])){
 
-		        	}
+		        // }
+
 				str.pop();
 			    }
 			    else{
