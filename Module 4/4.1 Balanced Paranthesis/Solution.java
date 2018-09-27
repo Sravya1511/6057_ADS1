@@ -1,20 +1,24 @@
-import java.util.Stack;
 import java.util.Scanner;
-import java.util.Arrays;
 /**
  * Class for stack array.
  */
 
 final class StackArray {
-	String[] array;
-	int size;
+	/**
+	 * string array to perform stack operations.
+	 */
+	private String[] array;
+	/**
+	 * size of stack array.
+	 */
+	private int size;
 	/**
 	 * Constructs the object.
 	 *
 	 * @param      n     { parameter_description }
 	 */
 
-	StackArray(int n) {
+	StackArray(final int n) {
 		array = new String[n];
 		size = 0;
 	}
@@ -28,11 +32,11 @@ final class StackArray {
 		array[size++] = item;
 	}
 	/**
-	 * removes top most element
+	 * removes top most element.
 	 */
 
 	public void pop() {
-		array[size-1] = null;
+		array[size - 1] = null;
 		size--;
 	}
 	/**
@@ -43,13 +47,12 @@ final class StackArray {
 	public boolean isEmpty() {
 		if (size == 0) {
 			return true;
-		}
-		else {
+		} else {
 			return false;
 		}
 	}
 	/**
-	 * returns top most element
+	 * returns top most element.
 	 *
 	 * @return     { description_of_the_return_value }
 	 */
@@ -88,7 +91,7 @@ final class Solution {
 	 * @param      tokens  The tokens
 	 */
 
-	public static void paranthesis(String[] tokens) {
+	public static void paranthesis(final String[] tokens) {
 		boolean x = false;
 		String i = ")";
 		String j = "]";
