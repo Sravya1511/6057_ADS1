@@ -17,7 +17,7 @@ class StackArray {
 
 	public void pop() {
 		array[size--] = null;
-		size--;
+		// size--;
 	}
 	public boolean isEmpty() {
 		if (size == 0) {
