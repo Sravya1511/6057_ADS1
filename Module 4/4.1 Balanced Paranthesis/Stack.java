@@ -16,7 +16,7 @@ class StackArray {
 	}
 
 	public void pop() {
-		array[size] = null;
+		array[size--] = null;
 		size--;
 	}
 	public boolean isEmpty() {
@@ -28,7 +28,8 @@ class StackArray {
 		}
 	}
 	public String peek() {
-		return array[size];
+		int a = size-1;
+		return array[a];
 	}
 }
 
@@ -46,35 +47,36 @@ class Solution {
 		boolean x = false;
 		String i = ")";
 		String j = "]";
-		String k = "}"
+		String k = "}";
 		StackArray str = new StackArray(tokens.length);
-		for(int j = 0; j<tokens.length; j++) {
-		    if(tokens[j].equals(i) || tokens[j].equals(j) || tokens[j].equals(k)) {
+		for(int m = 0; m<tokens.length; m++) {
+		    if(tokens[m].equals(i) || tokens[m].equals(j) || tokens[m].equals(k)) {
 		        if(str.isEmpty()) {
 		        	System.out.println("NO");
 		        	x = true;
 		        	break;
 		        }
 		        String a = str.peek();
-		        if(a.equals("(") && (tokens[j].equals("]") || tokens[j].equals("}"))); {
+		        // System.out.println(a);
+		        if(a.equals("(") && (tokens[m].equals("]") || tokens[m].equals("}"))) {
 		        	System.out.println("NO");
 		        	x = true;
 		        	break;
 		        }
-		        if(a.equals("{") && (tokens[j].equals("]") || tokens[j].equals(")"))); {
+		        if(a.equals("{") && (tokens[m].equals("]") || tokens[m].equals(")"))) {
 		        	System.out.println("NO");
 		        	x = true;
 		        	break;
 		        }
-		        if(a.equals("[") && (tokens[j].equals(")") || tokens[j].equals("}"))); {
+		        if(a.equals("[") && (tokens[m].equals(")") || tokens[m].equals("}"))) {
 		        	System.out.println("NO");
 		        	x = true;
 		        	break;
 		        }
-                str.pop();
-			    }
+		        str.pop();
+			}
 			    else{
-			        str.push(tokens[j]);
+			        str.push(tokens[m]);
 			    }
 			}
             // System.out.println(str);
