@@ -44,19 +44,34 @@ class Solution {
 
 	public static void paranthesis(String[] tokens) {
 		boolean x = false;
+		String i = ")";
+		String j = "]";
+		String k = "}"
 		StackArray str = new StackArray(tokens.length);
 		for(int j = 0; j<tokens.length; j++) {
-		    if(tokens[j].equals("}") || tokens[j].equals("]") || tokens[j].equals(")")) {
+		    if(tokens[j].equals(i) || tokens[j].equals(j) || tokens[j].equals(k)) {
 		        if(str.isEmpty()) {
 		        	System.out.println("NO");
 		        	x = true;
 		        	break;
 		        }
-		        // if(str.peep().equals(tokens[j])){
-
-		        // }
-
-				str.pop();
+		        String a = str.peek();
+		        if(a.equals("(") && (tokens[j].equals("]") || tokens[j].equals("}"))); {
+		        	System.out.println("NO");
+		        	x = true;
+		        	break;
+		        }
+		        if(a.equals("{") && (tokens[j].equals("]") || tokens[j].equals(")"))); {
+		        	System.out.println("NO");
+		        	x = true;
+		        	break;
+		        }
+		        if(a.equals("[") && (tokens[j].equals(")") || tokens[j].equals("}"))); {
+		        	System.out.println("NO");
+		        	x = true;
+		        	break;
+		        }
+                str.pop();
 			    }
 			    else{
 			        str.push(tokens[j]);
