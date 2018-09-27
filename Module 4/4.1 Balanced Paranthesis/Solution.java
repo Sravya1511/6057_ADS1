@@ -2,7 +2,7 @@ import java.util.Stack;
 import java.util.Scanner;
 import java.util.Arrays;
 
-class Solution {
+class Test {
 	public static void main(String[] args) {
 		Scanner scn = new Scanner(System.in);
 		int lines = Integer.parseInt(scn.nextLine());
