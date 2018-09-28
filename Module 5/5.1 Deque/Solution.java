@@ -57,19 +57,18 @@ class Deque<E> {
     }
 
 
-    public void popLeft() {
+    public boolean popLeft() {
     	if (size == 0) {
-    		System.out.println("No elements in array");
-    		return;
+    		return false;
     	}
         head = head.next;
         size--;
+        return true;
     }
 
-    public void popRight() {
+    public boolean popRight() {
     	if (size == 0) {
-    		System.out.println("No elements in array");
-    		return;
+    		return false;
     	}
         Node n = head;
         int count = 0;
@@ -77,9 +76,9 @@ class Deque<E> {
         	n = n.next;
         	count++;
         }
-        // System.out.println(n.data);
         n.next = null;
         size--;
+        return true;
     }
 
     public int size() {
@@ -103,12 +102,20 @@ class Solution {
                 deque.print();
                 break;
                 case "popRight":
-                deque.popRight();
+                if(deque.popRight()) {
                 deque.print();
+                }
+                else {
+                System.out.println("Deck is empty");
+                }
                 break;
                 case "popLeft":
-                deque.popLeft();
+                if(deque.popLeft()) {
                 deque.print();
+                }
+                else {
+                System.out.println("Deck is empty");
+                }
                 break;
                 case "size":
                 System.out.println(deque.size());
