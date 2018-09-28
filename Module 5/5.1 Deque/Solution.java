@@ -14,6 +14,10 @@ class Deque<E> {
     }
 
     public void print() {
+        if (size == 0) {
+            System.out.println("[]");
+            return;
+        }
     	Node n = head;
         System.out.print("[");
     	for(int i = 0; i<size-1; i++) {
