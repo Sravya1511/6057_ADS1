@@ -4,7 +4,7 @@ import java.util.Scanner;
  * reads input.
  */
 
-class Solution {
+final class Solution {
     /**
      * Constructs the object.
      */
@@ -12,7 +12,7 @@ class Solution {
 
     }
     /**
-     * main method is written
+     * main method is written.
      *
      * @param      args  The arguments
      */
@@ -22,7 +22,7 @@ class Solution {
         int n = Integer.parseInt(input.nextLine());
         for (int i = 0; i < n; i++) {
             String[] tokens = input.nextLine().split(" ");
-            switch(tokens[0]) {
+            switch (tokens[0]) {
                 case "pushLeft":
                 deque.pushLeft(Integer.parseInt(tokens[1]));
                 deque.print();
@@ -54,6 +54,8 @@ class Solution {
                 } else {
                  System.out.println("Not empty");
                 }
+                break;
+                default:
                 break;
 
 
