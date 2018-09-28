@@ -12,8 +12,16 @@ class Deque<E> {
        }
     }
 
+    public boolean isEmpty() {
+        if (size == 0){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public void print() {
-        if (size == 0) {
+        if (isEmpty()) {
             System.out.println("[]");
             return;
         }
@@ -28,7 +36,7 @@ class Deque<E> {
 
     public void pushLeft(E data) {
     	Node first = new Node(data);
-        if (size == 0) {
+        if (isEmpty()) {
         	head = first;
         	size++;
         	return;
@@ -39,7 +47,7 @@ class Deque<E> {
     }
 
     public void pushRight(E data) {
-    	if(size == 0) {
+    	if(isEmpty()) {
     		pushLeft(data);
     		return;
     	}
@@ -57,7 +65,7 @@ class Deque<E> {
 
 
     public boolean popLeft() {
-    	if (size == 0) {
+    	if (isEmpty()) {
     		return false;
     	}
         head = head.next;
@@ -66,7 +74,7 @@ class Deque<E> {
     }
 
     public boolean popRight() {
-    	if (size == 0) {
+    	if (isEmpty()) {
     		return false;
     	}
         Node n = head;
