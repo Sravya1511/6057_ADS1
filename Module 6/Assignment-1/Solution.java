@@ -48,12 +48,12 @@ class AddLargeNumbers {
      */
 
     public static LinkedList addLargeNumbers(final LinkedList list1, final LinkedList list2) {
-        StackArray stack1 = new StackArray(list1.size);
-        StackArray stack2 = new StackArray(list2.size);
-        while (list1.isEmpty() == false) {
+        StackArray stack1 = new StackArray(list1.size());
+        StackArray stack2 = new StackArray(list2.size());
+        while (!list1.isEmpty()) {
         stack1.push(list1.removeFirst());
         }
-        while (list2.isEmpty() == false) {
+        while (!list2.isEmpty()) {
         stack2.push(list2.removeFirst());
         }
         int maxSize = 0;
