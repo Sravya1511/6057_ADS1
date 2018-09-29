@@ -57,6 +57,7 @@ class AddLargeNumbers {
         stack2.push(list2.removeFirst());
         }
         int maxSize = 0;
+        final int ten = 10;
         if (stack2.size() > stack1.size()) {
             maxSize = stack2.size;
         } else {
@@ -70,8 +71,8 @@ class AddLargeNumbers {
             int a = stack1.pop();
             int b = stack2.pop();
             sum = a + b + carry;
-            temp = sum % 10;
-            carry = sum / 10;
+            temp = sum % ten;
+            carry = sum / ten;
             result.addNew(Integer.toString(temp));
             maxSize--;
         }
@@ -87,7 +88,13 @@ class AddLargeNumbers {
 
 public class Solution {
     /**
-     * reads input
+     * Constructs the object.
+     */
+    private Solution() {
+
+    }
+    /**
+     * reads input.
      *
      * @param      args  The arguments
      */
@@ -96,7 +103,7 @@ public class Solution {
         String input = sc.nextLine();
         String p = sc.nextLine();
         String q = sc.nextLine();
-        switch(input){
+        switch (input) {
             case "numberToDigits":
                 LinkedList pDigits = AddLargeNumbers.numberToDigits(p);
                 LinkedList qDigits = AddLargeNumbers.numberToDigits(q);
@@ -107,7 +114,7 @@ public class Solution {
             case "addLargeNumbers":
                 pDigits = AddLargeNumbers.numberToDigits(p);
                 qDigits = AddLargeNumbers.numberToDigits(q);
-                LinkedList result = AddLargeNumbers.addLargeNumbers(pDigits, qDigits);
+        LinkedList result = AddLargeNumbers.addLargeNumbers(pDigits, qDigits);
                 System.out.println(AddLargeNumbers.digitsToNumber(result));
                 // AddLargeNumbers.addLargeNumbers(pDigits, qDigits);
                 break;
