@@ -156,7 +156,10 @@ class AddLargeNumbers {
             // r = a+b;
             // System.out.println(r);
         }
+        if(carry!=0) {
         result.addNew(Integer.toString(carry));
+        }
+
         return result;
     }
 }
