@@ -139,7 +139,7 @@ class AddLargeNumbers {
         int sum = 0;
         int temp = 0;
         int carry = 0;
-        while(stack1.isEmpty() == false) {
+        while(stack2.isEmpty() == false) {
             int a = stack1.pop();
             int b = stack2.pop();
             sum = a+b+carry;
