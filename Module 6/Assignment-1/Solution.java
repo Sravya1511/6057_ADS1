@@ -47,7 +47,8 @@ class AddLargeNumbers {
      * @return     { returns result of Linkedlist type }
      */
 
-    public static LinkedList addLargeNumbers(final LinkedList list1, final LinkedList list2) {
+    public static LinkedList addLargeNumbers(final LinkedList list1,
+        final LinkedList list2) {
         StackArray stack1 = new StackArray(list1.size());
         StackArray stack2 = new StackArray(list2.size());
         while (!list1.isEmpty()) {
@@ -86,7 +87,7 @@ class AddLargeNumbers {
  * Solution class.
  */
 
-public class Solution {
+public final class Solution {
     /**
      * Constructs the object.
      */
@@ -118,6 +119,8 @@ public class Solution {
                 System.out.println(AddLargeNumbers.digitsToNumber(result));
                 // AddLargeNumbers.addLargeNumbers(pDigits, qDigits);
                 break;
+            default:
+            break;
         }
     }
 }
