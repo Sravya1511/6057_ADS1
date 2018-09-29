@@ -5,6 +5,9 @@ import java.util.Scanner;
  */
 
 final class AddLargeNumbers {
+    /**
+     * Constructs the object.
+     */
 
     private AddLargeNumbers() {
 
