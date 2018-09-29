@@ -47,36 +47,36 @@ class Test {
 // import java.util.Scanner;
 // import java.util.Arrays;
 
-// class StackArray {
-// 	String[] array;
-// 	int size;
+class StackArray {
+	String[] array;
+	int size;
 
-// 	StackArray(int n) {
-// 		array = new String[n];
-// 		size = 0;
-// 	}
+	StackArray(int n) {
+		array = new String[n];
+		size = 0;
+	}
 
-// 	public void push(String item) {
-// 		array[size++] = item;
-// 	}
+	public void push(String item) {
+		array[size++] = item;
+	}
 
-// 	public void pop() {
-// 		array[size-1] = null;
-// 		size--;
-// 	}
-// 	public boolean isEmpty() {
-// 		if (size == 0) {
-// 			return true;
-// 		}
-// 		else {
-// 			return false;
-// 		}
-// 	}
-// 	public String peek() {
-// 		int a = size-1;
-// 		return array[a];
-// 	}
-// }
+	public void pop() {
+		array[size-1] = null;
+		size--;
+	}
+	public boolean isEmpty() {
+		if (size == 0) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	public String peek() {
+		int a = size-1;
+		return array[a];
+	}
+}
 
 // class Solution {
 // 	public static void main(String[] args) {
