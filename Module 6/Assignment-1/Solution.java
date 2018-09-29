@@ -4,7 +4,11 @@ import java.util.Scanner;
  * It performs three operations.
  */
 
-class AddLargeNumbers {
+final class AddLargeNumbers {
+
+    private AddLargeNumbers() {
+
+    }
     /**
      * number is added to linkedlist.
      * number is in string type.
