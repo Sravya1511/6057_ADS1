@@ -88,6 +88,9 @@ class StackArray {
     }
 
     public int pop() {
+        if(size == 0) {
+            return 0;
+        }
         int a = array[size-1];
         size--;
         return a;
@@ -104,6 +107,7 @@ class StackArray {
         int a = size-1;
         return array[a];
     }
+    // public int
 }
 
 class AddLargeNumbers {
