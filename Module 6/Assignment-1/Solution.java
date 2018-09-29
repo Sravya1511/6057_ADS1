@@ -107,7 +107,10 @@ class StackArray {
         int a = size-1;
         return array[a];
     }
-    // public int
+    public int size() {
+        return size;
+    }
+
 }
 
 class AddLargeNumbers {
@@ -127,7 +130,6 @@ class AddLargeNumbers {
         LinkedList lis = new LinkedList();
         String a = lis.print(list);
         return a;
-
     }
 
     public static LinkedList addLargeNumbers(LinkedList list1, LinkedList list2) {
@@ -139,27 +141,28 @@ class AddLargeNumbers {
         while(list2.isEmpty() == false) {
         stack2.push(list2.removeFirst());
         }
+        int maxSize = 0;
+        if(stack2.size()>stack1.size()) {
+            maxSize = stack2.size;
+        } else {
+            maxSize = stack1.size;
+        }
         LinkedList result = new LinkedList();
         int sum = 0;
         int temp = 0;
         int carry = 0;
-        while(stack2.isEmpty() == false) {
+        while(maxSize > 0) {
             int a = stack1.pop();
             int b = stack2.pop();
             sum = a+b+carry;
             temp = sum%10;
             carry = sum/10;
             result.addNew(Integer.toString(temp));
-            // int sum = carry + a + b;
-            // result.data = sum % 10;
-            // carry = sum / 10;
-            // r = a+b;
-            // System.out.println(r);
+            maxSize--;
         }
         if(carry!=0) {
         result.addNew(Integer.toString(carry));
         }
-
         return result;
     }
 }
