@@ -1,8 +1,13 @@
+
 import java.util.Scanner;
+
 class CircularQueue {
-    Node front;
-    Node rear;
-    int size = 0;
+
+
+    Node front = null;
+    Node rear = null;
+    Node current = null;
+    int size;
 
     class Node {
         int data;
@@ -14,14 +19,6 @@ class CircularQueue {
        }
     }
 
-    public void print() {
-        Node n = front;
-        while(n!=null) {
-            System.out.print(n.data+", ");
-            n = n.next;
-        }
-        System.out.println();
-    }
 
     public void insert(int data) {
         Node n = new Node(data);
@@ -36,77 +33,98 @@ class CircularQueue {
         size++;
     }
 
-    public boolean isEmpty() {
-        return size == 0;
-    }
-    public int size() {
-        return size;
+    public int getElement() {
+        if (current == null) {
+            current = front;
+        }
+        Node tmp = current;
+        current = tmp.next;
+        return tmp.data;
     }
 
-    public int removeAt(int i) {
-        if (i == 0) {
-            Node n = front;
-            int ele = front.data;
+    ///*
+    public int remove(int element) {
+
+        if (front.data == element) {
             front = front.next;
+            rear.next = front;
+            size--;
+            return element;
+        }
+
+        if (rear.data == element) {
+            Node n = front;
+            int count = 0;
+            while(count < size-2) {
+            n = n.next;
+            count++;
+            }
+            n.next = front;
+            rear = n;
+            size--;
+            return element;
+        }
+
+        if (size == 1) {
+            int ele = front.data;
+            front = null;
             size--;
             return ele;
         }
-        if (i == size-1) {
-            Node n = front;
-            while (!n.next.equals(rear)) {
-                n = n.next;
-            }
-            int element = n.next.data;
-            n.next = front;
-            rear = n;
-            return element;
-        }
-        if(size == 1) {
-            Node n = front;
-            size--;
-            return front.data;
-        }
+
         Node n = front;
-        int count = 0;
-        while(count < i-1) {
-            count++;
+        while (n.next.data != element) {
             n = n.next;
         }
-        int ele = n.next.data;
-        n.next = n.next.next;
+        n.next = n.next.next;;
         size--;
-        return ele;
+        return element;
     }
 
+    public boolean isEmpty() {
+        return size == 0;
+    }
 
 }
 
-class Solution {
+/**
+ * Solution class.
+ */
+public final class Solution {
+
+
+    private Solution() {
+    }
+
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         int n = Integer.parseInt(input.nextLine());
         for(int i = 0; i<n; i++) {
-            CircularQueue cq = new CircularQueue();
+            CircularQueue counter = new CircularQueue();
             String[] tokens = input.nextLine().split(" ");
             int number = Integer.parseInt(tokens[0]);
             for(int j = 0; j<number; j++) {
-                cq.insert(j);
+                counter.insert(j);
+                // System.out.println("j");
             }
             String str = "";
-            while(!cq.isEmpty()) {
-            int sum = 0;
-            for(int k = 0; sum<cq.size()-1; k++) {
-                sum = k+Integer.parseInt(tokens[1])-1;
-                str += Integer.toString(cq.removeAt(sum))+" ";
-
+            while (!counter.isEmpty()) {
+                int t2 = 0;
+                for (int k = 0; k < Integer.parseInt(tokens[1]); k++) {
+                    t2 = counter.getElement();
+                }
+                // System.out.print(cl.remove(t2) + " ");
+                str += counter.remove(t2) + " ";
             }
-
-          }
-        System.out.println(str);
+            System.out.println(str.trim());
+            // System.out.println();
+            //*/
         }
-
     }
+
 }
+
+
 
 
 
