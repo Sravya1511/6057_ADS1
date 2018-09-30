@@ -37,7 +37,7 @@ class CircularQueue {
     }
 
     public boolean isEmpty() {
-        return front == null;
+        return size == 0;
     }
     public int size() {
         return size;
@@ -61,19 +61,21 @@ class CircularQueue {
             rear = n;
             return element;
         }
-        else {
+        if(size == 1) {
             Node n = front;
+            size--;
+            return front.data;
+        }
+        Node n = front;
         int count = 0;
         while(count < i-1) {
             count++;
             n = n.next;
         }
-        int ele = n.data;
+        int ele = n.next.data;
         n.next = n.next.next;
         size--;
         return ele;
-        }
-
     }
 
 
@@ -93,7 +95,7 @@ class Solution {
             String str = "";
             while(!cq.isEmpty()) {
             int sum = 0;
-            for(int k = 0; sum<cq.size(); k++) {
+            for(int k = 0; sum<cq.size()-1; k++) {
                 sum = k+Integer.parseInt(tokens[1])-1;
                 str += Integer.toString(cq.removeAt(sum))+" ";
 
