@@ -88,7 +88,7 @@ class Solution {
 					list.print();
 					}
 					else {
-						System.out.println("empty");
+						System.out.println("Steque is empty.");
 					}
 					break;
 					case "enqueue":
