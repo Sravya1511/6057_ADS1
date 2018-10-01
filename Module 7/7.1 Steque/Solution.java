@@ -54,12 +54,12 @@ class LinkedList {
 	public void print() {
 		Node n = head;
 		String str = "";
-		while(n!=null) {
-			str += n.data+", ";
+    	for(int i = 0; i<size-1; i++) {
+            str = str+n.data+", ";
             n = n.next;
-		}
-		str = str.substring(0, str.length()-2);
-		System.out.println(str);
+        }
+        str+=n.data;
+        System.out.println(str);
 	}
 }
 
