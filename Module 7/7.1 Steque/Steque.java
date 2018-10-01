@@ -28,7 +28,8 @@ class Steque {
     /**
     * push method inserts elemnets into linked list from left side.
     * same as stack push.
-     * The time complexity for push operation is 1.
+     * The time complexity for push operation is O(1).
+     * The node is directly added at head.
     *
     * @param      data  The data
     */
@@ -46,7 +47,9 @@ class Steque {
 	/**
 	 * enqueue enters elements into linked lists from right side.
 	 * same as queue enqueue.
-	 * The time complexity for enqueue operation is n.
+	 * The time complexity for enqueue operation is O(n). -- worst case.
+	 * To acess element in last, the loop should iterate for n times.
+	 * n be size of linked list.
 	 *
 	 * @param      data  The data
 	 */
@@ -68,7 +71,8 @@ class Steque {
 	 * pop method remves element from linkedlist.
 	 * The element is removed from left side.
 	 * same as pop operation of stack.
-	 * The time complexity for pop operation is n.
+	 * The time complexity for pop operation is O(1).
+	 * The first element has to be removed. So linkedlist is acessed for one time.
 	 *
 	 * @return     { if size=0, returns false}.
 	 */
@@ -84,7 +88,9 @@ class Steque {
 	}
 	/**
 	 * printing the element in linkedlists.
-	 * The time complexity for print operation is n.
+	 * The time complexity for print operation is O(n).
+	 * for printing, all the elements must be accessed in the linked lists.
+	 * n is size of linked list.
 	 */
 
 	public void print() {
