@@ -52,6 +52,10 @@ class LinkedList {
 	}
 
 	public void print() {
+		if(size == 0) {
+			System.out.println("empty");
+			return;
+		}
 		Node n = head;
 		String str = "";
     	for(int i = 0; i<size-1; i++) {
