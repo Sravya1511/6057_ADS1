@@ -53,7 +53,7 @@ class LinkedList {
 
 	public void print() {
 		if(size == 0) {
-			System.out.println("empty");
+			System.out.println("Steque is empty.");
 			return;
 		}
 		Node n = head;
