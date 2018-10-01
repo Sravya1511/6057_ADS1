@@ -14,7 +14,7 @@ final class Solution {
 
     }
     /**
-     * reads input
+     * reads input.
      *
      * @param      args  The arguments
      */
