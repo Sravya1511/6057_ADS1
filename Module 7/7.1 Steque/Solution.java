@@ -97,6 +97,7 @@ class Solution {
 					break;
 				}
 			}
+			System.out.println();
 		}
 
 	}
