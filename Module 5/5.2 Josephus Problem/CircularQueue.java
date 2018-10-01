@@ -1,6 +1,5 @@
 class CircularQueue {
 
-
     Node front = null;
     Node rear = null;
     Node current = null;
