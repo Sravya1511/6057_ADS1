@@ -6,41 +6,50 @@ import java.util.Scanner;
  * performs methods in Steque.
  */
 
-class Solution {
-	private Solution() {
+final class Solution {
+    /**
+     * Constructs the object.
+     */
+    private Solution() {
 
-	}
-	public static void main(String[] args) {
-		Scanner input = new Scanner(System.in);
-		int n = Integer.parseInt(input.nextLine());
-		for (int i = 0; i < n; i++) {
-			Steque list = new Steque();
-			while(input.hasNext()) {
-				String[] token = input.nextLine().split(" ");
-				if(token[0].equals("")) {
-					break;
-				}
-				switch(token[0]) {
-					case "push":
-					list.push(Integer.parseInt(token[1]));
-					list.print();
-					break;
-					case "pop":
-					if(list.pop()) {
-					list.print();
-					}
-					else {
-						System.out.println("Steque is empty.");
-					}
-					break;
-					case "enqueue":
-					list.enqueue(Integer.parseInt(token[1]));
-					list.print();
-					break;
-				}
-			}
-			System.out.println();
-		}
+    }
+    /**
+     * reads input
+     *
+     * @param      args  The arguments
+     */
+    public static void main(final String[] args) {
+        Scanner input = new Scanner(System.in);
+        int n = Integer.parseInt(input.nextLine());
+        for (int i = 0; i < n; i++) {
+            Steque list = new Steque();
+            while (input.hasNext()) {
+                String[] token = input.nextLine().split(" ");
+                if (token[0].equals("")) {
+                    break;
+                }
+                switch (token[0]) {
+                    case "push":
+                    list.push(Integer.parseInt(token[1]));
+                    list.print();
+                    break;
+                    case "pop":
+                    if (list.pop()) {
+                    list.print();
+                    } else {
+            System.out.println("Steque is empty.");
+                    }
+                    break;
+                    case "enqueue":
+            list.enqueue(Integer.parseInt(token[1]));
+                    list.print();
+                    break;
+                    default:
+                    break;
+                }
+            }
+            System.out.println();
+        }
 
-	}
+    }
 }
