@@ -54,7 +54,7 @@ class TeamArray {
                         exchange(i, min);
                         // break;
                     }
-                     else if(teamArray[j].losses == teamArray[j-1].losses) {
+                     else if(teamArray[j].losses == teamArray[i].losses) {
                         if(teamArray[j].draws > teamArray[min].draws) {
                         min = j;
                         exchange(i, min);
@@ -62,6 +62,7 @@ class TeamArray {
                         }
                     }
                 }
+
 
     		}
     	}
