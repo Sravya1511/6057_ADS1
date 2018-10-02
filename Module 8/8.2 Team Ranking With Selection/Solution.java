@@ -187,19 +187,19 @@ class Selection {
     	for(int i = 0; i<size; i++) {
             int max = i;
     		for(int j = i+1; j<size; j++) {
-    			if(teamArray[j].getWins() > teamArray[i].getWins()) {
+    			if(compareTo(teamArray[j].getWins(), teamArray[i].getWins()) >0) {
     				max = j;
                     exchange(teamArray, i, max);
     			}
 
-                else if(teamArray[j].getWins() == teamArray[i].getWins()) {
-                    if(teamArray[j].getLosses() < teamArray[i].getLosses()) {
+                else if(compareTo(teamArray[j].getWins(), teamArray[i].getWins()) == 0) {
+                    if(compareTo(teamArray[j].getLosses(), teamArray[i].getLosses()) <0) {
                         max = j;
                         exchange(teamArray, i, max);
                         // break;
                     }
-                     else if(teamArray[j].getLosses() == teamArray[i].getLosses()) {
-                        if(teamArray[j].getDraws() > teamArray[i].getDraws()) {
+                     else if(compareTo(teamArray[j].getLosses(), teamArray[i].getLosses()) == 0) {
+                        if(compareTo(teamArray[j].getDraws(), teamArray[i].getDraws()) >0) {
                         max = j;
                         exchange(teamArray, i, max);
                         // break;
