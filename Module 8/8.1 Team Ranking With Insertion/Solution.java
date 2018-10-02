@@ -50,7 +50,7 @@ class TeamArray {
     				exchange(j, j-1);
     			    }
     			    if(teamArray[j].losses == teamArray[j-1].losses) {
-    				    if(teamArray[j].draws < teamArray[j-1].draws) {
+    				    if(teamArray[j].draws > teamArray[j-1].draws) {
     				    exchange(j, j-1);
     			        }
     			    }
