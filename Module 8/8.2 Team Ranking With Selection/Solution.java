@@ -45,8 +45,7 @@ class TeamArray {
     		for(int j = i+1; j<size; j++) {
     			if(teamArray[j].wins > teamArray[min].wins) {
     				min = j;
-    			}
-                if(teamArray[j].wins == teamArray[min].wins) {
+                    if(teamArray[j].wins == teamArray[min].wins) {
                     if(teamArray[j].losses < teamArray[min].losses) {
                         min = j;
                         exchange(i, min);
@@ -60,6 +59,8 @@ class TeamArray {
                         }
                     }
                 }
+    			}
+
                 exchange(i, min);
 
 
