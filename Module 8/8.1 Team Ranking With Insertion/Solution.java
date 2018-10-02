@@ -21,7 +21,7 @@ class Team {
     	return name;
     }
     public int getWins() {
-    	return getWins();
+    	return wins;
     }
     public int getLosses() {
     	return losses;
