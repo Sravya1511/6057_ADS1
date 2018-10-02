@@ -41,23 +41,23 @@ class TeamArray {
 
     public void SelectionSort() {
     	for(int i = 0; i<size; i++) {
-            int min = i;
+            // int min = i;
     		for(int j = i+1; j<size; j++) {
-    			if(teamArray[j].wins > teamArray[min].wins) {
-    				min = j;
-                    exchange(i, min);
+    			if(teamArray[j].wins > teamArray[i].wins) {
+    				// min = j;
+                    exchange(i, j);
     			}
 
                 else if(teamArray[j].wins == teamArray[i].wins) {
-                    if(teamArray[j].losses < teamArray[min].losses) {
-                        min = j;
-                        exchange(i, min);
+                    if(teamArray[j].losses < teamArray[i].losses) {
+                        // min = j;
+                        exchange(i, j);
                         // break;
                     }
                      else if(teamArray[j].losses == teamArray[i].losses) {
-                        if(teamArray[j].draws > teamArray[min].draws) {
-                        min = j;
-                        exchange(i, min);
+                        if(teamArray[j].draws > teamArray[i].draws) {
+                        // min = j;
+                        exchange(i, j);
                         // break;
                         }
                     }
