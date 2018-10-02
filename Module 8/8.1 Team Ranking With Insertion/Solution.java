@@ -1,10 +1,10 @@
 import java.util.Scanner;
 
 class Team {
-	String name;
-	int wins;
-	int losses;
-	int draws;
+	private String name;
+	private int wins;
+	private int losses;
+	private int draws;
 
 	Team() {
 
@@ -16,14 +16,36 @@ class Team {
     	losses = l;
     	draws = d;
     }
+
+    public String getName() {
+    	return name;
+    }
+    public int getWins() {
+    	return getWins();
+    }
+    public int getLosses() {
+    	return losses;
+    }
+
+    public int getDraws() {
+    	return draws;
+    }
 }
 
 class TeamArray {
-	Team[] teamArray;
-	int size =0;
+	private Team[] teamArray;
+	private int size =0;
 
 	TeamArray() {
 		teamArray = new Team[10];
+	}
+
+	public Team[] getTeam() {
+		return teamArray;
+	}
+
+	public int getSize() {
+		return size;
 	}
 
 	public void addTeam(Team t) {
@@ -39,7 +61,7 @@ class TeamArray {
      public String print() {
     	String str = "";
     	for(int i = 0; i<size; i++) {
-   	    str += teamArray[i].name+",";
+   	    str += teamArray[i].getName()+",";
 	    }
 	    return str.substring(0, str.length()-1);
     }
@@ -68,15 +90,15 @@ class Insertion {
     public void insertionSort(Team[] teamArray, int size) {
     	for(int i = 0; i<size; i++) {
     		for(int j = i; j>0; j--) {
-    			if (compareTo(teamArray[j].wins, teamArray[j-1].wins) >0) {
+    			if (compareTo(teamArray[j].getWins(), teamArray[j-1].getWins()) >0) {
     				exchange(teamArray, j, j-1);
     			}
-    			if (compareTo(teamArray[j].wins, teamArray[j-1].wins) == 0) {
-                    if(compareTo(teamArray[j].losses, teamArray[j-1].losses) < 0) {
+    			if (compareTo(teamArray[j].getWins(), teamArray[j-1].getWins()) == 0) {
+                    if(compareTo(teamArray[j].getLosses(), teamArray[j-1].getLosses()) < 0) {
     				exchange(teamArray, j, j-1);
     			    }
-    			    if(compareTo(teamArray[j].losses, teamArray[j-1].losses) == 0) {
-    				    if(compareTo(teamArray[j].draws, teamArray[j-1].draws) >0 ) {
+    			    if(compareTo(teamArray[j].getLosses(), teamArray[j-1].getLosses()) == 0) {
+    				    if(compareTo(teamArray[j].getDraws(), teamArray[j-1].getDraws()) >0 ) {
     				    exchange(teamArray, j, j-1);
     			        }
     			    }
