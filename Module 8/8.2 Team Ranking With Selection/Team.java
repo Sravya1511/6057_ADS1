@@ -3,7 +3,7 @@
  * name, win points, loose points, draw points.
  *
  */
-class Team {
+class Team implements Comparable<Team> {
     /**
      * data type of name of the team is string.
      * data type of wins is int.
@@ -69,6 +69,28 @@ class Team {
 
     public int getDraws() {
         return draws;
+    }
+
+    public int compareTo(final Team team) {
+        if(this.wins > team.wins) {
+            return 1;
+        }
+        if(this.wins < team.wins) {
+            return -1;
+        }
+        if(this.losses > team.losses) {
+            return -1;
+        }
+        if(this.losses < team.losses) {
+            return 1;
+        }
+        if(this.draws > team.draws) {
+            return 1;
+        }
+        if(this.draws < team.draws) {
+            return -1;
+        }
+        return 0;
     }
 }
 
@@ -200,19 +222,19 @@ class Selection {
     	for(int i = 0; i<size; i++) {
             int max = i;
     		for(int j = i+1; j<size; j++) {
-    			if(compareTo(teamArray[j].getWins(), teamArray[i].getWins()) >0) {
+    			if(teamArray[j].compareTo(teamArray[i]) == 1) {
     				max = j;
                     exchange(teamArray, i, max);
     			}
 
-                else if(compareTo(teamArray[j].getWins(), teamArray[i].getWins()) == 0) {
-                    if(compareTo(teamArray[j].getLosses(), teamArray[i].getLosses()) <0) {
+                else if(teamArray[j].compareTo(teamArray[i]) == 0) {
+                    if(teamArray[j].compareTo(teamArray[i]) == 1) {
                         max = j;
                         exchange(teamArray, i, max);
                         // break;
                     }
-                     else if(compareTo(teamArray[j].getLosses(), teamArray[i].getLosses()) == 0) {
-                        if(compareTo(teamArray[j].getDraws(), teamArray[i].getDraws()) >0) {
+                     else if(teamArray[j].compareTo(teamArray[i]) == 0) {
+                        if(teamArray[j].compareTo(teamArray[i]) == 1) {
                         max = j;
                         exchange(teamArray, i, max);
                         // break;
