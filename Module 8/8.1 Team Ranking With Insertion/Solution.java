@@ -55,18 +55,28 @@ class Insertion {
 
     }
 
+    public int compareTo(int a, int b) {
+    	if(a>b) {
+    		return +1;
+    	}
+    	if(a == b) {
+    		return 0;
+    	}
+    	return -1;
+    }
+
     public void insertionSort(Team[] teamArray, int size) {
     	for(int i = 0; i<size; i++) {
     		for(int j = i; j>0; j--) {
-    			if(teamArray[j].wins > teamArray[j-1].wins) {
+    			if (compareTo(teamArray[j].wins, teamArray[j-1].wins) >0) {
     				exchange(teamArray, j, j-1);
     			}
-    			if(teamArray[j].wins == teamArray[j-1].wins) {
-                    if(teamArray[j].losses < teamArray[j-1].losses) {
+    			if (compareTo(teamArray[j].wins, teamArray[j-1].wins) == 0) {
+                    if(compareTo(teamArray[j].losses, teamArray[j-1].losses) < 0) {
     				exchange(teamArray, j, j-1);
     			    }
-    			    if(teamArray[j].losses == teamArray[j-1].losses) {
-    				    if(teamArray[j].draws > teamArray[j-1].draws) {
+    			    if(compareTo(teamArray[j].losses, teamArray[j-1].losses) == 0) {
+    				    if(compareTo(teamArray[j].draws, teamArray[j-1].draws) >0 ) {
     				    exchange(teamArray, j, j-1);
     			        }
     			    }
