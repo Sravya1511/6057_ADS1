@@ -44,6 +44,11 @@ class TeamArray {
     			if(teamArray[j].wins > teamArray[j-1].wins) {
     				exchange(j, j-1);
     			}
+    			if(teamArray[j].wins == teamArray[j-1].wins) {
+                   if(teamArray[j].losses < teamArray[j-1].losses) {
+    				exchange(j, j-1);
+    			    }
+    			}
 
     		}
     	}
