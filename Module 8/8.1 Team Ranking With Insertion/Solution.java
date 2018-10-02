@@ -31,38 +31,12 @@ class TeamArray {
          // System.out.println(size);
     }
 
-    public void exchange(int a, int b) {
-    	Team temp = new Team();
-    	temp = teamArray[a];
-    	teamArray[a] = teamArray[b];
-    	teamArray[b] = temp;
+    public void get() {
+    	Insertion insertion = new Insertion();
+    	insertion.insertionSort(teamArray, size);
 
     }
-
-    public void InsertionSort() {
-    	for(int i = 0; i<size; i++) {
-    		for(int j = i; j>0; j--) {
-    			if(teamArray[j].wins > teamArray[j-1].wins) {
-    				exchange(j, j-1);
-    			}
-    			if(teamArray[j].wins == teamArray[j-1].wins) {
-                    if(teamArray[j].losses < teamArray[j-1].losses) {
-    				exchange(j, j-1);
-    			    }
-    			    if(teamArray[j].losses == teamArray[j-1].losses) {
-    				    if(teamArray[j].draws > teamArray[j-1].draws) {
-    				    exchange(j, j-1);
-    			        }
-    			    }
-    			}
-
-    		}
-    	}
-
-    }
-
-
-    public String print() {
+     public String print() {
     	String str = "";
     	for(int i = 0; i<size; i++) {
    	    str += teamArray[i].name+",";
@@ -71,20 +45,55 @@ class TeamArray {
     }
 }
 
+class Insertion {
 
+	public void exchange(Team[] teamArray, int a, int b) {
+    	Team temp = new Team();
+    	temp = teamArray[a];
+    	teamArray[a] = teamArray[b];
+    	teamArray[b] = temp;
 
+    }
+
+    public void insertionSort(Team[] teamArray, int size) {
+    	for(int i = 0; i<size; i++) {
+    		for(int j = i; j>0; j--) {
+    			if(teamArray[j].wins > teamArray[j-1].wins) {
+    				exchange(teamArray, j, j-1);
+    			}
+    			if(teamArray[j].wins == teamArray[j-1].wins) {
+                    if(teamArray[j].losses < teamArray[j-1].losses) {
+    				exchange(teamArray, j, j-1);
+    			    }
+    			    if(teamArray[j].losses == teamArray[j-1].losses) {
+    				    if(teamArray[j].draws > teamArray[j-1].draws) {
+    				    exchange(teamArray, j, j-1);
+    			        }
+    			    }
+    			}
+
+    		}
+    	}
+    }
+
+}
 
 
 
 class Solution {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
+
 		TeamArray teamArr = new TeamArray();
+		int c = 0;
 		while(input.hasNext()) {
 			String[] token = input.nextLine().split(",");
-			teamArr.addTeam(new Team(token[0], Integer.parseInt(token[1]), Integer.parseInt(token[2]), Integer.parseInt(token[3])));
+			teamArr.addTeam(new Team(token[0], Integer.parseInt(token[1]),
+				Integer.parseInt(token[2]),
+				Integer.parseInt(token[3])));
+			c++;
 		}
-        teamArr.InsertionSort();
+		teamArr.get();
         System.out.println(teamArr.print());
 
 	}
