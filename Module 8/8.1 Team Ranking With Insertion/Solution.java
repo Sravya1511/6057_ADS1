@@ -1,118 +1,23 @@
 import java.util.Scanner;
 
-class Team {
-	private String name;
-	private int wins;
-	private int losses;
-	private int draws;
-
-	Team() {
-
-	}
-
-    Team(String n, int w, int l, int d) {
-    	name = n;
-    	wins = w;
-    	losses = l;
-    	draws = d;
-    }
-
-    public String getName() {
-    	return name;
-    }
-    public int getWins() {
-    	return wins;
-    }
-    public int getLosses() {
-    	return losses;
-    }
-
-    public int getDraws() {
-    	return draws;
-    }
-}
-
-class TeamArray {
-	private Team[] teamArray;
-	private int size =0;
-
-	TeamArray() {
-		teamArray = new Team[10];
-	}
-
-	public Team[] getTeam() {
-		return teamArray;
-	}
-
-	public int getSize() {
-		return size;
-	}
-
-	public void addTeam(Team t) {
-         teamArray[size++] = t;
-         // System.out.println(size);
-    }
-
-    public void get() {
-    	Insertion insertion = new Insertion();
-    	insertion.insertionSort(teamArray, size);
-
-    }
-     public String print() {
-    	String str = "";
-    	for(int i = 0; i<size; i++) {
-   	    str += teamArray[i].getName()+",";
-	    }
-	    return str.substring(0, str.length()-1);
-    }
-}
-
-class Insertion {
-
-	public void exchange(Team[] teamArray, int a, int b) {
-    	Team temp = new Team();
-    	temp = teamArray[a];
-    	teamArray[a] = teamArray[b];
-    	teamArray[b] = temp;
-
-    }
-
-    public int compareTo(int a, int b) {
-    	if(a>b) {
-    		return +1;
-    	}
-    	if(a == b) {
-    		return 0;
-    	}
-    	return -1;
-    }
-
-    public void insertionSort(Team[] teamArray, int size) {
-    	for(int i = 0; i<size; i++) {
-    		for(int j = i; j>0; j--) {
-    			if (compareTo(teamArray[j].getWins(), teamArray[j-1].getWins()) >0) {
-    				exchange(teamArray, j, j-1);
-    			}
-    			if (compareTo(teamArray[j].getWins(), teamArray[j-1].getWins()) == 0) {
-                    if(compareTo(teamArray[j].getLosses(), teamArray[j-1].getLosses()) < 0) {
-    				exchange(teamArray, j, j-1);
-    			    }
-    			    if(compareTo(teamArray[j].getLosses(), teamArray[j-1].getLosses()) == 0) {
-    				    if(compareTo(teamArray[j].getDraws(), teamArray[j-1].getDraws()) >0 ) {
-    				    exchange(teamArray, j, j-1);
-    			        }
-    			    }
-    			}
-
-    		}
-    	}
-    }
-
-}
-
-
-
+/**
+ * Solution class reads input and creates object for TeamArray.
+ */
 class Solution {
+	/**
+	 * Constructs the object.
+	 */
+
+	private Solution() {
+
+	}
+	/**
+	 * the TeamArray object is created and addTeam method is called.
+	 * Get method is also called which performs insertion sort.
+	 * Finally, the sorted team names are printed.
+	 *
+	 * @param      args  The arguments
+	 */
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 
