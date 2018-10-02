@@ -46,22 +46,23 @@ class TeamArray {
     			if(teamArray[j].wins > teamArray[min].wins) {
     				min = j;
     			}
+                exchange(i, min);
                 if(teamArray[j].wins == teamArray[min].wins) {
                     if(teamArray[j].losses < teamArray[min].losses) {
                         min = j;
                         exchange(i, min);
-                        break;
+                        // break;
                     }
                     if(teamArray[j].losses == teamArray[j-1].losses) {
                         if(teamArray[j].draws > teamArray[min].draws) {
                         min = j;
                         exchange(i, min);
-                        break;
+                        // break;
                         }
                     }
                 }
 
-                exchange(i, min);
+
     		}
     	}
     }
