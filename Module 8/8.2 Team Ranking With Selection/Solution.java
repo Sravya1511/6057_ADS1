@@ -26,11 +26,12 @@ final class Solution {
          */
         Scanner input = new Scanner(System.in);
         TeamArray teamArr = new TeamArray();
+        final int three = 3;
         while (input.hasNext()) {
             String[] token = input.nextLine().split(",");
             teamArr.addTeam(new Team(token[0], Integer.parseInt(token[1]),
                 Integer.parseInt(token[2]),
-                Integer.parseInt(token[3])));
+                Integer.parseInt(token[three])));
         }
         teamArr.get();
         System.out.println(teamArr.print());
