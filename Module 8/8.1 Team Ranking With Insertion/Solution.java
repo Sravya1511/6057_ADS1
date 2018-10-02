@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 class Team {
 	String name;
 	int wins;
@@ -45,8 +46,13 @@ class TeamArray {
     				exchange(j, j-1);
     			}
     			if(teamArray[j].wins == teamArray[j-1].wins) {
-                   if(teamArray[j].losses < teamArray[j-1].losses) {
+                    if(teamArray[j].losses < teamArray[j-1].losses) {
     				exchange(j, j-1);
+    			    }
+    			    if(teamArray[j].losses == teamArray[j-1].losses) {
+    				    if(teamArray[j].draws < teamArray[j-1].draws) {
+    				    exchange(j, j-1);
+    			        }
     			    }
     			}
 
@@ -61,7 +67,7 @@ class TeamArray {
     	for(int i = 0; i<size; i++) {
    	    str += teamArray[i].name+",";
 	    }
-	    return str;
+	    return str.substring(0, str.length()-1);
     }
 }
 
