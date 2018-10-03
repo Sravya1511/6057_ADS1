@@ -2,11 +2,12 @@ import java.util.Arrays;
 import java.util.Scanner;
 class Insertion {
 
-     public boolean less(Comparable a, Comparable b) {
-        return a.compareTo(b) < 0;
-    }
-     public  void insertionSort(Comparable[] array, int size) {
-        System.out.println("Insertion sort method invoked...");
+    public boolean less(Comparable a, Comparable b) {
+       return a.compareTo(b) < 0;
+   }
+   public void insertionSort(Comparable[] array) {
+    System.out.println("Insertion sort method invoked...");
+    int size = array.length;
         for(int i = 0; i<size; i++) {
             for(int j = i; j>0; j--) {
                 if(less(array[j], array[j-1])) {
@@ -18,6 +19,7 @@ class Insertion {
             }
         }
     }
+
 }
 class MergeSort {
 
@@ -26,28 +28,49 @@ class MergeSort {
     	return a.compareTo(b) < 0;
     }
 
+    public boolean isSort(Comparable[] array) {
+        for(int i = 1; i<array.length; i++) {
+            if(!less(array[i-1], array[i])) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     public void sort(Comparable[] array, Comparable[] aux, int low, int high) {
     	if (low >= high) {
     		return;
     	}
     	int mid = low+(high-low)/2;
-        if(mid-low < 7) {
+        if(high-low <= 7) {
         Insertion insertion = new Insertion();
-        insertion.insertionSort(array, mid-low);
-
+        insertion.insertionSort(array);
+        if(isSort(array)) {
+            System.out.println("Array is already sorted. So, skipped the call to merge...");
+            return;
         }
-        else if(high-mid < 7) {
-        Insertion insertion = new Insertion();
-        insertion.insertionSort(array, high-mid);
-
-
         }
+
+        // if(mid-low < 7 && array.length >7) {
+        // Insertion insertion = new Insertion();
+        // // System.out.println("Insertion sort method invoked...");
+        // insertion.insertionSort(array, mid-low);
+
+        // }
+        // if(high-mid < 7 && array.length >7) {
+        // Insertion insertion = new Insertion();
+        // // System.out.println("Insertion sort method invoked...");
+        // insertion.insertionSort(array, high-mid);
+
+
+        // }
         else {
         sort(array, aux, low, mid);
         sort(array, aux, mid+1, high);
+        merge(array, aux, low, mid, high);
         }
 
-    	merge(array, aux, low, mid, high);
+
     }
 
     public void merge(Comparable[] array, Comparable[] aux, int low, int mid, int high) {
@@ -74,16 +97,12 @@ class Solution {
         Scanner input = new Scanner(System.in);
         while(input.hasNext()) {
         String [] token = input.nextLine().split(",");
-        Integer [] array = new Integer[token.length];
-        for(int i = 0; i<token.length; i++) {
-            array[i] = Integer.parseInt(token[i]);
-
-        }
-        int size = array.length;
+        int size = token.length;
         Comparable[] aux = new Comparable[size];
         MergeSort merge = new MergeSort();
-        merge.sort(array, aux, 0, array.length-1);
-        System.out.println(Arrays.toString(array));
+        merge.sort(token, aux, 0, token.length-1);
+        System.out.println(Arrays.toString(token));
+        System.out.println();
         }
 
 
