@@ -28,9 +28,10 @@ class MergeSort {
     /**
      * Time complexity is O(1)
      */
-    public void sort(Comparable[] array, Comparable[] auxilary, int low, int high) {
-        if (high - low <= 7) {
-            insertionSort(auxilary, low, high);
+    private void sort(Comparable[] array, Comparable[] auxilary, int low, int high) {
+        if (high - low <=  7) {
+            Insertion insertion = new Insertion();
+            insertion.insertionSort(auxilary, low, high);
             System.out.println("Insertion sort method invoked...");
             return;
         }
@@ -50,27 +51,15 @@ class MergeSort {
     /**
      * Time complexity is O(1)
      */
-    // public void sort(Comparable[] a) {
-    //     Comparable[] aux = a.clone();
-    //     sort(aux, a, 0, a.length-1);
-    //     assert isSorted(a);
-    // }
+    public void sort(Comparable[] a) {
+        Comparable[] aux = a.clone();
+        sort(aux, a, 0, a.length-1);
+        assert isSorted(a);
+    }
     /**
      * Time complexity is O(N^2)
      */
-    public void insertionSort(Comparable[] a, int lo, int hi) {
-        for (int i = lo; i <= hi; i++)
-            for (int j = i; j > lo && less(a[j], a[j-1]); j--)
-                exch(a, j, j-1);
-    }
-    /**
-     * Time complexity is O(1)
-     */
-    public void exch(Comparable[] a, int i, int j) {
-        Comparable swap = a[i];
-        a[i] = a[j];
-        a[j] = swap;
-    }
+
     /**
      * Time complexity is O(1)
      */
@@ -93,20 +82,30 @@ class MergeSort {
             }
         return true;
     }
-    /**
-     * Time complexity is O(N)
-     */
-    // public Object show(Object[] a) {
-    //     String s = "[";
-    //     int i;
-    //     for (i = 0; i < a.length - 1; i++) {
-    //         s += a[i] + ", ";
-    //     }
-    //     s = s + a[a.length - 1] + "]";
-    //     return s;
-    // }
+
 }
 
+
+class Insertion {
+    public void insertionSort(Comparable[] a, int lo, int hi) {
+        for (int i = lo; i <= hi; i++)
+            for (int j = i; j > lo && less(a[j], a[j-1]); j--)
+                exchange(a, j, j-1);
+    }
+    /**
+     * Time complexity is O(1)
+     */
+    public void exchange(Comparable[] a, int i, int j) {
+        Comparable temp = a[i];
+        a[i] = a[j];
+        a[j] = temp;
+    }
+
+     public boolean less(Comparable a, Comparable b) {
+        return a.compareTo(b) < 0;
+    }
+
+}
 class Solution {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
@@ -115,7 +114,7 @@ class Solution {
         int size = token.length;
         Comparable[] aux = new Comparable[size];
         MergeSort merge = new MergeSort();
-        merge.sort(token, aux, 0, size-1);
+        merge.sort(token);
         System.out.println(Arrays.toString(token));
         System.out.println();
         }
