@@ -28,8 +28,8 @@ class MergeSort {
     /**
      * Time complexity is O(1)
      */
-    private void sort(Comparable[] array, Comparable[] auxilary, int low, int high) {
-        if (high <= low + 7) {
+    public void sort(Comparable[] array, Comparable[] auxilary, int low, int high) {
+        if (high - low <= 7) {
             insertionSort(auxilary, low, high);
             System.out.println("Insertion sort method invoked...");
             return;
@@ -50,11 +50,11 @@ class MergeSort {
     /**
      * Time complexity is O(1)
      */
-    public void sort(Comparable[] a) {
-        Comparable[] aux = a.clone();
-        sort(aux, a, 0, a.length-1);
-        assert isSorted(a);
-    }
+    // public void sort(Comparable[] a) {
+    //     Comparable[] aux = a.clone();
+    //     sort(aux, a, 0, a.length-1);
+    //     assert isSorted(a);
+    // }
     /**
      * Time complexity is O(N^2)
      */
@@ -115,7 +115,7 @@ class Solution {
         int size = token.length;
         Comparable[] aux = new Comparable[size];
         MergeSort merge = new MergeSort();
-        merge.sort(token);
+        merge.sort(token, aux, 0, size-1);
         System.out.println(Arrays.toString(token));
         System.out.println();
         }
