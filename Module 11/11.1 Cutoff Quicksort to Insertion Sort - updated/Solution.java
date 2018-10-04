@@ -31,7 +31,8 @@ class QuickSort {
      * @param      hi      The higher of int type.
      * @param      cutOff  The cut off of int type.
      */
-    private static void sort(final Comparable[] a, final int lo, final int hi, final int cutOff) {
+    private static void sort(final Comparable[] a, final int lo,
+        final int hi, final int cutOff) {
         Insertion insertion  = new Insertion();
         if (hi <= lo + cutOff - 1) {
             insertion.insertionSort(a, lo, hi);
@@ -91,7 +92,9 @@ class QuickSort {
      */
 
     private static boolean less(final Comparable v, final Comparable w) {
-        if (v == w) return false;   // optimization when reference equals
+        if (v == w) {
+        return false;
+        }   // optimization when reference equals
         return v.compareTo(w) < 0;
     }
 
@@ -121,7 +124,8 @@ class QuickSort {
      * @return     True if sorted, False otherwise.
      */
 
-    public static boolean isSorted(final Comparable[] a, final int low, final int high) {
+    public static boolean isSorted(final Comparable[] a,
+     final int low, final int high) {
         for (int i = low + 1; i <= high; i++) {
             if (less(a[i], a[i - 1])) {
                 return false;
