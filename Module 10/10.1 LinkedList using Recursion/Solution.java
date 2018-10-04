@@ -53,14 +53,14 @@ class LinkedList {
             return;
         }
 
-        if (curr.getNext() == null) {
+        if (curr.next == null) {
             head = curr;
             return;
         }
 
         reverse(curr.getNext());
         curr.getNext().setNext(curr);
-        curr.setNext(null);
+        curr.next = null;
     }
 
 	public void insertAt(int pos, int data) {
