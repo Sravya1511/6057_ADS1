@@ -1,4 +1,4 @@
-########## Testcase 0: Failed ##########
+########## Testcase 0: Passed ##########
 Expected Output: 
 [P, O, R, E, E, L, A, M, S, X, T]
 [A, O, M, E, E, L, P, R, S, X, T]
@@ -49,11 +49,8 @@ insertionSort called
 insertionSort called
 insertionSort called
 [A, E, E, I, N, O, Q, S, S, T, U, Y]
-Exception in thread "main" java.util.NoSuchElementException: No line found
-	at java.base/java.util.Scanner.nextLine(Unknown Source)
-	at Solution.main(Solution.java:100)
 ----------------------------------------
-########## Testcase 1: Failed ##########
+########## Testcase 1: Passed ##########
 Expected Output: 
 [1, 2, 3, 4, 5, 6, 7]
 insertionSort called
@@ -132,11 +129,8 @@ insertionSort called
 [fee, tap, tar, wad, was]
 insertionSort called
 [all, bad, dug, jam, yet]
-Exception in thread "main" java.util.NoSuchElementException: No line found
-	at java.base/java.util.Scanner.nextLine(Unknown Source)
-	at Solution.main(Solution.java:100)
 ----------------------------------------
-########## Testcase 2: Failed ##########
+########## Testcase 2: Passed ##########
 Expected Output: 
 [bed, bug, dad, yes, zoo]
 insertionSort called
@@ -183,9 +177,6 @@ insertionSort called
 insertionSort called
 insertionSort called
 [112, 121, 122, 123, 131, 132, 133]
-Exception in thread "main" java.util.NoSuchElementException: No line found
-	at java.base/java.util.Scanner.nextLine(Unknown Source)
-	at Solution.main(Solution.java:100)
 ----------------------------------------
 ########## Testcase 3: Failed ##########
 Expected Output: 

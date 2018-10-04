@@ -33,8 +33,6 @@ Starting audit...
 [ERROR] F:\6057_ADS1\Module 11\11.1 Cutoff Quicksort to Insertion Sort - updated\Solution.java:98:12: 'for' is not followed by whitespace. [WhitespaceAfter]
 [ERROR] F:\6057_ADS1\Module 11\11.1 Cutoff Quicksort to Insertion Sort - updated\Solution.java:98:25: '<' is not preceded with whitespace. [WhitespaceAround]
 [ERROR] F:\6057_ADS1\Module 11\11.1 Cutoff Quicksort to Insertion Sort - updated\Solution.java:98:26: '<' is not followed by whitespace. [WhitespaceAround]
-[ERROR] F:\6057_ADS1\Module 11\11.1 Cutoff Quicksort to Insertion Sort - updated\Solution.java:98:27: '*' is not preceded with whitespace. [WhitespaceAround]
-[ERROR] F:\6057_ADS1\Module 11\11.1 Cutoff Quicksort to Insertion Sort - updated\Solution.java:98:28: '*' is not followed by whitespace. [WhitespaceAround]
 [ERROR] F:\6057_ADS1\Module 11\11.1 Cutoff Quicksort to Insertion Sort - updated\Solution.java:108: Missing a Javadoc comment. [JavadocType]
 [ERROR] F:\6057_ADS1\Module 11\11.1 Cutoff Quicksort to Insertion Sort - updated\Solution.java:114:8: Unused @param tag for 'lo'. [JavadocMethod]
 [ERROR] F:\6057_ADS1\Module 11\11.1 Cutoff Quicksort to Insertion Sort - updated\Solution.java:115:8: Unused @param tag for 'hi'. [JavadocMethod]
@@ -57,4 +55,4 @@ Starting audit...
 [ERROR] F:\6057_ADS1\Module 11\11.1 Cutoff Quicksort to Insertion Sort - updated\Solution.java:145:26: Parameter a should be final. [FinalParameters]
 [ERROR] F:\6057_ADS1\Module 11\11.1 Cutoff Quicksort to Insertion Sort - updated\Solution.java:145:40: Parameter b should be final. [FinalParameters]
 Audit done.
-Checkstyle ends with 57 errors.
+Checkstyle ends with 55 errors.
