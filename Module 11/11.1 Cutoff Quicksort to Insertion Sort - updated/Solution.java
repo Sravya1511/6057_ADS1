@@ -127,10 +127,12 @@ final class QuickSort {
      */
 
     public static boolean isSorted(final Comparable[] a, final int low, final int high) {
-        for (int i = low + 1; i <= high; i++)
-            if (less(a[i], a[i-1])) {
+        for (int i = low + 1; i <= high; i++) {
+            if (less(a[i], a[i - 1])) {
                 return false;
             }
+        }
+
         return true;
     }
 }
@@ -141,6 +143,13 @@ final class QuickSort {
   */
 
 public final class Solution {
+    /**
+     * Constructs the object.
+     */
+
+    private Solution() {
+
+    }
     /**
      * reads input.
      *
@@ -179,14 +188,18 @@ class Insertion {
      * Time complexity is O(n^2).
      *
      * @param      a     {Comparable type }
-     * @param      lo    The lower of int type
-     * @param      hi    The higher of int type.
+     * @param      low   The lower of int type
+     * @param      high    The higher of int type.
      */
-    public void insertionSort(final Comparable[] a, final int low, final int high) {
+    public void insertionSort(final Comparable[] a,
+        final int low, final int high) {
         // System.out.println("insertionSort called");
-        for (int i = low; i <= high; i++)
-            for (int j = i; j > low && less(a[j], a[j-1]); j--)
-                exchange(a, j, j-1);
+        for (int i = low; i <= high; i++) {
+            for (int j = i; j > low && less(a[j], a[j - 1]); j--) {
+                exchange(a, j, j - 1);
+            }
+        }
+
     }
    /**
     * exchanges or swaps two numbers
