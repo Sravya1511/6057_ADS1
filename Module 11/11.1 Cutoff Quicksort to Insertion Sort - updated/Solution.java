@@ -7,6 +7,9 @@ import java.util.Arrays;
  * Time complexity is O(NlogN).
  */
 class QuickSort {
+    /**
+     * Constructs the object.
+     */
 
     QuickSort() {
 
