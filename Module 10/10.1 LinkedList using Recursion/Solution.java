@@ -19,13 +19,7 @@ class Node {
 	next = null;
 	}
 
-	 public Node getNext() {
-            return next;
-        }
 
-        public void setNext(Node next) {
-            this.next = next;
-        }
 }
 /**
  * List of linkeds.
@@ -35,13 +29,7 @@ class LinkedList {
 	int size = 0;
 	int count = 0;
 
-	public Node getHead() {
-        return head;
-    }
 
-    public void setHead(Node head) {
-        this.head = head;
-    }
 
     public void reverse() {
         reverse(head);
@@ -58,7 +46,7 @@ class LinkedList {
             return;
         }
 
-        reverse(curr.getNext());
+        reverse(curr.next);
         curr.next.next = curr;
         curr.next = null;
     }
