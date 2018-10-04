@@ -99,8 +99,13 @@ class Solution {
             QuickSort quick = new QuickSort();
             int cutOff = Integer.parseInt(input.nextLine());
             String[] array = input.nextLine().split(" ");
+            if (array[0].equals("")) {
+                System.out.println("[]");
+            }
+            else {
             quick.sort(array, cutOff);
-            System.out.println(Arrays.toString(array));
+                     System.out.println(Arrays.toString(array));   }
+
         }
     }
 }
