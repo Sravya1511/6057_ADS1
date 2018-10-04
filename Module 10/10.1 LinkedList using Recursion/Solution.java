@@ -52,9 +52,13 @@ final class Solution {
  * Class for node.
  * Node class has two attributes.
  * Data of type int.
- * next of type Node
+ * next of type Node.
  */
 class Node {
+    /**
+     * data is integer type.
+     * next is Node.
+     */
     int data;
     Node next;
     /**
@@ -92,7 +96,7 @@ class LinkedList {
      * @param      curr  The curr of Node type.
      */
 
-    private void reverse(Node curr) {
+    private void reverse(final Node curr) {
 
         if (curr == null) {
             return;
@@ -112,7 +116,7 @@ class LinkedList {
      * @param      data   The data of type integer
      */
 
-    public void insertAt(int index, int data) {
+    public void insertAt(final int index, final int data) {
 
 
         head = insertAt(head, new Node(data), index, 0);
@@ -130,7 +134,7 @@ class LinkedList {
      * @return     { returns Node type }
      */
 
-    private Node insertAt(Node curr, Node newNode, int index, int currIndex) {
+    private Node insertAt(final Node curr, final Node newNode, final int index, final int currIndex) {
         if (curr == null) {
             return newNode;
         } else if (currIndex == index) {
@@ -161,8 +165,8 @@ class LinkedList {
     public String print() {
         Node n = head;
         String result = "";
-        while (n!=null) {
-            result += n.data+", ";
+        while (n != null) {
+            result += n.data + ", ";
             n = n.next;
         }
         return result.substring(0, result.length() - 2);
