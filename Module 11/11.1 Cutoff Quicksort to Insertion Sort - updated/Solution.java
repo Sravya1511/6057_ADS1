@@ -6,12 +6,7 @@ import java.util.Arrays;
  * The elements are sort based on the pivot element.
  * Time complexity is O(NlogN).
  */
-final class QuickSort {
-    /**
-     * Constructs the object.
-     */
-
-     QuickSort() { }
+class QuickSort {
     /**
      * method for sort.
      * overloaded method.
