@@ -31,6 +31,13 @@ final class Solution {
         three.threesum(array, n);
     }
 }
+/**
+ * Class for three sum.
+ * This class calculates sum of three numbers until it is zero.
+ * The complexity of this methid is N^2log(N).
+ * The two for loops will give N^2.
+ * The binary search gives log(N).
+ */
 class ThreeSum {
      /**
      * {three sum function.
