@@ -20,7 +20,7 @@ class QuickSort {
      * @param      cutOff  The cut off of type integer.
      */
 
-    public static void sort(final Comparable[] a, final int cutOff) {
+    public void sort(final Comparable[] a, final int cutOff) {
         sort(a, 0, a.length - 1, cutOff);
     }
     /**
@@ -35,7 +35,7 @@ class QuickSort {
      * @param      hi      The higher of int type.
      * @param      cutOff  The cut off of int type.
      */
-    private static void sort(final Comparable[] a, final int lo,
+    private void sort(final Comparable[] a, final int lo,
         final int hi, final int cutOff) {
         Insertion insertion  = new Insertion();
         if (hi <= lo + cutOff - 1) {
@@ -61,7 +61,7 @@ class QuickSort {
      * @return     { returns partition index of int type }
      */
 
-    public static int partition(final Comparable[] arr,
+    public int partition(final Comparable[] arr,
      final int low, final int high) {
         int i = low;
         int j = high + 1;
@@ -95,7 +95,7 @@ class QuickSort {
      * @return     { returns true or false}
      */
 
-    private static boolean less(final Comparable v, final Comparable w) {
+    private boolean less(final Comparable v, final Comparable w) {
         if (v == w) {
         return false;
         }   // optimization when reference equals
@@ -111,7 +111,7 @@ class QuickSort {
      * @param      i     { parameter_description }
      * @param      j     { parameter_description }
      */
-    private static void exch(final Object[] a, final int i, final int j) {
+    private void exch(final Object[] a, final int i, final int j) {
         Object swap = a[i];
         a[i] = a[j];
         a[j] = swap;
@@ -128,7 +128,7 @@ class QuickSort {
      * @return     True if sorted, False otherwise.
      */
 
-    public static boolean isSorted(final Comparable[] a,
+    public  boolean isSorted(final Comparable[] a,
      final int low, final int high) {
         for (int i = low + 1; i <= high; i++) {
             if (less(a[i], a[i - 1])) {

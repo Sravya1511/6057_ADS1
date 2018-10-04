@@ -1,5 +1,4 @@
 Starting audit...
-[ERROR] F:\6057_ADS1\Module 11\11.1 Cutoff Quicksort to Insertion Sort - updated\Solution.java:9:1: Utility classes should not have a public or default constructor. [HideUtilityClassConstructor]
 [ERROR] F:\6057_ADS1\Module 11\11.1 Cutoff Quicksort to Insertion Sort - updated\Solution.java:11:5: Missing a Javadoc comment. [JavadocMethod]
 Audit done.
-Checkstyle ends with 2 errors.
+Checkstyle ends with 1 errors.
