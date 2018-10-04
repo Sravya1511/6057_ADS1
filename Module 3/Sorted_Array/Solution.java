@@ -12,7 +12,9 @@ final class Solution {
 
     }
     /**
-     * { function_description }.
+     * { Reads input }.
+     * Creates object for sort class.
+     * calls sort method of sort class
      *
      * @param      args  The arguments
      */
@@ -39,21 +41,20 @@ final class Solution {
         for (int i = 0; i < y; i++) {
             sort2[i] = Integer.parseInt(s[i]);
         }
-
-
-        // System.out.println(Arrays.toString(sort1));
-        // System.out.println(Arrays.toString(sort2));
-        sort(sort1, sort2);
+        Sort sort = new Sort();
+        sort.sort(sort1, sort2);
 
     }
+}
+class Sort {
     /**
-     * { function_description }.
+     * { sort method sorts two sorted arrays}.
      *
-     * @param      sort1  The array 1
-     * @param      sort2  The array 2
+     * @param      sort1  The array 1 of type integer.
+     * @param      sort2  The array 2 of type integer.
      */
 
-    public static void sort(final int[] sort1, final int[] sort2) {
+    public  void sort(final int[] sort1, final int[] sort2) {
         int i = 0;
         int j = 0;
         int[] array;
@@ -76,3 +77,5 @@ final class Solution {
     }
 
 }
+
+
