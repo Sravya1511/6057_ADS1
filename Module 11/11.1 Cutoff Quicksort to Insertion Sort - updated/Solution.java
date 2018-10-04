@@ -6,7 +6,7 @@ import java.util.Arrays;
  * The elements are sort based on the pivot element.
  * Time complexity is O(NlogN).
  */
-class QuickSort {
+final class QuickSort {
     /**
      * Constructs the object.
      */
@@ -21,7 +21,7 @@ class QuickSort {
      * @param      cutOff  The cut off of type integer.
      */
 
-    public static void sort(Comparable[] a, int cutOff) {
+    public static void sort(final Comparable[] a, final int cutOff) {
         sort(a, 0, a.length - 1, cutOff);
     }
     /**
@@ -36,7 +36,7 @@ class QuickSort {
      * @param      hi      The higher of int type.
      * @param      cutOff  The cut off of int type.
      */
-    private static void sort(Comparable[] a, int lo, int hi, int cutOff) {
+    private static void sort(final Comparable[] a, final int lo, final int hi, final int cutOff) {
         Insertion insertion  = new Insertion();
         if (hi <= lo + cutOff - 1) {
             insertion.insertionSort(a, lo, hi);
@@ -95,7 +95,7 @@ class QuickSort {
      * @return     { returns true or false}
      */
 
-    private static boolean less(Comparable v, Comparable w) {
+    private static boolean less(final Comparable v, final Comparable w) {
         if (v == w) return false;   // optimization when reference equals
         return v.compareTo(w) < 0;
     }
@@ -109,7 +109,7 @@ class QuickSort {
      * @param      i     { parameter_description }
      * @param      j     { parameter_description }
      */
-    private static void exch(Object[] a, int i, int j) {
+    private static void exch(final Object[] a, final int i, final int j) {
         Object swap = a[i];
         a[i] = a[j];
         a[j] = swap;
@@ -126,7 +126,7 @@ class QuickSort {
      * @return     True if sorted, False otherwise.
      */
 
-    public static boolean isSorted(Comparable[] a, int low, int high) {
+    public static boolean isSorted(final Comparable[] a, final int low, final int high) {
         for (int i = low + 1; i <= high; i++)
             if (less(a[i], a[i-1])) {
                 return false;
@@ -182,7 +182,7 @@ class Insertion {
      * @param      lo    The lower of int type
      * @param      hi    The higher of int type.
      */
-    public void insertionSort(Comparable[] a, int low, int high) {
+    public void insertionSort(final Comparable[] a, final int low, final int high) {
         // System.out.println("insertionSort called");
         for (int i = low; i <= high; i++)
             for (int j = i; j > low && less(a[j], a[j-1]); j--)
@@ -196,7 +196,7 @@ class Insertion {
     * @param      i     { index of first element }
     * @param      j     { index of second element }
     */
-    public void exchange(Comparable[] a, int i, int j) {
+    public void exchange(final Comparable[] a, final int i, final int j) {
         Comparable temp = a[i];
         a[i] = a[j];
         a[j] = temp;
@@ -212,7 +212,7 @@ class Insertion {
      * @return     { returns boolean value }
      */
 
-     public boolean less(Comparable a, Comparable b) {
+     public boolean less(final Comparable a, final Comparable b) {
         return a.compareTo(b) < 0;
     }
 
