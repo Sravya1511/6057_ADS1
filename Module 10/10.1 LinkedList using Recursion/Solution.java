@@ -67,7 +67,7 @@ class Node {
     /**
      * Constructs the object.
      *
-     * @param      data  The data of type integer.
+     * @param      data1  The data of type integer.
      */
     Node(final int data1) {
     this.data = data1;
@@ -84,10 +84,10 @@ class Node {
     /**
      * Sets the data.
      *
-     * @param      data  The data of integer type.
+     * @param      data1  The data of integer type.
      */
-    public void setData(final int data) {
-            this.data = data;
+    public void setData(final int data1) {
+            this.data = data1;
     }
     /**
      * Gets the next.
@@ -101,7 +101,7 @@ class Node {
         /**
          * Sets the next.
          *
-         * @param      next  The next of Node type.
+         * @param      next1  The next of Node type.
          */
 
         public void setNext(final Node next1) {
@@ -120,11 +120,17 @@ class LinkedList {
      * Linkedlist class.
      */
     private Node head;
+    /**
+     * Node type.
+     */
     private int size = 0;
+    /**
+     * integer type.
+     */
     private int count = 0;
 /**
  * overloaded method for reverse.
- * this method is called in main function
+ * this method is called in main function.
  */
     public void reverse() {
         reverse(head);
