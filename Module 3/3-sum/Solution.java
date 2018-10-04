@@ -28,7 +28,7 @@ final class Solution {
         }
         Arrays.sort(array);
         ThreeSum three = new ThreeSum();
-        three.threesum(array, n);
+        three.threeSum(array, n);
     }
 }
 /**
@@ -46,7 +46,7 @@ class ThreeSum {
      * @param      n      { integer type }
      */
 
-    public void threesum(final int[] array, final int n) {
+    public void threeSum(final int[] array, final int n) {
         // System.out.println(Arrays.toString(array));
         int count = 0;
         for (int i = 0; i < n; i++) {
