@@ -51,7 +51,7 @@ insertionSort called
 [A, E, E, I, N, O, Q, S, S, T, U, Y]
 Exception in thread "main" java.util.NoSuchElementException: No line found
 	at java.base/java.util.Scanner.nextLine(Unknown Source)
-	at Solution.main(Solution.java:99)
+	at Solution.main(Solution.java:100)
 ----------------------------------------
 ########## Testcase 1: Failed ##########
 Expected Output: 
@@ -134,7 +134,7 @@ insertionSort called
 [all, bad, dug, jam, yet]
 Exception in thread "main" java.util.NoSuchElementException: No line found
 	at java.base/java.util.Scanner.nextLine(Unknown Source)
-	at Solution.main(Solution.java:99)
+	at Solution.main(Solution.java:100)
 ----------------------------------------
 ########## Testcase 2: Failed ##########
 Expected Output: 
@@ -185,7 +185,7 @@ insertionSort called
 [112, 121, 122, 123, 131, 132, 133]
 Exception in thread "main" java.util.NoSuchElementException: No line found
 	at java.base/java.util.Scanner.nextLine(Unknown Source)
-	at Solution.main(Solution.java:99)
+	at Solution.main(Solution.java:100)
 ----------------------------------------
 ########## Testcase 3: Failed ##########
 Expected Output: 
@@ -210,8 +210,8 @@ Your Output:
 insertionSort called
 [1234567890]
 Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 1
-	at QuickSort.partition(Solution.java:52)
-	at QuickSort.sort(Solution.java:18)
+	at QuickSort.partition(Solution.java:53)
+	at QuickSort.sort(Solution.java:19)
 	at QuickSort.sort(Solution.java:9)
-	at Solution.main(Solution.java:101)
+	at Solution.main(Solution.java:102)
 ----------------------------------------
