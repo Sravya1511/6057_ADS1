@@ -54,7 +54,7 @@ class LinkedList {
         }
 
         if (curr.getNext() == null) {
-            this.head = curr;
+            head = curr;
             return;
         }
 
