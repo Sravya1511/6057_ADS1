@@ -1,6 +1,7 @@
 import java.util.Scanner;
 /**
  * Class for stack array.
+ * stackArray class performs push and pop operations.
  */
 
 final class StackArray {
@@ -15,7 +16,7 @@ final class StackArray {
     /**
      * Constructs the object.
      *
-     * @param      n     { parameter_description }
+     * @param      n     { size of the array of int type }
      */
 
     StackArray(final int n) {
@@ -25,7 +26,7 @@ final class StackArray {
     /**
      * pushes element into the stack.
      *
-     * @param      item  The item
+     * @param      item  The item of string type
      */
 
     public void push(final String item) {
@@ -54,7 +55,7 @@ final class StackArray {
     /**
      * returns top most element.
      *
-     * @return     { description_of_the_return_value }
+     * @return     { return value is string type }
      */
     public String peek() {
         int a = size - 1;
@@ -82,16 +83,19 @@ final class Solution {
         int lines = Integer.parseInt(scn.nextLine());
         for (int i = 0; i < lines; i++) {
             String[] tokens = scn.nextLine().split("");
-            paranthesis(tokens);
+            BalancedParanthesis paran = new BalancedParanthesis();
+            paran.paranthesis(tokens);
         }
     }
+}
+class BalancedParanthesis {
     /**
      * creates obj for StackArray class.
      *
      * @param      tokens  The tokens
      */
 
-    public static void paranthesis(final String[] tokens) {
+    public void paranthesis(final String[] tokens) {
         boolean x = false;
         String i = ")";
         String j = "]";
@@ -136,3 +140,5 @@ if (a.equals("[") && (tokens[m].equals(")") || tokens[m].equals("}"))) {
         }
     }
 }
+
+
