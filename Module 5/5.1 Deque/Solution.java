@@ -13,6 +13,8 @@ final class Solution {
     }
     /**
      * main method is written.
+     * creates object for dequeue class.
+     * the methods in dequeue class are called.
      *
      * @param      args  The arguments
      */

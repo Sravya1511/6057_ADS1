@@ -1,17 +1,35 @@
+/**
+ * Class for deque.
+ *
+ * @param      <E>   { Generic (integer type) }
+ */
 class Deque<E> {
 	Node head;
 	int size = 0;
 
+    /**
+     * Class for node.
+     */
+
     class Node {
     	E data;
     	Node next;
-
+    /**
+     * Constructs the object.
+     *
+     * @param      data1  The data1 of E type.
+     */
     Node(E data1) {
         this.data = data1;
         next = null;
        }
     }
 
+    /**
+     * Determines if the queue is empty or not.
+     *
+     * @return     True if empty, False otherwise.
+     */
     public boolean isEmpty() {
         if (size == 0){
             return true;
@@ -19,6 +37,9 @@ class Deque<E> {
             return false;
         }
     }
+    /**
+     * prints the values of queue.
+     */
 
     public void print() {
         if (isEmpty()) {
@@ -34,6 +55,12 @@ class Deque<E> {
         System.out.println(n.data+"]");
     }
 
+    /**
+     * The data is added from left side.
+     *
+     * @param      data  The data of E type.
+     */
+
     public void pushLeft(E data) {
     	Node first = new Node(data);
         if (isEmpty()) {
@@ -45,6 +72,12 @@ class Deque<E> {
         head = first;
         size++;
     }
+
+    /**
+     * The data is added from right.
+     *
+     * @param      data  The data of E type.
+     */
 
     public void pushRight(E data) {
     	if(isEmpty()) {
@@ -63,6 +96,13 @@ class Deque<E> {
     	size++;
     }
 
+    /**
+     * removes elements form left.
+     *
+     * @return     { returns false if queuue is empty
+     * else removes element}
+     */
+
 
     public boolean popLeft() {
     	if (isEmpty()) {
@@ -72,6 +112,12 @@ class Deque<E> {
         size--;
         return true;
     }
+
+    /**
+     * returns false if the queue is empty. else removes element from right.
+     *
+     * @return     { returns true or false }
+     */
 
     public boolean popRight() {
     	if (isEmpty()) {
@@ -87,6 +133,11 @@ class Deque<E> {
         size--;
         return true;
     }
+    /**
+     * size of the queue
+     *
+     * @return     { integer type }
+     */
 
     public int size() {
         return size;
