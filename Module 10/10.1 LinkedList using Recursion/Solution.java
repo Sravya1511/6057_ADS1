@@ -18,15 +18,50 @@ class Node {
 	this.data = data;
 	next = null;
 	}
+
+	 public Node getNext() {
+            return next;
+        }
+
+        public void setNext(Node next) {
+            this.next = next;
+        }
 }
 /**
  * List of linkeds.
  */
 class LinkedList {
-	Node head;
-	Node tail;
+	private Node head;
 	int size = 0;
 	int count = 0;
+
+	public Node getHead() {
+        return head;
+    }
+
+    public void setHead(Node head) {
+        this.head = head;
+    }
+
+    public void reverse() {
+        reverse(head);
+    }
+
+    private void reverse(Node curr) {
+
+        if (curr == null) {
+            return;
+        }
+
+        if (curr.getNext() == null) {
+            this.head = curr;
+            return;
+        }
+
+        reverse(curr.getNext());
+        curr.getNext().setNext(curr);
+        curr.setNext(null);
+    }
 
 	public void insertAt(int pos, int data) {
 		size++;
@@ -93,6 +128,10 @@ class Solution {
     			case "reverse":
     			if(list.size() == 0) {
     				System.out.println("No elements to reverse.");
+    			}
+    			else {
+    				list.reverse();
+    				System.out.println(list.print());
     			}
 
     			break;
