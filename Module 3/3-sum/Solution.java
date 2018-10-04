@@ -11,13 +11,13 @@ final class Solution {
 
     }
     /**
-     * { function_description }.
+     * { this method reads input and creates object for three sum class }.
      *
      * @param      args  The arguments
      */
     public static void main(final String[] args) {
         /**
-         * { var_description }
+         * {input reading }
          */
         Scanner input = new Scanner(System.in);
         int n = input.nextInt();
@@ -27,16 +27,19 @@ final class Solution {
             array[i] = input.nextInt();
         }
         Arrays.sort(array);
-        threesum(array, n);
+        ThreeSum three = new ThreeSum();
+        three.threesum(array, n);
     }
-    /**
+}
+class ThreeSum {
+     /**
      * {three sum function.
      *
      * @param      array  The array
-     * @param      n      { parameter_description }
+     * @param      n      { integer type }
      */
 
-    public static void threesum(final int[] array, final int n) {
+    public void threesum(final int[] array, final int n) {
         // System.out.println(Arrays.toString(array));
         int count = 0;
         for (int i = 0; i < n; i++) {
@@ -51,3 +54,4 @@ final class Solution {
         System.out.println(count);
     }
 }
+
