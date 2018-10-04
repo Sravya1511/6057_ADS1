@@ -59,7 +59,7 @@ class LinkedList {
         }
 
         reverse(curr.getNext());
-        curr.getNext().setNext(curr);
+        curr.next.next = curr;
         curr.next = null;
     }
 
