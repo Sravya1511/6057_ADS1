@@ -62,7 +62,7 @@ class LinkedList {
      * @param      data   The data of type integer
      */
 
-    public void insertAt(int index, int data){
+    public void insertAt(int index, int data) {
 
 
 		head = insertAt(head, new Node(data), index, 0);
@@ -80,15 +80,13 @@ class LinkedList {
 	 * @return     { returns Node type }
 	 */
 
-	private Node insertAt(Node curr, Node newNode, int index, int currIndex){
-		if(curr == null) {
+	private Node insertAt(Node curr, Node newNode, int index, int currIndex) {
+		if (curr == null) {
 			return newNode;
-		}
-		else if(currIndex == index){
+		} else if (currIndex == index) {
 			newNode.next = curr;
 			return newNode;
 		}
-
 		curr.next = insertAt(curr.next, newNode, index, currIndex+1);
 		return curr;
 
@@ -113,11 +111,11 @@ class LinkedList {
 	public String print() {
     	Node n = head;
     	String result = "";
-    	while(n!=null) {
+    	while (n!=null) {
     		result += n.data+", ";
     		n = n.next;
     	}
-    	return result.substring(0, result.length()-2);
+    	return result.substring(0, result.length() - 2);
     }
 
     // public void insertAt(int pos, int data) {
