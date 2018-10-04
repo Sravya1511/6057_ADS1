@@ -1,17 +1,9 @@
 Starting audit...
-[ERROR] F:\6057_ADS1\Module 10\10.1 LinkedList using Recursion\Solution.java:72:10: Parameter data should be final. [FinalParameters]
-[ERROR] F:\6057_ADS1\Module 10\10.1 LinkedList using Recursion\Solution.java:72:14: 'data' hides a field. [HiddenField]
-[ERROR] F:\6057_ADS1\Module 10\10.1 LinkedList using Recursion\Solution.java:89:25: Parameter data should be final. [FinalParameters]
-[ERROR] F:\6057_ADS1\Module 10\10.1 LinkedList using Recursion\Solution.java:89:29: 'data' hides a field. [HiddenField]
+[ERROR] F:\6057_ADS1\Module 10\10.1 LinkedList using Recursion\Solution.java:72:20: 'data' hides a field. [HiddenField]
+[ERROR] F:\6057_ADS1\Module 10\10.1 LinkedList using Recursion\Solution.java:89:35: 'data' hides a field. [HiddenField]
 [ERROR] F:\6057_ADS1\Module 10\10.1 LinkedList using Recursion\Solution.java:107:29: Parameter next should be final. [FinalParameters]
 [ERROR] F:\6057_ADS1\Module 10\10.1 LinkedList using Recursion\Solution.java:107:34: 'next' hides a field. [HiddenField]
-[ERROR] F:\6057_ADS1\Module 10\10.1 LinkedList using Recursion\Solution.java:119:5: Missing a Javadoc comment. [JavadocVariable]
-[ERROR] F:\6057_ADS1\Module 10\10.1 LinkedList using Recursion\Solution.java:120:5: Missing a Javadoc comment. [JavadocVariable]
-[ERROR] F:\6057_ADS1\Module 10\10.1 LinkedList using Recursion\Solution.java:120:9: Variable 'size' must be private and have accessor methods. [VisibilityModifier]
-[ERROR] F:\6057_ADS1\Module 10\10.1 LinkedList using Recursion\Solution.java:121:5: Missing a Javadoc comment. [JavadocVariable]
-[ERROR] F:\6057_ADS1\Module 10\10.1 LinkedList using Recursion\Solution.java:121:9: Variable 'count' must be private and have accessor methods. [VisibilityModifier]
-[ERROR] F:\6057_ADS1\Module 10\10.1 LinkedList using Recursion\Solution.java:173: Line is longer than 80 characters (found 102). [LineLength]
-[ERROR] F:\6057_ADS1\Module 10\10.1 LinkedList using Recursion\Solution.java:180:72: '+' is not preceded with whitespace. [WhitespaceAround]
-[ERROR] F:\6057_ADS1\Module 10\10.1 LinkedList using Recursion\Solution.java:180:73: '+' is not followed by whitespace. [WhitespaceAround]
+[ERROR] F:\6057_ADS1\Module 10\10.1 LinkedList using Recursion\Solution.java:123:5: Missing a Javadoc comment. [JavadocVariable]
+[ERROR] F:\6057_ADS1\Module 10\10.1 LinkedList using Recursion\Solution.java:124:5: Missing a Javadoc comment. [JavadocVariable]
 Audit done.
-Checkstyle ends with 14 errors.
+Checkstyle ends with 6 errors.

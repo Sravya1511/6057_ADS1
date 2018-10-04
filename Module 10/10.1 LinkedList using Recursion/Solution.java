@@ -69,7 +69,7 @@ class Node {
      *
      * @param      data  The data of type integer.
      */
-    Node(int data) {
+    Node(final int data) {
     this.data = data;
     next = null;
     }
@@ -86,7 +86,7 @@ class Node {
      *
      * @param      data  The data of integer type.
      */
-    public void setData(int data) {
+    public void setData(final int data) {
             this.data = data;
     }
     /**
@@ -116,9 +116,12 @@ class Node {
  * InsertAt and Reverse.
  */
 class LinkedList {
+    /**
+     * Linkedlist class.
+     */
     private Node head;
-    int size = 0;
-    int count = 0;
+    private int size = 0;
+    private int count = 0;
 /**
  * overloaded method for reverse.
  * this method is called in main function
@@ -170,14 +173,16 @@ class LinkedList {
      * @return     { returns Node type }
      */
 
-    private Node insertAt(final Node curr, final Node newNode, final int index, final int currIndex) {
+    private Node insertAt(final Node curr, final Node newNode,
+        final int index,
+        final int currIndex) {
         if (curr == null) {
             return newNode;
         } else if (currIndex == index) {
             newNode.setNext(curr);
             return newNode;
         }
-        curr.setNext(insertAt(curr.getNext(), newNode, index, currIndex+1));
+        curr.setNext(insertAt(curr.getNext(), newNode, index, currIndex + 1));
         return curr;
 
     }
