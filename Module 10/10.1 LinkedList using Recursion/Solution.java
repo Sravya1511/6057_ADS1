@@ -69,8 +69,8 @@ class Node {
      *
      * @param      data  The data of type integer.
      */
-    Node(final int data) {
-    this.data = data;
+    Node(final int data1) {
+    this.data = data1;
     next = null;
     }
     /**
@@ -104,8 +104,8 @@ class Node {
          * @param      next  The next of Node type.
          */
 
-        public void setNext(Node next) {
-            this.next = next;
+        public void setNext(final Node next1) {
+            this.next = next1;
         }
 
 

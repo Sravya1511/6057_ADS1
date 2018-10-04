@@ -1,9 +1,10 @@
 Starting audit...
-[ERROR] F:\6057_ADS1\Module 10\10.1 LinkedList using Recursion\Solution.java:72:20: 'data' hides a field. [HiddenField]
+[ERROR] F:\6057_ADS1\Module 10\10.1 LinkedList using Recursion\Solution.java:70:8: Unused @param tag for 'data'. [JavadocMethod]
+[ERROR] F:\6057_ADS1\Module 10\10.1 LinkedList using Recursion\Solution.java:72:20: Expected @param tag for 'data1'. [JavadocMethod]
 [ERROR] F:\6057_ADS1\Module 10\10.1 LinkedList using Recursion\Solution.java:89:35: 'data' hides a field. [HiddenField]
-[ERROR] F:\6057_ADS1\Module 10\10.1 LinkedList using Recursion\Solution.java:107:29: Parameter next should be final. [FinalParameters]
-[ERROR] F:\6057_ADS1\Module 10\10.1 LinkedList using Recursion\Solution.java:107:34: 'next' hides a field. [HiddenField]
+[ERROR] F:\6057_ADS1\Module 10\10.1 LinkedList using Recursion\Solution.java:104:12: Unused @param tag for 'next'. [JavadocMethod]
+[ERROR] F:\6057_ADS1\Module 10\10.1 LinkedList using Recursion\Solution.java:107:40: Expected @param tag for 'next1'. [JavadocMethod]
 [ERROR] F:\6057_ADS1\Module 10\10.1 LinkedList using Recursion\Solution.java:123:5: Missing a Javadoc comment. [JavadocVariable]
 [ERROR] F:\6057_ADS1\Module 10\10.1 LinkedList using Recursion\Solution.java:124:5: Missing a Javadoc comment. [JavadocVariable]
 Audit done.
-Checkstyle ends with 6 errors.
+Checkstyle ends with 7 errors.
