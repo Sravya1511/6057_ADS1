@@ -28,10 +28,10 @@ final class Solution {
     			int size = list.size();
     			int position = Integer.parseInt(token[1]);
     			if (position < 0 || position > size) {
-    				System.out.println("Can't insert at this position.");
+    			System.out.println("Can't insert at this position.");
     			} else {
-                    list.insertAt(position, Integer.parseInt(token[2]));
-    			    System.out.println(list.print());
+                list.insertAt(position, Integer.parseInt(token[2]));
+    			System.out.println(list.print());
     			}
     			break;
     			case "reverse":
