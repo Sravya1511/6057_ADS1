@@ -59,18 +59,54 @@ class Node {
      * data is integer type.
      * next is Node.
      */
-    int data;
-    Node next;
+    private int data;
+    /**
+     * next is node type.
+     */
+    private Node next;
     /**
      * Constructs the object.
      *
      * @param      data  The data of type integer.
      */
-
     Node(int data) {
     this.data = data;
     next = null;
     }
+    /**
+     * Gets the data.
+     *
+     * @return     The data. of integer type.
+     */
+     public int getData() {
+            return data;
+    }
+    /**
+     * Sets the data.
+     *
+     * @param      data  The data of integer type.
+     */
+    public void setData(int data) {
+            this.data = data;
+    }
+    /**
+     * Gets the next.
+     *
+     * @return     The next.of node type.
+     */
+
+    public Node getNext() {
+            return next;
+    }
+        /**
+         * Sets the next.
+         *
+         * @param      next  The next of Node type.
+         */
+
+        public void setNext(Node next) {
+            this.next = next;
+        }
 
 
 }
@@ -101,13 +137,13 @@ class LinkedList {
         if (curr == null) {
             return;
         }
-        if (curr.next == null) {
+        if (curr.getNext() == null) {
             head = curr;
             return;
         }
-        reverse(curr.next);
-        curr.next.next = curr;
-        curr.next = null;
+        reverse(curr.getNext());
+        curr.getNext().setNext(curr);
+        curr.setNext(null);
     }
     /**
      * overloaded method to insert the element.
@@ -138,10 +174,10 @@ class LinkedList {
         if (curr == null) {
             return newNode;
         } else if (currIndex == index) {
-            newNode.next = curr;
+            newNode.setNext(curr);
             return newNode;
         }
-        curr.next = insertAt(curr.next, newNode, index, currIndex+1);
+        curr.setNext(insertAt(curr.getNext(), newNode, index, currIndex+1));
         return curr;
 
     }
@@ -166,8 +202,8 @@ class LinkedList {
         Node n = head;
         String result = "";
         while (n != null) {
-            result += n.data + ", ";
-            n = n.next;
+            result += n.getData() + ", ";
+            n = n.getNext();
         }
         return result.substring(0, result.length() - 2);
     }
