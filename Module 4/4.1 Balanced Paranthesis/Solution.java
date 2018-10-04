@@ -88,11 +88,15 @@ final class Solution {
         }
     }
 }
+/**
+ * Class for balanced paranthesis.
+ * paranthesis method checks if the paranthesis are matching or not.
+ */
 class BalancedParanthesis {
     /**
      * creates obj for StackArray class.
      *
-     * @param      tokens  The tokens
+     * @param      tokens  The tokens of string array type
      */
 
     public void paranthesis(final String[] tokens) {
