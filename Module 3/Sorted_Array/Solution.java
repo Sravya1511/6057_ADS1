@@ -46,6 +46,11 @@ final class Solution {
 
     }
 }
+/**
+ * Class for sort.
+ * sort mwthod takes two arrays which are sorted.
+ * The sorted result is stored in third array.
+ */
 class Sort {
     /**
      * { sort method sorts two sorted arrays}.
