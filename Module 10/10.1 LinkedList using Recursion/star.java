@@ -10,8 +10,7 @@ class star {
 
 		}
 		else {
-			m += a.substring(0,1);
-			return star(a.substring(1));
+			m += a.substring(0,1)+star(a.substring(1));
 		}
         return m+a.substring(a.length()-1);
 	}

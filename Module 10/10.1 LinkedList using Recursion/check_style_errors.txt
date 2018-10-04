@@ -21,11 +21,13 @@ Starting audit...
 [ERROR] F:\6057_ADS1\Module 10\10.1 LinkedList using Recursion\star.java:9:54: ',' is not followed by whitespace. [WhitespaceAfter]
 [ERROR] F:\6057_ADS1\Module 10\10.1 LinkedList using Recursion\star.java:11:17: '}' at column 3 should be on the same line as the next part of a multi-block statement (one that directly contains multiple blocks: if/else-if/else, do/while or try/catch/finally). [RightCurly]
 [ERROR] F:\6057_ADS1\Module 10\10.1 LinkedList using Recursion\star.java:13:44: ',' is not followed by whitespace. [WhitespaceAfter]
-[ERROR] F:\6057_ADS1\Module 10\10.1 LinkedList using Recursion\star.java:16:17: '+' is not preceded with whitespace. [WhitespaceAround]
-[ERROR] F:\6057_ADS1\Module 10\10.1 LinkedList using Recursion\star.java:16:18: '+' is not followed by whitespace. [WhitespaceAround]
-[ERROR] F:\6057_ADS1\Module 10\10.1 LinkedList using Recursion\star.java:16:40: '-' is not preceded with whitespace. [WhitespaceAround]
-[ERROR] F:\6057_ADS1\Module 10\10.1 LinkedList using Recursion\star.java:16:41: '-' is not followed by whitespace. [WhitespaceAround]
-[ERROR] F:\6057_ADS1\Module 10\10.1 LinkedList using Recursion\star.java:18:9: Missing a Javadoc comment. [JavadocMethod]
-[ERROR] F:\6057_ADS1\Module 10\10.1 LinkedList using Recursion\star.java:18:33: Parameter args should be final. [FinalParameters]
+[ERROR] F:\6057_ADS1\Module 10\10.1 LinkedList using Recursion\star.java:13:46: '+' is not preceded with whitespace. [WhitespaceAround]
+[ERROR] F:\6057_ADS1\Module 10\10.1 LinkedList using Recursion\star.java:13:47: '+' is not followed by whitespace. [WhitespaceAround]
+[ERROR] F:\6057_ADS1\Module 10\10.1 LinkedList using Recursion\star.java:15:17: '+' is not preceded with whitespace. [WhitespaceAround]
+[ERROR] F:\6057_ADS1\Module 10\10.1 LinkedList using Recursion\star.java:15:18: '+' is not followed by whitespace. [WhitespaceAround]
+[ERROR] F:\6057_ADS1\Module 10\10.1 LinkedList using Recursion\star.java:15:40: '-' is not preceded with whitespace. [WhitespaceAround]
+[ERROR] F:\6057_ADS1\Module 10\10.1 LinkedList using Recursion\star.java:15:41: '-' is not followed by whitespace. [WhitespaceAround]
+[ERROR] F:\6057_ADS1\Module 10\10.1 LinkedList using Recursion\star.java:17:9: Missing a Javadoc comment. [JavadocMethod]
+[ERROR] F:\6057_ADS1\Module 10\10.1 LinkedList using Recursion\star.java:17:33: Parameter args should be final. [FinalParameters]
 Audit done.
-Checkstyle ends with 28 errors.
+Checkstyle ends with 30 errors.
