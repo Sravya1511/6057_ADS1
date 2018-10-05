@@ -75,6 +75,7 @@ class Node {
     }
     /**
      * Gets the data.
+     * The time complexity of this method is O(1).
      *
      * @return     The data. of integer type.
      */
@@ -83,6 +84,7 @@ class Node {
     }
     /**
      * Sets the data.
+     * The time complexity of this method is O(1).
      *
      * @param      data1  The data of integer type.
      */
@@ -91,6 +93,7 @@ class Node {
     }
     /**
      * Gets the next.
+     * The time complexity of this method is O(1).
      *
      * @return     The next.of node type.
      */
@@ -100,6 +103,7 @@ class Node {
     }
         /**
          * Sets the next.
+         * The time complexity of this method is O(1).
          *
          * @param      next1  The next of Node type.
          */
@@ -131,12 +135,15 @@ class LinkedList {
 /**
  * overloaded method for reverse.
  * this method is called in main function.
+ * The time complexity of this method is O(1)
  */
     public void reverse() {
         reverse(head);
     }
     /**
      * reverse method to reverse linked list.
+     * The time complexity of this method is O(N).
+     * Because the array is iterated (recursively) for N times (N is size) to reverse.
      *
      * @param      curr  The curr of Node type.
      */
@@ -156,6 +163,7 @@ class LinkedList {
     }
     /**
      * overloaded method to insert the element.
+     * The time complexity of this method is O(1).
      *
      * @param      index  The index of type integer
      * @param      data   The data of type integer
@@ -170,6 +178,9 @@ class LinkedList {
     }
     /**
      * inserts elements using recurssion.
+     * The time complexity of this method is O(N).
+     * The array is iterated recursively for N times.
+     * N is size.
      *
      * @param      curr       The curr of Node type.
      * @param      newNode    The new node of Node type.
@@ -196,6 +207,7 @@ class LinkedList {
 
     /**
      * size of the linked list is returned.
+     * The time complexity of this method is O(1).
      *
      * @return     { return tye is integer. }
      */
@@ -205,6 +217,7 @@ class LinkedList {
     }
     /**
      * prints the linkedlist data.
+     * The time complexity of this method is O(N).
      *
      * @return     { String is returned. }
      */
