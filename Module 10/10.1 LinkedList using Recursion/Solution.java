@@ -143,7 +143,8 @@ class LinkedList {
     /**
      * reverse method to reverse linked list.
      * The time complexity of this method is O(N).
-     * Because the array is iterated (recursively) for N times (N is size) to reverse.
+     * Because the array is iterated (recursively)
+     * for N times (N is size) to reverse.
      *
      * @param      curr  The curr of Node type.
      */
