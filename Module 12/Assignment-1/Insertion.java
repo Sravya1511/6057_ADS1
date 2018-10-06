@@ -1,6 +1,7 @@
 import java.util.Comparator;
 /**
  * Class for insertion.
+ * The time complexity is O(N^2).
  */
 class Insertion {
     /**
@@ -10,6 +11,7 @@ class Insertion {
 	public Insertion() {}
     /**
      * sorts the object array.
+     * The time complexity is O(N^2).
      *
      * @param      a           { object of student type}.
      * @param      comparator  The comparator.
@@ -25,6 +27,7 @@ class Insertion {
     }
     /**
      * compares two objects of student class
+     * The time complexity is O(1).
      *
      * @param      v           { student object }
      * @param      w           { student object}
@@ -38,6 +41,8 @@ class Insertion {
 
     /**
      * exchanges two objects
+     * The time complexity is O(1).
+     *
      *
      * @param      a     { student object }
      * @param      i     { index of int type}
