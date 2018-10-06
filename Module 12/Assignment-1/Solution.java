@@ -63,8 +63,6 @@ class StudentArray {
 		for(int i = 0; i<openVacancies; i++) {
 			res[count++] = meritArray[i];
 		}
-		// for(int k = 0; k<stVacancies; k++) {
-		// 	System.out.println(stVacancies);
 		    int a = 0;
 			for(int i = openVacancies; i<meritArray.length; i++) {
 			    if (meritArray[i].reservation.equals("ST")) {
@@ -75,14 +73,20 @@ class StudentArray {
 			    }
 		    }
 
-
-		// for(int k = 0; k<scVacancies; k++) {
-			// System.out.println(scVacancies);
 		    int b = 0;
 			for(int i = openVacancies; i<meritArray.length; i++) {
 			    if (meritArray[i].reservation.equals("SC")) {
 				res[count++] = meritArray[i];
 				if(b == scVacancies)
+					break;
+			    }
+		    }
+
+		    int c = 0;
+			for(int i = openVacancies; i<meritArray.length; i++) {
+			    if (meritArray[i].reservation.equals("BC")) {
+				res[count++] = meritArray[i];
+				if(c == bcVacancies)
 					break;
 
 			    }
