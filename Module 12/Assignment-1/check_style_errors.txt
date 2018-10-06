@@ -103,7 +103,6 @@ Starting audit...
 [ERROR] F:\6057_ADS1\Module 12\Assignment-1\Solution.java:98:78: '!=' is not followed by whitespace. [WhitespaceAround]
 [ERROR] F:\6057_ADS1\Module 12\Assignment-1\Solution.java:101:25: '}' at column 4 should be on the same line as the next part of a multi-block statement (one that directly contains multiple blocks: if/else-if/else, do/while or try/catch/finally). [RightCurly]
 [ERROR] F:\6057_ADS1\Module 12\Assignment-1\Solution.java:102:32: 'if' is not followed by whitespace. [WhitespaceAfter]
-[ERROR] F:\6057_ADS1\Module 12\Assignment-1\Solution.java:102:51: '||' is not followed by whitespace. [WhitespaceAround]
 [ERROR] F:\6057_ADS1\Module 12\Assignment-1\Solution.java:104:25: '}' at column 4 should be on the same line as the next part of a multi-block statement (one that directly contains multiple blocks: if/else-if/else, do/while or try/catch/finally). [RightCurly]
 [ERROR] F:\6057_ADS1\Module 12\Assignment-1\Solution.java:105:32: 'if' is not followed by whitespace. [WhitespaceAfter]
 [ERROR] F:\6057_ADS1\Module 12\Assignment-1\Solution.java:107:25: '}' at column 4 should be on the same line as the next part of a multi-block statement (one that directly contains multiple blocks: if/else-if/else, do/while or try/catch/finally). [RightCurly]
@@ -150,4 +149,4 @@ Starting audit...
 [ERROR] F:\6057_ADS1\Module 12\Assignment-1\Solution.java:168:25: '<' is not preceded with whitespace. [WhitespaceAround]
 [ERROR] F:\6057_ADS1\Module 12\Assignment-1\Solution.java:168:26: '<' is not followed by whitespace. [WhitespaceAround]
 Audit done.
-Checkstyle ends with 150 errors.
+Checkstyle ends with 149 errors.

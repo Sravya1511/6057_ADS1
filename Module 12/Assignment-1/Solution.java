@@ -99,13 +99,13 @@ class StudentArray {
                 res[count++] = meritArray[i];
                 c++;
 			}
-			else if(x < stVacancies ||countSt == stVacancies) {
+			else if(countSt == stVacancies) {
 				res[count++] = meritArray[i];
 			}
-			else if(y < scVacancies || countSc == scVacancies) {
+			else if(countSc == scVacancies) {
 				res[count++] = meritArray[i];
 			}
-			else if(z < bcVacancies || countBc == bcVacancies) {
+			else if(countBc == bcVacancies) {
 				res[count++] = meritArray[i];
 			}
 		}
