@@ -58,8 +58,19 @@ class StudentArray {
 
 	public Student[] getReservationArray(int vacancies, Student[] meritArray, int openVacancies, int bcVacancies, int scVacancies, int stVacancies) {
 		Student[] res;
+		int x = 0;
+		int y = 0;
+		int z = 0;
 		res = new Student[20];
 		int count = 0;
+		for(int i = 0; i<meritArray.length; i++) {
+			if(meritArray[i].reservation.equals("ST"))
+                 x++;
+            if(meritArray[i].reservation.equals("SC"))
+                 y++;
+            if(meritArray[i].reservation.equals("Bc"))
+                 z++;
+		}
 		for(int i = 0; i<openVacancies; i++) {
 			res[count++] = meritArray[i];
 		}
@@ -71,13 +82,16 @@ class StudentArray {
                 res[count++] = meritArray[i];
                 a++;
 			}
-			if(meritArray[i].reservation.equals("SC") && b!=scVacancies) {
+			else if(meritArray[i].reservation.equals("SC") && b!=scVacancies) {
                 res[count++] = meritArray[i];
                 b++;
 			}
-			if(meritArray[i].reservation.equals("BC") && c!=bcVacancies) {
+			else if(meritArray[i].reservation.equals("BC") && c!=bcVacancies) {
                 res[count++] = meritArray[i];
                 c++;
+			}
+			else if(x < stVacancies || y < scVacancies || z < bcVacancies ) {
+				res[count++] = meritArray[i];
 			}
 			// if(meritArray[i].reservation.equals("Open")) {
    //              res[count++] = meritArray[i];
