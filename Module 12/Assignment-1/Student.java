@@ -18,7 +18,7 @@ class Student {
 	 */
 	private int marks1;
 	/**
-	 * marks2 of student
+	 * marks2 of student.
 	 */
 	private int marks2;
 	/**
@@ -26,7 +26,7 @@ class Student {
 	 */
 	private int marks3;
 	/**
-	 * total marks of student
+	 * total marks of student.
 	 */
 	private int total;
 	/**
@@ -37,15 +37,15 @@ class Student {
     /**
      * Constructs the object.
      *
-     * @param      n     { name of type string }
-     * @param      dob   The dob of type String
-     * @param      m1    The m1 of int type
-     * @param      m2    The m2 of int type
-     * @param      m3    The m3 of int type
+     * @param      n     { name of type string }.
+     * @param      dob   The dob of type String.
+     * @param      m1    The m1 of int type.
+     * @param      m2    The m2 of int type.
+     * @param      m3    The m3 of int type.
      * @param      t     total marks of int type.
      * @param      res   The reservation od string type.
      */
-	Student(String n, String dob, String m1, String m2, String m3, String t, String res) {
+	Student(final String n, final String dob, final String m1, final String m2, final String m3, final String t, final String res) {
 		this.name = n;
 		this.dateOfBirth = dob;
 		this.marks1 = Integer.parseInt(m1);
@@ -54,26 +54,61 @@ class Student {
 		this.total = Integer.parseInt(t);
 		this.reservation = res;
 	}
+	/**
+	 * Gets the marks 1.
+	 *
+	 * @return     The marks 1 of int type.
+	 */
 
     public int getMarks1() {
         return marks1;
     }
+    /**
+     * Gets the marks 2.
+     *
+     * @return     The marks 2 of int type.
+     */
     public int getMarks2() {
         return marks2;
     }
+    /**
+     * Gets the marks 3.
+     *
+     * @return     The marks 3 of int type.
+     */
     public int getMarks3() {
         return marks3;
     }
+    /**
+     * Gets the name.
+     *
+     * @return     The name of String type.
+     */
     public String getName() {
         return name;
     }
+    /**
+     * Gets the dob.
+     *
+     * @return     The dob of String type.
+     */
 
     public String getDob() {
         return dateOfBirth;
     }
+    /**
+     * Gets the total.
+     *
+     * @return     The total of int type.
+     */
     public int getTotal() {
         return total;
     }
+    /**
+     * Gets the reservation.
+     *
+     * @return     The reservation of String type.
+     */
     public String getReservation() {
         return reservation;
     }
