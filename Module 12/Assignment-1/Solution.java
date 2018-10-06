@@ -91,10 +91,10 @@ class StudentArray {
                 c++;
 			}
 			// else if(x < stVacancies || y < scVacancies || z < bcVacancies ) {
-			else {
-				res[count++] = meritArray[i];
+			// else {
+			// 	res[count++] = meritArray[i];
 
-			}
+			// }
 			// if(meritArray[i].reservation.equals("Open")) {
    //              res[count++] = meritArray[i];
    //              c++;
