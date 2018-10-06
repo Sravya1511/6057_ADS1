@@ -79,10 +79,10 @@ class StudentArray {
                 res[count++] = meritArray[i];
                 c++;
 			}
-			if(meritArray[i].reservation.equals("Open")) {
-                res[count++] = meritArray[i];
-                c++;
-			}
+			// if(meritArray[i].reservation.equals("Open")) {
+   //              res[count++] = meritArray[i];
+   //              c++;
+			// }
 
 		}
 		 //    int a = 0;

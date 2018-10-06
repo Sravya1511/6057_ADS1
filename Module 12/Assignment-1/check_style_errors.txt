@@ -84,7 +84,6 @@ Starting audit...
 [ERROR] F:\6057_ADS1\Module 12\Assignment-1\Solution.java:78:27: 'if' is not followed by whitespace. [WhitespaceAfter]
 [ERROR] F:\6057_ADS1\Module 12\Assignment-1\Solution.java:78:71: '!=' is not preceded with whitespace. [WhitespaceAround]
 [ERROR] F:\6057_ADS1\Module 12\Assignment-1\Solution.java:78:73: '!=' is not followed by whitespace. [WhitespaceAround]
-[ERROR] F:\6057_ADS1\Module 12\Assignment-1\Solution.java:82:27: 'if' is not followed by whitespace. [WhitespaceAfter]
 [ERROR] F:\6057_ADS1\Module 12\Assignment-1\Solution.java:89: Line is longer than 80 characters (found 81). [LineLength]
 [ERROR] F:\6057_ADS1\Module 12\Assignment-1\Solution.java:99: Line is longer than 80 characters (found 81). [LineLength]
 [ERROR] F:\6057_ADS1\Module 12\Assignment-1\Solution.java:109: Line is longer than 80 characters (found 81). [LineLength]
@@ -130,4 +129,4 @@ Starting audit...
 [ERROR] F:\6057_ADS1\Module 12\Assignment-1\Solution.java:176:25: '<' is not preceded with whitespace. [WhitespaceAround]
 [ERROR] F:\6057_ADS1\Module 12\Assignment-1\Solution.java:176:26: '<' is not followed by whitespace. [WhitespaceAround]
 Audit done.
-Checkstyle ends with 130 errors.
+Checkstyle ends with 129 errors.
