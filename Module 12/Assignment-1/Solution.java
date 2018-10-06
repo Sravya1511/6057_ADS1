@@ -61,7 +61,7 @@ class StudentArray {
 		int x = 0;
 		int y = 0;
 		int z = 0;
-		res = new Student[20];
+		res = new Student[30];
 		int count = 0;
 		for(int i = 0; i<meritArray.length; i++) {
 			if(meritArray[i].reservation.equals("ST"))

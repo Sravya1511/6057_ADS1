@@ -64,7 +64,7 @@ Starting audit...
 [ERROR] F:\6057_ADS1\Module 12\Assignment-1\Solution.java:59:102: Parameter bcVacancies should be final. [FinalParameters]
 [ERROR] F:\6057_ADS1\Module 12\Assignment-1\Solution.java:59:119: Parameter scVacancies should be final. [FinalParameters]
 [ERROR] F:\6057_ADS1\Module 12\Assignment-1\Solution.java:59:136: Parameter stVacancies should be final. [FinalParameters]
-[ERROR] F:\6057_ADS1\Module 12\Assignment-1\Solution.java:64:35: '20' is a magic number. [MagicNumber]
+[ERROR] F:\6057_ADS1\Module 12\Assignment-1\Solution.java:64:35: '30' is a magic number. [MagicNumber]
 [ERROR] F:\6057_ADS1\Module 12\Assignment-1\Solution.java:66:20: 'for' is not followed by whitespace. [WhitespaceAfter]
 [ERROR] F:\6057_ADS1\Module 12\Assignment-1\Solution.java:66:33: '<' is not preceded with whitespace. [WhitespaceAround]
 [ERROR] F:\6057_ADS1\Module 12\Assignment-1\Solution.java:66:34: '<' is not followed by whitespace. [WhitespaceAround]
