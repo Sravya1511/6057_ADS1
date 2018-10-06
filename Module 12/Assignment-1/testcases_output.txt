@@ -1,4 +1,4 @@
-########## Testcase 0: Passed ##########
+########## Testcase 0: Failed ##########
 Expected Output: 
 divya,99,ST
 Deepak,98,Open
@@ -55,12 +55,9 @@ Anjali,38,SC
 Aryan,32,ST
 Shreya,23,SC
 
-divya,99,ST
-Deepak,98,Open
-Ira,93,ST
-tanvi,90,BC
-Aditya,80,ST
-priya,72,SC
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 20
+	at StudentArray.getReservationArray(Solution.java:95)
+	at Solution.main(Solution.java:190)
 ----------------------------------------
 ########## Testcase 1: Failed ##########
 Expected Output: 
@@ -136,10 +133,10 @@ Aryan,32,ST
 Shreya,23,SC
 
 Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 20
-	at StudentArray.getReservationArray(Solution.java:94)
-	at Solution.main(Solution.java:188)
+	at StudentArray.getReservationArray(Solution.java:95)
+	at Solution.main(Solution.java:190)
 ----------------------------------------
-########## Testcase 2: Passed ##########
+########## Testcase 2: Failed ##########
 Expected Output: 
 divya,99,Open
 tanvi,90,Open
@@ -168,8 +165,8 @@ Tanya,66,BC
 Abhishek,60,BC
 
 divya,99,Open
+tanvi,90,Open
 Aditya,80,ST
-priya,76,SC
 ----------------------------------------
 ########## Testcase 3: Failed ##########
 Expected Output: 
@@ -288,8 +285,8 @@ shyam,23,Open
 Shreya,23,Open
 
 Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 20
-	at StudentArray.getReservationArray(Solution.java:94)
-	at Solution.main(Solution.java:188)
+	at StudentArray.getReservationArray(Solution.java:95)
+	at Solution.main(Solution.java:190)
 ----------------------------------------
 ########## Testcase 5: Failed ##########
 Expected Output: 
@@ -372,6 +369,6 @@ Aryan,32,ST
 Shreya,23,SC
 
 Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 20
-	at StudentArray.getReservationArray(Solution.java:94)
-	at Solution.main(Solution.java:188)
+	at StudentArray.getReservationArray(Solution.java:95)
+	at Solution.main(Solution.java:190)
 ----------------------------------------
