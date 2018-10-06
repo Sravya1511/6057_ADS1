@@ -1,42 +1,5 @@
 import java.util.Scanner;
 import java.util.Comparator;
-class Student {
-	String name;
-	String dateOfBirth;
-	int marks1;
-	int marks2;
-	int marks3;
-	int total;
-	String reservation;
-
-	Student(String n, String dob, String m1, String m2, String m3, String t, String res) {
-		this.name = n;
-		this.dateOfBirth = dob;
-		this.marks1 = Integer.parseInt(m1);
-		this.marks2 = Integer.parseInt(m2);
-		this.marks3 = Integer.parseInt(m3);
-		this.total = Integer.parseInt(t);
-		this.reservation = res;
-	}
-
-	public String toString() {
-		return this.name+","+this.total+","+this.reservation;
-	}
-
-	static Comparator<Student> meritComparator = new Comparator<Student>() {
-		public int compare(Student s1, Student s2) {
-			if(s1.total - s2.total != 0)
-				return s1.total - s2.total;
-			else if(s1.marks3 - s2.marks3 != 0)
-				return s1.marks3 - s2.marks3;
-			// else if(s1.marks2 - s2.marks2 != 0)
-			else if(s1.marks2 - s2.marks2 != 0)
-				return s1.marks2 - s2.marks2;
-			else
-				return s1.dateOfBirth.compareTo(s2.dateOfBirth);
-		}
-	};
-}
 
 
 class StudentArray {
@@ -64,11 +27,11 @@ class StudentArray {
 		res = new Student[30];
 		int count = 0;
 		for(int i = 0; i<meritArray.length; i++) {
-			if(meritArray[i].reservation.equals("ST"))
+			if(meritArray[i].getReservation().equals("ST"))
                  x++;
-            if(meritArray[i].reservation.equals("SC"))
+            if(meritArray[i].getReservation().equals("SC"))
                  y++;
-            if(meritArray[i].reservation.equals("Bc"))
+            if(meritArray[i].getReservation().equals("Bc"))
                  z++;
 		}
 		for(int i = 0; i<openVacancies; i++) {
@@ -84,15 +47,15 @@ class StudentArray {
         int b = 0;
         int c = 0;
 		for(int i = openVacancies; i<meritArray.length;i++) {
-			if(meritArray[i].reservation.equals("ST") && a!=stVacancies) {
+			if(meritArray[i].getReservation().equals("ST") && a!=stVacancies) {
                 res[count++] = meritArray[i];
                 a++;
 			}
-			else if(meritArray[i].reservation.equals("SC") && b!=scVacancies) {
+			else if(meritArray[i].getReservation().equals("SC") && b!=scVacancies) {
                 res[count++] = meritArray[i];
                 b++;
 			}
-			else if(meritArray[i].reservation.equals("BC") && c!=bcVacancies) {
+			else if(meritArray[i].getReservation().equals("BC") && c!=bcVacancies) {
                 res[count++] = meritArray[i];
                 c++;
 			}
