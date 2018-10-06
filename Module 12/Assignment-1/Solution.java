@@ -73,12 +73,12 @@ class StudentArray {
 		}
 		for(int i = 0; i<openVacancies; i++) {
 			res[count++] = meritArray[i];
-			if(meritArray[i].reservation.equals("ST"))
-                 x++;
-            if(meritArray[i].reservation.equals("SC"))
-                 y++;
-            if(meritArray[i].reservation.equals("Bc"))
-                 z++;
+			// if(meritArray[i].reservation.equals("ST"))
+   //               x++;
+   //          if(meritArray[i].reservation.equals("SC"))
+   //               y++;
+   //          if(meritArray[i].reservation.equals("Bc"))
+   //               z++;
 		}
         int a = 0;
         int b = 0;
@@ -96,53 +96,11 @@ class StudentArray {
                 res[count++] = meritArray[i];
                 c++;
 			}
-			// else if(meritArray[i].reservation.equals("Open")) {
-			// 	res[count++] = meritArray[i];
-			// }
-			// else if(x < stVacancies || y < scVacancies || z < bcVacancies ) {
-			// else {
-			// 	res[count++] = meritArray[i];
-
-			// }
-			// if(meritArray[i].reservation.equals("Open")) {
-   //              res[count++] = meritArray[i];
-   //              c++;
-			// }
-
+			else if(x < stVacancies) {
+				res[count++] = meritArray[i];
+			}
 		}
-		 //    int a = 0;
-			// for(int i = openVacancies; i<meritArray.length; i++) {
-			//     if (meritArray[i].reservation.equals("ST")) {
-			// 	res[count++] = meritArray[i];
-			// 	a++;
-			// 	if(a == stVacancies)
-			// 		break;
-			//     }
-		 //    }
-
-		 //    int b = 0;
-			// for(int i = openVacancies; i<meritArray.length; i++) {
-			//     if (meritArray[i].reservation.equals("SC")) {
-			// 	res[count++] = meritArray[i];
-			// 	b++;
-			// 	if(b == scVacancies)
-			// 		break;
-			//     }
-		 //    }
-
-		 //    int c = 0;
-			// for(int i = openVacancies; i<meritArray.length; i++) {
-			//     if (meritArray[i].reservation.equals("BC")) {
-			// 	res[count++] = meritArray[i];
-			// 	c++;
-			// 	if(c == bcVacancies)
-			// 		break;
-
-			//     }
-		 //    }
-
 		return res;
-
 	}
 }
 

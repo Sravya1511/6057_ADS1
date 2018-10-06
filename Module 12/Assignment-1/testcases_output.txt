@@ -292,19 +292,9 @@ Aryan,32,Open
 shyam,23,Open
 Shreya,23,Open
 
-divya,99,Open
-tanvi,99,Open
-Ishita,99,Open
-Deepak,98,Open
-Ira,93,Open
-Raj,87,Open
-mahesh,87,Open
-null
-null
-null
-null
-null
-null
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 20
+	at StudentArray.getReservationArray(Solution.java:100)
+	at Solution.main(Solution.java:157)
 ----------------------------------------
 ########## Testcase 5: Failed ##########
 Expected Output: 
