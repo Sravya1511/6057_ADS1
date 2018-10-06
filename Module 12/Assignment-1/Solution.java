@@ -99,6 +99,12 @@ class StudentArray {
 			else if(x < stVacancies) {
 				res[count++] = meritArray[i];
 			}
+			else if(y < scVacancies) {
+				res[count++] = meritArray[i];
+			}
+			else if(z < bcVacancies) {
+				res[count++] = meritArray[i];
+			}
 		}
 		return res;
 	}
