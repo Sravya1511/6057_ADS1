@@ -73,11 +73,25 @@ class StudentArray {
 	}
 }
 
+/**
+ * Class for solution.
+ */
 
 
-
-class Solution {
-	public static void main(String[] args) {
+final class Solution {
+	/**
+	 * Constructs the object.
+	 */
+	private Solution () {
+	}
+	/**
+	 * { reads input  }.
+	 * creates object for Student Array class.
+	 * adds students object to student array class.
+	 *
+	 * @param      args  The arguments
+	 */
+	public static void main(final String[] args) {
 		Scanner input = new Scanner(System.in);
 		int number = Integer.parseInt(input.nextLine());
 		int vacancies = Integer.parseInt(input.nextLine());
@@ -87,14 +101,14 @@ class Solution {
         int stVacancies = Integer.parseInt(input.nextLine());
         StudentArray array = new StudentArray(number);
         Student[] meritArray = array.getArray();
-        for(int i = 0; i<number; i++) {
+        for (int i = 0; i < number; i++) {
         	String[] token = input.nextLine().split(",");
             array.addStudent(new Student(token[0], token[1], token[2], token[3], token[4], token[5], token[6]));
         }
         Insertion insertion = new Insertion();
         insertion.sort(meritArray, Student.meritComparator);
 
-        for(int i = 0; i<number; i++) {
+        for (int i = 0; i < number; i++) {
         	System.out.println(meritArray[i]);
         }
 
@@ -104,7 +118,7 @@ class Solution {
         reservationArray = new Student[vacancies];
         reservationArray = array.getReservationArray(vacancies, meritArray, openVacancies, bcVacancies, scVacancies, stVacancies);
 
-        for(int i = 0; i<vacancies; i++) {
+        for (int i = 0; i < vacancies; i++) {
         	System.out.println(reservationArray[i]);
         }
 

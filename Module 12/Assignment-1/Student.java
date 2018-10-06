@@ -45,7 +45,9 @@ class Student {
      * @param      t     total marks of int type.
      * @param      res   The reservation od string type.
      */
-	Student(final String n, final String dob, final String m1, final String m2, final String m3, final String t, final String res) {
+	Student(final String n, final String dob, final String m1,
+		final String m2,
+		final String m3, final String t, final String res) {
 		this.name = n;
 		this.dateOfBirth = dob;
 		this.marks1 = Integer.parseInt(m1);
@@ -127,16 +129,17 @@ class Student {
 	 * comparator method to compare the marks, total, dob.
 	 */
 
-	static Comparator<Student> meritComparator = new Comparator<Student>() {
-		public int compare(Student s1, Student s2) {
+	public static Comparator<Student> meritComparator = new Comparator<Student>() {
+		public int compare(final Student s1, final Student s2) {
 			if (s1.total - s2.total != 0) {
 				return s1.total - s2.total;
 			} else if (s1.marks3 - s2.marks3 != 0) {
 				return s1.marks3 - s2.marks3;
 			} else if (s1.marks2 - s2.marks2 != 0) {
 				return s1.marks2 - s2.marks2;
-			} else
+			} else {
 				return s1.dateOfBirth.compareTo(s2.dateOfBirth);
+			}
 		}
 	};
 }

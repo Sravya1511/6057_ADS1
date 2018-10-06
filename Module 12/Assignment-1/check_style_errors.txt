@@ -1,9 +1,6 @@
 Starting audit...
 [ERROR] F:\6057_ADS1\Module 12\Assignment-1\Student.java:8:1: File contains tab characters (this is the first instance). [FileTabCharacter]
-[ERROR] F:\6057_ADS1\Module 12\Assignment-1\Student.java:48: Line is longer than 80 characters (found 136). [LineLength]
-[ERROR] F:\6057_ADS1\Module 12\Assignment-1\Student.java:130:36: Variable 'meritComparator' must be private and have accessor methods. [VisibilityModifier]
-[ERROR] F:\6057_ADS1\Module 12\Assignment-1\Student.java:131:36: Parameter s1 should be final. [FinalParameters]
-[ERROR] F:\6057_ADS1\Module 12\Assignment-1\Student.java:131:48: Parameter s2 should be final. [FinalParameters]
-[ERROR] F:\6057_ADS1\Module 12\Assignment-1\Student.java:138: 'else' construct must use '{}'s. [NeedBraces]
+[ERROR] F:\6057_ADS1\Module 12\Assignment-1\Student.java:132: Line is longer than 80 characters (found 87). [LineLength]
+[ERROR] F:\6057_ADS1\Module 12\Assignment-1\Student.java:132:43: Variable 'meritComparator' must be private and have accessor methods. [VisibilityModifier]
 Audit done.
-Checkstyle ends with 6 errors.
+Checkstyle ends with 3 errors.
