@@ -77,6 +77,7 @@ class StudentArray {
 			for(int i = openVacancies; i<meritArray.length; i++) {
 			    if (meritArray[i].reservation.equals("SC")) {
 				res[count++] = meritArray[i];
+				b++;
 				if(b == scVacancies)
 					break;
 			    }
@@ -86,6 +87,7 @@ class StudentArray {
 			for(int i = openVacancies; i<meritArray.length; i++) {
 			    if (meritArray[i].reservation.equals("BC")) {
 				res[count++] = meritArray[i];
+				c++;
 				if(c == bcVacancies)
 					break;
 
