@@ -63,36 +63,55 @@ class StudentArray {
 		for(int i = 0; i<openVacancies; i++) {
 			res[count++] = meritArray[i];
 		}
-		    int a = 0;
-			for(int i = openVacancies; i<meritArray.length; i++) {
-			    if (meritArray[i].reservation.equals("ST")) {
-				res[count++] = meritArray[i];
-				a++;
-				if(a == stVacancies)
-					break;
-			    }
-		    }
+        int a = 0;
+        int b = 0;
+        int c = 0;
+		for(int i = openVacancies; i<meritArray.length;i++) {
+			if(meritArray[i].reservation.equals("ST") && a!=stVacancies) {
+                res[count++] = meritArray[i];
+                a++;
+			}
+			if(meritArray[i].reservation.equals("SC") && b!=scVacancies) {
+                res[count++] = meritArray[i];
+                b++;
+			}
+			if(meritArray[i].reservation.equals("BC") && c!=bcVacancies) {
+                res[count++] = meritArray[i];
+                c++;
+			}
 
-		    int b = 0;
-			for(int i = openVacancies; i<meritArray.length; i++) {
-			    if (meritArray[i].reservation.equals("SC")) {
-				res[count++] = meritArray[i];
-				b++;
-				if(b == scVacancies)
-					break;
-			    }
-		    }
 
-		    int c = 0;
-			for(int i = openVacancies; i<meritArray.length; i++) {
-			    if (meritArray[i].reservation.equals("BC")) {
-				res[count++] = meritArray[i];
-				c++;
-				if(c == bcVacancies)
-					break;
+		}
+		 //    int a = 0;
+			// for(int i = openVacancies; i<meritArray.length; i++) {
+			//     if (meritArray[i].reservation.equals("ST")) {
+			// 	res[count++] = meritArray[i];
+			// 	a++;
+			// 	if(a == stVacancies)
+			// 		break;
+			//     }
+		 //    }
 
-			    }
-		    }
+		 //    int b = 0;
+			// for(int i = openVacancies; i<meritArray.length; i++) {
+			//     if (meritArray[i].reservation.equals("SC")) {
+			// 	res[count++] = meritArray[i];
+			// 	b++;
+			// 	if(b == scVacancies)
+			// 		break;
+			//     }
+		 //    }
+
+		 //    int c = 0;
+			// for(int i = openVacancies; i<meritArray.length; i++) {
+			//     if (meritArray[i].reservation.equals("BC")) {
+			// 	res[count++] = meritArray[i];
+			// 	c++;
+			// 	if(c == bcVacancies)
+			// 		break;
+
+			//     }
+		 //    }
 
 		return res;
 
