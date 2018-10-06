@@ -4,12 +4,6 @@ Starting audit...
 [ERROR] F:\6057_ADS1\Module 12\Assignment-1\Student.java:130:36: Variable 'meritComparator' must be private and have accessor methods. [VisibilityModifier]
 [ERROR] F:\6057_ADS1\Module 12\Assignment-1\Student.java:131:36: Parameter s1 should be final. [FinalParameters]
 [ERROR] F:\6057_ADS1\Module 12\Assignment-1\Student.java:131:48: Parameter s2 should be final. [FinalParameters]
-[ERROR] F:\6057_ADS1\Module 12\Assignment-1\Student.java:132: 'if' construct must use '{}'s. [NeedBraces]
-[ERROR] F:\6057_ADS1\Module 12\Assignment-1\Student.java:132:27: 'if' is not followed by whitespace. [WhitespaceAfter]
-[ERROR] F:\6057_ADS1\Module 12\Assignment-1\Student.java:134: 'if' construct must use '{}'s. [NeedBraces]
-[ERROR] F:\6057_ADS1\Module 12\Assignment-1\Student.java:134:32: 'if' is not followed by whitespace. [WhitespaceAfter]
-[ERROR] F:\6057_ADS1\Module 12\Assignment-1\Student.java:136: 'if' construct must use '{}'s. [NeedBraces]
-[ERROR] F:\6057_ADS1\Module 12\Assignment-1\Student.java:136:32: 'if' is not followed by whitespace. [WhitespaceAfter]
 [ERROR] F:\6057_ADS1\Module 12\Assignment-1\Student.java:138: 'else' construct must use '{}'s. [NeedBraces]
 Audit done.
-Checkstyle ends with 12 errors.
+Checkstyle ends with 6 errors.

@@ -129,13 +129,13 @@ class Student {
 
 	static Comparator<Student> meritComparator = new Comparator<Student>() {
 		public int compare(Student s1, Student s2) {
-			if(s1.total - s2.total != 0)
+			if (s1.total - s2.total != 0) {
 				return s1.total - s2.total;
-			else if(s1.marks3 - s2.marks3 != 0)
+			} else if (s1.marks3 - s2.marks3 != 0) {
 				return s1.marks3 - s2.marks3;
-			else if(s1.marks2 - s2.marks2 != 0)
+			} else if (s1.marks2 - s2.marks2 != 0) {
 				return s1.marks2 - s2.marks2;
-			else
+			} else
 				return s1.dateOfBirth.compareTo(s2.dateOfBirth);
 		}
 	};
