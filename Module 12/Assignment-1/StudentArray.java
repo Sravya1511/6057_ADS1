@@ -44,7 +44,9 @@ class StudentArray {
 	 * @return     The reservation array.
 	 */
 
-	public Student[] getReservationArray(int vacancies, Student[] meritArray, int openVacancies, int bcVacancies, int scVacancies, int stVacancies) {
+	public Student[] getReservationArray(final int vacancies, final Student[] meritArray,
+		final int openVacancies, final int bcVacancies, final int scVacancies,
+		final int stVacancies) {
 		Student[] res;
 		int x = 0;
 		int y = 0;
@@ -52,13 +54,13 @@ class StudentArray {
 		res = new Student[30];
 		int count = 0;
 		for (int i = 0; i < meritArray.length; i++) {
-			if(meritArray[i].getReservation().equals("ST")) {
+			if (meritArray[i].getReservation().equals("ST")) {
 				 x++;
 			}
-            if(meritArray[i].getReservation().equals("SC")) {
+            if (meritArray[i].getReservation().equals("SC")) {
             	y++;
             }
-            if(meritArray[i].getReservation().equals("Bc")) {
+            if (meritArray[i].getReservation().equals("Bc")) {
             	z++;
             }
 
@@ -70,20 +72,20 @@ class StudentArray {
         int b = 0;
         int c = 0;
 		for (int i = openVacancies; i < meritArray.length; i++) {
-			if(meritArray[i].getReservation().equals("ST") && a!=stVacancies) {
+			if (meritArray[i].getReservation().equals("ST") && a!=stVacancies) {
                 res[count++] = meritArray[i];
                 a++;
-			} else if(meritArray[i].getReservation().equals("SC") && b != scVacancies) {
+			} else if (meritArray[i].getReservation().equals("SC") && b != scVacancies) {
                 res[count++] = meritArray[i];
                 b++;
-			} else if(meritArray[i].getReservation().equals("BC") && c != bcVacancies) {
+			} else if (meritArray[i].getReservation().equals("BC") && c != bcVacancies) {
                 res[count++] = meritArray[i];
                 c++;
-			} else if(x < stVacancies) {
+			} else if (x < stVacancies) {
 				res[count++] = meritArray[i];
-			} else if(y < scVacancies) {
+			} else if (y < scVacancies) {
 				res[count++] = meritArray[i];
-			} else if(z < bcVacancies) {
+			} else if (z < bcVacancies) {
 				res[count++] = meritArray[i];
 			}
 		}
