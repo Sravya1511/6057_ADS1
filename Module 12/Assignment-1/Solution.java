@@ -61,9 +61,6 @@ class StudentArray {
 		int x = 0;
 		int y = 0;
 		int z = 0;
-		int countSt = 0;
-		int countSc = 0;
-		int countBc = 0;
 		res = new Student[30];
 		int count = 0;
 		for(int i = 0; i<meritArray.length; i++) {
@@ -76,12 +73,12 @@ class StudentArray {
 		}
 		for(int i = 0; i<openVacancies; i++) {
 			res[count++] = meritArray[i];
-			if(meritArray[i].reservation.equals("ST"))
-                 countSt++;
-            if(meritArray[i].reservation.equals("SC"))
-                 countSc++;
-            if(meritArray[i].reservation.equals("Bc"))
-                 countBc++;
+			// if(meritArray[i].reservation.equals("ST"))
+   //               countSt++;
+   //          if(meritArray[i].reservation.equals("SC"))
+   //               countSc++;
+   //          if(meritArray[i].reservation.equals("Bc"))
+   //               ++;
 		}
         int a = 0;
         int b = 0;
@@ -99,13 +96,13 @@ class StudentArray {
                 res[count++] = meritArray[i];
                 c++;
 			}
-			else if(countSt == stVacancies) {
+			else if(x < stVacancies) {
 				res[count++] = meritArray[i];
 			}
-			else if(countSc == scVacancies) {
+			else if(y < scVacancies) {
 				res[count++] = meritArray[i];
 			}
-			else if(countBc == bcVacancies) {
+			else if(z < bcVacancies) {
 				res[count++] = meritArray[i];
 			}
 		}
