@@ -1,4 +1,4 @@
-########## Testcase 0: Passed ##########
+########## Testcase 0: Failed ##########
 Expected Output: 
 divya,99,ST
 Deepak,98,Open
@@ -59,10 +59,10 @@ divya,99,ST
 Deepak,98,Open
 Ira,93,ST
 tanvi,90,BC
+riya,83,Open
 Aditya,80,ST
-priya,72,SC
 ----------------------------------------
-########## Testcase 1: Passed ##########
+########## Testcase 1: Failed ##########
 Expected Output: 
 divya,99,ST
 Ishita,99,Open
@@ -135,16 +135,11 @@ Anjali,38,SC
 Aryan,32,ST
 Shreya,23,SC
 
-divya,99,ST
-Ishita,99,Open
-Deepak,98,Open
-Ira,93,ST
-tanvi,90,BC
-Raj,87,BC
-Aditya,80,ST
-priya,72,SC
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 20
+	at StudentArray.getReservationArray(Solution.java:83)
+	at Solution.main(Solution.java:174)
 ----------------------------------------
-########## Testcase 2: Passed ##########
+########## Testcase 2: Failed ##########
 Expected Output: 
 divya,99,Open
 tanvi,90,Open
@@ -173,8 +168,8 @@ Tanya,66,BC
 Abhishek,60,BC
 
 divya,99,Open
+tanvi,90,Open
 Aditya,80,ST
-priya,76,SC
 ----------------------------------------
 ########## Testcase 3: Failed ##########
 Expected Output: 
@@ -211,8 +206,8 @@ divya,99,Open
 tanvi,90,ST
 Aditya,80,Open
 priya,76,SC
-Tanya,66,BC
-null
+Ajay,76,Open
+rahul,73,Open
 ----------------------------------------
 ########## Testcase 4: Failed ##########
 Expected Output: 
@@ -292,19 +287,9 @@ Aryan,32,Open
 shyam,23,Open
 Shreya,23,Open
 
-divya,99,Open
-tanvi,99,Open
-Ishita,99,Open
-Deepak,98,Open
-Ira,93,Open
-Raj,87,Open
-mahesh,87,Open
-null
-null
-null
-null
-null
-null
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 20
+	at StudentArray.getReservationArray(Solution.java:83)
+	at Solution.main(Solution.java:174)
 ----------------------------------------
 ########## Testcase 5: Failed ##########
 Expected Output: 
@@ -395,10 +380,10 @@ Raj,87,BC
 mahesh,87,BC
 riya,83,Open
 Aditya,80,ST
+Amit,76,Open
+Ajay,76,Open
+Arjun,75,Open
+rahul,73,Open
 priya,72,SC
-varsha,66,BC
-null
-null
-null
-null
+Priyanka,70,Open
 ----------------------------------------
