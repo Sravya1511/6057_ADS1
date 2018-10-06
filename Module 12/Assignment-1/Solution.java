@@ -55,6 +55,42 @@ class StudentArray {
 	public Student[] getArray(){
 		return studentArray;
 	}
+
+	public Student[] getReservationArray(int vacancies, Student[] meritArray, int openVacancies, int bcVacancies, int scVacancies, int stVacancies) {
+		Student[] res;
+		res = new Student[20];
+		int count = 0;
+		for(int i = 0; i<openVacancies; i++) {
+			res[count++] = meritArray[i];
+		}
+		// for(int k = 0; k<stVacancies; k++) {
+		// 	System.out.println(stVacancies);
+		    int a = 0;
+			for(int i = openVacancies; i<meritArray.length; i++) {
+			    if (meritArray[i].reservation.equals("ST")) {
+				res[count++] = meritArray[i];
+				a++;
+				if(a == stVacancies)
+					break;
+			    }
+		    }
+
+
+		// for(int k = 0; k<scVacancies; k++) {
+			// System.out.println(scVacancies);
+		    int b = 0;
+			for(int i = openVacancies; i<meritArray.length; i++) {
+			    if (meritArray[i].reservation.equals("SC")) {
+				res[count++] = meritArray[i];
+				if(b == scVacancies)
+					break;
+
+			    }
+		    }
+
+		return res;
+
+	}
 }
 
 class Insertion {
@@ -91,16 +127,26 @@ class Solution {
         int scVacancies = Integer.parseInt(input.nextLine());
         int stVacancies = Integer.parseInt(input.nextLine());
         StudentArray array = new StudentArray(number);
-        Student[] temp = array.getArray();
+        Student[] meritArray = array.getArray();
         for(int i = 0; i<number; i++) {
         	String[] token = input.nextLine().split(",");
             array.addStudent(new Student(token[0], token[1], token[2], token[3], token[4], token[5], token[6]));
         }
         Insertion insertion = new Insertion();
-        insertion.sort(temp, Student.meritComparator);
+        insertion.sort(meritArray, Student.meritComparator);
 
         for(int i = 0; i<number; i++) {
-        	System.out.println(temp[i]);
+        	System.out.println(meritArray[i]);
+        }
+
+        System.out.println();
+
+        Student [] reservationArray;
+        reservationArray = new Student[vacancies];
+        reservationArray = array.getReservationArray(vacancies, meritArray, openVacancies, bcVacancies, scVacancies, stVacancies);
+
+        for(int i = 0; i<vacancies; i++) {
+        	System.out.println(reservationArray[i]);
         }
 
 	}
