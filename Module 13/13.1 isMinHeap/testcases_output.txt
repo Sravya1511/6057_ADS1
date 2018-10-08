@@ -13,7 +13,7 @@ Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 8
 	at MinPQ.isMinHeap(Solution.java:34)
 	at Solution.main(Solution.java:71)
 ----------------------------------------
-########## Testcase 1: Failed ##########
+########## Testcase 1: Passed ##########
 Expected Output: 
 false
 false
@@ -22,6 +22,11 @@ false
 false
 false
 Your Output: 
+false
+false
+false
+false
+false
 false
 ----------------------------------------
 ########## Testcase 2: Failed ##########

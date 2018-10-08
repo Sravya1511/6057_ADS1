@@ -51,7 +51,7 @@ class Solution {
 		Scanner input = new Scanner(System.in);
 		String type = input.nextLine();
 		int n = Integer.parseInt(input.nextLine());
-		switch (type) {
+		switch(type) {
 			case "String":
 			for(int i = 0; i<n; i++) {
 
@@ -69,10 +69,8 @@ class Solution {
 				// System.out.println(res.length);
 				MinPQ<String> stringArray = new MinPQ<String>(tokens, tokens.length);
 				System.out.println(stringArray.isMinHeap());
-				break;
-
-
 			}
+			break;
 		}
 
 	}
