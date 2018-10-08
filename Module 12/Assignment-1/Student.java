@@ -1,7 +1,7 @@
 import java.util.Comparator;
 /**
  * Class for student.
- * The student class studnet attibutes.
+ * The student class student attibutes.
  *
  */
 class Student {

@@ -16,6 +16,7 @@ class StudentArray {
 	}
     /**
      * Adds a student.
+     * The time complexity is O(1).
      *
      * @param      student  The student of type student
      */
@@ -24,6 +25,7 @@ class StudentArray {
 	}
 	/**
 	 * Gets the array.
+	 * The time complexity is O(N).
 	 *
 	 * @return     The array of student type.
 	 */
@@ -33,6 +35,7 @@ class StudentArray {
 	}
 	/**
 	 * Gets the reservation array.
+	 * The time complexity is O(N).
 	 *
 	 * @param      vacancies      The vacancies of type int.
 	 * @param      meritArray     The merit array of type studnet.
