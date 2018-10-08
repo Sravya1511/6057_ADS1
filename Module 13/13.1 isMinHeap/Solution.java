@@ -85,7 +85,6 @@ class Solution {
 					System.out.println("false");
 					return;
 				}
-				else {
 					Float[] res = new Float[tokens.length+1];
 				int m = 1;
 
@@ -96,7 +95,6 @@ class Solution {
 				}
 				MinPQ<Float> flArray = new MinPQ<Float>(res);
 				System.out.println(flArray.isMinHeap());
-				}
 
 
 
