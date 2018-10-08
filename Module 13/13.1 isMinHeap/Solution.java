@@ -89,17 +89,17 @@ class Solution {
 
 				String[] tokens = input.nextLine().split(",");
 				Integer[] res = new Integer[tokens.length+1];
-				int m = 1;
+				// int m = 1;
 				for(int k = 0; k<tokens.length; k++) {
-                      res[m] = Integer.parseInt(tokens[k]);
-                      m++;
+                      res[k+1] = Integer.parseInt(tokens[k]);
+
 				}
 				MinPQ<Integer> intArray = new MinPQ<Integer>();
 				System.out.println(intArray.isMinHeap(res));
 			}
 			case "Float":
 			for(int i = 0; i<n; i++) {
-				String[] tokens = input.next().split(",");
+				String[] tokens = input.nextLine().split(",");
 				Float[] res = new Float[tokens.length+1];
 				int m = 1;
 				for(int k = 0; k<tokens.length; k++) {
