@@ -26,7 +26,7 @@ false
 false
 false
 ----------------------------------------
-########## Testcase 2: Failed ##########
+########## Testcase 2: Passed ##########
 Expected Output: 
 true
 true
@@ -45,9 +45,6 @@ false
 false
 true
 false
-Exception in thread "main" java.util.NoSuchElementException: No line found
-	at java.base/java.util.Scanner.nextLine(Unknown Source)
-	at Solution.main(Solution.java:102)
 ----------------------------------------
 ########## Testcase 3: Passed ##########
 Expected Output: 
@@ -71,5 +68,5 @@ Exception in thread "main" java.lang.NumberFormatException: empty String
 	at java.base/jdk.internal.math.FloatingDecimal.readJavaFormatString(Unknown Source)
 	at java.base/jdk.internal.math.FloatingDecimal.parseFloat(Unknown Source)
 	at java.base/java.lang.Float.parseFloat(Unknown Source)
-	at Solution.main(Solution.java:106)
+	at Solution.main(Solution.java:107)
 ----------------------------------------
