@@ -85,21 +85,16 @@ class Solution {
 					System.out.println("false");
 					return;
 				}
-					Float[] res = new Float[tokens.length+1];
+				Float[] res = new Float[tokens.length+1];
 				int m = 1;
 
-
+                if(tokens.length!=0)
 					for(int k = 0; k<tokens.length; k++) {
                       res[m] = Float.parseFloat(tokens[k]);
                       m++;
 				}
 				MinPQ<Float> flArray = new MinPQ<Float>(res);
 				System.out.println(flArray.isMinHeap());
-
-
-
-
-
 			}
 			break;
 			case "Double":
