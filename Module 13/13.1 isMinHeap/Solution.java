@@ -84,6 +84,32 @@ class Solution {
 				MinPQ<Integer> intArray = new MinPQ<Integer>(res, res.length);
 				System.out.println(intArray.isMinHeap());
 			}
+			case "Float":
+			for(int i = 0; i<n; i++) {
+
+				String[] tokens = input.nextLine().split(",");
+				Float[] res = new Float[tokens.length+1];
+				int m = 1;
+				for(int k = 0; k<tokens.length; k++) {
+                      res[m] = Float.parseFloat(tokens[k]);
+                      m++;
+				}
+				MinPQ<Float> flArray = new MinPQ<Float>(res, res.length);
+				System.out.println(flArray.isMinHeap());
+			}
+			case "Double":
+			for(int i = 0; i<n; i++) {
+
+				String[] tokens = input.nextLine().split(",");
+				Double[] res = new Double[tokens.length+1];
+				int m = 1;
+				for(int k = 0; k<tokens.length; k++) {
+                      res[m] = Double.parseDouble(tokens[k]);
+                      m++;
+				}
+				MinPQ<Double> doubleArray = new MinPQ<Double>(res, res.length);
+				System.out.println(doubleArray.isMinHeap());
+			}
 
 		}
 

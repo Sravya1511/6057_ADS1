@@ -54,7 +54,18 @@ true
 false
 false
 Your Output: 
-
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 325
+	at MinPQ.greater(Solution.java:15)
+	at MinPQ.isMinHeap(Solution.java:44)
+	at MinPQ.isMinHeap(Solution.java:45)
+	at MinPQ.isMinHeap(Solution.java:45)
+	at MinPQ.isMinHeap(Solution.java:45)
+	at MinPQ.isMinHeap(Solution.java:45)
+	at MinPQ.isMinHeap(Solution.java:45)
+	at MinPQ.isMinHeap(Solution.java:45)
+	at MinPQ.isMinHeap(Solution.java:45)
+	at MinPQ.isMinHeap(Solution.java:34)
+	at Solution.main(Solution.java:111)
 ----------------------------------------
 ########## Testcase 4: Failed ##########
 Expected Output: 
@@ -62,5 +73,9 @@ true
 true
 false
 Your Output: 
-
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 3
+	at MinPQ.greater(Solution.java:15)
+	at MinPQ.isMinHeap(Solution.java:44)
+	at MinPQ.isMinHeap(Solution.java:34)
+	at Solution.main(Solution.java:98)
 ----------------------------------------
