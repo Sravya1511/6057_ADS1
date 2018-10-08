@@ -1,12 +1,5 @@
 Starting audit...
 [ERROR] F:\6057_ADS1\Module 13\13.1 isMinHeap\Solution.java:0: File does not end with a newline. [NewlineAtEndOfFile]
-[ERROR] F:\6057_ADS1\Module 13\13.1 isMinHeap\Solution.java:2:8: Unused import - java.util.Comparator. [UnusedImports]
-[ERROR] F:\6057_ADS1\Module 13\13.1 isMinHeap\Solution.java:3:8: Unused import - java.util.Arrays. [UnusedImports]
-[ERROR] F:\6057_ADS1\Module 13\13.1 isMinHeap\Solution.java:12:1: File contains tab characters (this is the first instance). [FileTabCharacter]
-[ERROR] F:\6057_ADS1\Module 13\13.1 isMinHeap\Solution.java:12:11: Missing a Javadoc comment. [JavadocVariable]
-[ERROR] F:\6057_ADS1\Module 13\13.1 isMinHeap\Solution.java:12:14: Variable 'pq' must be private and have accessor methods. [VisibilityModifier]
-[ERROR] F:\6057_ADS1\Module 13\13.1 isMinHeap\Solution.java:19:15: Parameter array should be final. [FinalParameters]
-[ERROR] F:\6057_ADS1\Module 13\13.1 isMinHeap\Solution.java:31:16: 'while' is not followed by whitespace. [WhitespaceAfter]
-[ERROR] F:\6057_ADS1\Module 13\13.1 isMinHeap\Solution.java:105: Line is longer than 80 characters (found 81). [LineLength]
+[ERROR] F:\6057_ADS1\Module 13\13.1 isMinHeap\Solution.java:13:5: Missing a Javadoc comment. [JavadocVariable]
 Audit done.
-Checkstyle ends with 9 errors.
+Checkstyle ends with 2 errors.
