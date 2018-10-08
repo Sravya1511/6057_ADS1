@@ -80,11 +80,18 @@ class Solution {
 			break;
 			case "Float":
 			for(int i = 0; i<n; i++) {
-				String[] tokens = input.nextLine().split(",");
-                if(tokens.length == 0) {
+				String temp = input.nextLine();
+				if(temp.equals("")) {
 					System.out.println("false");
 					return;
 				}
+				String[] tokens = temp.split(",");
+				// System.out.println(tokens[]);
+    //             if(tokens[0].equals(null)) {
+				// 	System.out.println("false");
+				// 	System.out.println("hi");
+				// 	return;
+				// }
 				Float[] res = new Float[tokens.length+1];
 				int m = 1;
 
