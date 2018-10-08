@@ -63,13 +63,13 @@ class Solution {
 				int m = 1;
 				for(int k = 0; k<tokens.length; k++) {
                       res[m] = tokens[k];
-
                       m++;
 				}
 				System.out.println(Arrays.toString(res));
 				System.out.println(res.length);
 				MinPQ<String> stringArray = new MinPQ<String>(res, res.length);
 				System.out.println(stringArray.isMinHeap());
+				break;
 
 
 			}

@@ -42,6 +42,6 @@ Starting audit...
 [ERROR] F:\6057_ADS1\Module 13\13.1 isMinHeap\Solution.java:64:36: 'for' is not followed by whitespace. [WhitespaceAfter]
 [ERROR] F:\6057_ADS1\Module 13\13.1 isMinHeap\Solution.java:64:49: '<' is not preceded with whitespace. [WhitespaceAround]
 [ERROR] F:\6057_ADS1\Module 13\13.1 isMinHeap\Solution.java:64:50: '<' is not followed by whitespace. [WhitespaceAround]
-[ERROR] F:\6057_ADS1\Module 13\13.1 isMinHeap\Solution.java:71: Line is longer than 80 characters (found 95). [LineLength]
+[ERROR] F:\6057_ADS1\Module 13\13.1 isMinHeap\Solution.java:70: Line is longer than 80 characters (found 95). [LineLength]
 Audit done.
 Checkstyle ends with 44 errors.

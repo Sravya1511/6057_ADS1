@@ -18,7 +18,7 @@ Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 9
 	at MinPQ.isMinHeap(Solution.java:45)
 	at MinPQ.isMinHeap(Solution.java:45)
 	at MinPQ.isMinHeap(Solution.java:34)
-	at Solution.main(Solution.java:72)
+	at Solution.main(Solution.java:71)
 ----------------------------------------
 ########## Testcase 1: Failed ##########
 Expected Output: 
@@ -33,37 +33,6 @@ Your Output:
 11
 [null, X, T, S, R, P, O, M, L, E, E, A]
 12
-1
-false
-[XX, TT, SS, RR, PP]
-5
-[null, XX, TT, SS, RR, PP]
-6
-1
-false
-[X, T, S, R, P, O, M, L, E, E, A]
-11
-[null, X, T, S, R, P, O, M, L, E, E, A]
-12
-1
-false
-[X, T, S, R, P, O]
-6
-[null, X, T, S, R, P, O]
-7
-1
-false
-[B, X, T, S, R, P, O, M, L, E, E, A]
-12
-[null, B, X, T, S, R, P, O, M, L, E, E, A]
-13
-1
-2
-false
-[X, T, S, E, A]
-5
-[null, X, T, S, E, A]
-6
 1
 false
 ----------------------------------------
