@@ -1,0 +1,98 @@
+########## Testcase 0: Failed ##########
+Expected Output: 
+true
+false
+true
+false
+Your Output: 
+[A, B, C, F, G, I, I, Z]
+8
+[null, A, B, C, F, G, I, I, Z]
+9
+1
+2
+4
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 9
+	at MinPQ.greater(Solution.java:15)
+	at MinPQ.isMinHeap(Solution.java:44)
+	at MinPQ.isMinHeap(Solution.java:45)
+	at MinPQ.isMinHeap(Solution.java:45)
+	at MinPQ.isMinHeap(Solution.java:34)
+	at Solution.main(Solution.java:72)
+----------------------------------------
+########## Testcase 1: Failed ##########
+Expected Output: 
+false
+false
+false
+false
+false
+false
+Your Output: 
+[X, T, S, R, P, O, M, L, E, E, A]
+11
+[null, X, T, S, R, P, O, M, L, E, E, A]
+12
+1
+false
+[XX, TT, SS, RR, PP]
+5
+[null, XX, TT, SS, RR, PP]
+6
+1
+false
+[X, T, S, R, P, O, M, L, E, E, A]
+11
+[null, X, T, S, R, P, O, M, L, E, E, A]
+12
+1
+false
+[X, T, S, R, P, O]
+6
+[null, X, T, S, R, P, O]
+7
+1
+false
+[B, X, T, S, R, P, O, M, L, E, E, A]
+12
+[null, B, X, T, S, R, P, O, M, L, E, E, A]
+13
+1
+2
+false
+[X, T, S, E, A]
+5
+[null, X, T, S, E, A]
+6
+1
+false
+----------------------------------------
+########## Testcase 2: Failed ##########
+Expected Output: 
+true
+true
+true
+false
+false
+false
+true
+false
+Your Output: 
+
+----------------------------------------
+########## Testcase 3: Failed ##########
+Expected Output: 
+true
+false
+false
+Your Output: 
+
+----------------------------------------
+########## Testcase 4: Failed ##########
+Expected Output: 
+true
+true
+false
+Your Output: 
+
+----------------------------------------
