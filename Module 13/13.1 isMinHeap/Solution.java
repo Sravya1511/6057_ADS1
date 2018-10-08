@@ -81,17 +81,17 @@ class Solution {
 			case "Float":
 			for(int i = 0; i<n; i++) {
 				String temp = input.nextLine();
-				if(temp.equals("")) {
-					System.out.println("false");
-					return;
-				}
-				String[] tokens = temp.split(",");
-				// System.out.println(tokens[]);
-    //             if(tokens[0].equals(null)) {
+				// if(temp.equals("")) {
 				// 	System.out.println("false");
-				// 	System.out.println("hi");
 				// 	return;
 				// }
+				String[] tokens = temp.split(",");
+				// System.out.println(tokens[]);
+                if(tokens[0].equals("")) {
+					System.out.println("false");
+					// System.out.println("hi");
+					return;
+				}
 				Float[] res = new Float[tokens.length+1];
 				int m = 1;
 

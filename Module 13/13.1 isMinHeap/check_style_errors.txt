@@ -39,7 +39,7 @@ Starting audit...
 [ERROR] F:\6057_ADS1\Module 13\13.1 isMinHeap\Solution.java:82:28: 'for' is not followed by whitespace. [WhitespaceAfter]
 [ERROR] F:\6057_ADS1\Module 13\13.1 isMinHeap\Solution.java:82:41: '<' is not preceded with whitespace. [WhitespaceAround]
 [ERROR] F:\6057_ADS1\Module 13\13.1 isMinHeap\Solution.java:82:42: '<' is not followed by whitespace. [WhitespaceAround]
-[ERROR] F:\6057_ADS1\Module 13\13.1 isMinHeap\Solution.java:84:35: 'if' is not followed by whitespace. [WhitespaceAfter]
+[ERROR] F:\6057_ADS1\Module 13\13.1 isMinHeap\Solution.java:90:19: 'if' is not followed by whitespace. [WhitespaceAfter]
 [ERROR] F:\6057_ADS1\Module 13\13.1 isMinHeap\Solution.java:95:70: '+' is not preceded with whitespace. [WhitespaceAround]
 [ERROR] F:\6057_ADS1\Module 13\13.1 isMinHeap\Solution.java:95:71: '+' is not followed by whitespace. [WhitespaceAround]
 [ERROR] F:\6057_ADS1\Module 13\13.1 isMinHeap\Solution.java:98: 'if' construct must use '{}'s. [NeedBraces]
