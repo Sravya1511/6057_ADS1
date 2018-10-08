@@ -72,10 +72,10 @@ class Solution {
 				// System.out.println(tokens.length);
 
 				String[] res = new String[tokens.length+1];
-				int m = 1;
+				// int m = 1;
 				for(int k = 0; k<tokens.length; k++) {
-                      res[m] = tokens[k];
-                      m++;
+                      res[k+1] = tokens[k];
+
 				}
 				// System.out.println(Arrays.toString(res));
 				// System.out.println(res.length);

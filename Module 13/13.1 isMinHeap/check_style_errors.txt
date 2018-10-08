@@ -34,6 +34,8 @@ Starting audit...
 [ERROR] F:\6057_ADS1\Module 13\13.1 isMinHeap\Solution.java:76:36: 'for' is not followed by whitespace. [WhitespaceAfter]
 [ERROR] F:\6057_ADS1\Module 13\13.1 isMinHeap\Solution.java:76:49: '<' is not preceded with whitespace. [WhitespaceAround]
 [ERROR] F:\6057_ADS1\Module 13\13.1 isMinHeap\Solution.java:76:50: '<' is not followed by whitespace. [WhitespaceAround]
+[ERROR] F:\6057_ADS1\Module 13\13.1 isMinHeap\Solution.java:77:28: '+' is not preceded with whitespace. [WhitespaceAround]
+[ERROR] F:\6057_ADS1\Module 13\13.1 isMinHeap\Solution.java:77:29: '+' is not followed by whitespace. [WhitespaceAround]
 [ERROR] F:\6057_ADS1\Module 13\13.1 isMinHeap\Solution.java:82: Line is longer than 80 characters (found 95). [LineLength]
 [ERROR] F:\6057_ADS1\Module 13\13.1 isMinHeap\Solution.java:87:28: 'for' is not followed by whitespace. [WhitespaceAfter]
 [ERROR] F:\6057_ADS1\Module 13\13.1 isMinHeap\Solution.java:87:41: '<' is not preceded with whitespace. [WhitespaceAround]
@@ -63,4 +65,4 @@ Starting audit...
 [ERROR] F:\6057_ADS1\Module 13\13.1 isMinHeap\Solution.java:118:50: '<' is not followed by whitespace. [WhitespaceAround]
 [ERROR] F:\6057_ADS1\Module 13\13.1 isMinHeap\Solution.java:122: Line is longer than 80 characters (found 95). [LineLength]
 Audit done.
-Checkstyle ends with 63 errors.
+Checkstyle ends with 65 errors.
