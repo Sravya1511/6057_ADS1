@@ -81,7 +81,10 @@ class Solution {
 			case "Float":
 			for(int i = 0; i<n; i++) {
 				String[] tokens = input.nextLine().split(",");
-				Float[] res = new Float[tokens.length+1];
+				if(tokens.length == 0) {
+					System.out.println("false");
+				} else {
+					Float[] res = new Float[tokens.length+1];
 				int m = 1;
 				for(int k = 0; k<tokens.length; k++) {
                       res[m] = Float.parseFloat(tokens[k]);
@@ -89,11 +92,12 @@ class Solution {
 				}
 				MinPQ<Float> flArray = new MinPQ<Float>(res);
 				System.out.println(flArray.isMinHeap());
+				}
+
 			}
 			break;
 			case "Double":
 			for(int i = 0; i<n; i++) {
-
 				String[] tokens = input.nextLine().split(",");
 				Double[] res = new Double[tokens.length+1];
 				int m = 1;
