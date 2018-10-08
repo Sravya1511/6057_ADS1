@@ -81,7 +81,7 @@ class Solution {
 			case "Float":
 			for(int i = 0; i<n; i++) {
 				String[] tokens = input.nextLine().split(",");
-				if(tokens.length == 0) {
+				if(tokens[0].equals(null)) {
 					System.out.println("false");
 				} else {
 					Float[] res = new Float[tokens.length+1];
