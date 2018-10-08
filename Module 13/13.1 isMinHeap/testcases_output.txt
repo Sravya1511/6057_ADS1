@@ -5,9 +5,9 @@ false
 true
 false
 Your Output: 
-Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 8
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 9
 	at MinPQ.greater(Solution.java:15)
-	at MinPQ.isMinHeap(Solution.java:43)
+	at MinPQ.isMinHeap(Solution.java:44)
 	at MinPQ.isMinHeap(Solution.java:45)
 	at MinPQ.isMinHeap(Solution.java:45)
 	at MinPQ.isMinHeap(Solution.java:34)
