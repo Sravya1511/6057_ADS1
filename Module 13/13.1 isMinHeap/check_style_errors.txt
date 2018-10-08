@@ -1,5 +1,6 @@
 Starting audit...
 [ERROR] F:\6057_ADS1\Module 13\13.1 isMinHeap\Solution.java:0: File does not end with a newline. [NewlineAtEndOfFile]
+[ERROR] F:\6057_ADS1\Module 13\13.1 isMinHeap\Solution.java:3:8: Unused import - java.util.Arrays. [UnusedImports]
 [ERROR] F:\6057_ADS1\Module 13\13.1 isMinHeap\Solution.java:4: Missing a Javadoc comment. [JavadocType]
 [ERROR] F:\6057_ADS1\Module 13\13.1 isMinHeap\Solution.java:5:1: File contains tab characters (this is the first instance). [FileTabCharacter]
 [ERROR] F:\6057_ADS1\Module 13\13.1 isMinHeap\Solution.java:5:10: Missing a Javadoc comment. [JavadocVariable]
@@ -44,4 +45,4 @@ Starting audit...
 [ERROR] F:\6057_ADS1\Module 13\13.1 isMinHeap\Solution.java:64:50: '<' is not followed by whitespace. [WhitespaceAround]
 [ERROR] F:\6057_ADS1\Module 13\13.1 isMinHeap\Solution.java:70: Line is longer than 80 characters (found 95). [LineLength]
 Audit done.
-Checkstyle ends with 44 errors.
+Checkstyle ends with 45 errors.

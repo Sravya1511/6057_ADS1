@@ -36,7 +36,7 @@ class MinPQ<E extends Comparable<E>> {
 
     // is subtree of pq[1..n] rooted at k a min heap?
     private boolean isMinHeap(int k) {
-    	System.out.println(k);
+    	// System.out.println(k);+
         if (k > n) return true;
         int left = 2*k;
         int right = 2*k + 1;
@@ -56,8 +56,8 @@ class Solution {
 			for(int i = 0; i<n; i++) {
 
 				String[] tokens = input.nextLine().split(",");
-				System.out.println(Arrays.toString(tokens));
-				System.out.println(tokens.length);
+				// System.out.println(Arrays.toString(tokens));
+				// System.out.println(tokens.length);
 
 				String[] res = new String[tokens.length+1];
 				int m = 1;
@@ -65,8 +65,8 @@ class Solution {
                       res[m] = tokens[k];
                       m++;
 				}
-				System.out.println(Arrays.toString(res));
-				System.out.println(res.length);
+				// System.out.println(Arrays.toString(res));
+				// System.out.println(res.length);
 				MinPQ<String> stringArray = new MinPQ<String>(res, res.length);
 				System.out.println(stringArray.isMinHeap());
 				break;
