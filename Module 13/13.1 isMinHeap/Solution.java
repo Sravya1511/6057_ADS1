@@ -10,6 +10,9 @@ import java.util.Scanner;
  * @param      <E>   { array of generic type }
  */
 class MinPQ<E extends Comparable<E>> {
+    /**
+     * pq array of generic type.
+     */
     private E[] pq;
      /**
       * Constructs the object.
