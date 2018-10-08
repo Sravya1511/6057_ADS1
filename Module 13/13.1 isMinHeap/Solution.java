@@ -1,63 +1,46 @@
 import java.util.Scanner;
 import java.util.Comparator;
 import java.util.Arrays;
+/**
+ * Class for minpq
+ * this class checks if the elements are inserted in binary heap order or not.
+ * The time complexity is O(logN).
+ *
+ * @param      <E>   { array of generic type }
+ */
 class MinPQ<E extends Comparable<E>> {
-	// E[] pq;
-	// int n;
-	// Comparator<E> comparator;
-	// MinPQ(E[] array, int size) {
- //        pq = array;
- //        n = size;
-	// }
+	 E[] pq;
+	 /**
+	  * Constructs the object.
+	  *
+	  * @param      array  The array of generic type.
+	  */
 
-	public boolean isMinHeap(E[] pq) {
-		int n = pq.length-1;
-          while(n>1) {
-          	if(pq[n].compareTo(pq[n/2]) >= 0) {
+	MinPQ(E[] array) {
+     pq = array;
+
+	}
+	/**
+	 * The method determines if the array is minimum priority queue or not.
+	 *
+	 * @return     True if minimum heap, False otherwise.
+	 */
+
+	public boolean isMinHeap() {
+		int n = pq.length - 1;
+          while(n > 1) {
+          	if (pq[n].compareTo(pq[n/2]) >= 0) {
           		n = -1;
-          	}
-          	else {
+          	} else {
           		return false;
           	}
           }
           return true;
 	}
-
-// 	private boolean greater(int i, int j) {
-//         if (comparator == null) {
-//             return ((Comparable<E>) pq[i]).compareTo( pq[j]) > 0;
-//         }
-//         else {
-//             return comparator.compare(pq[i], pq[j]) > 0;
-//         }
-//     }
-//      // @Override
-//     // public int compareTo(MinPQ) {
-//     //     this.pq
-//     // }
-
-//     private void exch(int i, int j) {
-//         E swap = pq[i];
-//         pq[i] = pq[j];
-//         pq[j] = swap;
-//     }
-
-//     // is pq[1..N] a min heap?
-//     public boolean isMinHeap() {
-//         return isMinHeap(1);
-//     }
-
-//     // is subtree of pq[1..n] rooted at k a min heap?
-//     private boolean isMinHeap(int k) {
-//     	// System.out.println(k);+
-//         if (k > n) return true;
-//         int left = 2*k;
-//         int right = 2*k + 1;
-//         if (left  <= n && greater(k, left))  return false;
-//         if (right <= n && greater(k, right)) return false;
-//         return isMinHeap(left) && isMinHeap(right);
-//     }
 }
+/**
+ * Class for solution.
+ */
 
 class Solution {
 	public static void main(String[] args) {
@@ -69,8 +52,6 @@ class Solution {
 			for(int i = 0; i<n; i++) {
 
 				String[] tokens = input.nextLine().split(",");
-				// System.out.println(Arrays.toString(tokens));
-				// System.out.println(tokens.length);
 
 				String[] res = new String[tokens.length+1];
 				// int m = 1;
@@ -78,10 +59,9 @@ class Solution {
                       res[k+1] = tokens[k];
 
 				}
-				// System.out.println(Arrays.toString(res));
-				// System.out.println(res.length);
-				MinPQ<String> stringArray = new MinPQ<String>();
-				System.out.println(stringArray.isMinHeap(res));
+
+				MinPQ<String> stringArray = new MinPQ<String>(res);
+				System.out.println(stringArray.isMinHeap());
 			}
 			break;
 			case "Integer":
@@ -94,8 +74,8 @@ class Solution {
                       res[k+1] = Integer.parseInt(tokens[k]);
 
 				}
-				MinPQ<Integer> intArray = new MinPQ<Integer>();
-				System.out.println(intArray.isMinHeap(res));
+				MinPQ<Integer> intArray = new MinPQ<Integer>(res);
+				System.out.println(intArray.isMinHeap());
 			}
 			break;
 			case "Float":
@@ -107,8 +87,8 @@ class Solution {
                       res[m] = Float.parseFloat(tokens[k]);
                       m++;
 				}
-				MinPQ<Float> flArray = new MinPQ<Float>();
-				System.out.println(flArray.isMinHeap(res));
+				MinPQ<Float> flArray = new MinPQ<Float>(res);
+				System.out.println(flArray.isMinHeap());
 			}
 			break;
 			case "Double":
@@ -121,12 +101,10 @@ class Solution {
                       res[m] = Double.parseDouble(tokens[k]);
                       m++;
 				}
-				MinPQ<Double> doubleArray = new MinPQ<Double>();
-				System.out.println(doubleArray.isMinHeap(res));
+				MinPQ<Double> doubleArray = new MinPQ<Double>(res);
+				System.out.println(doubleArray.isMinHeap());
 			}
 			break;
-
 		}
-
 	}
 }
