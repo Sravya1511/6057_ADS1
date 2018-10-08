@@ -83,6 +83,7 @@ class Solution {
 				String[] tokens = input.nextLine().split(",");
 				if(tokens[0].equals(null)) {
 					System.out.println("false");
+					break;
 				} else {
 					Float[] res = new Float[tokens.length+1];
 				int m = 1;
