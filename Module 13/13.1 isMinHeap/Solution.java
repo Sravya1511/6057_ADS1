@@ -10,40 +10,52 @@ class MinPQ<E extends Comparable<E>> {
         n = size;
 	}
 
-	private boolean greater(int i, int j) {
-        if (comparator == null) {
-            return ((Comparable<E>) pq[i]).compareTo( pq[j]) > 0;
-        }
-        else {
-            return comparator.compare(pq[i], pq[j]) > 0;
-        }
-    }
-     // @Override
-    // public int compareTo(MinPQ) {
-    //     this.pq
-    // }
+	public boolean isMinHeap() {
+          while(n>1) {
+          	if(pq[n].compareTo(pq[n/2]) >= 0) {
+          		n = -1;
+          	}
+          	else {
+          		return false;
+          	}
+          }
+          return true;
+	}
 
-    private void exch(int i, int j) {
-        E swap = pq[i];
-        pq[i] = pq[j];
-        pq[j] = swap;
-    }
+// 	private boolean greater(int i, int j) {
+//         if (comparator == null) {
+//             return ((Comparable<E>) pq[i]).compareTo( pq[j]) > 0;
+//         }
+//         else {
+//             return comparator.compare(pq[i], pq[j]) > 0;
+//         }
+//     }
+//      // @Override
+//     // public int compareTo(MinPQ) {
+//     //     this.pq
+//     // }
 
-    // is pq[1..N] a min heap?
-    public boolean isMinHeap() {
-        return isMinHeap(1);
-    }
+//     private void exch(int i, int j) {
+//         E swap = pq[i];
+//         pq[i] = pq[j];
+//         pq[j] = swap;
+//     }
 
-    // is subtree of pq[1..n] rooted at k a min heap?
-    private boolean isMinHeap(int k) {
-    	// System.out.println(k);+
-        if (k > n) return true;
-        int left = 2*k;
-        int right = 2*k + 1;
-        if (left  <= n && greater(k, left))  return false;
-        if (right <= n && greater(k, right)) return false;
-        return isMinHeap(left) && isMinHeap(right);
-    }
+//     // is pq[1..N] a min heap?
+//     public boolean isMinHeap() {
+//         return isMinHeap(1);
+//     }
+
+//     // is subtree of pq[1..n] rooted at k a min heap?
+//     private boolean isMinHeap(int k) {
+//     	// System.out.println(k);+
+//         if (k > n) return true;
+//         int left = 2*k;
+//         int right = 2*k + 1;
+//         if (left  <= n && greater(k, left))  return false;
+//         if (right <= n && greater(k, right)) return false;
+//         return isMinHeap(left) && isMinHeap(right);
+//     }
 }
 
 class Solution {
