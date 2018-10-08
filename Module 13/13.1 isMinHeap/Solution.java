@@ -71,6 +71,19 @@ class Solution {
 				System.out.println(stringArray.isMinHeap());
 			}
 			break;
+			case "Integer":
+			for(int i = 0; i<n; i++) {
+
+				String[] tokens = input.nextLine().split(",");
+				Integer[] res = new Integer[tokens.length+1];
+				int m = 1;
+				for(int k = 0; k<tokens.length; k++) {
+                      res[m] = Integer.parseInt(tokens[k]);
+                      m++;
+				}
+				MinPQ<Integer> intArray = new MinPQ<Integer>(res, res.length);
+				System.out.println(intArray.isMinHeap());
+			}
 
 		}
 
