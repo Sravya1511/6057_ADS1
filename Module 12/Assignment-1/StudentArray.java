@@ -84,13 +84,14 @@ class StudentArray {
 			} else if (meritArray[i].getReservation().equals("BC") && c != bcVacancies) {
                 res[count++] = meritArray[i];
                 c++;
-			} else if (x < stVacancies) {
-				res[count++] = meritArray[i];
-			} else if (y < scVacancies) {
-				res[count++] = meritArray[i];
-			} else if (z < bcVacancies) {
-				res[count++] = meritArray[i];
 			}
+			//  else if (x < stVacancies) {
+			// 	res[count++] = meritArray[i];
+			// } else if (y < scVacancies) {
+			// 	res[count++] = meritArray[i];
+			// } else if (z < bcVacancies) {
+			// 	res[count++] = meritArray[i];
+			// }
 		}
 		return res;
 	}
