@@ -99,8 +99,7 @@ class Solution {
 			}
 			case "Float":
 			for(int i = 0; i<n; i++) {
-
-				String[] tokens = input.nextLine().split(",");
+				String[] tokens = input.next().split(",");
 				Float[] res = new Float[tokens.length+1];
 				int m = 1;
 				for(int k = 0; k<tokens.length; k++) {
