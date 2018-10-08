@@ -2,15 +2,16 @@ import java.util.Scanner;
 import java.util.Comparator;
 import java.util.Arrays;
 class MinPQ<E extends Comparable<E>> {
-	E[] pq;
-	int n;
-	Comparator<E> comparator;
-	MinPQ(E[] array, int size) {
-        pq = array;
-        n = size;
-	}
+	// E[] pq;
+	// int n;
+	// Comparator<E> comparator;
+	// MinPQ(E[] array, int size) {
+ //        pq = array;
+ //        n = size;
+	// }
 
-	public boolean isMinHeap() {
+	public boolean isMinHeap(E[] pq) {
+		int n = pq.length-1;
           while(n>1) {
           	if(pq[n].compareTo(pq[n/2]) >= 0) {
           		n = -1;
@@ -79,8 +80,8 @@ class Solution {
 				}
 				// System.out.println(Arrays.toString(res));
 				// System.out.println(res.length);
-				MinPQ<String> stringArray = new MinPQ<String>(res, res.length);
-				System.out.println(stringArray.isMinHeap());
+				MinPQ<String> stringArray = new MinPQ<String>();
+				System.out.println(stringArray.isMinHeap(res));
 			}
 			break;
 			case "Integer":
@@ -93,8 +94,8 @@ class Solution {
                       res[m] = Integer.parseInt(tokens[k]);
                       m++;
 				}
-				MinPQ<Integer> intArray = new MinPQ<Integer>(res, res.length);
-				System.out.println(intArray.isMinHeap());
+				MinPQ<Integer> intArray = new MinPQ<Integer>();
+				System.out.println(intArray.isMinHeap(res));
 			}
 			case "Float":
 			for(int i = 0; i<n; i++) {
@@ -106,8 +107,8 @@ class Solution {
                       res[m] = Float.parseFloat(tokens[k]);
                       m++;
 				}
-				MinPQ<Float> flArray = new MinPQ<Float>(res, res.length);
-				System.out.println(flArray.isMinHeap());
+				MinPQ<Float> flArray = new MinPQ<Float>();
+				System.out.println(flArray.isMinHeap(res));
 			}
 			case "Double":
 			for(int i = 0; i<n; i++) {
@@ -119,8 +120,8 @@ class Solution {
                       res[m] = Double.parseDouble(tokens[k]);
                       m++;
 				}
-				MinPQ<Double> doubleArray = new MinPQ<Double>(res, res.length);
-				System.out.println(doubleArray.isMinHeap());
+				MinPQ<Double> doubleArray = new MinPQ<Double>();
+				System.out.println(doubleArray.isMinHeap(res));
 			}
 
 		}

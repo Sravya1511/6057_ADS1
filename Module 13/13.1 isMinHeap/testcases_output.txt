@@ -1,15 +1,16 @@
-########## Testcase 0: Failed ##########
+########## Testcase 0: Passed ##########
 Expected Output: 
 true
 false
 true
 false
 Your Output: 
-Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 9
-	at MinPQ.isMinHeap(Solution.java:15)
-	at Solution.main(Solution.java:83)
+true
+false
+true
+false
 ----------------------------------------
-########## Testcase 1: Failed ##########
+########## Testcase 1: Passed ##########
 Expected Output: 
 false
 false
@@ -18,9 +19,12 @@ false
 false
 false
 Your Output: 
-Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 12
-	at MinPQ.isMinHeap(Solution.java:15)
-	at Solution.main(Solution.java:83)
+false
+false
+false
+false
+false
+false
 ----------------------------------------
 ########## Testcase 2: Failed ##########
 Expected Output: 
@@ -33,19 +37,27 @@ false
 true
 false
 Your Output: 
-Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 10
-	at MinPQ.isMinHeap(Solution.java:15)
-	at Solution.main(Solution.java:97)
+true
+true
+true
+false
+false
+false
+true
+false
+Exception in thread "main" java.util.NoSuchElementException: No line found
+	at java.base/java.util.Scanner.nextLine(Unknown Source)
+	at Solution.main(Solution.java:103)
 ----------------------------------------
-########## Testcase 3: Failed ##########
+########## Testcase 3: Passed ##########
 Expected Output: 
 true
 false
 false
 Your Output: 
-Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 325
-	at MinPQ.isMinHeap(Solution.java:15)
-	at Solution.main(Solution.java:123)
+true
+false
+false
 ----------------------------------------
 ########## Testcase 4: Failed ##########
 Expected Output: 
@@ -53,7 +65,11 @@ true
 true
 false
 Your Output: 
-Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 3
-	at MinPQ.isMinHeap(Solution.java:15)
-	at Solution.main(Solution.java:110)
+true
+true
+Exception in thread "main" java.lang.NumberFormatException: empty String
+	at java.base/jdk.internal.math.FloatingDecimal.readJavaFormatString(Unknown Source)
+	at java.base/jdk.internal.math.FloatingDecimal.parseFloat(Unknown Source)
+	at java.base/java.lang.Float.parseFloat(Unknown Source)
+	at Solution.main(Solution.java:107)
 ----------------------------------------
