@@ -128,7 +128,7 @@ class StudentArray {
 				result[i] = res[i];
 			}
 			Insertion insertion = new Insertion();
-			insertion.sort(result, Student.totalComparator);
+			insertion.sort(result, Student.meritComparator);
 			return result;
 	}
 
