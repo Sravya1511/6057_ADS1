@@ -476,7 +476,7 @@ new Comparator<Student>() {
         }
     };
 /**
- * getter method
+ * getter method.
  *
  * @return     { returns comparator }
  */
