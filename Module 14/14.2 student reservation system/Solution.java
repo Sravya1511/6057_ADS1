@@ -243,6 +243,13 @@ final class Solution {
  * The time complexity is O(N^2).
  */
 class Insertion {
+    /**
+     * Constructs the object.
+     */
+
+    Insertion() {
+
+    }
 
     /**
      * sorts the object array.
@@ -349,7 +356,9 @@ class Student {
         this.total = Integer.parseInt(t);
         this.reservation = res;
     }
-
+/**
+ * Constructs the object.
+ */
     Student() {
 
     }
@@ -466,7 +475,11 @@ new Comparator<Student>() {
                 return s1.getDay() - s2.getDay();
         }
     };
-
+/**
+ * getter method
+ *
+ * @return     { returns comparator }
+ */
     static Comparator<Student> meritComparator() {
         return meritComparator;
     }
