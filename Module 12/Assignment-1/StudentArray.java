@@ -88,10 +88,7 @@ class StudentArray {
                 c++;
 			}
 		}
-		if(a == x && b == y && c == z) {
-			return res;
-		}
-		else {
+
 			if(a!=stVacancies) {
 				for(int i = openVacancies; i<meritArray.length; i++) {
 					if(!contains(meritArray[i])) {
@@ -126,7 +123,6 @@ class StudentArray {
 				}
 			}
 
-		}
 
 		return res;
 	}
