@@ -1,5 +1,6 @@
 Starting audit...
 [ERROR] F:\6057_ADS1\Module 14\14.2 student reservation system\Solution.java:245:1: Utility classes should not have a public or default constructor. [HideUtilityClassConstructor]
-[ERROR] F:\6057_ADS1\Module 14\14.2 student reservation system\Solution.java:447:35: Variable 'meritComparator' must be private and have accessor methods. [VisibilityModifier]
+[ERROR] F:\6057_ADS1\Module 14\14.2 student reservation system\Solution.java:353:5: Missing a Javadoc comment. [JavadocMethod]
+[ERROR] F:\6057_ADS1\Module 14\14.2 student reservation system\Solution.java:470:5: Missing a Javadoc comment. [JavadocMethod]
 Audit done.
-Checkstyle ends with 2 errors.
+Checkstyle ends with 3 errors.

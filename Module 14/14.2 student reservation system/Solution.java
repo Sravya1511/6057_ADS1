@@ -149,7 +149,7 @@ class StudentArray {
                 result[i] = res[i];
             }
             Insertion insertion = new Insertion();
-            insertion.sort(result, Student.meritComparator);
+            insertion.sort(result, Student.meritComparator());
             return result;
     }
     /**
@@ -218,7 +218,7 @@ final class Solution {
                 token[five], token[six]));
         }
         Insertion insertion = new Insertion();
-        insertion.sort(meritArray, Student.meritComparator);
+        insertion.sort(meritArray, Student.meritComparator());
 
         for (int i = 0; i < number; i++) {
             System.out.println(meritArray[i]);
@@ -349,6 +349,11 @@ class Student {
         this.total = Integer.parseInt(t);
         this.reservation = res;
     }
+
+    Student() {
+
+    }
+
     /**
      * Gets the marks 1.
      *
@@ -444,7 +449,7 @@ class Student {
      * comparator method to compare the marks, total, dob.
      */
 
-public static Comparator<Student> meritComparator =
+private static Comparator<Student> meritComparator =
 new Comparator<Student>() {
         public int compare(final Student s1, final Student s2) {
             if (s1.total - s2.total != 0) {
@@ -461,6 +466,11 @@ new Comparator<Student>() {
                 return s1.getDay() - s2.getDay();
         }
     };
+
+    static Comparator<Student> meritComparator() {
+        return meritComparator;
+    }
+
 // static Comparator<Student> totalComparator = new Comparator<Student>(){
     //  public int compare(Student b1, Student b2) {
     //      return b1.total - b2.total;
