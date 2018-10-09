@@ -4,6 +4,9 @@
 class StudentArray {
 	Student[] studentArray;
 	int size;
+	Student[] res;
+	// res = new Student[30];
+
 
     /**
      * Constructs the object.
@@ -50,11 +53,10 @@ class StudentArray {
 	public Student[] getReservationArray(final int vacancies, final Student[] meritArray,
 		final int openVacancies, final int bcVacancies, final int scVacancies,
 		final int stVacancies) {
-		Student[] res;
+
 		int x = 0;
 		int y = 0;
 		int z = 0;
-		res = new Student[30];
 		int count = 0;
 		for (int i = openVacancies; i < meritArray.length; i++) {
 			if (meritArray[i].getReservation().equals("ST")) {
@@ -78,27 +80,63 @@ class StudentArray {
 			if (meritArray[i].getReservation().equals("ST") && a!=stVacancies) {
                 res[count++] = meritArray[i];
                 a++;
-			}
-			else if(x < stVacancies) {
-                   res[count++] = meritArray[i];
-			}
-			if (meritArray[i].getReservation().equals("SC") && b != scVacancies) {
+			} else if (meritArray[i].getReservation().equals("SC") && b != scVacancies) {
                 res[count++] = meritArray[i];
                 b++;
-			}
-			else if(y < scVacancies) {
-                   res[count++] = meritArray[i];
-			}
-			if (meritArray[i].getReservation().equals("BC") && c != bcVacancies) {
+			} else if (meritArray[i].getReservation().equals("BC") && c != bcVacancies) {
                 res[count++] = meritArray[i];
                 c++;
 			}
-			else if(z < bcVacancies) {
-                   res[count++] = meritArray[i];
+		}
+		if(a == x && b == y && c == z) {
+			return res;
+		}
+		else {
+			if(a!=stVacancies) {
+				for(int i = openVacancies; i<meritArray.length; i++) {
+					if(!contains(meritArray[i])) {
+                         res[count++] = meritArray[i];
+                         a++;
+                         if(a == stVacancies) {
+                         	break;
+                         }
+					}
+				}
 			}
+			if(b!=scVacancies) {
+				for(int i = openVacancies; i<meritArray.length; i++) {
+					if(!contains(meritArray[i])) {
+                         res[count++] = meritArray[i];
+                         b++;
+                         if(b == scVacancies) {
+                         	break;
+                         }
+					}
+				}
+			}
+			if(c!=bcVacancies) {
+				for(int i = openVacancies; i<meritArray.length; i++) {
+					if(!contains(meritArray[i])) {
+                         res[count++] = meritArray[i];
+                         c++;
+                         if(c == bcVacancies) {
+                         	break;
+                         }
+					}
+				}
+			}
+
 		}
 
-
 		return res;
+	}
+
+	public boolean contains(Student name) {
+		for(Student i : res) {
+			if(i.equals(name))  {
+				return true;
+			}
+		}
+		return false;
 	}
 }

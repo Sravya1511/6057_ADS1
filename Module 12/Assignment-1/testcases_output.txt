@@ -1,4 +1,4 @@
-########## Testcase 0: Passed ##########
+########## Testcase 0: Failed ##########
 Expected Output: 
 divya,99,ST
 Deepak,98,Open
@@ -55,14 +55,11 @@ Anjali,38,SC
 Aryan,32,ST
 Shreya,23,SC
 
-divya,99,ST
-Deepak,98,Open
-Ira,93,ST
-tanvi,90,BC
-Aditya,80,ST
-priya,72,SC
+Exception in thread "main" java.lang.NullPointerException
+	at StudentArray.getReservationArray(StudentArray.java:74)
+	at Solution.main(Solution.java:49)
 ----------------------------------------
-########## Testcase 1: Passed ##########
+########## Testcase 1: Failed ##########
 Expected Output: 
 divya,99,ST
 Ishita,99,Open
@@ -135,16 +132,11 @@ Anjali,38,SC
 Aryan,32,ST
 Shreya,23,SC
 
-divya,99,ST
-Ishita,99,Open
-Deepak,98,Open
-Ira,93,ST
-tanvi,90,BC
-Raj,87,BC
-Aditya,80,ST
-priya,72,SC
+Exception in thread "main" java.lang.NullPointerException
+	at StudentArray.getReservationArray(StudentArray.java:74)
+	at Solution.main(Solution.java:49)
 ----------------------------------------
-########## Testcase 2: Passed ##########
+########## Testcase 2: Failed ##########
 Expected Output: 
 divya,99,Open
 tanvi,90,Open
@@ -172,9 +164,9 @@ Priyanka,70,Open
 Tanya,66,BC
 Abhishek,60,BC
 
-divya,99,Open
-Aditya,80,ST
-priya,76,SC
+Exception in thread "main" java.lang.NullPointerException
+	at StudentArray.getReservationArray(StudentArray.java:74)
+	at Solution.main(Solution.java:49)
 ----------------------------------------
 ########## Testcase 3: Failed ##########
 Expected Output: 
@@ -207,12 +199,9 @@ Priyanka,70,Open
 Tanya,66,BC
 Abhishek,60,BC
 
-divya,99,Open
-tanvi,90,ST
-Aditya,80,Open
-priya,76,SC
-priya,76,SC
-Ajay,76,Open
+Exception in thread "main" java.lang.NullPointerException
+	at StudentArray.getReservationArray(StudentArray.java:74)
+	at Solution.main(Solution.java:49)
 ----------------------------------------
 ########## Testcase 4: Failed ##########
 Expected Output: 
@@ -292,8 +281,8 @@ Aryan,32,Open
 shyam,23,Open
 Shreya,23,Open
 
-Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 30
-	at StudentArray.getReservationArray(StudentArray.java:97)
+Exception in thread "main" java.lang.NullPointerException
+	at StudentArray.getReservationArray(StudentArray.java:74)
 	at Solution.main(Solution.java:49)
 ----------------------------------------
 ########## Testcase 5: Failed ##########
@@ -376,7 +365,7 @@ Manoj,32,SC
 Aryan,32,ST
 Shreya,23,SC
 
-Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 30
-	at StudentArray.getReservationArray(StudentArray.java:97)
+Exception in thread "main" java.lang.NullPointerException
+	at StudentArray.getReservationArray(StudentArray.java:74)
 	at Solution.main(Solution.java:49)
 ----------------------------------------
