@@ -56,7 +56,7 @@ class StudentArray {
 		int z = 0;
 		res = new Student[30];
 		int count = 0;
-		for (int i = 0; i < meritArray.length; i++) {
+		for (int i = openVacancies; i < meritArray.length; i++) {
 			if (meritArray[i].getReservation().equals("ST")) {
 				 x++;
 			}
@@ -85,14 +85,8 @@ class StudentArray {
                 res[count++] = meritArray[i];
                 c++;
 			}
-			//  else if (x < stVacancies) {
-			// 	res[count++] = meritArray[i];
-			// } else if (y < scVacancies) {
-			// 	res[count++] = meritArray[i];
-			// } else if (z < bcVacancies) {
-			// 	res[count++] = meritArray[i];
-			// }
 		}
+
 		return res;
 	}
 }
