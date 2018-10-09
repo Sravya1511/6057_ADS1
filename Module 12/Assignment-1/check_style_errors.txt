@@ -15,5 +15,7 @@ Starting audit...
 [ERROR] F:\6057_ADS1\Module 12\Assignment-1\StudentArray.java:78:79: '!=' is not followed by whitespace. [WhitespaceAround]
 [ERROR] F:\6057_ADS1\Module 12\Assignment-1\StudentArray.java:81: Line is longer than 80 characters (found 101). [LineLength]
 [ERROR] F:\6057_ADS1\Module 12\Assignment-1\StudentArray.java:84: Line is longer than 80 characters (found 101). [LineLength]
+[ERROR] F:\6057_ADS1\Module 12\Assignment-1\StudentArray.java:89:19: 'if' is not followed by whitespace. [WhitespaceAfter]
+[ERROR] F:\6057_ADS1\Module 12\Assignment-1\StudentArray.java:94: Line is longer than 80 characters (found 86). [LineLength]
 Audit done.
-Checkstyle ends with 16 errors.
+Checkstyle ends with 18 errors.

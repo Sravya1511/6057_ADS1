@@ -63,7 +63,7 @@ class StudentArray {
             if (meritArray[i].getReservation().equals("SC")) {
             	y++;
             }
-            if (meritArray[i].getReservation().equals("Bc")) {
+            if (meritArray[i].getReservation().equals("BC")) {
             	z++;
             }
 
@@ -86,6 +86,16 @@ class StudentArray {
                 c++;
 			}
 		}
+		if(a == x && b == y && c == z) {
+			return res;
+		}
+		// else {
+		// 	if(x < stVacancies) {
+		// 		for(int i = openVacancies; i<meritArray.length; i++) {
+
+		// 		}
+		// 	}
+		// }
 
 		return res;
 	}
