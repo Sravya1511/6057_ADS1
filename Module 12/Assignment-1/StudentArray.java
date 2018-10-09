@@ -123,9 +123,13 @@ class StudentArray {
 				}
 			}
 		// return res;
+			Student[] result = new Student[count];
+			for(int i = 0; i<count; i++) {
+				result[i] = res[i];
+			}
 			Insertion insertion = new Insertion();
-			insertion.sort(res, Student.totalComparator);
-			return res;
+			insertion.sort(result, Student.totalComparator);
+			return result;
 	}
 
 	public boolean contains(Student name) {
