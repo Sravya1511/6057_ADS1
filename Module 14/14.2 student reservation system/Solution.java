@@ -2,6 +2,7 @@ import java.util.Comparator;
 import java.util.Scanner;
 /**
  * Class for student array.
+ * The student array creates array of student class.
  */
 class StudentArray {
 	Student[] studentArray;
@@ -91,19 +92,19 @@ class StudentArray {
 			}
 		}
 
-			if(a!=stVacancies) {
-				for(int i = openVacancies; i<meritArray.length; i++) {
-					if(!contains(meritArray[i])) {
+			if (a != stVacancies) {
+				for (int i = openVacancies; i < meritArray.length; i++) {
+					if (!contains(meritArray[i])) {
                          res[count++] = meritArray[i];
                          a++;
-                         if(a == stVacancies) {
+                         if (a == stVacancies) {
                          	break;
                          }
 					}
 				}
 			}
-			if(b!=scVacancies) {
-				for(int i = openVacancies; i<meritArray.length; i++) {
+			if (b != scVacancies) {
+				for(int i = openVacancies; i < meritArray.length; i++) {
 					if(!contains(meritArray[i])) {
                          res[count++] = meritArray[i];
                          b++;
@@ -113,8 +114,8 @@ class StudentArray {
 					}
 				}
 			}
-			if(c!=bcVacancies) {
-				for(int i = openVacancies; i<meritArray.length; i++) {
+			if (c != bcVacancies) {
+				for (int i = openVacancies; i < meritArray.length; i++) {
 					if(!contains(meritArray[i])) {
                          res[count++] = meritArray[i];
                          c++;
@@ -126,7 +127,7 @@ class StudentArray {
 			}
 		// return res;
 			Student[] result = new Student[count];
-			for(int i = 0; i<count; i++) {
+			for (int i = 0; i < count; i++) {
 				result[i] = res[i];
 			}
 			Insertion insertion = new Insertion();
