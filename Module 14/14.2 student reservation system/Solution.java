@@ -259,7 +259,7 @@ class Insertion {
      * @param      comparator  The comparator.
      */
 
-    public static void sort(final Object[] a, final Comparator comparator) {
+    public void sort(final Object[] a, final Comparator comparator) {
         int n = a.length;
         for (int i = 0; i < n; i++) {
             for (int j = i; j > 0 && great(a[j], a[j - 1], comparator); j--) {
@@ -277,7 +277,7 @@ class Insertion {
      *
      * @return     { returns boolean }
      */
-    private static  boolean great(final Object v,
+    private boolean great(final Object v,
         final Object w, final Comparator comparator) {
         return comparator.compare(v, w) > 0;
     }
@@ -292,7 +292,7 @@ class Insertion {
      * @param      j     { index of int type }
      */
 
-    private static void exch(final Object[] a, final int i, final int j) {
+    private void exch(final Object[] a, final int i, final int j) {
         Object swap = a[i];
         a[i] = a[j];
         a[j] = swap;
