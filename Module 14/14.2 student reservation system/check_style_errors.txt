@@ -1,13 +1,5 @@
 Starting audit...
-[ERROR] F:\6057_ADS1\Module 14\14.2 student reservation system\Solution.java:8:1: File contains tab characters (this is the first instance). [FileTabCharacter]
-[ERROR] F:\6057_ADS1\Module 14\14.2 student reservation system\Solution.java:49:9: '{' at column 2 should be on the previous line. [LeftCurly]
-[ERROR] F:\6057_ADS1\Module 14\14.2 student reservation system\Solution.java:68: Line is longer than 80 characters (found 86). [LineLength]
-[ERROR] F:\6057_ADS1\Module 14\14.2 student reservation system\Solution.java:128:28: 'if' is not followed by whitespace. [WhitespaceAfter]
-[ERROR] F:\6057_ADS1\Module 14\14.2 student reservation system\Solution.java:217: Line is longer than 80 characters (found 81). [LineLength]
-[ERROR] F:\6057_ADS1\Module 14\14.2 student reservation system\Solution.java:231: Line is longer than 80 characters (found 82). [LineLength]
-[ERROR] F:\6057_ADS1\Module 14\14.2 student reservation system\Solution.java:243:1: Utility classes should not have a public or default constructor. [HideUtilityClassConstructor]
-[ERROR] F:\6057_ADS1\Module 14\14.2 student reservation system\Solution.java:292:30: Parameter a should be final. [FinalParameters]
-[ERROR] F:\6057_ADS1\Module 14\14.2 student reservation system\Solution.java:389: First sentence should end with a period. [JavadocStyle]
-[ERROR] F:\6057_ADS1\Module 14\14.2 student reservation system\Solution.java:451:35: Variable 'meritComparator' must be private and have accessor methods. [VisibilityModifier]
+[ERROR] F:\6057_ADS1\Module 14\14.2 student reservation system\Solution.java:245:1: Utility classes should not have a public or default constructor. [HideUtilityClassConstructor]
+[ERROR] F:\6057_ADS1\Module 14\14.2 student reservation system\Solution.java:447:35: Variable 'meritComparator' must be private and have accessor methods. [VisibilityModifier]
 Audit done.
-Checkstyle ends with 10 errors.
+Checkstyle ends with 2 errors.

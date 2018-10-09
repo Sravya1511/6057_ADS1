@@ -5,19 +5,19 @@ import java.util.Scanner;
  * The student array creates array of student class.
  */
 class StudentArray {
-	/**
-	 * student array of student class.
-	 */
-	private Student[] studentArray;
-	/**
-	 * size of student array of int type.
-	 */
-	private int size;
-	/**
-	 * student array res of type student.
-	 */
-	private Student[] res;
-	// res = new Student[30];
+    /**
+     * student array of student class.
+     */
+    private Student[] studentArray;
+    /**
+     * size of student array of int type.
+     */
+    private int size;
+    /**
+     * student array res of type student.
+     */
+    private Student[] res;
+    // res = new Student[30];
 
 
     /**
@@ -25,154 +25,154 @@ class StudentArray {
      *
      * @param      n     { int n - size of student array }
      */
-	StudentArray(final int n) {
-		studentArray = new Student[n];
-		size = 0;
-	}
+    StudentArray(final int n) {
+        studentArray = new Student[n];
+        size = 0;
+    }
     /**
      * Adds a student.
      * The time complexity is O(1).
      *
      * @param      student  The student of type student
      */
-	public void addStudent(final Student student) {
-		studentArray[size++] = student;
-	}
-	/**
-	 * Gets the array.
-	 * The time complexity is O(N).
-	 *
-	 * @return     The array of student type.
-	 */
+    public void addStudent(final Student student) {
+        studentArray[size++] = student;
+    }
+    /**
+     * Gets the array.
+     * The time complexity is O(N).
+     *
+     * @return     The array of student type.
+     */
 
-	public Student[] getArray()
-	{
-		return studentArray;
-	}
-	/**
-	 * Gets the reservation array.
-	 * The time complexity is O(N).
-	 *
-	 * @param      vacancies      The vacancies of type int.
-	 * @param      meritArray     The merit array of type studnet.
-	 * @param      openVacancies  The open vacancies of type int
-	 * @param      bcVacancies    The bc vacancies of type int.
-	 * @param      scVacancies    The screen vacancies of type int.
-	 * @param      stVacancies    The st vacancies of type int.
-	 *
-	 * @return     The reservation array.
-	 */
+    public Student[] getArray() {
+        return studentArray;
+    }
+    /**
+     * Gets the reservation array.
+     * The time complexity is O(N).
+     *
+     * @param      vacancies      The vacancies of type int.
+     * @param      meritArray     The merit array of type studnet.
+     * @param      openVacancies  The open vacancies of type int
+     * @param      bcVacancies    The bc vacancies of type int.
+     * @param      scVacancies    The screen vacancies of type int.
+     * @param      stVacancies    The st vacancies of type int.
+     *
+     * @return     The reservation array.
+     */
 
-	public Student[] getReservationArray(final int vacancies,
-		final Student[] meritArray,
-		final int openVacancies, final int bcVacancies, final int scVacancies,
-		final int stVacancies) {
-		final int th = 30;
-	    res = new Student[th];
-		int x = 0;
-		int y = 0;
-		int z = 0;
-		int count = 0;
-		for (int i = openVacancies; i < meritArray.length; i++) {
-			if (meritArray[i].getReservation().equals("ST")) {
-				 x++;
-			}
+    public Student[] getReservationArray(final int vacancies,
+        final Student[] meritArray,
+        final int openVacancies, final int bcVacancies,
+        final int scVacancies,
+        final int stVacancies) {
+        final int th = 30;
+        res = new Student[th];
+        int x = 0;
+        int y = 0;
+        int z = 0;
+        int count = 0;
+        for (int i = openVacancies; i < meritArray.length; i++) {
+            if (meritArray[i].getReservation().equals("ST")) {
+                 x++;
+            }
             if (meritArray[i].getReservation().equals("SC")) {
-            	y++;
+                y++;
             }
             if (meritArray[i].getReservation().equals("BC")) {
-            	z++;
+                z++;
             }
 
-		}
-		for (int i = 0; i < openVacancies; i++) {
-			res[count++] = meritArray[i];
-		}
+        }
+        for (int i = 0; i < openVacancies; i++) {
+            res[count++] = meritArray[i];
+        }
         int a = 0;
         int b = 0;
         int c = 0;
-		for (int i = openVacancies; i < meritArray.length; i++) {
-			if (meritArray[i].getReservation().equals("ST")
-				&& a != stVacancies) {
+        for (int i = openVacancies; i < meritArray.length; i++) {
+            if (meritArray[i].getReservation().equals("ST")
+                && a != stVacancies) {
                 res[count++] = meritArray[i];
                 a++;
-			} else if (meritArray[i].getReservation().equals("SC")
-				&& b != scVacancies) {
+            } else if (meritArray[i].getReservation().equals("SC")
+                && b != scVacancies) {
                 res[count++] = meritArray[i];
                 b++;
             } else if (meritArray[i].getReservation().equals("BC")
-            	&& c != bcVacancies) {
+                && c != bcVacancies) {
                 res[count++] = meritArray[i];
                 c++;
-			}
-		}
+            }
+        }
 
-			if (a != stVacancies) {
-				for (int i = openVacancies;
-					i < meritArray.length; i++) {
-					if (!contains(meritArray[i])) {
+            if (a != stVacancies) {
+                for (int i = openVacancies;
+                    i < meritArray.length; i++) {
+                    if (!contains(meritArray[i])) {
                          res[count++] = meritArray[i];
                          a++;
                          if (a == stVacancies) {
-                         	break;
+                            break;
                          }
-					}
-				}
-			}
-			if (b != scVacancies) {
-				for (int i = openVacancies;
-					i < meritArray.length; i++) {
-					if (!contains(meritArray[i])) {
+                    }
+                }
+            }
+            if (b != scVacancies) {
+                for (int i = openVacancies;
+                    i < meritArray.length; i++) {
+                    if (!contains(meritArray[i])) {
                          res[count++] = meritArray[i];
                          b++;
-                         if(b == scVacancies) {
-                         	break;
+                         if (b == scVacancies) {
+                            break;
                          }
-					}
-				}
-			}
-			if (c != bcVacancies) {
-				for (int i = openVacancies;
-					i < meritArray.length; i++) {
-					if (!contains(meritArray[i])) {
+                    }
+                }
+            }
+            if (c != bcVacancies) {
+                for (int i = openVacancies;
+                    i < meritArray.length; i++) {
+                    if (!contains(meritArray[i])) {
                          res[count++] = meritArray[i];
                          c++;
                          if (c == bcVacancies) {
-                         	break;
+                            break;
                          }
-					}
-				}
-			}
-		// return res;
-			Student[] result = new Student[count];
-			for (int i = 0; i < count; i++) {
-				result[i] = res[i];
-			}
-			Insertion insertion = new Insertion();
-			insertion.sort(result, Student.meritComparator);
-			return result;
-	}
-	/**
-	 * checks if there is element present or not.
-	 * The time complexity is O(N) - worst case.
-	 *
-	 *
-	 * @param      name  The name of student type
-	 *
-	 * @return     { returns boolean  }
-	 */
+                    }
+                }
+            }
+        // return res;
+            Student[] result = new Student[count];
+            for (int i = 0; i < count; i++) {
+                result[i] = res[i];
+            }
+            Insertion insertion = new Insertion();
+            insertion.sort(result, Student.meritComparator);
+            return result;
+    }
+    /**
+     * checks if there is element present or not.
+     * The time complexity is O(N) - worst case.
+     *
+     *
+     * @param      name  The name of student type
+     *
+     * @return     { returns boolean  }
+     */
 
-	public boolean contains(final Student name) {
-		for (Student i : res) {
-			if (i != (null)) {
-			if (i.equals(name))  {
-				return true;
-			}
-			}
+    public boolean contains(final Student name) {
+        for (Student i : res) {
+            if (i != (null)) {
+            if (i.equals(name))  {
+                return true;
+            }
+            }
 
-		}
-		return false;
-	}
+        }
+        return false;
+    }
 }
 
 
@@ -184,43 +184,44 @@ class StudentArray {
 
 
 final class Solution {
-	/**
-	 * Constructs the object.
-	 */
-	private Solution() {
-	}
-	/**
-	 * { reads input  }.
-	 * creates object for Student Array class.
-	 * adds students object to student array class.
-	 *
-	 * @param      args  The arguments
-	 */
-	public static void main(final String[] args) {
-		Scanner input = new Scanner(System.in);
-		final int two = 2;
-		final int three = 3;
-		final int four = 4;
-		final int five = 5;
-		final int six = 6;
-		int number = Integer.parseInt(input.nextLine());
-		int vacancies = Integer.parseInt(input.nextLine());
-		int openVacancies = Integer.parseInt(input.nextLine());
+    /**
+     * Constructs the object.
+     */
+    private Solution() {
+    }
+    /**
+     * { reads input  }.
+     * creates object for Student Array class.
+     * adds students object to student array class.
+     *
+     * @param      args  The arguments
+     */
+    public static void main(final String[] args) {
+        Scanner input = new Scanner(System.in);
+        final int two = 2;
+        final int three = 3;
+        final int four = 4;
+        final int five = 5;
+        final int six = 6;
+        int number = Integer.parseInt(input.nextLine());
+        int vacancies = Integer.parseInt(input.nextLine());
+        int openVacancies = Integer.parseInt(input.nextLine());
         int bcVacancies = Integer.parseInt(input.nextLine());
         int scVacancies = Integer.parseInt(input.nextLine());
         int stVacancies = Integer.parseInt(input.nextLine());
         StudentArray array = new StudentArray(number);
         Student[] meritArray = array.getArray();
         for (int i = 0; i < number; i++) {
-        	String[] token = input.nextLine().split(",");
+            String[] token = input.nextLine().split(",");
             array.addStudent(new Student(token[0], token[1],
-            	token[two], token[three], token[four], token[five], token[six]));
+                token[two], token[three], token[four],
+                token[five], token[six]));
         }
         Insertion insertion = new Insertion();
         insertion.sort(meritArray, Student.meritComparator);
 
         for (int i = 0; i < number; i++) {
-        	System.out.println(meritArray[i]);
+            System.out.println(meritArray[i]);
         }
 
         System.out.println();
@@ -228,26 +229,21 @@ final class Solution {
         Student[] reservationArray;
         reservationArray = new Student[vacancies];
         reservationArray = array.getReservationArray(vacancies,
-        	meritArray, openVacancies, bcVacancies, scVacancies, stVacancies);
+            meritArray, openVacancies, bcVacancies,
+            scVacancies, stVacancies);
 
         for (int i = 0; i < vacancies; i++) {
-        	System.out.println(reservationArray[i]);
+            System.out.println(reservationArray[i]);
         }
 
-	}
+    }
 }
 /**
  * Class for insertion.
  * The time complexity is O(N^2).
  */
 class Insertion {
-    /**
-     * Constructs the object.
-     */
 
-	Insertion() {
-
-	}
     /**
      * sorts the object array.
      * The time complexity is O(N^2).
@@ -256,7 +252,7 @@ class Insertion {
      * @param      comparator  The comparator.
      */
 
-	public static void sort(final Object[] a, final Comparator comparator) {
+    public static void sort(final Object[] a, final Comparator comparator) {
         int n = a.length;
         for (int i = 0; i < n; i++) {
             for (int j = i; j > 0 && great(a[j], a[j - 1], comparator); j--) {
@@ -275,7 +271,7 @@ class Insertion {
      * @return     { returns boolean }
      */
     private static  boolean great(final Object v,
-    	final Object w, final Comparator comparator) {
+        final Object w, final Comparator comparator) {
         return comparator.compare(v, w) > 0;
     }
 
@@ -289,7 +285,7 @@ class Insertion {
      * @param      j     { index of int type }
      */
 
-    private static void exch(Object[] a, final int i, final int j) {
+    private static void exch(final Object[] a, final int i, final int j) {
         Object swap = a[i];
         a[i] = a[j];
         a[j] = swap;
@@ -302,34 +298,34 @@ class Insertion {
  *
  */
 class Student {
-	/**
-	 * name of the student.
-	 */
-	private String name;
-	/**
-	 * date of birth of the student.
-	 */
-	private String dateOfBirth;
-	/**
-	 * marks1 of student.
-	 */
-	private int marks1;
-	/**
-	 * marks2 of student.
-	 */
-	private int marks2;
-	/**
-	 * marks3 of student.
-	 */
-	private int marks3;
-	/**
-	 * total marks of student.
-	 */
-	private int total;
-	/**
-	 * Reservation of student.
-	 */
-	private String reservation;
+    /**
+     * name of the student.
+     */
+    private String name;
+    /**
+     * date of birth of the student.
+     */
+    private String dateOfBirth;
+    /**
+     * marks1 of student.
+     */
+    private int marks1;
+    /**
+     * marks2 of student.
+     */
+    private int marks2;
+    /**
+     * marks3 of student.
+     */
+    private int marks3;
+    /**
+     * total marks of student.
+     */
+    private int total;
+    /**
+     * Reservation of student.
+     */
+    private String reservation;
 
     /**
      * Constructs the object.
@@ -342,22 +338,22 @@ class Student {
      * @param      t     total marks of int type.
      * @param      res   The reservation od string type.
      */
-	Student(final String n, final String dob, final String m1,
-		final String m2,
-		final String m3, final String t, final String res) {
-		this.name = n;
-		this.dateOfBirth = dob;
-		this.marks1 = Integer.parseInt(m1);
-		this.marks2 = Integer.parseInt(m2);
-		this.marks3 = Integer.parseInt(m3);
-		this.total = Integer.parseInt(t);
-		this.reservation = res;
-	}
-	/**
-	 * Gets the marks 1.
-	 *
-	 * @return     The marks 1 of int type.
-	 */
+    Student(final String n, final String dob, final String m1,
+        final String m2,
+        final String m3, final String t, final String res) {
+        this.name = n;
+        this.dateOfBirth = dob;
+        this.marks1 = Integer.parseInt(m1);
+        this.marks2 = Integer.parseInt(m2);
+        this.marks3 = Integer.parseInt(m3);
+        this.total = Integer.parseInt(t);
+        this.reservation = res;
+    }
+    /**
+     * Gets the marks 1.
+     *
+     * @return     The marks 1 of int type.
+     */
 
     public int getMarks1() {
         return marks1;
@@ -387,36 +383,36 @@ class Student {
         return name;
     }
     /**
-     * Gets the year
+     * Gets the year.
      *
      * @return     The year of int type.
      */
 
    public int getYear() {
-		String[] date = dateOfBirth.split("-");
-		int year = Integer.parseInt(date[2]);
-		return year;
-	}
-	/**
-	 * Gets the month.
-	 *
-	 * @return     The month of int type.
-	 */
-	public int getMonth() {
-		String[] date = dateOfBirth.split("-");
-		int month = Integer.parseInt(date[1]);
-		return month;
-	}
-	/**
-	 * Gets the day.
-	 *
-	 * @return     The day of int type.
-	 */
-	public int getDay() {
-		String[] date = dateOfBirth.split("-");
-		int day = Integer.parseInt(date[0]);
-		return day;
-	}
+        String[] date = dateOfBirth.split("-");
+        int year = Integer.parseInt(date[2]);
+        return year;
+    }
+    /**
+     * Gets the month.
+     *
+     * @return     The month of int type.
+     */
+    public int getMonth() {
+        String[] date = dateOfBirth.split("-");
+        int month = Integer.parseInt(date[1]);
+        return month;
+    }
+    /**
+     * Gets the day.
+     *
+     * @return     The day of int type.
+     */
+    public int getDay() {
+        String[] date = dateOfBirth.split("-");
+        int day = Integer.parseInt(date[0]);
+        return day;
+    }
     /**
      * Gets the total.
      *
@@ -434,40 +430,40 @@ class Student {
         return reservation;
     }
 
-	/**
-	 * returns the string containing students name, total, reservation.
-	 *
-	 * @return     String.
-	 */
+    /**
+     * returns the string containing students name, total, reservation.
+     *
+     * @return     String.
+     */
 
-	public String toString() {
-		return this.name + "," + this.total + "," + this.reservation;
-	}
+    public String toString() {
+        return this.name + "," + this.total + "," + this.reservation;
+    }
 
-	/**
-	 * comparator method to compare the marks, total, dob.
-	 */
+    /**
+     * comparator method to compare the marks, total, dob.
+     */
 
 public static Comparator<Student> meritComparator =
 new Comparator<Student>() {
-		public int compare(final Student s1, final Student s2) {
-			if (s1.total - s2.total != 0) {
-				return s1.total - s2.total;
-			} else if (s1.marks3 - s2.marks3 != 0) {
-				return s1.marks3 - s2.marks3;
-			} else if (s1.marks2 - s2.marks2 != 0) {
-				return s1.marks2 - s2.marks2;
-			} else if (s1.getYear() - s2.getYear() != 0) {
-				return s1.getYear() - s2.getYear();
-			} else if (s1.getMonth() - s2.getMonth() != 0) {
-				return s1.getMonth() - s2.getMonth();
-			}
-				return s1.getDay() - s2.getDay();
-		}
-	};
+        public int compare(final Student s1, final Student s2) {
+            if (s1.total - s2.total != 0) {
+                return s1.total - s2.total;
+            } else if (s1.marks3 - s2.marks3 != 0) {
+                return s1.marks3 - s2.marks3;
+            } else if (s1.marks2 - s2.marks2 != 0) {
+                return s1.marks2 - s2.marks2;
+            } else if (s1.getYear() - s2.getYear() != 0) {
+                return s1.getYear() - s2.getYear();
+            } else if (s1.getMonth() - s2.getMonth() != 0) {
+                return s1.getMonth() - s2.getMonth();
+            }
+                return s1.getDay() - s2.getDay();
+        }
+    };
 // static Comparator<Student> totalComparator = new Comparator<Student>(){
-	// 	public int compare(Student b1, Student b2) {
-	// 		return b1.total - b2.total;
-	// 	}
-	// };
+    //  public int compare(Student b1, Student b2) {
+    //      return b1.total - b2.total;
+    //  }
+    // };
 }
