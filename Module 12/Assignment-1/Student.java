@@ -142,4 +142,10 @@ class Student {
 			}
 		}
 	};
+
+	static Comparator<Student> totalComparator = new Comparator<Student>(){
+		public int compare(Student b1, Student b2) {
+			return b1.total - b2.total;
+		}
+	};
 }

@@ -122,9 +122,10 @@ class StudentArray {
 					}
 				}
 			}
-
-
-		return res;
+		// return res;
+			Insertion insertion = new Insertion();
+			insertion.sort(res, Student.totalComparator);
+			return res;
 	}
 
 	public boolean contains(Student name) {
