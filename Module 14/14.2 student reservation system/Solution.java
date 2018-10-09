@@ -80,7 +80,7 @@ class StudentArray {
         int b = 0;
         int c = 0;
 		for (int i = openVacancies; i < meritArray.length; i++) {
-			if (meritArray[i].getReservation().equals("ST") && a!=stVacancies) {
+			if (meritArray[i].getReservation().equals("ST") && a != stVacancies) {
                 res[count++] = meritArray[i];
                 a++;
 			} else if (meritArray[i].getReservation().equals("SC") && b != scVacancies) {
@@ -104,8 +104,8 @@ class StudentArray {
 				}
 			}
 			if (b != scVacancies) {
-				for(int i = openVacancies; i < meritArray.length; i++) {
-					if(!contains(meritArray[i])) {
+				for (int i = openVacancies; i < meritArray.length; i++) {
+					if (!contains(meritArray[i])) {
                          res[count++] = meritArray[i];
                          b++;
                          if(b == scVacancies) {
@@ -134,11 +134,20 @@ class StudentArray {
 			insertion.sort(result, Student.meritComparator);
 			return result;
 	}
+	/**
+	 * checks if there is element present or not.
+	 * The time complexity is O(N) - worst case.
+	 *
+	 *
+	 * @param      name  The name of student type
+	 *
+	 * @return     { returns boolean  }
+	 */
 
-	public boolean contains(Student name) {
-		for(Student i : res) {
-			if(i != (null)) {
-			if(i.equals(name))  {
+	public boolean contains(final Student name) {
+		for (Student i : res) {
+			if (i != (null)) {
+			if (i.equals(name))  {
 				return true;
 			}
 			}
