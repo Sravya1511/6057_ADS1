@@ -95,9 +95,21 @@ class Student {
      * @return     The dob of String type.
      */
 
-    public String getDob() {
-        return dateOfBirth;
-    }
+   public int getYear() {
+		String[] date = dateOfBirth.split("-");
+		int year = Integer.parseInt(date[2]);
+		return year;
+	}
+	public int getMonth() {
+		String[] date = dateOfBirth.split("-");
+		int month = Integer.parseInt(date[1]);
+		return month;
+	}
+	public int getDay() {
+		String[] date = dateOfBirth.split("-");
+		int day = Integer.parseInt(date[0]);
+		return day;
+	}
     /**
      * Gets the total.
      *
@@ -137,9 +149,12 @@ class Student {
 				return s1.marks3 - s2.marks3;
 			} else if (s1.marks2 - s2.marks2 != 0) {
 				return s1.marks2 - s2.marks2;
-			} else {
-				return s1.dateOfBirth.compareTo(s2.dateOfBirth);
+			} else if (s1.getYear() - s2.getYear() != 0) {
+				return s1.getYear() - s2.getYear();
+			} else if (s1.getMonth() - s2.getMonth() != 0) {
+				return s1.getMonth() - s2.getMonth();
 			}
+				return s1.getDay() - s2.getDay();
 		}
 	};
 
