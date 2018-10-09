@@ -53,8 +53,7 @@ class StudentArray {
 	public Student[] getReservationArray(final int vacancies, final Student[] meritArray,
 		final int openVacancies, final int bcVacancies, final int scVacancies,
 		final int stVacancies) {
-	res = new Student[30];
-
+	    res = new Student[30];
 		int x = 0;
 		int y = 0;
 		int z = 0;
@@ -134,9 +133,12 @@ class StudentArray {
 
 	public boolean contains(Student name) {
 		for(Student i : res) {
+			if(i != (null)) {
 			if(i.equals(name))  {
 				return true;
 			}
+			}
+
 		}
 		return false;
 	}
