@@ -37,7 +37,7 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
      * If the key is new, it is inserted.
      * If the key already exists, the value is overrided.
      * It calls rank method to know the index of the key to be placed.
-     * The time complexity is O(N).
+     * The time complexity is O(N). - worst case.
      *
      * @param      key    The key of key type.
      * @param      value  The value of value type.
