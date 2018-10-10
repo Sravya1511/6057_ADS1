@@ -8,67 +8,76 @@ import java.util.Scanner;
  * @param      <Value>  The value
  */
 class SymbolTable<Key extends Comparable<Key>, Value> {
-	private Key[] keys;
-	private Value[] values;
-	private int n = 0;
-	/**
-	 * Constructs the object.
-	 * The keys array of type Key.
-	 * The values array of type value.
-	 *
-	 * @param      size  The size of int type.
-	 */
+    /**
+     * key array of type key.
+     */
+    private Key[] keys;
+    /**
+     * value array of value Type.
+     */
+    private Value[] values;
+    /**
+     * size of the table.
+     */
+    private int n = 0;
+    /**
+     * Constructs the object.
+     * The keys array of type Key.
+     * The values array of type value.
+     *
+     * @param      size  The size of int type.
+     */
 
-	SymbolTable(final int size) {
-		keys = (Key[]) new Comparable[size];
-		values = (Value[]) new Object[size];
-	}
-	/**
-	 * The method inserts key and values.
-	 * If the key is new, it is inserted.
-	 * If the key already exists, the value is overrided.
-	 * It calls rank method to know the index of the key to be placed.
-	 * The time complexity is O(N).
-	 *
-	 * @param      key    The key of key type.
-	 * @param      value  The value of value type.
-	 */
+    SymbolTable(final int size) {
+        keys = (Key[]) new Comparable[size];
+        values = (Value[]) new Object[size];
+    }
+    /**
+     * The method inserts key and values.
+     * If the key is new, it is inserted.
+     * If the key already exists, the value is overrided.
+     * It calls rank method to know the index of the key to be placed.
+     * The time complexity is O(N).
+     *
+     * @param      key    The key of key type.
+     * @param      value  The value of value type.
+     */
 
-	public void put(final Key key, final Value value) {
-		int i = rank(key);
-		if (i < n && keys[i].compareTo(key) == 0) {
+    public void put(final Key key, final Value value) {
+        int i = rank(key);
+        if (i < n && keys[i].compareTo(key) == 0) {
             values[i] = value;
             return;
         }
-		for (int j = n; j > i; j--)  {
+        for (int j = n; j > i; j--)  {
             keys[j] = keys[j - 1];
             values[j] = values[j - 1];
         }
         keys[i] = key;
         values[i] = value;
         n++;
-	}
-	/**
-	 * The key is compared with all the keys and finds its position.
-	 * Rank is found using binary search algorithm.
-	 * The time complexity is O(logN).
-	 *
-	 * @param      key   The key
-	 *
-	 * @return     { description_of_the_return_value }
-	 */
+    }
+    /**
+     * The key is compared with all the keys and finds its position.
+     * Rank is found using binary search algorithm.
+     * The time complexity is O(logN).
+     *
+     * @param      key   The key
+     *
+     * @return     { description_of_the_return_value }
+     */
 
-	public int rank(final Key key) {
+    public int rank(final Key key) {
         int lo = 0, hi = n - 1;
         while (lo <= hi) {
             int mid = lo + (hi - lo) / 2;
             int cmp = key.compareTo(keys[mid]);
             if      (cmp < 0) {
-            	hi = mid - 1;
+                hi = mid - 1;
             } else if (cmp > 0) {
-            	lo = mid + 1;
+                lo = mid + 1;
             } else {
-            	return mid;
+                return mid;
             }
         }
         return lo;
@@ -81,9 +90,9 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
      */
 
     public boolean isEmpty() {
-    	if (n == 0) {
-    		return true;
-    	}
+        if (n == 0) {
+            return true;
+        }
         return false;
     }
     /**
@@ -95,7 +104,7 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
 
     public void deleteMin() {
         if (isEmpty()) {
-        	return;
+            return;
         }
         delete(min());
     }
@@ -110,7 +119,7 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
 
     public Key min() {
         if (isEmpty()) {
-        	return null;
+            return null;
         }
         return keys[0];
     }
@@ -124,10 +133,10 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
 
     public void delete(final Key key) {
         if (key == null) {
-        	return;
+            return;
         }
         if (isEmpty()) {
-        	return;
+            return;
         }
         int i = rank(key);
 
@@ -158,7 +167,7 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
 
     public boolean contains(final Key key) {
         if (key == null) {
-        	return false;
+            return false;
         }
         return get(key) != null;
     }
@@ -172,7 +181,7 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
 
     public Key max() {
         if (isEmpty()) {
-        	return null;
+            return null;
         }
         return keys[n - 1];
     }
@@ -189,16 +198,17 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
 
     public Key floor(final Key key) {
         if (key == null) {
-        	return null;
+            return null;
         }
         int i = rank(key);
         if (i < n && key.compareTo(keys[i]) == 0) {
-        	return keys[i];
+            return keys[i];
         }
         if (i == 0) {
-        	return null;
+            return null;
+        } else {
+            return keys[i - 1];
         }
-        else return keys[i - 1];
     }
     /**
      * gets the value of that key.
@@ -212,15 +222,15 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
 
     public Value get(final Key key) {
         if (key == null) {
-        	System.out.println("No key");
-        	return null;
+            System.out.println("No key");
+            return null;
         }
         if (isEmpty()) {
-        	return null;
+            return null;
         }
         int i = rank(key);
         if (i < n && keys[i].compareTo(key) == 0) {
-        	return values[i];
+            return values[i];
         }
         return null;
     }
@@ -231,12 +241,12 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
      */
 
     public void print() {
-    	for (int i = 0; i < keys.length; i++) {
-    		if (keys[i] != null) {
-    		System.out.println(keys[i] + " " + values[i]);
+        for (int i = 0; i < keys.length; i++) {
+            if (keys[i] != null) {
+            System.out.println(keys[i] + " " + values[i]);
 
-    		}
-    	}
+            }
+        }
     }
 }
 /**
@@ -245,32 +255,32 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
  */
 
 final class Solution {
-	/**
-	 * Constructs the object.
-	 */
+    /**
+     * Constructs the object.
+     */
 
-	private Solution() {
+    private Solution() {
 
-	}
-	/**
-	 * creates object for symbolTable class.
-	 *
-	 * @param      args  The arguments
-	 */
-	public static void main(final String[] args) {
-		Scanner input = new Scanner(System.in);
-		String[] tokens = input.nextLine().split(" ");
-		SymbolTable<String, Integer> st = new
-		SymbolTable<String, Integer>(tokens.length);
-		for (int i = 0; i < tokens.length; i++) {
-			st.put(tokens[i], i);
-		}
+    }
+    /**
+     * creates object for symbolTable class.
+     *
+     * @param      args  The arguments
+     */
+    public static void main(final String[] args) {
+        Scanner input = new Scanner(System.in);
+        String[] tokens = input.nextLine().split(" ");
+        SymbolTable<String, Integer> st = new
+        SymbolTable<String, Integer>(tokens.length);
+        for (int i = 0; i < tokens.length; i++) {
+            st.put(tokens[i], i);
+        }
         // st.print();
         while (input.hasNext()) {
-        	String[] m = input.nextLine().split(" ");
-        	switch (m[0]) {
-        		case "get":
-        		System.out.println(st.get(m[1]));
+            String[] m = input.nextLine().split(" ");
+            switch (m[0]) {
+                case "get":
+                System.out.println(st.get(m[1]));
                 break;
                 case"contains":
                 System.out.println(st.contains(m[1]));
@@ -292,7 +302,7 @@ final class Solution {
                 break;
                 default:
                 break;
-        	}
+            }
         }
-	}
+    }
 }
