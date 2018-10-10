@@ -240,7 +240,7 @@ final class Solution {
 		Scanner input = new Scanner(System.in);
 		String[] tokens = input.nextLine().split(" ");
 		SymbolTable<String, Integer> st = new SymbolTable<String, Integer>(tokens.length);
-		for(int i = 0; i<tokens.length; i++) {
+		for (int i = 0; i < tokens.length; i++) {
 			st.put(tokens[i], i);
 		}
         // st.print();
@@ -268,8 +268,8 @@ final class Solution {
                 case "keys":
                 st.print();
                 break;
-
-
+                default:
+                break;
         	}
         }
 	}

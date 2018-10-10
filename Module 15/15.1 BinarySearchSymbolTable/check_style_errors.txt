@@ -50,11 +50,7 @@ Starting audit...
 [ERROR] F:\6057_ADS1\Module 15\15.1 BinarySearchSymbolTable\Solution.java:217:48: '+' is not followed by whitespace. [WhitespaceAround]
 [ERROR] F:\6057_ADS1\Module 15\15.1 BinarySearchSymbolTable\Solution.java:239:33: Parameter args should be final. [FinalParameters]
 [ERROR] F:\6057_ADS1\Module 15\15.1 BinarySearchSymbolTable\Solution.java:242: Line is longer than 80 characters (found 98). [LineLength]
-[ERROR] F:\6057_ADS1\Module 15\15.1 BinarySearchSymbolTable\Solution.java:243:20: 'for' is not followed by whitespace. [WhitespaceAfter]
-[ERROR] F:\6057_ADS1\Module 15\15.1 BinarySearchSymbolTable\Solution.java:243:33: '<' is not preceded with whitespace. [WhitespaceAround]
-[ERROR] F:\6057_ADS1\Module 15\15.1 BinarySearchSymbolTable\Solution.java:243:34: '<' is not followed by whitespace. [WhitespaceAround]
 [ERROR] F:\6057_ADS1\Module 15\15.1 BinarySearchSymbolTable\Solution.java:247:14: 'while' is not followed by whitespace. [WhitespaceAfter]
-[ERROR] F:\6057_ADS1\Module 15\15.1 BinarySearchSymbolTable\Solution.java:249: switch without "default" clause. [MissingSwitchDefault]
 [ERROR] F:\6057_ADS1\Module 15\15.1 BinarySearchSymbolTable\Solution.java:249:23: 'switch' is not followed by whitespace. [WhitespaceAround]
 Audit done.
-Checkstyle ends with 57 errors.
+Checkstyle ends with 53 errors.
