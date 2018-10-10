@@ -1,15 +1,40 @@
 import java.util.Scanner;
+/**
+ * Class for symbol table.
+ * The Symbol table is used for inserting keys and corresponding
+ * values.
+ *
+ * @param      <Key>    The key
+ * @param      <Value>  The value
+ */
 class SymbolTable<Key extends Comparable<Key>, Value> {
 	Key[] keys;
 	Value[] values;
 	int n = 0;
+	/**
+	 * Constructs the object.
+	 * The keys array of type Key.
+	 * The values array of type value.
+	 *
+	 * @param      size  The size of int type.
+	 */
 
 	SymbolTable(int size) {
 		keys = (Key[]) new Comparable[size];
 		values = (Value[]) new Object[size];
 	}
+	/**
+	 * The method inserts key and values.
+	 * If the key is new, it is inserted.
+	 * If the key already exists, the value is overrided.
+	 * It calls rank method to know the index of the key to be placed.
+	 * The time complexity is O(N).
+	 *
+	 * @param      key    The key of key type.
+	 * @param      value  The value of value type.
+	 */
 
-	public void put(Key key, Value value) {
+	public void put(final Key key, final Value value) {
 		int i = rank(key);
 		if (i < n && keys[i].compareTo(key) == 0) {
             values[i] = value;
@@ -23,9 +48,17 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
         values[i] = value;
         n++;
 	}
+	/**
+	 * The key is compared with all the keys and finds its position.
+	 * Rank is found using binary search algorithm.
+	 * The time complexity is O(logN).
+	 *
+	 * @param      key   The key
+	 *
+	 * @return     { description_of_the_return_value }
+	 */
 
-	public int rank(Key key) {
-
+	public int rank(final Key key) {
         int lo = 0, hi = n-1;
         while (lo <= hi) {
             int mid = lo + (hi - lo) / 2;
@@ -36,17 +69,37 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
         }
         return lo;
     }
+    /**
+     * checks if the table is empty or not.
+     * The time complexity is O(1).
+     *
+     * @return     True if empty, False otherwise.
+     */
 
     public boolean isEmpty() {
     	if (n == 0)
     		return true;
         return false;
     }
+    /**
+     * deletes the minimum element.
+     * Calls min method and delete method.
+     * The time complexity is O(1).
+     *
+     */
 
     public void deleteMin() {
         if (isEmpty()) return;
         delete(min());
     }
+    /**
+     * finds min value.
+     * The min value is always present in 0th index.
+     * The time complexity is O(1).
+     *
+     *
+     * @return     { returns key }
+     */
 
     public Key min() {
         if (isEmpty())
@@ -54,7 +107,14 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
         return keys[0];
     }
 
-    public void delete(Key key) {
+    /**
+     * deletes the particular elements.
+     * The time complexity is O(N).
+     *
+     * @param      key   The key
+     */
+
+    public void delete(final Key key) {
         if (key == null) return;
         if (isEmpty()) return;
 
@@ -71,23 +131,33 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
         }
 
         n--;
-        keys[n] = null;  // to avoid loitering
+        keys[n] = null;
         values[n] = null;
-
-        // // resize if 1/4 full
-        // if (n > 0 && n == keys.length/4) resize(keys.length/2);
-
-        // assert check();
     }
+    /**
+     * checks if the symbol table contains the element or not.
+     * The time complexity is O(1).
+     * calls get method.
+     *
+     *
+     * @param      key   The key
+     *
+     * @return     { returns true or false }
+     */
 
-
-
-    public boolean contains(Key key) {
+    public boolean contains(final Key key) {
         if (key == null) {
         	return false;
         }
         return get(key) != null;
     }
+    /**
+     * max value is always the last element.
+     * The time complexity is O(1)
+     *
+     *
+     * @return     { returns key }
+     */
 
     public Key max() {
         if (isEmpty()) {
@@ -95,10 +165,19 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
         }
         return keys[n-1];
     }
+    /**
+     * floor method returns the value .
+     * equal to or greater than the key value.
+     * The time complexity is O(1).
+     *
+     *
+     * @param      key   The key
+     *
+     * @return     { returns key }
+     */
 
-    public Key floor(Key key) {
+    public Key floor(final Key key) {
         if (key == null) {
-        	// System.out.println("MOO");
         	return null;
         }
         int i = rank(key);
@@ -106,10 +185,17 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
         if (i == 0) return null;
         else return keys[i-1];
     }
+    /**
+     * gets the value of that key.
+     * The time complexity is O(1)
+     * calls the rank method.
+     *
+     * @param      key   The key
+     *
+     * @return     { description_of_the_return_value }
+     */
 
-
-
-    public Value get(Key key) {
+    public Value get(final Key key) {
         if (key == null) {
         	System.out.println("No key");
         	return null;
@@ -119,6 +205,11 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
         if (i < n && keys[i].compareTo(key) == 0) return values[i];
         return null;
     }
+    /**
+     * prints the keys and values.
+     * The time complexity is O(N).
+     *
+     */
 
     public void print() {
     	for(int i = 0; i<keys.length; i++) {
@@ -127,8 +218,24 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
     	}
     }
 }
+/**
+ * Class for solution.
+ * reads input.
+ */
 
-class Solution {
+final class Solution {
+	/**
+	 * Constructs the object.
+	 */
+
+	private Solution() {
+
+	}
+	/**
+	 * creates object for symbolTable class.
+	 *
+	 * @param      args  The arguments
+	 */
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		String[] tokens = input.nextLine().split(" ");
