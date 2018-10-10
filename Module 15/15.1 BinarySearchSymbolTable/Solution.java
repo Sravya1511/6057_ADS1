@@ -8,9 +8,9 @@ import java.util.Scanner;
  * @param      <Value>  The value
  */
 class SymbolTable<Key extends Comparable<Key>, Value> {
-	Key[] keys;
-	Value[] values;
-	int n = 0;
+	private Key[] keys;
+	private Value[] values;
+	private int n = 0;
 	/**
 	 * Constructs the object.
 	 * The keys array of type Key.
@@ -19,7 +19,7 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
 	 * @param      size  The size of int type.
 	 */
 
-	SymbolTable(int size) {
+	SymbolTable(final int size) {
 		keys = (Key[]) new Comparable[size];
 		values = (Value[]) new Object[size];
 	}
@@ -41,8 +41,8 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
             return;
         }
 		for (int j = n; j > i; j--)  {
-            keys[j] = keys[j-1];
-            values[j] = values[j-1];
+            keys[j] = keys[j - 1];
+            values[j] = values[j - 1];
         }
         keys[i] = key;
         values[i] = value;
@@ -59,13 +59,17 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
 	 */
 
 	public int rank(final Key key) {
-        int lo = 0, hi = n-1;
+        int lo = 0, hi = n - 1;
         while (lo <= hi) {
             int mid = lo + (hi - lo) / 2;
             int cmp = key.compareTo(keys[mid]);
-            if      (cmp < 0) hi = mid - 1;
-            else if (cmp > 0) lo = mid + 1;
-            else return mid;
+            if      (cmp < 0) {
+            	hi = mid - 1;
+            } else if (cmp > 0) {
+            	lo = mid + 1;
+            } else {
+            	return mid;
+            }
         }
         return lo;
     }
@@ -77,8 +81,9 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
      */
 
     public boolean isEmpty() {
-    	if (n == 0)
+    	if (n == 0) {
     		return true;
+    	}
         return false;
     }
     /**
@@ -89,7 +94,9 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
      */
 
     public void deleteMin() {
-        if (isEmpty()) return;
+        if (isEmpty()) {
+        	return;
+        }
         delete(min());
     }
     /**
@@ -102,8 +109,9 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
      */
 
     public Key min() {
-        if (isEmpty())
+        if (isEmpty()) {
         	return null;
+        }
         return keys[0];
     }
 
@@ -115,9 +123,12 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
      */
 
     public void delete(final Key key) {
-        if (key == null) return;
-        if (isEmpty()) return;
-
+        if (key == null) {
+        	return;
+        }
+        if (isEmpty()) {
+        	return;
+        }
         int i = rank(key);
 
         // key not in table
@@ -125,9 +136,9 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
             return;
         }
 
-        for (int j = i; j < n-1; j++)  {
-            keys[j] = keys[j+1];
-            values[j] = values[j+1];
+        for (int j = i; j < n - 1; j++)  {
+            keys[j] = keys[j + 1];
+            values[j] = values[j + 1];
         }
 
         n--;
@@ -163,7 +174,7 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
         if (isEmpty()) {
         	return null;
         }
-        return keys[n-1];
+        return keys[n - 1];
     }
     /**
      * floor method returns the value .
@@ -181,9 +192,13 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
         	return null;
         }
         int i = rank(key);
-        if (i < n && key.compareTo(keys[i]) == 0) return keys[i];
-        if (i == 0) return null;
-        else return keys[i-1];
+        if (i < n && key.compareTo(keys[i]) == 0) {
+        	return keys[i];
+        }
+        if (i == 0) {
+        	return null;
+        }
+        else return keys[i - 1];
     }
     /**
      * gets the value of that key.
@@ -200,9 +215,13 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
         	System.out.println("No key");
         	return null;
         }
-        if (isEmpty()) return null;
+        if (isEmpty()) {
+        	return null;
+        }
         int i = rank(key);
-        if (i < n && keys[i].compareTo(key) == 0) return values[i];
+        if (i < n && keys[i].compareTo(key) == 0) {
+        	return values[i];
+        }
         return null;
     }
     /**
@@ -212,9 +231,11 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
      */
 
     public void print() {
-    	for(int i = 0; i<keys.length; i++) {
-    		if(keys[i]!=null)
-    		System.out.println(keys[i]+" "+values[i]);
+    	for (int i = 0; i < keys.length; i++) {
+    		if (keys[i] != null) {
+    		System.out.println(keys[i] + " " + values[i]);
+
+    		}
     	}
     }
 }
@@ -236,17 +257,18 @@ final class Solution {
 	 *
 	 * @param      args  The arguments
 	 */
-	public static void main(String[] args) {
+	public static void main(final String[] args) {
 		Scanner input = new Scanner(System.in);
 		String[] tokens = input.nextLine().split(" ");
-		SymbolTable<String, Integer> st = new SymbolTable<String, Integer>(tokens.length);
+		SymbolTable<String, Integer> st = new
+		SymbolTable<String, Integer>(tokens.length);
 		for (int i = 0; i < tokens.length; i++) {
 			st.put(tokens[i], i);
 		}
         // st.print();
-        while(input.hasNext()) {
+        while (input.hasNext()) {
         	String[] m = input.nextLine().split(" ");
-        	switch(m[0]) {
+        	switch (m[0]) {
         		case "get":
         		System.out.println(st.get(m[1]));
                 break;
