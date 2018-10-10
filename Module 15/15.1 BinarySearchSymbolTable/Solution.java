@@ -123,7 +123,7 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
     public void print() {
     	for(int i = 0; i<keys.length; i++) {
     		if(keys[i]!=null)
-    		System.out.println(keys[i]+"  "+values[i]);
+    		System.out.println(keys[i]+" "+values[i]);
     	}
     }
 }
