@@ -57,12 +57,15 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
         return x;
     }
 
-    public int get(BookKey key) {
+    public Integer get(BookKey key) {
         return get(root, key);
     }
 
-    private int get(Node x, BookKey key) {
-
+    private Integer get(Node x, BookKey key) {
+        if(x == null) {
+        	// System.out.println("null");
+        	return null;
+        }
         int cmp = key.getName().compareTo(x.key.getName());
         if      (cmp < 0) return get(x.left, key);
         else if (cmp > 0) return get(x.right, key);
