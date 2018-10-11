@@ -5,8 +5,17 @@ import java.util.Scanner;
  *
  */
 class BookKey implements Comparable<BookKey> {
+	/**
+	 * Name of book.
+	 */
 	private String name;
+	/**
+	 * author of book.
+	 */
 	private String author;
+	/**
+	 * price of book.
+	 */
 	private float price;
 
 	/**
@@ -42,7 +51,7 @@ class BookKey implements Comparable<BookKey> {
 	 */
 
 	public int compareTo(BookKey that){
-		return -1;
+		return this.name.compareTo(that.name);
 	}
 }
 
@@ -72,7 +81,7 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
      * right node address.
      */
 	class Node {
-		BookKey key;
+		E key;
 		Value value;
 		Node left;
 		Node right;
@@ -82,7 +91,7 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
          * @param      key    The key of Bookkey class.
          * @param      value  The value of int type.
          */
-		Node(BookKey key, Value value) {
+		Node(E key, Value value) {
 			this.key = key;
 			this.value = value;
 			this.left = null;
@@ -98,7 +107,7 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
 	 * @param      val   The value of int type.
 	 */
 
-	 public void put(BookKey key, Value val) {
+	 public void put(final E key, final Value val) {
         if (key == null) {
         	return;
         }
@@ -117,12 +126,12 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
      * @return     { returns node type. That becomes root }
      */
 
-    private Node put(Node x, BookKey key, Value val) {
+    private Node put(final Node x, final E key, final Value val) {
     	size++;
         if (x == null) {
         	return new Node(key, val);
         }
-        int cmp = key.getName().compareTo(x.key.getName());
+        int cmp = key.compareTo(x.key);
         if (cmp < 0) {
         	x.left  = put(x.left,  key, val);
         }
@@ -145,7 +154,7 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
      * @return     { returns int }
      */
 
-    public Value get(BookKey key) {
+    public Value get(final E key) {
         return get(root, key);
     }
 
@@ -161,11 +170,11 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
      * @return     { returns int }
      */
 
-    private Value get(Node x, BookKey key) {
+    private Value get(final Node x, final E key) {
         if(x == null) {
         	return null;
         }
-        int cmp = key.getName().compareTo(x.key.getName());
+        int cmp = key.compareTo(x.key);
         if (cmp < 0) {
         	return get(x.left, key);
         }
