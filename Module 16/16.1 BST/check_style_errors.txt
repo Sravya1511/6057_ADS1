@@ -1,14 +1,5 @@
 Starting audit...
 [ERROR] F:\6057_ADS1\Module 16\16.1 BST\Solution.java:0: File does not end with a newline. [NewlineAtEndOfFile]
-[ERROR] F:\6057_ADS1\Module 16\16.1 BST\Solution.java:8:1: File contains tab characters (this is the first instance). [FileTabCharacter]
-[ERROR] F:\6057_ADS1\Module 16\16.1 BST\Solution.java:53:30: Parameter that should be final. [FinalParameters]
-[ERROR] F:\6057_ADS1\Module 16\16.1 BST\Solution.java:68:13: Variable 'size' must be private and have accessor methods. [VisibilityModifier]
-[ERROR] F:\6057_ADS1\Module 16\16.1 BST\Solution.java:79:14: Variable 'root' must be private and have accessor methods. [VisibilityModifier]
-[ERROR] F:\6057_ADS1\Module 16\16.1 BST\Solution.java:106:12: Unused @param tag for 'key'. [JavadocMethod]
-[ERROR] F:\6057_ADS1\Module 16\16.1 BST\Solution.java:107:12: Unused @param tag for 'value'. [JavadocMethod]
-[ERROR] F:\6057_ADS1\Module 16\16.1 BST\Solution.java:109:22: Parameter k should be final. [FinalParameters]
-[ERROR] F:\6057_ADS1\Module 16\16.1 BST\Solution.java:109:24: Expected @param tag for 'k'. [JavadocMethod]
-[ERROR] F:\6057_ADS1\Module 16\16.1 BST\Solution.java:109:27: Parameter v should be final. [FinalParameters]
-[ERROR] F:\6057_ADS1\Module 16\16.1 BST\Solution.java:109:33: Expected @param tag for 'v'. [JavadocMethod]
+[ERROR] F:\6057_ADS1\Module 16\16.1 BST\Solution.java:68:9: Variable 'size' must be private and have accessor methods. [VisibilityModifier]
 Audit done.
-Checkstyle ends with 11 errors.
+Checkstyle ends with 2 errors.
