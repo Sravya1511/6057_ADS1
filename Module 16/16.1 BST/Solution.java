@@ -26,14 +26,14 @@ class BookKey implements Comparable<BookKey> {
 	 * @param      p     { String p }
 	 */
 
-	BookKey(String n, String a, float p) {
+	BookKey(final String n, final String a, final float p) {
 		this.name = n;
 		this.author = a;
 		this.price = p;
 	}
 
 	/**
-	 * gets the name
+	 * gets the name.
 	 *
 	 * @return     The name of string type.
 	 */
@@ -43,14 +43,14 @@ class BookKey implements Comparable<BookKey> {
 	}
 
 	/**
-	 * override method
+	 * override method.
 	 *
-	 * @param      that  The that
+	 * @param      that  The that.
 	 *
 	 * @return     { returns int }
 	 */
 
-	public int compareTo(BookKey that){
+	public int compareTo(BookKey that) {
 		return this.name.compareTo(that.name);
 	}
 }
@@ -73,6 +73,9 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
 
 	}
 
+/**
+ * root of node type.
+ */
 	Node root;
     /**
      * Class for node.
@@ -81,19 +84,31 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
      * right node address.
      */
 	class Node {
-		E key;
-		Value value;
-		Node left;
-		Node right;
+		/**
+		 * key of node.
+		 */
+		private E key;
+		/**
+		 * value of node.
+		 */
+		private Value value;
+		/**
+		 * left node address.
+		 */
+		private Node left;
+		/**
+		 * right node address.
+		 */
+		private Node right;
         /**
          * Constructs the object.
          *
          * @param      key    The key of Bookkey class.
          * @param      value  The value of int type.
          */
-		Node(E key, Value value) {
-			this.key = key;
-			this.value = value;
+		Node(E k, Value v) {
+			this.key = k;
+			this.value = v;
 			this.left = null;
 			this.right =  null;
 		}
@@ -134,11 +149,9 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
         int cmp = key.compareTo(x.key);
         if (cmp < 0) {
         	x.left  = put(x.left,  key, val);
-        }
-        else if (cmp > 0) {
+        } else if (cmp > 0) {
         	x.right = put(x.right, key, val);
-        }
-        else {
+        } else {
         	x.value = val;
         }
         return x;
@@ -171,17 +184,15 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
      */
 
     private Value get(final Node x, final E key) {
-        if(x == null) {
+        if (x == null) {
         	return null;
         }
         int cmp = key.compareTo(x.key);
         if (cmp < 0) {
         	return get(x.left, key);
-        }
-        else if (cmp > 0) {
+        } else if (cmp > 0) {
         	return get(x.right, key);
-        }
-        else {
+        } else {
         	 return x.value;
         }
     }
@@ -194,19 +205,41 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
  */
 
 final class Solution {
+	/**
+	 * Constructs the object.
+	 */
+
+	private Solution() {
+
+	}
+	/**
+	 * main method.
+	 * reads input.
+	 * creates object for BookKey class.
+	 * Calls put and get method.
+	 *
+	 *
+	 * @param      args  The arguments
+	 */
 	public static void main(final String[] args) {
+		final int three = 3;
+		final int four = 4;
 		Scanner input = new Scanner(System.in);
-		BinarySearchTree<BookKey, Integer> binarySearch = new BinarySearchTree<BookKey, Integer>();
-		while(input.hasNext()) {
+		BinarySearchTree<BookKey, Integer>
+		binarySearch = new
+		BinarySearchTree<BookKey, Integer>();
+		while (input.hasNext()) {
 			String[] tokens = input.nextLine().split(",");
-            switch(tokens[0]) {
+            switch (tokens[0]) {
             	case "put":
-            	BookKey key = new BookKey(tokens[1], tokens[2], Float.parseFloat(tokens[3]));
-            	Integer value = Integer.parseInt(tokens[4]);
+            	BookKey key = new BookKey(tokens[1],
+            		tokens[2], Float.parseFloat(tokens[three]));
+            	Integer value = Integer.parseInt(tokens[four]);
             	binarySearch.put(key, value);
             	break;
             	case "get":
-            	BookKey key1 = new BookKey(tokens[1], tokens[2], Float.parseFloat(tokens[3]));
+            	BookKey key1 = new BookKey(tokens[1],
+            		tokens[2], Float.parseFloat(tokens[three]));
             	System.out.println(binarySearch.get(key1));
             	break;
             	default:
