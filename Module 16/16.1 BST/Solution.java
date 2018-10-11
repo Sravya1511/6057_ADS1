@@ -65,7 +65,7 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
     /**
      * size of the tree.
      */
-    int size;
+    private int size;
     /**
      * Constructs the object.
      */
