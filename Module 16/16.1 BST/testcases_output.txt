@@ -1,0 +1,30 @@
+########## Testcase 0: Passed ##########
+Expected Output: 
+1
+Your Output: 
+1
+----------------------------------------
+########## Testcase 1: Passed ##########
+Expected Output: 
+6
+5
+7
+2
+Your Output: 
+6
+5
+7
+2
+----------------------------------------
+########## Testcase 2: Failed ##########
+Expected Output: 
+null
+7
+Your Output: 
+Exception in thread "main" java.lang.NullPointerException
+	at BinarySearchTree.get(Solution.java:66)
+	at BinarySearchTree.get(Solution.java:67)
+	at BinarySearchTree.get(Solution.java:68)
+	at BinarySearchTree.get(Solution.java:61)
+	at Solution.main(Solution.java:87)
+----------------------------------------
