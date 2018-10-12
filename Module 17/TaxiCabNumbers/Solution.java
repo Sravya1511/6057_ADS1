@@ -187,6 +187,13 @@ class MinPQ<Key> {
         }
         return min;
     }
+    /**
+     * swim operation is called in insert.
+     * the node is inserted at end.
+     * The element them swims.
+     *
+     * @param      k     { parameter_description }
+     */
 
     private void swim(int k) {
         while (k > 1 && greater(k/2, k)) {
@@ -194,6 +201,12 @@ class MinPQ<Key> {
             k = k/2;
         }
     }
+    /**
+     * sinks the value.
+     * Sink operation is used to delete element.
+     *
+     * @param      k     {index of int type }
+     */
 
     private void sink(int k) {
         while (2 * k <= n) {
@@ -208,6 +221,14 @@ class MinPQ<Key> {
             k = j;
         }
     }
+    /**
+     * compares two objects.
+     *
+     * @param      i     { index of int type }
+     * @param      i     { index of int type }
+     *
+     * @return     { returns boolean type }
+     */
 
 
     private boolean greater(int i, int j) {
@@ -218,7 +239,12 @@ class MinPQ<Key> {
             return comparator.compare(pq[i], pq[j]) > 0;
         }
     }
-
+    /**
+     * exchanges two objects in heap.
+     *
+     * @param      i     { index of int type }
+     * @param      j     { index of int type }
+     */
     private void exch(int i, int j) {
         Key swap = pq[i];
         pq[i] = pq[j];
@@ -230,17 +256,34 @@ class MinPQ<Key> {
 
 
 
+/**
+ * class Solution.
+ * reads input.
+ * creates object for minpq.
+ * The generic is of class CubeSum.
+ */
 
+final class Solution {
+    /**
+     * Constructs the object.
+     */
+    private Solution() {
 
-class Solution {
-	public static void main(String[] args) {
+    }
+    /**
+     * main method.
+     *
+     * @param      args  The arguments
+     */
+	public static void main(final String[] args) {
 
         Scanner input = new Scanner(System.in);
+        final int six = 600;
         int count = 0;
-        int n = 600;
+        int n = six;
         String[] tokens = input.nextLine().split(" ");
         int number = Integer.parseInt(tokens[0]);
-        int M = Integer.parseInt(tokens[1]);
+        int pair = Integer.parseInt(tokens[1]);
         MinPQ<CubeSum> pq = new MinPQ<CubeSum>();
         for (int i = 0; i <= n; i++) {
             pq.insert(new CubeSum(i, i));
@@ -255,7 +298,7 @@ class Solution {
             } else {
                 count = 0;
             }
-            if (count == M - 1) {
+            if (count == pair - 1) {
                 number--;
                 if (number == 0) {
                     System.out.println(s.getSum());
