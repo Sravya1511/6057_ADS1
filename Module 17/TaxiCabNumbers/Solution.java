@@ -178,11 +178,12 @@ class MinPQ<Key> {
      */
 
     public Key delMin() {
+        final int four = 4;
         Key min = pq[1];
         exch(1, n--);
         sink(1);
         pq[n + 1] = null;
-        if ((n > 0) && (n == (pq.length - 1) / 4)) {
+        if ((n > 0) && (n == (pq.length - 1) / four)) {
             resize(pq.length / 2);
         }
         return min;
@@ -196,9 +197,9 @@ class MinPQ<Key> {
      */
 
     private void swim(int k) {
-        while (k > 1 && greater(k/2, k)) {
-            exch(k, k/2);
-            k = k/2;
+        while (k > 1 && greater(k / 2, k)) {
+            exch(k, k / 2);
+            k = k / 2;
         }
     }
     /**
@@ -211,7 +212,7 @@ class MinPQ<Key> {
     private void sink(int k) {
         while (2 * k <= n) {
             int j = 2 * k;
-            if (j < n && greater(j, j+1)) {
+            if (j < n && greater(j, j + 1)) {
                 j++;
             }
             if (!greater(k, j)) {
@@ -225,17 +226,16 @@ class MinPQ<Key> {
      * compares two objects.
      *
      * @param      i     { index of int type }
-     * @param      i     { index of int type }
+     * @param      j    { index of int type }
      *
      * @return     { returns boolean type }
      */
 
 
-    private boolean greater(int i, int j) {
+    private boolean greater(final int i, final int j) {
         if (comparator == null) {
             return ((Comparable<Key>) pq[i]).compareTo(pq[j]) > 0;
-        }
-        else {
+        } else {
             return comparator.compare(pq[i], pq[j]) > 0;
         }
     }
@@ -245,7 +245,7 @@ class MinPQ<Key> {
      * @param      i     { index of int type }
      * @param      j     { index of int type }
      */
-    private void exch(int i, int j) {
+    private void exch(final int i, final int j) {
         Key swap = pq[i];
         pq[i] = pq[j];
         pq[j] = swap;
@@ -275,7 +275,7 @@ final class Solution {
      *
      * @param      args  The arguments
      */
-	public static void main(final String[] args) {
+    public static void main(final String[] args) {
 
         Scanner input = new Scanner(System.in);
         final int six = 600;
