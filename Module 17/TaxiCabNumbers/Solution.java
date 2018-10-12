@@ -1,6 +1,6 @@
 import java.util.Scanner;
 import java.util.Comparator;
-import java.util.Iterator;
+// import java.util.Iterator;
 /**
  * Class for cube sum.
  * Thsi calss has i and j values and sum.
@@ -22,11 +22,11 @@ class CubeSum implements Comparable<CubeSum> {
     /**
      * Constructs the object.
      *
-     * @param      i     { int type }
-     * @param      j     { int type }
+     * @param      x    { int type }
+     * @param      y     { int type }
      */
 
-    public CubeSum(final int x, final int y) {
+    CubeSum(final int x, final int y) {
         this.sum = x * x * x + y * y * y;
         this.i = x;
         this.j = y;
@@ -67,7 +67,7 @@ class CubeSum implements Comparable<CubeSum> {
      * @return     { int type }
      */
 
-    public int compareTo(CubeSum that) {
+    public int compareTo(final CubeSum that) {
         if (this.sum < that.sum) {
             return -1;
         }
@@ -128,15 +128,15 @@ class MinPQ<Key> {
      * @param      comparator    The comparator
      */
 
-    MinPQ(final int initCapacity, final Comparator<Key> comparator) {
-        this.comparator = comparator;
+    MinPQ(final int initCapacity, final Comparator<Key> comparat) {
+        this.comparator = comparat;
         pq = (Key[]) new Object[initCapacity + 1];
         n = 0;
     }
     /**
      * Constructs the object.
      *
-     * @param      comparator  The comparator
+     * @param      comparato  The comparator
      */
 
 
