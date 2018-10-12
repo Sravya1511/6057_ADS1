@@ -60,7 +60,9 @@ class CubeSum implements Comparable<CubeSum> {
     }
 
     /**
-     * compares two objects of CubeSum type.
+     * compares two objects of CubeSum type
+     * The time complexity is O(1).
+     * .
      *
      * @param      that  The that
      *
@@ -136,6 +138,7 @@ class MinPQ<Key> {
     /**
      * Constructs the object.
      *
+     *
      * @param      comparato  The comparator
      */
 
@@ -145,6 +148,8 @@ class MinPQ<Key> {
     }
     /**
      * Determines if empty.
+     * The time complexity is O(1).
+     *
      *
      * @return     True if empty, False otherwise.
      */
@@ -156,6 +161,8 @@ class MinPQ<Key> {
 
     /**
      * size of the heap.
+     * The time complexity is O(1).
+     *
      *
      * @return     { returns int }
      */
@@ -166,6 +173,8 @@ class MinPQ<Key> {
    /**
     * resizes the array.
     * insert method will call this method.
+     * The time complexity is O(N).
+    *
     *
     * @param      capacity  The capacity of int
     */
@@ -181,6 +190,8 @@ class MinPQ<Key> {
     /**
      * inserts the object CubeSum.
      * The insertion method calls swim method.
+     * The time complexity is O(1).
+     *
      *
      * @param      x     { key of Cube Sum object }
      */
@@ -195,6 +206,8 @@ class MinPQ<Key> {
     }
     /**
      * deletes the root node.
+     * The time complexity is O(1).
+     *
      *
      * @return     { returns key of CubeSum object }
      */
@@ -214,6 +227,8 @@ class MinPQ<Key> {
      * swim operation is called in insert.
      * the node is inserted at end.
      * The element them swims.
+     * The time complexity is O(logN).
+     *
      *
      * @param      key     { parameter_description }
      */
@@ -228,6 +243,8 @@ class MinPQ<Key> {
     /**
      * sinks the value.
      * Sink operation is used to delete element.
+     * The time complexity is O(logN).
+     *
      *
      * @param      key     {index of int type }
      */
@@ -248,6 +265,8 @@ class MinPQ<Key> {
     }
     /**
      * compares two objects.
+     * The time complexity is O(1).
+     *
      *
      * @param      i     { index of int type }
      * @param      j    { index of int type }
@@ -265,6 +284,7 @@ class MinPQ<Key> {
     }
     /**
      * exchanges two objects in heap.
+     * The time complexity is O(1).
      *
      * @param      i     { index of int type }
      * @param      j     { index of int type }
@@ -290,6 +310,8 @@ class MinPQ<Key> {
 final class Solution {
     /**
      * Constructs the object.
+     * The time complexity is O(Nb).
+     *
      */
     private Solution() {
 
