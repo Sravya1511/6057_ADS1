@@ -121,21 +121,32 @@ class MinPQ<Key> {
     public MinPQ(Comparator<Key> comparator) {
         this(1, comparator);
     }
+    /**
+     * Determines if empty.
+     *
+     * @return     True if empty, False otherwise.
+     */
 
 
     public boolean isEmpty() {
         return n == 0;
     }
 
-
+    /**
+     * size of the heap.
+     *
+     * @return     { returns int }
+     */
     public int size() {
         return n;
     }
 
-
-    public Key min() {
-        return pq[1];
-    }
+   /**
+    * resizes the array.
+    * insert method will call this method.
+    *
+    * @param      capacity  The capacity of int
+    */
 
     private void resize(int capacity) {
         assert capacity > n;
@@ -145,30 +156,37 @@ class MinPQ<Key> {
         }
         pq = temp;
     }
-
+    /**
+     * inserts the object CubeSum.
+     * The insertion method calls swim method.
+     *
+     * @param      x     { key of Cube Sum object }
+     */
 
     public void insert(Key x) {
         // double size of array if necessary
-        if (n == pq.length - 1) resize(2 * pq.length);
-
-        // add x, and percolate it up to maintain heap invariant
+        if (n == pq.length - 1) {
+            resize(2 * pq.length);
+        }
         pq[++n] = x;
         swim(n);
     }
+    /**
+     * deletes the root node.
+     *
+     * @return     { returns key of CubeSum object }
+     */
 
     public Key delMin() {
-        // if (isEmpty()) throw new NoSuchElementException("Priority queue underflow");
         Key min = pq[1];
         exch(1, n--);
         sink(1);
-        pq[n+1] = null;     // to avoid loiterig and help with garbage collection
-        if ((n > 0) && (n == (pq.length - 1) / 4)) resize(pq.length / 2);
-        // assert isMinHeap();
+        pq[n + 1] = null;
+        if ((n > 0) && (n == (pq.length - 1) / 4)) {
+            resize(pq.length / 2);
+        }
         return min;
     }
-
-
-
 
     private void swim(int k) {
         while (k > 1 && greater(k/2, k)) {
@@ -178,10 +196,14 @@ class MinPQ<Key> {
     }
 
     private void sink(int k) {
-        while (2*k <= n) {
-            int j = 2*k;
-            if (j < n && greater(j, j+1)) j++;
-            if (!greater(k, j)) break;
+        while (2 * k <= n) {
+            int j = 2 * k;
+            if (j < n && greater(j, j+1)) {
+                j++;
+            }
+            if (!greater(k, j)) {
+                break;
+            }
             exch(k, j);
             k = j;
         }
@@ -219,8 +241,6 @@ class Solution {
         String[] tokens = input.nextLine().split(" ");
         int N = Integer.parseInt(tokens[0]);
         int M = Integer.parseInt(tokens[1]);
-
-
         MinPQ<CubeSum> pq = new MinPQ<CubeSum>();
         for (int i = 0; i <= n; i++) {
             pq.insert(new CubeSum(i, i));
@@ -235,7 +255,7 @@ class Solution {
             } else {
                 count = 0;
             }
-            if(count == M-1) {
+            if (count == M - 1) {
                 N--;
                 if(N == 0) {
                     System.out.println(s.getSum());
