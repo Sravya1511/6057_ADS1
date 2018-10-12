@@ -239,7 +239,7 @@ class Solution {
         int count = 0;
         int n = 600;
         String[] tokens = input.nextLine().split(" ");
-        int N = Integer.parseInt(tokens[0]);
+        int number = Integer.parseInt(tokens[0]);
         int M = Integer.parseInt(tokens[1]);
         MinPQ<CubeSum> pq = new MinPQ<CubeSum>();
         for (int i = 0; i <= n; i++) {
@@ -250,22 +250,23 @@ class Solution {
         // find smallest sum, print it out, and update
         while (!pq.isEmpty()) {
             CubeSum s = pq.delMin();
-            if(temp == s.getSum()) {
+            if (temp == s.getSum()) {
                 count++;
             } else {
                 count = 0;
             }
             if (count == M - 1) {
-                N--;
-                if(N == 0) {
+                number--;
+                if (number == 0) {
                     System.out.println(s.getSum());
                     break;
                 }
             }
             temp = s.getSum();
             // System.out.println(s);
-            if (s.getj() < n)
+            if (s.getj() < n) {
                 pq.insert(new CubeSum(s.geti(), s.getj() + 1));
+            }
         }
     }
 }

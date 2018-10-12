@@ -49,10 +49,6 @@ Starting audit...
 [ERROR] F:\6057_ADS1\Module 17\TaxiCabNumbers\Solution.java:236:9: Missing a Javadoc comment. [JavadocMethod]
 [ERROR] F:\6057_ADS1\Module 17\TaxiCabNumbers\Solution.java:236:33: Parameter args should be final. [FinalParameters]
 [ERROR] F:\6057_ADS1\Module 17\TaxiCabNumbers\Solution.java:240:17: '600' is a magic number. [MagicNumber]
-[ERROR] F:\6057_ADS1\Module 17\TaxiCabNumbers\Solution.java:242:13: Name 'N' must match pattern '^[a-z][a-zA-Z0-9]*$'. [LocalVariableName]
 [ERROR] F:\6057_ADS1\Module 17\TaxiCabNumbers\Solution.java:243:13: Name 'M' must match pattern '^[a-z][a-zA-Z0-9]*$'. [LocalVariableName]
-[ERROR] F:\6057_ADS1\Module 17\TaxiCabNumbers\Solution.java:253:15: 'if' is not followed by whitespace. [WhitespaceAfter]
-[ERROR] F:\6057_ADS1\Module 17\TaxiCabNumbers\Solution.java:260:19: 'if' is not followed by whitespace. [WhitespaceAfter]
-[ERROR] F:\6057_ADS1\Module 17\TaxiCabNumbers\Solution.java:267: 'if' construct must use '{}'s. [NeedBraces]
 Audit done.
-Checkstyle ends with 55 errors.
+Checkstyle ends with 51 errors.
