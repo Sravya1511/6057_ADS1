@@ -7,8 +7,17 @@ import java.util.Iterator;
  * All are int type.
  */
 class CubeSum implements Comparable<CubeSum> {
+    /**
+     * sum of the cubes.
+     */
     private final int sum;
+    /**
+     * values of 1st number.
+     */
     private final int i;
+    /**
+     * value of 2nd number.
+     */
     private final int j;
     /**
      * Constructs the object.
@@ -17,10 +26,10 @@ class CubeSum implements Comparable<CubeSum> {
      * @param      j     { int type }
      */
 
-    public CubeSum(final int i, final int j) {
-        this.sum = i * i * i + j * j * j;
-        this.i = i;
-        this.j = j;
+    public CubeSum(final int x, final int y) {
+        this.sum = x * x * x + y * y * y;
+        this.i = x;
+        this.j = y;
     }
     /**
      * gets the i.
@@ -59,8 +68,12 @@ class CubeSum implements Comparable<CubeSum> {
      */
 
     public int compareTo(CubeSum that) {
-        if (this.sum < that.sum) return -1;
-        if (this.sum > that.sum) return +1;
+        if (this.sum < that.sum) {
+            return -1;
+        }
+        if (this.sum > that.sum) {
+            return +1;
+        }
         return 0;
     }
 }
@@ -75,8 +88,17 @@ class CubeSum implements Comparable<CubeSum> {
 
 
 class MinPQ<Key> {
-    private Key[] pq;                    // store items at indices 1 to n
-    private int n;                       // number of items on priority queue
+    /**
+     * key generic.
+     */
+    private Key[] pq;
+    /**
+     * size of the heap.
+     */
+    private int n;
+    /**
+     * comparator.
+     */
     private Comparator<Key> comparator;  // optional comparator
 
     /**
@@ -85,7 +107,7 @@ class MinPQ<Key> {
      *
      * @param      initCapacity  The initialize capacity.
      */
-    public MinPQ(final int initCapacity) {
+    MinPQ(final int initCapacity) {
         pq = (Key[]) new Object[initCapacity + 1];
         n = 0;
     }
@@ -95,7 +117,7 @@ class MinPQ<Key> {
      * overloaded constructor.
      * This constructor is called from main method.
      */
-    public MinPQ() {
+    MinPQ() {
         this(1);
     }
     /**
@@ -106,7 +128,7 @@ class MinPQ<Key> {
      * @param      comparator    The comparator
      */
 
-    public MinPQ(int initCapacity, Comparator<Key> comparator) {
+    MinPQ(final int initCapacity, final Comparator<Key> comparator) {
         this.comparator = comparator;
         pq = (Key[]) new Object[initCapacity + 1];
         n = 0;
@@ -118,8 +140,8 @@ class MinPQ<Key> {
      */
 
 
-    public MinPQ(Comparator<Key> comparator) {
-        this(1, comparator);
+    MinPQ(final Comparator<Key> comparato) {
+        this(1, comparato);
     }
     /**
      * Determines if empty.
@@ -148,7 +170,7 @@ class MinPQ<Key> {
     * @param      capacity  The capacity of int
     */
 
-    private void resize(int capacity) {
+    private void resize(final int capacity) {
         assert capacity > n;
         Key[] temp = (Key[]) new Object[capacity];
         for (int i = 1; i <= n; i++) {
@@ -163,7 +185,7 @@ class MinPQ<Key> {
      * @param      x     { key of Cube Sum object }
      */
 
-    public void insert(Key x) {
+    public void insert(final Key x) {
         // double size of array if necessary
         if (n == pq.length - 1) {
             resize(2 * pq.length);
