@@ -1,40 +1,77 @@
 import java.util.Scanner;
 import java.util.Comparator;
 import java.util.Iterator;
+/**
+ * Class for cube sum.
+ * Thsi calss has i and j values and sum.
+ * All are int type.
+ */
 class CubeSum implements Comparable<CubeSum> {
     private final int sum;
     private final int i;
     private final int j;
+    /**
+     * Constructs the object.
+     *
+     * @param      i     { int type }
+     * @param      j     { int type }
+     */
 
-    public CubeSum(int i, int j) {
-        this.sum = i*i*i + j*j*j;
+    public CubeSum(final int i, final int j) {
+        this.sum = i * i * i + j * j * j;
         this.i = i;
         this.j = j;
     }
+    /**
+     * gets the i.
+     *
+     * @return     { int type }
+     */
 
     public int geti() {
         return this.i;
     }
+    /**
+     * gets j.
+     *
+     * @return     { int type }
+     */
 
     public int getj() {
         return this.j;
     }
+    /**
+     * Gets the sum.
+     *
+     * @return     int type.
+     */
 
     public int getSum() {
         return this.sum;
     }
+
+    /**
+     * compares two objects of CubeSum type.
+     *
+     * @param      that  The that
+     *
+     * @return     { int type }
+     */
 
     public int compareTo(CubeSum that) {
         if (this.sum < that.sum) return -1;
         if (this.sum > that.sum) return +1;
         return 0;
     }
-
-    public String toString() {
-        return sum + " = " + i + "^3" + " + " + j + "^3";
-    }
 }
 
+
+/**
+ * Class for minimum pq.
+ * the heap of min type is created.
+ *
+ * @param      <Key>  The key
+ */
 
 
 class MinPQ<Key> {
@@ -42,38 +79,47 @@ class MinPQ<Key> {
     private int n;                       // number of items on priority queue
     private Comparator<Key> comparator;  // optional comparator
 
-
-    public MinPQ(int initCapacity) {
+    /**
+     * Constructs the object.
+     * overloaded constructor.
+     *
+     * @param      initCapacity  The initialize capacity.
+     */
+    public MinPQ(final int initCapacity) {
         pq = (Key[]) new Object[initCapacity + 1];
         n = 0;
     }
 
-
+    /**
+     * Constructs the object.
+     * overloaded constructor.
+     * This constructor is called from main method.
+     */
     public MinPQ() {
         this(1);
     }
-
+    /**
+     * Constructs the object.
+     * overloaded constructor.
+     *
+     * @param      initCapacity  The initialize capacity of int type
+     * @param      comparator    The comparator
+     */
 
     public MinPQ(int initCapacity, Comparator<Key> comparator) {
         this.comparator = comparator;
         pq = (Key[]) new Object[initCapacity + 1];
         n = 0;
     }
+    /**
+     * Constructs the object.
+     *
+     * @param      comparator  The comparator
+     */
 
 
     public MinPQ(Comparator<Key> comparator) {
         this(1, comparator);
-    }
-
-
-    public MinPQ(Key[] keys) {
-        n = keys.length;
-        pq = (Key[]) new Object[keys.length + 1];
-        for (int i = 0; i < n; i++)
-            pq[i+1] = keys[i];
-        for (int k = n/2; k >= 1; k--)
-            sink(k);
-        // assert isMinHeap();
     }
 
 
@@ -88,11 +134,9 @@ class MinPQ<Key> {
 
 
     public Key min() {
-        // if (isEmpty()) throw new NoSuchElementException("Priority queue underflow");
         return pq[1];
     }
 
-    // helper function to double the size of the heap array
     private void resize(int capacity) {
         assert capacity > n;
         Key[] temp = (Key[]) new Object[capacity];
@@ -102,11 +146,7 @@ class MinPQ<Key> {
         pq = temp;
     }
 
-    /**
-     * Adds a new key to this priority queue.
-     *
-     * @param  x the key to add to this priority queue
-     */
+
     public void insert(Key x) {
         // double size of array if necessary
         if (n == pq.length - 1) resize(2 * pq.length);
@@ -114,15 +154,8 @@ class MinPQ<Key> {
         // add x, and percolate it up to maintain heap invariant
         pq[++n] = x;
         swim(n);
-        // assert isMinHeap();
     }
 
-    /**
-     * Removes and returns a smallest key on this priority queue.
-     *
-     * @return a smallest key on this priority queue
-     * @throws NoSuchElementException if this priority queue is empty
-     */
     public Key delMin() {
         // if (isEmpty()) throw new NoSuchElementException("Priority queue underflow");
         Key min = pq[1];
