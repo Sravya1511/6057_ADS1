@@ -215,10 +215,11 @@ class MinPQ<Key> {
      * the node is inserted at end.
      * The element them swims.
      *
-     * @param      k     { parameter_description }
+     * @param      key     { parameter_description }
      */
 
-    private void swim(int k) {
+    private void swim(final int key) {
+        int k = key;
         while (k > 1 && greater(k / 2, k)) {
             exch(k, k / 2);
             k = k / 2;
@@ -228,10 +229,11 @@ class MinPQ<Key> {
      * sinks the value.
      * Sink operation is used to delete element.
      *
-     * @param      k     {index of int type }
+     * @param      key     {index of int type }
      */
 
-    private void sink(int k) {
+    private void sink(final int key) {
+        int k = key;
         while (2 * k <= n) {
             int j = 2 * k;
             if (j < n && greater(j, j + 1)) {
