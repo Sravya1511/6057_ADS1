@@ -125,7 +125,7 @@ class MinPQ<Key> {
      * overloaded constructor.
      *
      * @param      initCapacity  The initialize capacity of int type
-     * @param      comparator    The comparator
+     * @param      comparat    The comparator
      */
 
     MinPQ(final int initCapacity, final Comparator<Key> comparat) {
