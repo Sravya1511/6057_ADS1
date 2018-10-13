@@ -24,12 +24,49 @@ class Stock implements Comparable<Stock>{
     }
 }
 
+class Set {
+
+	int size;
+	String[] list;
+
+	Set() {
+       list = new String[20];
+       size = 0;
+	}
+
+	public boolean contains(final String item) {
+        for (int i = 0; i < size; i++) {
+            if (list[i].equals(item)) {
+            return true;
+            }
+        }
+        return false;
+    }
+
+    public void add(String item) {
+    	if (size == 0) {
+    		list[size++] = item;
+    	}
+    	else if(!contains(item)) {
+    		list[size++] = item;
+    	}
+    }
+
+    public void print() {
+    	for(int i = 0; i<size; i++) {
+    		System.out.println(list[i]);
+    	}
+    }
+
+}
+
 class Solution {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		int n = Integer.parseInt(input.nextLine());
 		SymbolTable<String, Integer> symbolMax = new SymbolTable<String, Integer>(30);
 		SymbolTable<String, Integer> symbolMin = new SymbolTable<String, Integer>(30);
+		Set set = new Set();
 
 		for(int i = 0; i<6; i++) {
 			MinPQ<Stock> stMinPQ = new MinPQ<Stock>();
@@ -37,7 +74,9 @@ class Solution {
 			for(int j = 0; j<n; j++) {
 				String[] tokens = input.nextLine().split(",");
 				stMinPQ.insert(new Stock(tokens[0], Float.parseFloat(tokens[1])));
+				set.add(tokens[0]);
 				stMaxPQ.insert(new Stock(tokens[0], Float.parseFloat(tokens[1])));
+				set.add(tokens[0]);
 			}
 			for(int k = 0; k<5; k++) {
 				Stock a = stMaxPQ.delMax();
@@ -68,10 +107,15 @@ class Solution {
 				if(tokens[1].equals("minST")) {
 					System.out.println(symbolMin.get(tokens[2]));
 				}
+                case "intersection":
+                set.print();
+
 			}
 		}
 	}
 }
+
+
 class SymbolTable<Key extends Comparable<Key>, Value> {
     /**
      * key array of type key.
@@ -96,6 +140,10 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
     SymbolTable(final int size) {
         keys = (Key[]) new Comparable[size];
         values =  new int[size];
+    }
+
+    public int size() {
+    	return n;
     }
 
     public void put(final Key key, final int value) {
@@ -149,15 +197,6 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
             return true;
         }
         return false;
-    }
-
-    public void print() {
-    	for (int i = 0; i < keys.length; i++) {
-            if (keys[i] != null) {
-            System.out.println(keys[i] + " " + values[i]);
-
-            }
-        }
     }
 }
 

@@ -290,7 +290,7 @@ Fine Organic Industries Ltd. 0.29
 Vinati Organics 1.03
 Chola Inv Fin 1.47
 ----------------------------------------
-########## Testcase 2: Passed ##########
+########## Testcase 2: Failed ##########
 Expected Output: 
 Merck Ltd 4.83
 ICRA 2.84
@@ -442,11 +442,91 @@ Tasty Bite Eat 0.23
 WABCO India 0.33
 
 5
+MRF
+3M India
+Eicher Motors
+Honeywell Auto
+Bosch
+Nestle India
+Tasty Bite Eat
+Abbott India
+GSK Cons Health
+WABCO India
+Sanofi India
+TTK Prestige
+Lakshmi Machine
+Bajaj Finserv
+Bharat Rasayan
+Schaeffler India
+HEG Ltd
+Oracle Fin
+ICRA
+Merck Ltd
 2
+MRF
+3M India
+Eicher Motors
+Honeywell Auto
+Bosch
+Nestle India
+Tasty Bite Eat
+Abbott India
+GSK Cons Health
+WABCO India
+Sanofi India
+TTK Prestige
+Lakshmi Machine
+Bajaj Finserv
+Bharat Rasayan
+Schaeffler India
+HEG Ltd
+Oracle Fin
+ICRA
+Merck Ltd
 1
+MRF
+3M India
+Eicher Motors
+Honeywell Auto
+Bosch
+Nestle India
+Tasty Bite Eat
+Abbott India
+GSK Cons Health
+WABCO India
+Sanofi India
+TTK Prestige
+Lakshmi Machine
+Bajaj Finserv
+Bharat Rasayan
+Schaeffler India
+HEG Ltd
+Oracle Fin
+ICRA
+Merck Ltd
 3
+MRF
+3M India
+Eicher Motors
+Honeywell Auto
+Bosch
+Nestle India
+Tasty Bite Eat
+Abbott India
+GSK Cons Health
+WABCO India
+Sanofi India
+TTK Prestige
+Lakshmi Machine
+Bajaj Finserv
+Bharat Rasayan
+Schaeffler India
+HEG Ltd
+Oracle Fin
+ICRA
+Merck Ltd
 ----------------------------------------
-########## Testcase 3: Passed ##########
+########## Testcase 3: Failed ##########
 Expected Output: 
 Larsen & Toubro 4.11
 Vinati Organics 4.03
@@ -598,9 +678,49 @@ Vinati Organics 1.03
 Chola Inv Fin 1.47
 
 2
+Larsen & Toubro
+APL Apollo Tube
+Vinati Organics
+Jubilant Food
+Endurance Technologies Ltd.
+Nalwa Sons Invst
+NIIT Tech
+Chola Inv Fin
+Fine Organic Industries Ltd.
+Ceat
 0
+Larsen & Toubro
+APL Apollo Tube
+Vinati Organics
+Jubilant Food
+Endurance Technologies Ltd.
+Nalwa Sons Invst
+NIIT Tech
+Chola Inv Fin
+Fine Organic Industries Ltd.
+Ceat
 4
+Larsen & Toubro
+APL Apollo Tube
+Vinati Organics
+Jubilant Food
+Endurance Technologies Ltd.
+Nalwa Sons Invst
+NIIT Tech
+Chola Inv Fin
+Fine Organic Industries Ltd.
+Ceat
 0
+Larsen & Toubro
+APL Apollo Tube
+Vinati Organics
+Jubilant Food
+Endurance Technologies Ltd.
+Nalwa Sons Invst
+NIIT Tech
+Chola Inv Fin
+Fine Organic Industries Ltd.
+Ceat
 ----------------------------------------
 ########## Testcase 4: Failed ##########
 Expected Output: 
@@ -769,11 +889,191 @@ Tasty Bite Eat 0.23
 WABCO India 0.33
 
 2
+MRF
+3M India
+Eicher Motors
+Honeywell Auto
+Bosch
+Nestle India
+Tasty Bite Eat
+Abbott India
+GSK Cons Health
+WABCO India
+Sanofi India
+TTK Prestige
+Lakshmi Machine
+Bajaj Finserv
+Bharat Rasayan
+Schaeffler India
+HEG Ltd
+Oracle Fin
+ICRA
+Merck Ltd
 1
+MRF
+3M India
+Eicher Motors
+Honeywell Auto
+Bosch
+Nestle India
+Tasty Bite Eat
+Abbott India
+GSK Cons Health
+WABCO India
+Sanofi India
+TTK Prestige
+Lakshmi Machine
+Bajaj Finserv
+Bharat Rasayan
+Schaeffler India
+HEG Ltd
+Oracle Fin
+ICRA
+Merck Ltd
 0
+MRF
+3M India
+Eicher Motors
+Honeywell Auto
+Bosch
+Nestle India
+Tasty Bite Eat
+Abbott India
+GSK Cons Health
+WABCO India
+Sanofi India
+TTK Prestige
+Lakshmi Machine
+Bajaj Finserv
+Bharat Rasayan
+Schaeffler India
+HEG Ltd
+Oracle Fin
+ICRA
+Merck Ltd
 2
+MRF
+3M India
+Eicher Motors
+Honeywell Auto
+Bosch
+Nestle India
+Tasty Bite Eat
+Abbott India
+GSK Cons Health
+WABCO India
+Sanofi India
+TTK Prestige
+Lakshmi Machine
+Bajaj Finserv
+Bharat Rasayan
+Schaeffler India
+HEG Ltd
+Oracle Fin
+ICRA
+Merck Ltd
 0
+MRF
+3M India
+Eicher Motors
+Honeywell Auto
+Bosch
+Nestle India
+Tasty Bite Eat
+Abbott India
+GSK Cons Health
+WABCO India
+Sanofi India
+TTK Prestige
+Lakshmi Machine
+Bajaj Finserv
+Bharat Rasayan
+Schaeffler India
+HEG Ltd
+Oracle Fin
+ICRA
+Merck Ltd
 2
+MRF
+3M India
+Eicher Motors
+Honeywell Auto
+Bosch
+Nestle India
+Tasty Bite Eat
+Abbott India
+GSK Cons Health
+WABCO India
+Sanofi India
+TTK Prestige
+Lakshmi Machine
+Bajaj Finserv
+Bharat Rasayan
+Schaeffler India
+HEG Ltd
+Oracle Fin
+ICRA
+Merck Ltd
 1
+MRF
+3M India
+Eicher Motors
+Honeywell Auto
+Bosch
+Nestle India
+Tasty Bite Eat
+Abbott India
+GSK Cons Health
+WABCO India
+Sanofi India
+TTK Prestige
+Lakshmi Machine
+Bajaj Finserv
+Bharat Rasayan
+Schaeffler India
+HEG Ltd
+Oracle Fin
+ICRA
+Merck Ltd
 1
+MRF
+3M India
+Eicher Motors
+Honeywell Auto
+Bosch
+Nestle India
+Tasty Bite Eat
+Abbott India
+GSK Cons Health
+WABCO India
+Sanofi India
+TTK Prestige
+Lakshmi Machine
+Bajaj Finserv
+Bharat Rasayan
+Schaeffler India
+HEG Ltd
+Oracle Fin
+ICRA
+Merck Ltd
+MRF
+3M India
+Eicher Motors
+Honeywell Auto
+Bosch
+Nestle India
+Tasty Bite Eat
+Abbott India
+GSK Cons Health
+WABCO India
+Sanofi India
+TTK Prestige
+Lakshmi Machine
+Bajaj Finserv
+Bharat Rasayan
+Schaeffler India
+HEG Ltd
+Oracle Fin
+ICRA
+Merck Ltd
 ----------------------------------------
