@@ -1,5 +1,10 @@
 import java.util.Scanner;
 import java.util.Comparator;
+/**
+ * Class for stock.
+ * stock has two parameters.
+ *
+ */
 class Stock implements Comparable<Stock>{
 	String name;
 	float data;
@@ -24,41 +29,6 @@ class Stock implements Comparable<Stock>{
     }
 }
 
-class Set {
-
-	int size;
-	String[] list;
-
-	Set() {
-       list = new String[20];
-       size = 0;
-	}
-
-	public boolean contains(final String item) {
-        for (int i = 0; i < size; i++) {
-            if (list[i].equals(item)) {
-            return true;
-            }
-        }
-        return false;
-    }
-
-    public void add(String item) {
-    	if (size == 0) {
-    		list[size++] = item;
-    	}
-    	else if(!contains(item)) {
-    		list[size++] = item;
-    	}
-    }
-
-    public void print() {
-    	for(int i = 0; i<size; i++) {
-    		System.out.println(list[i]);
-    	}
-    }
-
-}
 
 class Solution {
 	public static void main(String[] args) {
@@ -66,7 +36,6 @@ class Solution {
 		int n = Integer.parseInt(input.nextLine());
 		SymbolTable<String, Integer> symbolMax = new SymbolTable<String, Integer>(30);
 		SymbolTable<String, Integer> symbolMin = new SymbolTable<String, Integer>(30);
-		Set set = new Set();
 
 		for(int i = 0; i<6; i++) {
 			MinPQ<Stock> stMinPQ = new MinPQ<Stock>();
@@ -81,14 +50,12 @@ class Solution {
 			for(int k = 0; k<5; k++) {
 				Stock a = stMaxPQ.delMax();
 				System.out.println(a);
-				set.add(a.name);
 				symbolMax.put(a.name, 1);
 			}
 			System.out.println();
 			for(int k = 0; k<5; k++) {
 				Stock b = stMinPQ.delMin();
 				System.out.println(b);
-				set.add(b.name);
 				symbolMin.put(b.name, 1);
 			}
 			System.out.println();
@@ -111,7 +78,7 @@ class Solution {
 				}
 				break;
                 case "intersection":
-                set.print();
+                // set.print();
                 break;
 
 			}
@@ -201,6 +168,10 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
             return true;
         }
         return false;
+    }
+
+    public Key[] getKeys() {
+    	return keys;
     }
 }
 

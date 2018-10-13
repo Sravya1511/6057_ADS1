@@ -776,23 +776,4 @@ WABCO India 0.33
 2
 1
 1
-Merck Ltd
-Schaeffler India
-TTK Prestige
-ICRA
-Bharat Rasayan
-Bosch
-Abbott India
-MRF
-Oracle Fin
-Bajaj Finserv
-Sanofi India
-Nestle India
-Honeywell Auto
-Eicher Motors
-Tasty Bite Eat
-Lakshmi Machine
-HEG Ltd
-3M India
-WABCO India
 ----------------------------------------
