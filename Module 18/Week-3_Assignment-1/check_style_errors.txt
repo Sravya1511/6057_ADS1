@@ -1,5 +1,2 @@
 Starting audit...
-[ERROR] F:\6057_ADS1\Module 18\Week-3_Assignment-1\Solution.java:10:1: File contains tab characters (this is the first instance). [FileTabCharacter]
-[ERROR] F:\6057_ADS1\Module 18\Week-3_Assignment-1\Solution.java:68:31: 'switch' is not followed by whitespace. [WhitespaceAround]
 Audit done.
-Checkstyle ends with 2 errors.
