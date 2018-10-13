@@ -79,9 +79,6 @@ class Solution {
 				break;
                 case "intersection":
                 symbolMax.intersection(symbolMin.getKeys(), symbolMax.getKeys());
-
-
-
                 break;
 
 			}
