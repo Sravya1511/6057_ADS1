@@ -86,14 +86,21 @@ class Solution {
 	}
 }
 
-
+/**
+ * Class for symbol table.
+ * The Symbol table is used for inserting keys and corresponding
+ * values.
+ *
+ * @param      <Key>    The key
+ * @param      <Value>  The value
+ */
 class SymbolTable<Key extends Comparable<Key>, Value> {
     /**
      * key array of type key.
      */
     private Key[] keys;
     /**
-     * value array of value Type.
+     * value array of int Type.
      */
     private int[] values;
     /**
@@ -103,7 +110,7 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
     /**
      * Constructs the object.
      * The keys array of type Key.
-     * The values array of type value.
+     * The values array of type int.
      *
      * @param      size  The size of int type.
      */
@@ -112,10 +119,26 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
         keys = (Key[]) new Comparable[size];
         values =  new int[size];
     }
+    /**
+     * size of the symbol table
+     *
+     * @return     { returns int }
+     */
 
     public int size() {
     	return n;
     }
+
+    /**
+     * The method inserts key and values.
+     * If the key is new, it is inserted.
+     * If the key already exists, the value is overrided.
+     * It calls rank method to know the index of the key to be placed.
+     * The time complexity is O(N). - worst case.
+     *
+     * @param      key    The key of key type.
+     * @param      value  The value of int type.
+     */
 
     public void put(final Key key, final int value) {
         int i = rank(key);
@@ -131,6 +154,15 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
         values[i] = value;
         n++;
     }
+    /**
+     * The key is compared with all the keys and finds its position.
+     * Rank is found using binary search algorithm.
+     * The time complexity is O(logN).
+     *
+     * @param      key   The key
+     *
+     * @return     { returns int }
+     */
 
     public int rank(final Key key) {
         int lo = 0, hi = n - 1;
@@ -148,6 +180,16 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
         return lo;
     }
 
+     /**
+     * gets the value of that key.
+     * The time complexity is O(1)
+     * calls the rank method.
+     *
+     * @param      key   The key
+     *
+     * @return     { returns key }
+     */
+
     public int get(final Key key) {
         if (key == null) {
             System.out.println("No key");
@@ -162,6 +204,12 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
         }
         return 0;
     }
+    /**
+     * class intersection.
+     *
+     * @param      temp1  key type
+     * @param      temp2  key type.
+     */
 
     public void intersection(Key[] temp1, Key[] temp2) {
     	 for (int m = 0; m < temp1.length; m++) {
@@ -173,17 +221,36 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
                 }
     }
 
+    /**
+     * checks if the table is empty or not.
+     * The time complexity is O(1).
+     *
+     * @return     True if empty, False otherwise.
+     */
+
     public boolean isEmpty() {
         if (n == 0) {
             return true;
         }
         return false;
     }
+    /**
+     * Gets the keys.
+     *
+     * @return     The keys.
+     */
 
     public Key[] getKeys() {
     	return keys;
     }
 }
+
+/**
+ * Class for minimum pq.
+ * the heap of min type is created.
+ *
+ * @param      <Key>  The key
+ */
 
 class MinPQ<Key> {
     /**
@@ -393,6 +460,13 @@ class MinPQ<Key> {
 
 
 }
+
+/**
+ * Class for maximum pq.
+ * the heap of max type is created.
+ *
+ * @param      <Key>  The key
+ */
 
 class MaxPQ<Key> {
     /**
