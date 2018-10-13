@@ -28,26 +28,138 @@ class Solution {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		int n = Integer.parseInt(input.nextLine());
+		SymbolTable<String, Integer> symbolMax = new SymbolTable<String, Integer>(30);
+		SymbolTable<String, Integer> symbolMin = new SymbolTable<String, Integer>(30);
+
 		for(int i = 0; i<6; i++) {
-			MinPQ<Stock> st = new MinPQ<Stock>();
-			MaxPQ<Stock> stm = new MaxPQ<Stock>();
+			MinPQ<Stock> stMinPQ = new MinPQ<Stock>();
+			MaxPQ<Stock> stMaxPQ = new MaxPQ<Stock>();
 			for(int j = 0; j<n; j++) {
 				String[] tokens = input.nextLine().split(",");
-				st.insert(new Stock(tokens[0], Float.parseFloat(tokens[1])));
-				stm.insert(new Stock(tokens[0], Float.parseFloat(tokens[1])));
+				stMinPQ.insert(new Stock(tokens[0], Float.parseFloat(tokens[1])));
+				stMaxPQ.insert(new Stock(tokens[0], Float.parseFloat(tokens[1])));
 			}
 			for(int k = 0; k<5; k++) {
-				System.out.println(stm.delMax());
+				Stock a = stMaxPQ.delMax();
+				System.out.println(a);
+				symbolMax.put(a.name, 1);
 			}
 			System.out.println();
 			for(int k = 0; k<5; k++) {
-				System.out.println(st.delMin());
+				Stock b = stMinPQ.delMin();
+				System.out.println(b);
+				symbolMin.put(b.name, 1);
 			}
 			System.out.println();
 		}
+        // System.out.println("Max SymbolTable");
+		// symbolMax.print();
+		// System.out.println("Min SymbolTable");
+		// symbolMin.print();
+		//
+		int k = Integer.parseInt(input.nextLine());
+		for(int i = 0; i<k; i++) {
+			String[] tokens = input.nextLine().split(",");
+			switch(tokens[0]) {
+				case "get":
+				if(tokens[1].equals("maxST")) {
+					System.out.println(symbolMax.get(tokens[2]));
+				}
+				if(tokens[1].equals("minST")) {
+					System.out.println(symbolMin.get(tokens[2]));
+				}
+			}
+		}
 	}
 }
+class SymbolTable<Key extends Comparable<Key>, Value> {
+    /**
+     * key array of type key.
+     */
+    private Key[] keys;
+    /**
+     * value array of value Type.
+     */
+    private int[] values;
+    /**
+     * size of the table.
+     */
+    private int n = 0;
+    /**
+     * Constructs the object.
+     * The keys array of type Key.
+     * The values array of type value.
+     *
+     * @param      size  The size of int type.
+     */
 
+    SymbolTable(final int size) {
+        keys = (Key[]) new Comparable[size];
+        values =  new int[size];
+    }
+
+    public void put(final Key key, final int value) {
+        int i = rank(key);
+        if (i < n && keys[i].compareTo(key) == 0) {
+            values[i] = values[i]+1;
+            return;
+        }
+        for (int j = n; j > i; j--)  {
+            keys[j] = keys[j - 1];
+            values[j] = values[j - 1];
+        }
+        keys[i] = key;
+        values[i] = value;
+        n++;
+    }
+
+    public int rank(final Key key) {
+        int lo = 0, hi = n - 1;
+        while (lo <= hi) {
+            int mid = lo + (hi - lo) / 2;
+            int cmp = key.compareTo(keys[mid]);
+            if     (cmp < 0) {
+                hi = mid - 1;
+            } else if (cmp > 0) {
+                lo = mid + 1;
+            } else {
+                return mid;
+            }
+        }
+        return lo;
+    }
+
+    public int get(final Key key) {
+        if (key == null) {
+            System.out.println("No key");
+            return 0;
+        }
+        if (isEmpty()) {
+            return 0;
+        }
+        int i = rank(key);
+        if (i < n && keys[i].compareTo(key) == 0) {
+            return values[i];
+        }
+        return 0;
+    }
+
+    public boolean isEmpty() {
+        if (n == 0) {
+            return true;
+        }
+        return false;
+    }
+
+    public void print() {
+    	for (int i = 0; i < keys.length; i++) {
+            if (keys[i] != null) {
+            System.out.println(keys[i] + " " + values[i]);
+
+            }
+        }
+    }
+}
 
 class MinPQ<Key> {
 
