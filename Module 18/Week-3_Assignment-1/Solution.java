@@ -186,30 +186,94 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
 }
 
 class MinPQ<Key> {
+    /**
+     * key generic.
+     */
+    private Key[] pq;
+    /**
+     * size of the heap.
+     */
+    private int n;
+    /**
+     * comparator.
+     */
+    private Comparator<Key> comparator;  // optional comparator
 
-	Key[] pq;
-	int n;
-    Comparator<Key> comparator;
-
-
-	MinPQ() {
-    this(1);
-    }
-
-	MinPQ(final int initCapacity) {
+    /**
+     * Constructs the object.
+     * overloaded constructor.
+     *
+     * @param      initCapacity  The initialize capacity.
+     */
+    MinPQ(final int initCapacity) {
         pq = (Key[]) new Object[initCapacity + 1];
         n = 0;
     }
+
+    /**
+     * Constructs the object.
+     * overloaded constructor.
+     * This constructor is called from main method.
+     */
+    MinPQ() {
+        this(1);
+    }
+    /**
+     * Constructs the object.
+     * overloaded constructor.
+     *
+     * @param      initCapacity  The initialize capacity of int type
+     * @param      comparat    The comparator
+     */
 
     MinPQ(final int initCapacity, final Comparator<Key> comparat) {
         this.comparator = comparat;
         pq = (Key[]) new Object[initCapacity + 1];
         n = 0;
     }
+    /**
+     * Constructs the object.
+     *
+     *
+     * @param      comparato  The comparator
+     */
+
 
     MinPQ(final Comparator<Key> comparato) {
         this(1, comparato);
     }
+    /**
+     * Determines if empty.
+     * The time complexity is O(1).
+     *
+     *
+     * @return     True if empty, False otherwise.
+     */
+
+
+    public boolean isEmpty() {
+        return n == 0;
+    }
+
+    /**
+     * size of the heap.
+     * The time complexity is O(1).
+     *
+     *
+     * @return     { returns int }
+     */
+    public int size() {
+        return n;
+    }
+
+   /**
+    * resizes the array.
+    * insert method will call this method.
+     * The time complexity is O(N).
+    *
+    *
+    * @param      capacity  The capacity of int
+    */
 
     private void resize(final int capacity) {
         assert capacity > n;
@@ -219,6 +283,14 @@ class MinPQ<Key> {
         }
         pq = temp;
     }
+    /**
+     * inserts the object CubeSum.
+     * The insertion method calls swim method.
+     * The time complexity is O(1).
+     *
+     *
+     * @param      x     { key of Cube Sum object }
+     */
 
     public void insert(final Key x) {
         // double size of array if necessary
@@ -228,6 +300,13 @@ class MinPQ<Key> {
         pq[++n] = x;
         swim(n);
     }
+    /**
+     * deletes the root node.
+     * The time complexity is O(1).
+     *
+     *
+     * @return     { returns key of CubeSum object }
+     */
 
     public Key delMin() {
         final int four = 4;
@@ -240,6 +319,15 @@ class MinPQ<Key> {
         }
         return min;
     }
+    /**
+     * swim operation is called in insert.
+     * the node is inserted at end.
+     * The element them swims.
+     * The time complexity is O(logN).
+     *
+     *
+     * @param      key     { parameter_description }
+     */
 
     private void swim(final int key) {
         int k = key;
@@ -248,6 +336,14 @@ class MinPQ<Key> {
             k = k / 2;
         }
     }
+    /**
+     * sinks the value.
+     * Sink operation is used to delete element.
+     * The time complexity is O(logN).
+     *
+     *
+     * @param      key     {index of int type }
+     */
 
     private void sink(final int key) {
         int k = key;
@@ -263,6 +359,17 @@ class MinPQ<Key> {
             k = j;
         }
     }
+    /**
+     * compares two objects.
+     * The time complexity is O(1).
+     *
+     *
+     * @param      i     { index of int type }
+     * @param      j    { index of int type }
+     *
+     * @return     { returns boolean type }
+     */
+
 
     private boolean greater(final int i, final int j) {
         if (comparator == null) {
@@ -271,39 +378,111 @@ class MinPQ<Key> {
             return comparator.compare(pq[i], pq[j]) > 0;
         }
     }
-
-     private void exch(final int i, final int j) {
+    /**
+     * exchanges two objects in heap.
+     * The time complexity is O(1).
+     *
+     * @param      i     { index of int type }
+     * @param      j     { index of int type }
+     */
+    private void exch(final int i, final int j) {
         Key swap = pq[i];
         pq[i] = pq[j];
         pq[j] = swap;
     }
+
+
 }
 
 class MaxPQ<Key> {
+    /**
+     * key generic.
+     */
+    private Key[] pq;
+    /**
+     * size of the heap.
+     */
+    private int n;
+    /**
+     * comparator.
+     */
+    private Comparator<Key> comparator;  // optional comparator
 
-	Key[] pq;
-	int n;
-    Comparator<Key> comparator;
-
-
-	MaxPQ() {
-    this(1);
-    }
-
-	MaxPQ(final int initCapacity) {
+    /**
+     * Constructs the object.
+     * overloaded constructor.
+     *
+     * @param      initCapacity  The initialize capacity.
+     */
+    MaxPQ(final int initCapacity) {
         pq = (Key[]) new Object[initCapacity + 1];
         n = 0;
     }
+
+    /**
+     * Constructs the object.
+     * overloaded constructor.
+     * This constructor is called from main method.
+     */
+    MaxPQ() {
+        this(1);
+    }
+    /**
+     * Constructs the object.
+     * overloaded constructor.
+     *
+     * @param      initCapacity  The initialize capacity of int type
+     * @param      comparat    The comparator
+     */
 
     MaxPQ(final int initCapacity, final Comparator<Key> comparat) {
         this.comparator = comparat;
         pq = (Key[]) new Object[initCapacity + 1];
         n = 0;
     }
+    /**
+     * Constructs the object.
+     *
+     *
+     * @param      comparato  The comparator
+     */
+
 
     MaxPQ(final Comparator<Key> comparato) {
         this(1, comparato);
     }
+    /**
+     * Determines if empty.
+     * The time complexity is O(1).
+     *
+     *
+     * @return     True if empty, False otherwise.
+     */
+
+
+    public boolean isEmpty() {
+        return n == 0;
+    }
+
+    /**
+     * size of the heap.
+     * The time complexity is O(1).
+     *
+     *
+     * @return     { returns int }
+     */
+    public int size() {
+        return n;
+    }
+
+   /**
+    * resizes the array.
+    * insert method will call this method.
+     * The time complexity is O(N).
+    *
+    *
+    * @param      capacity  The capacity of int
+    */
 
     private void resize(final int capacity) {
         assert capacity > n;
@@ -313,6 +492,14 @@ class MaxPQ<Key> {
         }
         pq = temp;
     }
+    /**
+     * inserts the object CubeSum.
+     * The insertion method calls swim method.
+     * The time complexity is O(1).
+     *
+     *
+     * @param      x     { key of Cube Sum object }
+     */
 
     public void insert(final Key x) {
         // double size of array if necessary
@@ -322,18 +509,34 @@ class MaxPQ<Key> {
         pq[++n] = x;
         swim(n);
     }
+    /**
+     * deletes the root node.
+     * The time complexity is O(1).
+     *
+     *
+     * @return     { returns key of CubeSum object }
+     */
 
     public Key delMax() {
         final int four = 4;
-        Key max = pq[1];
+        Key min = pq[1];
         exch(1, n--);
         sink(1);
         pq[n + 1] = null;
         if ((n > 0) && (n == (pq.length - 1) / four)) {
             resize(pq.length / 2);
         }
-        return max;
+        return min;
     }
+    /**
+     * swim operation is called in insert.
+     * the node is inserted at end.
+     * The element them swims.
+     * The time complexity is O(logN).
+     *
+     *
+     * @param      key     { parameter_description }
+     */
 
     private void swim(final int key) {
         int k = key;
@@ -342,6 +545,14 @@ class MaxPQ<Key> {
             k = k / 2;
         }
     }
+    /**
+     * sinks the value.
+     * Sink operation is used to delete element.
+     * The time complexity is O(logN).
+     *
+     *
+     * @param      key     {index of int type }
+     */
 
     private void sink(final int key) {
         int k = key;
@@ -357,6 +568,17 @@ class MaxPQ<Key> {
             k = j;
         }
     }
+    /**
+     * compares two objects.
+     * The time complexity is O(1).
+     *
+     *
+     * @param      i     { index of int type }
+     * @param      j    { index of int type }
+     *
+     * @return     { returns boolean type }
+     */
+
 
     private boolean less(final int i, final int j) {
         if (comparator == null) {
@@ -365,11 +587,18 @@ class MaxPQ<Key> {
             return comparator.compare(pq[i], pq[j]) < 0;
         }
     }
-
-     private void exch(final int i, final int j) {
+    /**
+     * exchanges two objects in heap.
+     * The time complexity is O(1).
+     *
+     * @param      i     { index of int type }
+     * @param      j     { index of int type }
+     */
+    private void exch(final int i, final int j) {
         Key swap = pq[i];
         pq[i] = pq[j];
         pq[j] = swap;
     }
-}
 
+
+}
