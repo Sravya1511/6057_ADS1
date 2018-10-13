@@ -78,16 +78,10 @@ class Solution {
 				}
 				break;
                 case "intersection":
-                String[] temp1 = symbolMin.getKeys();
-                String[] temp2 = symbolMax.getKeys();
+                symbolMax.intersection(symbolMin.getKeys(), symbolMax.getKeys());
 
-                for (int m = 0; m < temp1.length; m++) {
-                    for (int j = 0; j < temp2.length; j++) {
-                        if (temp1[m].equals(temp2[j])) {
-                          System.out.println(temp1[m]);
-                        }
-                    }
-                }
+
+
                 break;
 
 			}
@@ -170,6 +164,16 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
             return values[i];
         }
         return 0;
+    }
+
+    public void intersection(Key[] temp1, Key[] temp2) {
+    	 for (int m = 0; m < temp1.length; m++) {
+            for (int j = 0; j < temp2.length; j++) {
+                    if (temp1[m].equals(temp2[j])) {
+                          System.out.println(temp1[m]);
+                        }
+                    }
+                }
     }
 
     public boolean isEmpty() {
