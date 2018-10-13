@@ -776,24 +776,23 @@ WABCO India 0.33
 2
 1
 1
-MRF
-3M India
-Eicher Motors
-Honeywell Auto
-Bosch
-Nestle India
-Tasty Bite Eat
-Abbott India
-GSK Cons Health
-WABCO India
-Sanofi India
-TTK Prestige
-Lakshmi Machine
-Bajaj Finserv
-Bharat Rasayan
-Schaeffler India
-HEG Ltd
-Oracle Fin
-ICRA
 Merck Ltd
+Schaeffler India
+TTK Prestige
+ICRA
+Bharat Rasayan
+Bosch
+Abbott India
+MRF
+Oracle Fin
+Bajaj Finserv
+Sanofi India
+Nestle India
+Honeywell Auto
+Eicher Motors
+Tasty Bite Eat
+Lakshmi Machine
+HEG Ltd
+3M India
+WABCO India
 ----------------------------------------

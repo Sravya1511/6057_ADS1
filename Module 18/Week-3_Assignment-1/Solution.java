@@ -74,19 +74,21 @@ class Solution {
 			for(int j = 0; j<n; j++) {
 				String[] tokens = input.nextLine().split(",");
 				stMinPQ.insert(new Stock(tokens[0], Float.parseFloat(tokens[1])));
-				set.add(tokens[0]);
+				// set.add(tokens[0]);
 				stMaxPQ.insert(new Stock(tokens[0], Float.parseFloat(tokens[1])));
-				set.add(tokens[0]);
+				// set.add(tokens[0]);
 			}
 			for(int k = 0; k<5; k++) {
 				Stock a = stMaxPQ.delMax();
 				System.out.println(a);
+				set.add(a.name);
 				symbolMax.put(a.name, 1);
 			}
 			System.out.println();
 			for(int k = 0; k<5; k++) {
 				Stock b = stMinPQ.delMin();
 				System.out.println(b);
+				set.add(b.name);
 				symbolMin.put(b.name, 1);
 			}
 			System.out.println();
