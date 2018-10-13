@@ -3,6 +3,8 @@ import java.util.Comparator;
 /**
  * Class for stock.
  * stock has two parameters.
+ * name of the compnay.
+ * %change in stock.
  *
  */
 class Stock implements Comparable<Stock>{
@@ -28,32 +30,54 @@ class Stock implements Comparable<Stock>{
         return this.name.compareTo(that.name);
     }
 }
+/**
+ * Class for solution.
+ * reads input.
+ * The object for stock class is created.
+ *
+ */
 
+final class Solution {
+	/**
+	 * Constructs the object.
+	 */
 
-class Solution {
-	public static void main(String[] args) {
+	private Solution() {
+
+	}
+	/**
+	 * The main method puts all the stocks in min.
+	 * heap and max heap.
+	 *
+	 * @param      args  The arguments
+	 */
+	public static void main(final String[] args) {
 		Scanner input = new Scanner(System.in);
 		int n = Integer.parseInt(input.nextLine());
-		SymbolTable<String, Integer> symbolMax = new SymbolTable<String, Integer>(30);
-		SymbolTable<String, Integer> symbolMin = new SymbolTable<String, Integer>(30);
+		SymbolTable<String, Integer> symbolMax = new
+		SymbolTable<String, Integer>(30);
+		SymbolTable<String, Integer> symbolMin = new
+		SymbolTable<String, Integer>(30);
 
-		for(int i = 0; i<6; i++) {
+		for (int i = 0; i < 6; i++) {
 			MinPQ<Stock> stMinPQ = new MinPQ<Stock>();
 			MaxPQ<Stock> stMaxPQ = new MaxPQ<Stock>();
-			for(int j = 0; j<n; j++) {
+			for (int j = 0; j < n; j++) {
 				String[] tokens = input.nextLine().split(",");
-				stMinPQ.insert(new Stock(tokens[0], Float.parseFloat(tokens[1])));
+				stMinPQ.insert(new Stock(tokens[0],
+					Float.parseFloat(tokens[1])));
 				// set.add(tokens[0]);
-				stMaxPQ.insert(new Stock(tokens[0], Float.parseFloat(tokens[1])));
+				stMaxPQ.insert(new Stock(tokens[0],
+					Float.parseFloat(tokens[1])));
 				// set.add(tokens[0]);
 			}
-			for(int k = 0; k<5; k++) {
+			for (int k = 0; k < 5; k++) {
 				Stock a = stMaxPQ.delMax();
 				System.out.println(a);
 				symbolMax.put(a.name, 1);
 			}
 			System.out.println();
-			for(int k = 0; k<5; k++) {
+			for (int k = 0; k < 5; k++) {
 				Stock b = stMinPQ.delMin();
 				System.out.println(b);
 				symbolMin.put(b.name, 1);
@@ -66,7 +90,7 @@ class Solution {
 		// symbolMin.print();
 		//
 		int k = Integer.parseInt(input.nextLine());
-		for(int i = 0; i<k; i++) {
+		for (int i = 0; i < k; i++) {
 			String[] tokens = input.nextLine().split(",");
 			switch(tokens[0]) {
 				case "get":
@@ -78,7 +102,10 @@ class Solution {
 				}
 				break;
                 case "intersection":
-                symbolMax.intersection(symbolMin.getKeys(), symbolMax.getKeys());
+                symbolMax.intersection(symbolMin.getKeys(),
+                	symbolMax.getKeys());
+                break;
+                default:
                 break;
 
 			}
