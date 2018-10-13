@@ -52,14 +52,18 @@ final class Solution {
 	 * @param      args  The arguments
 	 */
 	public static void main(final String[] args) {
+		final int six = 6;
+		final int t = 30;
+		final int five = 5;
+
 		Scanner input = new Scanner(System.in);
 		int n = Integer.parseInt(input.nextLine());
 		SymbolTable<String, Integer> symbolMax = new
-		SymbolTable<String, Integer>(30);
+		SymbolTable<String, Integer>(t);
 		SymbolTable<String, Integer> symbolMin = new
-		SymbolTable<String, Integer>(30);
+		SymbolTable<String, Integer>(t);
 
-		for (int i = 0; i < 6; i++) {
+		for (int i = 0; i < six; i++) {
 			MinPQ<Stock> stMinPQ = new MinPQ<Stock>();
 			MaxPQ<Stock> stMaxPQ = new MaxPQ<Stock>();
 			for (int j = 0; j < n; j++) {
@@ -71,13 +75,13 @@ final class Solution {
 					Float.parseFloat(tokens[1])));
 				// set.add(tokens[0]);
 			}
-			for (int k = 0; k < 5; k++) {
+			for (int k = 0; k < five; k++) {
 				Stock a = stMaxPQ.delMax();
 				System.out.println(a);
 				symbolMax.put(a.name, 1);
 			}
 			System.out.println();
-			for (int k = 0; k < 5; k++) {
+			for (int k = 0; k < five; k++) {
 				Stock b = stMinPQ.delMin();
 				System.out.println(b);
 				symbolMin.put(b.name, 1);
@@ -94,11 +98,11 @@ final class Solution {
 			String[] tokens = input.nextLine().split(",");
 			switch(tokens[0]) {
 				case "get":
-				if(tokens[1].equals("maxST")) {
-					System.out.println(symbolMax.get(tokens[2]));
+				if (tokens[1].equals("maxST")) {
+		System.out.println(symbolMax.get(tokens[2]));
 				}
-				if(tokens[1].equals("minST")) {
-					System.out.println(symbolMin.get(tokens[2]));
+				if (tokens[1].equals("minST")) {
+		System.out.println(symbolMin.get(tokens[2]));
 				}
 				break;
                 case "intersection":
