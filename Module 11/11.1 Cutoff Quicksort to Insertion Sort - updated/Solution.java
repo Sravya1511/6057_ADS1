@@ -54,7 +54,7 @@ class QuickSort {
 
     /**
      * partition method.
-     * Time complexity is O(NlogN).
+     * Time complexity is O(N).
      *
      *
      * @param      arr   The arr of type comparable.
@@ -110,9 +110,9 @@ class QuickSort {
      * Time complexity is O(1).
      *
      *
-     * @param      a     { parameter_description }
-     * @param      i     { parameter_description }
-     * @param      j     { parameter_description }
+     * @param      a     { a of type object }
+     * @param      i     { i of int type }
+     * @param      j     { j of int type }
      */
     private void exch(final Object[] a, final int i, final int j) {
         Object swap = a[i];
