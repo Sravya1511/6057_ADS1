@@ -50,7 +50,7 @@ class StudentArray {
     }
     /**
      * Gets the reservation array.
-     * The time complexity is O(N).
+     * The time complexity is O(N^2).
      *
      * @param      vacancies      The vacancies of type int.
      * @param      meritArray     The merit array of type studnet.
@@ -69,22 +69,9 @@ class StudentArray {
         final int stVacancies) {
         final int th = 30;
         res = new Student[th];
-        int x = 0;
-        int y = 0;
-        int z = 0;
-        int count = 0;
-        // for (int i = openVacancies; i < meritArray.length; i++) {
-        //     if (meritArray[i].getReservation().equals("ST")) {
-        //          x++;
-        //     }
-        //     if (meritArray[i].getReservation().equals("SC")) {
-        //         y++;
-        //     }
-        //     if (meritArray[i].getReservation().equals("BC")) {
-        //         z++;
-        //     }
 
-        // }
+        int count = 0;
+
         for (int i = 0; i < openVacancies; i++) {
             res[count++] = meritArray[i];
         }
