@@ -72,7 +72,7 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
         while (lo <= hi) {
             int mid = lo + (hi - lo) / 2;
             int cmp = key.compareTo(keys[mid]);
-            if      (cmp < 0) {
+            if     (cmp < 0) {
                 hi = mid - 1;
             } else if (cmp > 0) {
                 lo = mid + 1;
@@ -188,7 +188,7 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
     /**
      * floor method returns the value .
      * equal to or greater than the key value.
-     * The time complexity is O(1).
+     * The time complexity is O(logN).
      *
      *
      * @param      key   The key
@@ -212,12 +212,12 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
     }
     /**
      * gets the value of that key.
-     * The time complexity is O(1)
+     * The time complexity is O(logN)
      * calls the rank method.
      *
      * @param      key   The key
      *
-     * @return     { description_of_the_return_value }
+     * @return     { returns key }
      */
 
     public Value get(final Key key) {
@@ -264,6 +264,7 @@ final class Solution {
     }
     /**
      * creates object for symbolTable class.
+     * The time complexity is O(N).
      *
      * @param      args  The arguments
      */
