@@ -62,6 +62,7 @@ class MaxPQ<Key> {
      * Returns true if this priority queue is empty.
      * @return {@code true} if this priority queue is empty;
      *         {@code false} otherwise
+     * The time complexity is O(1).
      */
     public boolean isEmpty() {
         return n == 0;
@@ -69,6 +70,8 @@ class MaxPQ<Key> {
     /**
      * Returns the number of keys on this priority queue.
      * @return the number of keys on this priority queue
+     * The time complexity is O(1).
+     *
      */
     public int size() {
         return n;
@@ -77,6 +80,8 @@ class MaxPQ<Key> {
     /**
      * Returns a largest key on this priority queue.
      * @return a largest key on this priority queue
+     * The time complexity is O(1).
+     *
      */
     public Key max() {
         if (isEmpty()) {
@@ -84,7 +89,9 @@ class MaxPQ<Key> {
         }
         return pq[1];
     }
-    // helper function to double the size of the heap array
+    // The time complexity is O(N).
+    // helper function to double the size of the heap array.
+
     private void resize(final int capacity) {
         Key[] temp = (Key[]) new Object[capacity];
         for (int i = 1; i <= n; i++) {
@@ -94,6 +101,8 @@ class MaxPQ<Key> {
     }
     /**
      * Adds a new key to this priority queue.
+     * The time complexity is O(logN).
+     *
      * @param  x the new key to add to this priority queue
      */
     public void insert(final Key x) {
@@ -105,6 +114,8 @@ class MaxPQ<Key> {
     /**
      * Removes and returns a largest key on this priority queue.
      * @return a largest key on this priority queue
+     * The time complexity is O(logN).
+     *
      */
     public Key delMax() {
         if (isEmpty()) {
@@ -119,6 +130,8 @@ class MaxPQ<Key> {
     }
     /**
      * swim method.
+     * The time complexity is O(logN).
+     *
      * @param      k     index.
      */
     private void swim(final int k) {
@@ -130,6 +143,8 @@ class MaxPQ<Key> {
     }
     /**
      * sink method.
+     * The time complexity is O(logN).
+     *
      * @param      k     index.
      */
     private void sink(final int k) {
@@ -144,6 +159,8 @@ class MaxPQ<Key> {
     }
     /**
      * less method.
+     * The time complexity is O(1).
+     *
      * @param      i     index.
      * @param      j     index.
      * @return     true or false.
@@ -157,6 +174,8 @@ class MaxPQ<Key> {
     }
     /**
      * exch method to swap the elements of array.
+     * The time complexity is O(1).
+     *
      * @param      i     index.
      * @param      j     index.
      */
@@ -167,6 +186,8 @@ class MaxPQ<Key> {
     }
     /**
      * Determines if maximum heap.
+     * The time complexity is O(N).
+     *
      * @return     True if maximum heap, False otherwise.
      */
     private boolean isMaxHeap() {
@@ -174,6 +195,8 @@ class MaxPQ<Key> {
     }
     /**
      * Determines if maximum heap.
+     * The time complexity is O(N) -- worst case.
+     *
      * @param      k     index.
      * @return     True if maximum heap, False otherwise.
      */
@@ -251,6 +274,8 @@ class MinPQ<Key> {
     }
     /**
      * Returns true if this priority queue is empty.
+     * The time complexity is O(1).
+     *
      * @return {@code true} if this priority queue is empty;
      *         {@code false} otherwise
      */
@@ -259,6 +284,8 @@ class MinPQ<Key> {
     }
     /**
      * Returns the number of keys on this priority queue.
+     * The time complexity is O(1).
+     *
      * @return the number of keys on this priority queue
      */
     public int size() {
@@ -266,6 +293,8 @@ class MinPQ<Key> {
     }
     /**
      * Returns a smallest key on this priority queue.
+     * The time complexity is O(1).
+     *
      * @return a smallest key on this priority queue.
      */
     public Key min() {
@@ -276,6 +305,8 @@ class MinPQ<Key> {
     }
     /**
      * resize method to resize the array.
+     * The time complexity is O(N).
+     *
      * @param      capacity  The capacity
      */
     private void resize(final int capacity) {
@@ -288,6 +319,8 @@ class MinPQ<Key> {
     }
     /**
      * Adds a new key to this priority queue.
+     * The time complexity is O(logN).
+     *
      * @param  x the key to add to this priority queue
      */
     public void insert(final Key x) {
@@ -297,6 +330,8 @@ class MinPQ<Key> {
     }
     /**
      * Removes and returns a smallest key on this priority queue.
+     * The time complexity is O(logN).
+     *
      * @return a smallest key on this priority queue
      */
     public Key delMin() {
@@ -312,6 +347,8 @@ class MinPQ<Key> {
     }
     /**
      * swim method.
+     * The time complexity is O(logN).
+     *
      * @param      k    index.
      */
     private void swim(final int k) {
@@ -323,6 +360,8 @@ class MinPQ<Key> {
     }
     /**
      * sink method.
+     * The time complexity is O(logN).
+     *
      * @param      k    index.
      */
     private void sink(final int k) {
@@ -337,6 +376,8 @@ class MinPQ<Key> {
     }
     /**
      * greater method.
+     * The time complexity is O(1).
+     *
      * @param      i     index.
      * @param      j     index.
      * @return     true or false.
@@ -350,6 +391,8 @@ class MinPQ<Key> {
     }
     /**
      * exch method to swap the elements.
+     * The time complexity is O(1).
+     *
      * @param      i     index.
      * @param      j     index.
      */
@@ -361,12 +404,16 @@ class MinPQ<Key> {
     /**
      * Determines if minimum heap.
      * @return     True if minimum heap, False otherwise.
+     * The time complexity is O(N).
+     *
      */
     private boolean isMinHeap() {
         return isMinHeap(1);
     }
     /**
      * Determines if minimum heap.
+     * The time complexity is O(N).
+     *
      * @param      k     index.
      * @return     True if minimum heap, False otherwise.
      */
