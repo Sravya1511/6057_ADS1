@@ -3,7 +3,7 @@ import java.util.Comparator;
 // import java.util.Iterator;
 /**
  * Class for cube sum.
- * Thsi calss has i and j values and sum.
+ * This class has i and j values and sum.
  * All are int type.
  */
 class CubeSum implements Comparable<CubeSum> {
@@ -33,6 +33,7 @@ class CubeSum implements Comparable<CubeSum> {
     }
     /**
      * gets the i.
+     * The time complexity is O(1).
      *
      * @return     { int type }
      */
@@ -42,6 +43,8 @@ class CubeSum implements Comparable<CubeSum> {
     }
     /**
      * gets j.
+     * The time complexity is O(1).
+     *
      *
      * @return     { int type }
      */
@@ -51,6 +54,8 @@ class CubeSum implements Comparable<CubeSum> {
     }
     /**
      * Gets the sum.
+     * The time complexity is O(1).
+     *
      *
      * @return     int type.
      */
@@ -174,6 +179,7 @@ class MinPQ<Key> {
     * resizes the array.
     * insert method will call this method.
      * The time complexity is O(N).
+    * Iterates all elements in an array.
     *
     *
     * @param      capacity  The capacity of int
@@ -190,7 +196,8 @@ class MinPQ<Key> {
     /**
      * inserts the object CubeSum.
      * The insertion method calls swim method.
-     * The time complexity is O(1).
+     * The time complexity is O(logN).
+     * Calls swim operation.
      *
      *
      * @param      x     { key of Cube Sum object }
@@ -206,8 +213,8 @@ class MinPQ<Key> {
     }
     /**
      * deletes the root node.
-     * The time complexity is O(1).
-     *
+     * The time complexity is O(logN).
+     * calls sink operation.
      *
      * @return     { returns key of CubeSum object }
      */
@@ -226,7 +233,7 @@ class MinPQ<Key> {
     /**
      * swim operation is called in insert.
      * the node is inserted at end.
-     * The element them swims.
+     * The element then swims.
      * The time complexity is O(logN).
      *
      *
@@ -310,7 +317,7 @@ class MinPQ<Key> {
 final class Solution {
     /**
      * Constructs the object.
-     * The time complexity is O(Nb).
+     * The time complexity is O(N).
      *
      */
     private Solution() {
