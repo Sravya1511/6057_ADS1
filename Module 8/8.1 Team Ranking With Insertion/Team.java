@@ -177,13 +177,15 @@ class TeamArray {
    Another loop sees that all the elements towards its left are sorted.
    The exchange is done only when smaller element is towards right of larger element
 
- * The worst case complexity of insertion sort is n^2.
+ * The worst case complexity of insertion sort is O(n^2).
  * The for loop is iterated for two times
  */
 
 class Insertion {
 	/**
 	 * The exchange method exchanges two Teams in teamArray.
+     * The time complexity is O(1).
+     *
 	 *
 	 * @param      teamArray  The team array
 	 * @param      a          { index to be exchanged }
@@ -199,7 +201,8 @@ class Insertion {
     }
 
     /**
-     * compares two team scores(win, loose, draw)
+     * compares two team scores(win, loose, draw).
+     * The time complexity is O(1).
      *
      * @param      a     { int value of win or loose or draw }
      * @param      b     { int value of win or loose or draw}
@@ -222,6 +225,8 @@ class Insertion {
      * The insertion sort compares win points.
      * If they are same, it compares loose points,
      * If they are same, it compares draw points.
+     * The time complexity is O(N^2).
+     *
      *
      *
      * @param      teamArray  The team array
