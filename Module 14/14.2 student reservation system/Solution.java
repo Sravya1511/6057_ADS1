@@ -40,7 +40,7 @@ class StudentArray {
     }
     /**
      * Gets the array.
-     * The time complexity is O(N).
+     * The time complexity is O(1).
      *
      * @return     The array of student type.
      */
@@ -73,18 +73,18 @@ class StudentArray {
         int y = 0;
         int z = 0;
         int count = 0;
-        for (int i = openVacancies; i < meritArray.length; i++) {
-            if (meritArray[i].getReservation().equals("ST")) {
-                 x++;
-            }
-            if (meritArray[i].getReservation().equals("SC")) {
-                y++;
-            }
-            if (meritArray[i].getReservation().equals("BC")) {
-                z++;
-            }
+        // for (int i = openVacancies; i < meritArray.length; i++) {
+        //     if (meritArray[i].getReservation().equals("ST")) {
+        //          x++;
+        //     }
+        //     if (meritArray[i].getReservation().equals("SC")) {
+        //         y++;
+        //     }
+        //     if (meritArray[i].getReservation().equals("BC")) {
+        //         z++;
+        //     }
 
-        }
+        // }
         for (int i = 0; i < openVacancies; i++) {
             res[count++] = meritArray[i];
         }
