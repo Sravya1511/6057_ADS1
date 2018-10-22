@@ -1,5 +1,4 @@
 Starting audit...
 [ERROR] F:\6057_ADS1\Module 19\19.1 BST\Solution.java:0: File does not end with a newline. [NewlineAtEndOfFile]
-[ERROR] F:\6057_ADS1\Module 19\19.1 BST\Solution.java:202:40: Parameter s should be final. [FinalParameters]
 Audit done.
-Checkstyle ends with 2 errors.
+Checkstyle ends with 1 errors.

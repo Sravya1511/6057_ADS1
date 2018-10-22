@@ -199,7 +199,7 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
          * @param      v  The value of int type.
          * @param      s  The size.
          */
-        Node(final E k, final Value v, int s) {
+        Node(final E k, final Value v, final int s) {
             this.key = k;
             this.value = v;
             this.left = null;
