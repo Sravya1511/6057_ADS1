@@ -305,9 +305,12 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
      * @return     { returns maximum node}
      */
 
-    private Node max(Node x) {
-        if (x.right == null) return x;
-        else                 return max(x.right);
+    private Node max(final Node x) {
+        if (x.right == null) {
+        	return x;
+        } else {
+        	return max(x.right);
+        }
     }
     /**
      * The minimum node is found.
@@ -327,9 +330,12 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
      * @return     { Node type }
      */
 
-    private Node min(Node x) {
-        if (x.left == null) return x;
-        else                return min(x.left);
+    private Node min(final Node x) {
+        if (x.left == null) {
+        	return x;
+        } else {
+        	return min(x.left);
+        }
     }
     /**
      * Returns the largest key in the symbol table.
@@ -340,10 +346,13 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
      * @return     { returns book type }
      */
 
-    public E floor(E key) {
+    public E floor(final E key) {
         Node x = floor(root, key);
-        if (x == null) return null;
-        else return x.key;
+        if (x == null) {
+        	return null;
+        } else {
+        	return x.key;
+        }
     }
 
     /**
@@ -355,14 +364,23 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
      * @return     { returns node }
      */
 
-    private Node floor(Node x, E key) {
-        if (x == null) return null;
+    private Node floor(final Node x, final E key) {
+        if (x == null) {
+        	return null;
+        }
         int cmp = key.compareTo(x.key);
-        if (cmp == 0) return x;
-        if (cmp <  0) return floor(x.left, key);
+        if (cmp == 0) {
+        	return x;
+        }
+        if (cmp <  0) {
+        	return floor(x.left, key);
+        }
         Node t = floor(x.right, key);
-        if (t != null) return t;
-        else return x;
+        if (t != null) {
+        	return t;
+        } else {
+        	return x;
+        }
     }
     /**
      * returns greater than or equal to key.
@@ -372,10 +390,13 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
      * @return     { returns book type }
      */
 
-    public E ceiling(E key) {
+    public E ceiling(final E key) {
         Node x = ceiling(root, key);
-        if (x == null) return null;
-        else return x.key;
+        if (x == null) {
+        	return null;
+        } else {
+        	return x.key;
+        }
     }
     /**
      * returns greater than or equal to value.
@@ -386,14 +407,21 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
      * @return     { returns node }
      */
 
-    private Node ceiling(Node x, E key) {
-        if (x == null) return null;
+    private Node ceiling(final Node x, final E key) {
+        if (x == null) {
+        	return null;
+        }
         int cmp = key.compareTo(x.key);
-        if (cmp == 0) return x;
+        if (cmp == 0) {
+        	return x;
+        }
         if (cmp < 0) {
             Node t = ceiling(x.left, key);
-            if (t != null) return t;
-            else return x;
+            if (t != null) {
+            	return t;
+            } else {
+            	return x;
+            }
         }
         return ceiling(x.right, key);
     }
@@ -405,7 +433,7 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
      * @return     { description_of_the_return_value }
      */
 
-    public E select(int k) {
+    public E select(final int k) {
 
         Node x = select(root, k);
         return x.key;
@@ -419,12 +447,18 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
      * @return     { description_of_the_return_value }
      */
 
-    private Node select(Node x, int k) {
-        if (x == null) return null;
+    private Node select(final Node x, final int k) {
+        if (x == null) {
+         return null;
+        }
         int t = size(x.left);
-        if      (t > k) return select(x.left,  k);
-        else if (t < k) return select(x.right, k-t-1);
-        else            return x;
+        if      (t > k) {
+        	return select(x.left,  k);
+        } else if (t < k) {
+        	return select(x.right, k-t-1);
+        } else {
+        	return x;
+        }
     }
     /**
      * size of the binary tree.
@@ -443,9 +477,12 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
      *
      * @return     { description_of_the_return_value }
      */
-    private int size(Node x) {
-        if (x == null) return 0;
-        else return x.size;
+    private int size(final Node x) {
+        if (x == null) {
+        	return 0;
+        } else {
+        	return x.size;
+        }
     }
     /**
      * prints the book class.
@@ -453,9 +490,9 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
      * @param      book  The book
      */
 
-    public void toString(Book book) {
-    	System.out.println(book.getName()+", "+
-    		book.getAuthor()+", "+book.getPrice());
+    public void toString(final Book book) {
+    	System.out.println(book.getName() + ", " +
+    		book.getAuthor() + ", " + book.getPrice());
     }
 
 }
