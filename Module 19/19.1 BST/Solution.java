@@ -52,9 +52,11 @@ class Solution {
                 case "max":
                 Book key2 = binarySearch.max();
                 binarySearch.toString(key2);
+                break;
                 case "min":
                 Book key3 = binarySearch.min();
                 binarySearch.toString(key3);
+                break;
                 case "floor":
                 Book key4 = new Book(tokens[1],
                     tokens[2], Float.parseFloat(tokens[three]));
@@ -67,7 +69,7 @@ class Solution {
                 break;
                 case "select":
                 binarySearch.toString(binarySearch.select(Integer.parseInt(tokens[1])));
-
+                break;
                 default:
                 break;
 
