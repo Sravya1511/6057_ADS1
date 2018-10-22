@@ -65,6 +65,9 @@ class Solution {
                     tokens[2], Float.parseFloat(tokens[three]));
                 binarySearch.toString(binarySearch.ceiling(key5));
                 break;
+                case "select":
+                binarySearch.toString(binarySearch.select(Integer.parseInt(tokens[1])));
+
                 default:
                 break;
 
@@ -118,17 +121,19 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
          * right node address.
          */
         private Node right;
+        private int size;
         /**
          * Constructs the object.
          *
          * @param      k    The key of Bookkey class.
          * @param      v  The value of int type.
          */
-        Node(final E k, final Value v) {
+        Node(final E k, final Value v, int size) {
             this.key = k;
             this.value = v;
             this.left = null;
             this.right =  null;
+            this.size = size;
         }
 
     }
@@ -162,7 +167,7 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
     private Node put(final Node x, final E key, final Value val) {
         size++;
         if (x == null) {
-            return new Node(key, val);
+            return new Node(key, val, 1);
         }
         int cmp = key.compareTo(x.key);
         if (cmp < 0) {
@@ -172,6 +177,7 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
         } else {
             x.value = val;
         }
+        x.size = 1 + size(x.left) + size(x.right);
         return x;
     }
 
@@ -270,6 +276,33 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
             else return x;
         }
         return ceiling(x.right, key);
+    }
+
+    public E select(int k) {
+        // if (k < 0 || k >= size()) {
+        //     throw new IllegalArgumentException("argument to select() is invalid: " + k);
+        // }
+        Node x = select(root, k);
+        return x.key;
+    }
+
+    // Return key of rank k.
+    private Node select(Node x, int k) {
+        if (x == null) return null;
+        int t = size(x.left);
+        if      (t > k) return select(x.left,  k);
+        else if (t < k) return select(x.right, k-t-1);
+        else            return x;
+    }
+
+    public int size() {
+        return size(root);
+    }
+
+    // return number of key-value pairs in BST rooted at x
+    private int size(Node x) {
+        if (x == null) return 0;
+        else return x.size;
     }
 
     public void toString(Book book) {
