@@ -1,33 +1,97 @@
 import java.util.Scanner;
+/**
+ * Class for book.
+ */
 class Book implements Comparable<Book>{
-	private String name;
-	private String author;
-	private float price;
+	 /**
+     * Name of book.
+     */
+    private String name;
+    /**
+     * author of book.
+     */
+    private String author;
+    /**
+     * price of book.
+     */
+    private float price;
 
-	Book(String n, String a, float p) {
-		this.name = n;
-		this.author = a;
-		this.price = p;
-	}
+    /**
+     * Constructs the object.
+     *
+     * @param      n     { String n }
+     * @param      a     { String a }
+     * @param      p     { String p }
+     */
+
+    Book(final String n, final String a, final float p) {
+        this.name = n;
+        this.author = a;
+        this.price = p;
+    }
+    /**
+     * Gets the name.
+     * The time complexity is O(1).
+     *
+     * @return     The name of string type.
+     */
 
 	public String getName() {
 		return this.name;
 	}
 
+	/**
+	 * Gets the author.
+     * The time complexity is O(1).
+	 *
+	 *
+	 * @return     The author of string type.
+	 */
+
 	public String getAuthor() {
 		return this.author;
 	}
 
+	/**
+	 * Gets the price.
+     * The time complexity is O(1).
+	 *
+	 * @return     The price of int type.
+	 */
+
 	public float getPrice() {
 		return this.price;
 	}
+	/**
+	 * compares two names of the authors.
+     * The time complexity is O(1).
+	 *
+	 * @param      that  The that of Book class
+	 *
+	 * @return     { int }
+	 */
 
 	public int compareTo(Book that) {
 		return this.name.compareTo(that.name);
 	}
 
 }
-class Solution {
+/**
+ * Class for solution.
+ */
+final class Solution {
+	/**
+	 * Constructs the object.
+	 */
+	Solution() {
+
+	}
+	/**
+	 * main method. reads input.
+     * The time complexity is O().
+	 *
+	 * @param      args  The arguments
+	 */
     public static void main(final String[] args) {
         final int three = 3;
         final int four = 4;
@@ -222,33 +286,74 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
              return x.value;
         }
     }
+
+    /**
+     * method to find maximum element in binary tree.
+     *
+     * @return     { book object of book class }
+     */
      public E max() {
-        // if (isEmpty()) throw new NoSuchElementException("calls max() with empty symbol table");
+
         return max(root).key;
     }
+
+    /**
+     * The maximum node is found.
+     *
+     * @param      x     { Node type }
+     *
+     * @return     { returns maximum node}
+     */
 
     private Node max(Node x) {
         if (x.right == null) return x;
         else                 return max(x.right);
     }
+    /**
+     * The minimum node is found.
+     *
+     * @return     {book class }
+     */
 
     public E min() {
-        // if (isEmpty()) throw new NoSuchElementException("calls min() with empty symbol table");
+
         return min(root).key;
     }
+    /**
+     * The minimum node is found.
+     *
+     * @param      x     { Node class }
+     *
+     * @return     { Node type }
+     */
 
     private Node min(Node x) {
         if (x.left == null) return x;
         else                return min(x.left);
     }
+    /**
+     * Returns the largest key in the symbol table.
+     * less than or equal to key.
+     *
+     * @param      key   The key of book class
+     *
+     * @return     { returns book type }
+     */
 
     public E floor(E key) {
-        // if (key == null) throw new IllegalArgumentException("argument to floor() is null");
-        // if (isEmpty()) throw new NoSuchElementException("calls floor() with empty symbol table");
         Node x = floor(root, key);
         if (x == null) return null;
         else return x.key;
     }
+
+    /**
+     * returns less or equal to key.
+     *
+     * @param      x     { Node type }
+     * @param      key   The key
+     *
+     * @return     { returns node }
+     */
 
     private Node floor(Node x, E key) {
         if (x == null) return null;
@@ -259,14 +364,27 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
         if (t != null) return t;
         else return x;
     }
+    /**
+     * returns greater than or equal to key.
+     *
+     * @param      key   The key of book class type.
+     *
+     * @return     { returns book type }
+     */
 
     public E ceiling(E key) {
-        // if (key == null) throw new IllegalArgumentException("argument to ceiling() is null");
-        // if (isEmpty()) throw new NoSuchElementException("calls ceiling() with empty symbol table");
         Node x = ceiling(root, key);
         if (x == null) return null;
         else return x.key;
     }
+    /**
+     * returns greater than or equal to value.
+     *
+     * @param      x     { Node type }
+     * @param      key   The key of book type.
+     *
+     * @return     { returns node }
+     */
 
     private Node ceiling(Node x, E key) {
         if (x == null) return null;
@@ -279,16 +397,28 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
         }
         return ceiling(x.right, key);
     }
+    /**
+     * { function_description }
+     *
+     * @param      k     { parameter_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
 
     public E select(int k) {
-        // if (k < 0 || k >= size()) {
-        //     throw new IllegalArgumentException("argument to select() is invalid: " + k);
-        // }
+
         Node x = select(root, k);
         return x.key;
     }
+    /**
+     * { function_description }
+     *
+     * @param      x     { parameter_description }
+     * @param      k     { parameter_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
 
-    // Return key of rank k.
     private Node select(Node x, int k) {
         if (x == null) return null;
         int t = size(x.left);
@@ -296,19 +426,36 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
         else if (t < k) return select(x.right, k-t-1);
         else            return x;
     }
+    /**
+     * size of the binary tree.
+     *
+     * @return     { int type }
+     */
 
     public int size() {
         return size(root);
     }
 
-    // return number of key-value pairs in BST rooted at x
+    /**
+     * return number of key-value pairs in BST rooted at x.
+     *
+     * @param      x     { parameter_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
     private int size(Node x) {
         if (x == null) return 0;
         else return x.size;
     }
+    /**
+     * prints the book class.
+     *
+     * @param      book  The book
+     */
 
     public void toString(Book book) {
-    	System.out.println(book.getName()+", "+book.getAuthor()+", "+book.getPrice());
+    	System.out.println(book.getName()+", "+
+    		book.getAuthor()+", "+book.getPrice());
     }
 
 }
