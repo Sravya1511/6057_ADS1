@@ -3,7 +3,7 @@ import java.util.Scanner;
  * Class for book.
  */
 class Book implements Comparable<Book> {
-	 /**
+     /**
      * Name of book.
      */
     private String name;
@@ -36,62 +36,62 @@ class Book implements Comparable<Book> {
      * @return     The name of string type.
      */
 
-	public String getName() {
-		return this.name;
-	}
+    public String getName() {
+        return this.name;
+    }
 
-	/**
-	 * Gets the author.
+    /**
+     * Gets the author.
      * The time complexity is O(1).
-	 *
-	 *
-	 * @return     The author of string type.
-	 */
+     *
+     *
+     * @return     The author of string type.
+     */
 
-	public String getAuthor() {
-		return this.author;
-	}
+    public String getAuthor() {
+        return this.author;
+    }
 
-	/**
-	 * Gets the price.
+    /**
+     * Gets the price.
      * The time complexity is O(1).
-	 *
-	 * @return     The price of int type.
-	 */
+     *
+     * @return     The price of int type.
+     */
 
-	public float getPrice() {
-		return this.price;
-	}
-	/**
-	 * compares two names of the authors.
+    public float getPrice() {
+        return this.price;
+    }
+    /**
+     * compares two names of the authors.
      * The time complexity is O(1).
-	 *
-	 * @param      that  The that of Book class
-	 *
-	 * @return     { int }
-	 */
+     *
+     * @param      that  The that of Book class
+     *
+     * @return     { int }
+     */
 
-	public int compareTo(final Book that) {
-		return this.name.compareTo(that.name);
-	}
+    public int compareTo(final Book that) {
+        return this.name.compareTo(that.name);
+    }
 
 }
 /**
  * Class for solution.
  */
 final class Solution {
-	/**
-	 * Constructs the object.
-	 */
-	private Solution() {
+    /**
+     * Constructs the object.
+     */
+    private Solution() {
 
-	}
-	/**
-	 * main method. reads input.
+    }
+    /**
+     * main method. reads input.
      * The time complexity is O().
-	 *
-	 * @param      args  The arguments
-	 */
+     *
+     * @param      args  The arguments
+     */
     public static void main(final String[] args) {
         final int three = 3;
         final int four = 4;
@@ -133,7 +133,7 @@ final class Solution {
                 break;
                 case "select":
                 binarySearch.toString(binarySearch.select(
-                	Integer.parseInt(tokens[1])));
+                    Integer.parseInt(tokens[1])));
                 break;
                 default:
                 break;
@@ -189,7 +189,7 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
          */
         private Node right;
         /**
-         * sizeof tree
+         * sizeof tree.
          */
         private int size;
         /**
@@ -197,14 +197,14 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
          *
          * @param      k    The key of Bookkey class.
          * @param      v  The value of int type.
-         * @param      size  The size.
+         * @param      s  The size.
          */
-        Node(final E k, final Value v, int size) {
+        Node(final E k, final Value v, int s) {
             this.key = k;
             this.value = v;
             this.left = null;
             this.right =  null;
-            this.size = size;
+            this.size = s;
         }
 
     }
@@ -315,9 +315,9 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
 
     private Node max(final Node x) {
         if (x.right == null) {
-        	return x;
+            return x;
         } else {
-        	return max(x.right);
+            return max(x.right);
         }
     }
     /**
@@ -344,9 +344,9 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
 
     private Node min(final Node x) {
         if (x.left == null) {
-        	return x;
+            return x;
         } else {
-        	return min(x.left);
+            return min(x.left);
         }
     }
     /**
@@ -363,9 +363,9 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
     public E floor(final E key) {
         Node x = floor(root, key);
         if (x == null) {
-        	return null;
+            return null;
         } else {
-        	return x.key;
+            return x.key;
         }
     }
 
@@ -382,20 +382,20 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
 
     private Node floor(final Node x, final E key) {
         if (x == null) {
-        	return null;
+            return null;
         }
         int cmp = key.compareTo(x.key);
         if (cmp == 0) {
-        	return x;
+            return x;
         }
         if (cmp <  0) {
-        	return floor(x.left, key);
+            return floor(x.left, key);
         }
         Node t = floor(x.right, key);
         if (t != null) {
-        	return t;
+            return t;
         } else {
-        	return x;
+            return x;
         }
     }
     /**
@@ -411,9 +411,9 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
     public E ceiling(final E key) {
         Node x = ceiling(root, key);
         if (x == null) {
-        	return null;
+            return null;
         } else {
-        	return x.key;
+            return x.key;
         }
     }
     /**
@@ -429,18 +429,18 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
 
     private Node ceiling(final Node x, final E key) {
         if (x == null) {
-        	return null;
+            return null;
         }
         int cmp = key.compareTo(x.key);
         if (cmp == 0) {
-        	return x;
+            return x;
         }
         if (cmp < 0) {
             Node t = ceiling(x.left, key);
             if (t != null) {
-            	return t;
+                return t;
             } else {
-            	return x;
+                return x;
             }
         }
         return ceiling(x.right, key);
@@ -477,11 +477,11 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
         }
         int t = size(x.left);
         if      (t > k) {
-        	return select(x.left,  k);
+            return select(x.left,  k);
         } else if (t < k) {
-        	return select(x.right, k - t - 1);
+            return select(x.right, k - t - 1);
         } else {
-        	return x;
+            return x;
         }
     }
     /**
@@ -507,9 +507,9 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
      */
     private int size(final Node x) {
         if (x == null) {
-        	return 0;
+            return 0;
         } else {
-        	return x.size;
+            return x.size;
         }
     }
     /**
@@ -521,8 +521,8 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
      */
 
     public void toString(final Book book) {
-    	System.out.println(book.getName() + ", "
-    		+ book.getAuthor() + ", " + book.getPrice());
+        System.out.println(book.getName() + ", "
+            + book.getAuthor() + ", " + book.getPrice());
     }
 
 }
