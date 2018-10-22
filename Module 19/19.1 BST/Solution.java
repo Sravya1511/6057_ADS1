@@ -2,7 +2,7 @@ import java.util.Scanner;
 /**
  * Class for book.
  */
-class Book implements Comparable<Book>{
+class Book implements Comparable<Book> {
 	 /**
      * Name of book.
      */
@@ -71,7 +71,7 @@ class Book implements Comparable<Book>{
 	 * @return     { int }
 	 */
 
-	public int compareTo(Book that) {
+	public int compareTo(final Book that) {
 		return this.name.compareTo(that.name);
 	}
 
@@ -83,7 +83,7 @@ final class Solution {
 	/**
 	 * Constructs the object.
 	 */
-	Solution() {
+	private Solution() {
 
 	}
 	/**
@@ -132,7 +132,8 @@ final class Solution {
                 binarySearch.toString(binarySearch.ceiling(key5));
                 break;
                 case "select":
-                binarySearch.toString(binarySearch.select(Integer.parseInt(tokens[1])));
+                binarySearch.toString(binarySearch.select(
+                	Integer.parseInt(tokens[1])));
                 break;
                 default:
                 break;
@@ -187,12 +188,16 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
          * right node address.
          */
         private Node right;
+        /**
+         * sizeof tree
+         */
         private int size;
         /**
          * Constructs the object.
          *
          * @param      k    The key of Bookkey class.
          * @param      v  The value of int type.
+         * @param      size  The size.
          */
         Node(final E k, final Value v, int size) {
             this.key = k;
@@ -474,7 +479,7 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
         if      (t > k) {
         	return select(x.left,  k);
         } else if (t < k) {
-        	return select(x.right, k-t-1);
+        	return select(x.right, k - t - 1);
         } else {
         	return x;
         }
@@ -516,8 +521,8 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
      */
 
     public void toString(final Book book) {
-    	System.out.println(book.getName() + ", " +
-    		book.getAuthor() + ", " + book.getPrice());
+    	System.out.println(book.getName() + ", "
+    		+ book.getAuthor() + ", " + book.getPrice());
     }
 
 }

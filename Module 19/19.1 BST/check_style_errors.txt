@@ -1,19 +1,8 @@
 Starting audit...
 [ERROR] F:\6057_ADS1\Module 19\19.1 BST\Solution.java:0: File does not end with a newline. [NewlineAtEndOfFile]
-[ERROR] F:\6057_ADS1\Module 19\19.1 BST\Solution.java:5:39: '>' is followed by an illegal character. [GenericWhitespace]
-[ERROR] F:\6057_ADS1\Module 19\19.1 BST\Solution.java:5:39: '{' is not preceded with whitespace. [WhitespaceAround]
 [ERROR] F:\6057_ADS1\Module 19\19.1 BST\Solution.java:6:1: File contains tab characters (this is the first instance). [FileTabCharacter]
-[ERROR] F:\6057_ADS1\Module 19\19.1 BST\Solution.java:74:30: Parameter that should be final. [FinalParameters]
-[ERROR] F:\6057_ADS1\Module 19\19.1 BST\Solution.java:82:1: Utility classes should not have a public or default constructor. [HideUtilityClassConstructor]
-[ERROR] F:\6057_ADS1\Module 19\19.1 BST\Solution.java:135: Line is longer than 80 characters (found 88). [LineLength]
-[ERROR] F:\6057_ADS1\Module 19\19.1 BST\Solution.java:190:9: Missing a Javadoc comment. [JavadocVariable]
-[ERROR] F:\6057_ADS1\Module 19\19.1 BST\Solution.java:197:40: Parameter size should be final. [FinalParameters]
-[ERROR] F:\6057_ADS1\Module 19\19.1 BST\Solution.java:197:44: 'size' hides a field. [HiddenField]
-[ERROR] F:\6057_ADS1\Module 19\19.1 BST\Solution.java:197:44: Expected @param tag for 'size'. [JavadocMethod]
-[ERROR] F:\6057_ADS1\Module 19\19.1 BST\Solution.java:477:41: '-' is not preceded with whitespace. [WhitespaceAround]
-[ERROR] F:\6057_ADS1\Module 19\19.1 BST\Solution.java:477:42: '-' is not followed by whitespace. [WhitespaceAround]
-[ERROR] F:\6057_ADS1\Module 19\19.1 BST\Solution.java:477:43: '-' is not preceded with whitespace. [WhitespaceAround]
-[ERROR] F:\6057_ADS1\Module 19\19.1 BST\Solution.java:477:44: '-' is not followed by whitespace. [WhitespaceAround]
-[ERROR] F:\6057_ADS1\Module 19\19.1 BST\Solution.java:519:50: '+' should be on a new line. [OperatorWrap]
+[ERROR] F:\6057_ADS1\Module 19\19.1 BST\Solution.java:191: First sentence should end with a period. [JavadocStyle]
+[ERROR] F:\6057_ADS1\Module 19\19.1 BST\Solution.java:202:40: Parameter size should be final. [FinalParameters]
+[ERROR] F:\6057_ADS1\Module 19\19.1 BST\Solution.java:202:44: 'size' hides a field. [HiddenField]
 Audit done.
-Checkstyle ends with 16 errors.
+Checkstyle ends with 5 errors.
