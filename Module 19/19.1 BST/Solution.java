@@ -205,7 +205,7 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
     }
     /**
      * puts the value in trees.
-     * The time complexity is O(logN).
+     * The time complexity is O(N).
      *
      * @param      key   The key of Bookkey class.
      * @param      val   The value of int type.
@@ -220,7 +220,7 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
     /**
      * puts the keys and values.
      * overloaded method.
-     * The time complexity is O(logN).
+     * The time complexity is O(N).
      * The binary search looks for half of the values.
      *
      * @param      x     { NODE TYPE }
@@ -289,6 +289,7 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
 
     /**
      * method to find maximum element in binary tree.
+     * The time complexity is O(logN).
      *
      * @return     { book object of book class }
      */
@@ -299,6 +300,8 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
 
     /**
      * The maximum node is found.
+     * The time complexity is O(logN).
+     *
      *
      * @param      x     { Node type }
      *
@@ -314,6 +317,8 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
     }
     /**
      * The minimum node is found.
+     * The time complexity is O(logN).
+     *
      *
      * @return     {book class }
      */
@@ -324,6 +329,8 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
     }
     /**
      * The minimum node is found.
+     * The time complexity is O(logN).
+     *
      *
      * @param      x     { Node class }
      *
@@ -340,6 +347,8 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
     /**
      * Returns the largest key in the symbol table.
      * less than or equal to key.
+     * The time complexity is O(logN).
+     *
      *
      * @param      key   The key of book class
      *
@@ -357,6 +366,8 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
 
     /**
      * returns less or equal to key.
+     * The time complexity is O(logN).
+     *
      *
      * @param      x     { Node type }
      * @param      key   The key
@@ -384,6 +395,8 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
     }
     /**
      * returns greater than or equal to key.
+     * The time complexity is O(logN).
+     *
      *
      * @param      key   The key of book class type.
      *
@@ -400,6 +413,8 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
     }
     /**
      * returns greater than or equal to value.
+     * The time complexity is O(logN).
+     *
      *
      * @param      x     { Node type }
      * @param      key   The key of book type.
@@ -426,11 +441,13 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
         return ceiling(x.right, key);
     }
     /**
-     * { function_description }
+     * returns value at given index.
+     * The time complexity is O(logN).
      *
-     * @param      k     { parameter_description }
      *
-     * @return     { description_of_the_return_value }
+     * @param      k     { integer k }
+     *
+     * @return     { book class }
      */
 
     public E select(final int k) {
@@ -439,12 +456,14 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
         return x.key;
     }
     /**
-     * { function_description }
+     * { returns node of the select integer }
+     * The time complexity is O(logN).
      *
-     * @param      x     { parameter_description }
-     * @param      k     { parameter_description }
      *
-     * @return     { description_of_the_return_value }
+     * @param      x     { Node type }
+     * @param      k     { integer }
+     *
+     * @return     { Node type }
      */
 
     private Node select(final Node x, final int k) {
@@ -462,6 +481,8 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
     }
     /**
      * size of the binary tree.
+     * The time complexity is O(1).
+     *
      *
      * @return     { int type }
      */
@@ -472,10 +493,12 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
 
     /**
      * return number of key-value pairs in BST rooted at x.
+     * The time complexity is O(1).
      *
-     * @param      x     { parameter_description }
      *
-     * @return     { description_of_the_return_value }
+     * @param      x     { Node type }
+     *
+     * @return     { int type }
      */
     private int size(final Node x) {
         if (x == null) {
@@ -486,6 +509,8 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
     }
     /**
      * prints the book class.
+     * The time complexity is O(1).
+     *
      *
      * @param      book  The book
      */

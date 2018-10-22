@@ -10,12 +10,10 @@ Starting audit...
 [ERROR] F:\6057_ADS1\Module 19\19.1 BST\Solution.java:197:40: Parameter size should be final. [FinalParameters]
 [ERROR] F:\6057_ADS1\Module 19\19.1 BST\Solution.java:197:44: 'size' hides a field. [HiddenField]
 [ERROR] F:\6057_ADS1\Module 19\19.1 BST\Solution.java:197:44: Expected @param tag for 'size'. [JavadocMethod]
-[ERROR] F:\6057_ADS1\Module 19\19.1 BST\Solution.java:428: First sentence should end with a period. [JavadocStyle]
-[ERROR] F:\6057_ADS1\Module 19\19.1 BST\Solution.java:441: First sentence should end with a period. [JavadocStyle]
-[ERROR] F:\6057_ADS1\Module 19\19.1 BST\Solution.java:458:41: '-' is not preceded with whitespace. [WhitespaceAround]
-[ERROR] F:\6057_ADS1\Module 19\19.1 BST\Solution.java:458:42: '-' is not followed by whitespace. [WhitespaceAround]
-[ERROR] F:\6057_ADS1\Module 19\19.1 BST\Solution.java:458:43: '-' is not preceded with whitespace. [WhitespaceAround]
-[ERROR] F:\6057_ADS1\Module 19\19.1 BST\Solution.java:458:44: '-' is not followed by whitespace. [WhitespaceAround]
-[ERROR] F:\6057_ADS1\Module 19\19.1 BST\Solution.java:494:50: '+' should be on a new line. [OperatorWrap]
+[ERROR] F:\6057_ADS1\Module 19\19.1 BST\Solution.java:477:41: '-' is not preceded with whitespace. [WhitespaceAround]
+[ERROR] F:\6057_ADS1\Module 19\19.1 BST\Solution.java:477:42: '-' is not followed by whitespace. [WhitespaceAround]
+[ERROR] F:\6057_ADS1\Module 19\19.1 BST\Solution.java:477:43: '-' is not preceded with whitespace. [WhitespaceAround]
+[ERROR] F:\6057_ADS1\Module 19\19.1 BST\Solution.java:477:44: '-' is not followed by whitespace. [WhitespaceAround]
+[ERROR] F:\6057_ADS1\Module 19\19.1 BST\Solution.java:519:50: '+' should be on a new line. [OperatorWrap]
 Audit done.
-Checkstyle ends with 18 errors.
+Checkstyle ends with 16 errors.
