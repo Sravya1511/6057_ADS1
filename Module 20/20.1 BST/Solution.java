@@ -597,7 +597,7 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
      * @return     { Node type }
      */
 
-    private Node delete(Node x, final E key) {
+    private Node delete(final Node x, final E key) {
         Node temp = x;
         if (x == null) {
             return null;
