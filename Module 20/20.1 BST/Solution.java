@@ -538,7 +538,7 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
      * @return     { Node type }
      */
 
-    private Node deleteMin(Node x) {
+    private Node deleteMin(final Node x) {
         if (x.left == null) {
             return x.right;
         }
@@ -561,7 +561,7 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
      * @return     { Node type }
      */
 
-    private Node deleteMax(Node x) {
+    private Node deleteMax(final Node x) {
         if (x.right == null) {
             return x.left;
         }
@@ -575,7 +575,7 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
      * @param      key   of book class type.
      */
 
-    public void delete(E key) {
+    public void delete(final E key) {
         root = delete(root, key);
     }
     /**
@@ -587,7 +587,7 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
      * @return     { Node type }
      */
 
-    private Node delete(Node x, E key) {
+    private Node delete(Node x, final E key) {
         if (x == null) {
             return null;
         }

@@ -1,8 +1,4 @@
 Starting audit...
-[ERROR] F:\6057_ADS1\Module 20\20.1 BST\Solution.java:541:28: Parameter x should be final. [FinalParameters]
-[ERROR] F:\6057_ADS1\Module 20\20.1 BST\Solution.java:564:28: Parameter x should be final. [FinalParameters]
-[ERROR] F:\6057_ADS1\Module 20\20.1 BST\Solution.java:578:24: Parameter key should be final. [FinalParameters]
 [ERROR] F:\6057_ADS1\Module 20\20.1 BST\Solution.java:590:25: Parameter x should be final. [FinalParameters]
-[ERROR] F:\6057_ADS1\Module 20\20.1 BST\Solution.java:590:33: Parameter key should be final. [FinalParameters]
 Audit done.
-Checkstyle ends with 5 errors.
+Checkstyle ends with 1 errors.
