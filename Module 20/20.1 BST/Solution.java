@@ -523,42 +523,86 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
             return x.size;
         }
     }
+    /**
+     * deletes the minimum element.
+     */
 
     public void deleteMin() {
         root = deleteMin(root);
     }
+    /**
+     * returns minimum element and replaces null with it.
+     *
+     * @param      x     { Node type }
+     *
+     * @return     { Node type }
+     */
 
     private Node deleteMin(Node x) {
-        if (x.left == null) return x.right;
+        if (x.left == null) {
+            return x.right;
+        }
         x.left = deleteMin(x.left);
         x.size = size(x.left) + size(x.right) + 1;
         return x;
     }
+    /**
+     * deletes maximum element.
+     */
 
     public void deleteMax() {
         root = deleteMax(root);
     }
+    /**
+     * deletes maximum element.
+     *
+     * @param      x     { Node type }
+     *
+     * @return     { Node type }
+     */
 
     private Node deleteMax(Node x) {
-        if (x.right == null) return x.left;
+        if (x.right == null) {
+            return x.left;
+        }
         x.right = deleteMax(x.right);
         x.size = size(x.left) + size(x.right) + 1;
         return x;
     }
+    /**
+     * deletes the particular key.
+     *
+     * @param      key   of book class type.
+     */
 
-     public void delete(E key) {
+    public void delete(E key) {
         root = delete(root, key);
     }
+    /**
+     * The method deletes the given key.
+     *
+     * @param      x     { Node type }
+     * @param      key   key of book class type to be deleted.
+     *
+     * @return     { Node type }
+     */
 
     private Node delete(Node x, E key) {
-        if (x == null) return null;
-
+        if (x == null) {
+            return null;
+        }
         int cmp = key.compareTo(x.key);
-        if      (cmp < 0) x.left  = delete(x.left,  key);
-        else if (cmp > 0) x.right = delete(x.right, key);
-        else {
-            if (x.right == null) return x.left;
-            if (x.left  == null) return x.right;
+        if      (cmp < 0) {
+            x.left  = delete(x.left,  key);
+        } else if (cmp > 0) {
+            x.right = delete(x.right, key);
+        } else {
+            if (x.right == null) {
+                return x.left;
+            }
+            if (x.left  == null) {
+                return x.right;
+            }
             Node t = x;
             x = min(t.right);
             x.right = deleteMin(t.right);
@@ -579,8 +623,7 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
     public void toString(final Book book) {
         if (book == null) {
             System.out.println("null");
-        }
-        else {
+        } else {
         System.out.println(book.getName() + ", "
             + book.getAuthor() + ", " + book.getPrice());
         }
