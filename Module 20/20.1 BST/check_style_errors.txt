@@ -1,0 +1,21 @@
+Starting audit...
+[ERROR] F:\6057_ADS1\Module 20\20.1 BST\Solution.java:527:5: Missing a Javadoc comment. [JavadocMethod]
+[ERROR] F:\6057_ADS1\Module 20\20.1 BST\Solution.java:531:5: Missing a Javadoc comment. [JavadocMethod]
+[ERROR] F:\6057_ADS1\Module 20\20.1 BST\Solution.java:531:28: Parameter x should be final. [FinalParameters]
+[ERROR] F:\6057_ADS1\Module 20\20.1 BST\Solution.java:532: 'if' construct must use '{}'s. [NeedBraces]
+[ERROR] F:\6057_ADS1\Module 20\20.1 BST\Solution.java:538:5: Missing a Javadoc comment. [JavadocMethod]
+[ERROR] F:\6057_ADS1\Module 20\20.1 BST\Solution.java:542:5: Missing a Javadoc comment. [JavadocMethod]
+[ERROR] F:\6057_ADS1\Module 20\20.1 BST\Solution.java:542:28: Parameter x should be final. [FinalParameters]
+[ERROR] F:\6057_ADS1\Module 20\20.1 BST\Solution.java:543: 'if' construct must use '{}'s. [NeedBraces]
+[ERROR] F:\6057_ADS1\Module 20\20.1 BST\Solution.java:549:6: Missing a Javadoc comment. [JavadocMethod]
+[ERROR] F:\6057_ADS1\Module 20\20.1 BST\Solution.java:549:25: Parameter key should be final. [FinalParameters]
+[ERROR] F:\6057_ADS1\Module 20\20.1 BST\Solution.java:553:5: Missing a Javadoc comment. [JavadocMethod]
+[ERROR] F:\6057_ADS1\Module 20\20.1 BST\Solution.java:553:25: Parameter x should be final. [FinalParameters]
+[ERROR] F:\6057_ADS1\Module 20\20.1 BST\Solution.java:553:33: Parameter key should be final. [FinalParameters]
+[ERROR] F:\6057_ADS1\Module 20\20.1 BST\Solution.java:554: 'if' construct must use '{}'s. [NeedBraces]
+[ERROR] F:\6057_ADS1\Module 20\20.1 BST\Solution.java:557: 'if' construct must use '{}'s. [NeedBraces]
+[ERROR] F:\6057_ADS1\Module 20\20.1 BST\Solution.java:558: 'if' construct must use '{}'s. [NeedBraces]
+[ERROR] F:\6057_ADS1\Module 20\20.1 BST\Solution.java:560: 'if' construct must use '{}'s. [NeedBraces]
+[ERROR] F:\6057_ADS1\Module 20\20.1 BST\Solution.java:561: 'if' construct must use '{}'s. [NeedBraces]
+Audit done.
+Checkstyle ends with 18 errors.
