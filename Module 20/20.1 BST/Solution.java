@@ -577,8 +577,14 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
      */
 
     public void toString(final Book book) {
+        if (book == null) {
+            System.out.println("null");
+        }
+        else {
         System.out.println(book.getName() + ", "
             + book.getAuthor() + ", " + book.getPrice());
+        }
+
     }
 
 }

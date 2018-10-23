@@ -17,5 +17,6 @@ Starting audit...
 [ERROR] F:\6057_ADS1\Module 20\20.1 BST\Solution.java:558: 'if' construct must use '{}'s. [NeedBraces]
 [ERROR] F:\6057_ADS1\Module 20\20.1 BST\Solution.java:560: 'if' construct must use '{}'s. [NeedBraces]
 [ERROR] F:\6057_ADS1\Module 20\20.1 BST\Solution.java:561: 'if' construct must use '{}'s. [NeedBraces]
+[ERROR] F:\6057_ADS1\Module 20\20.1 BST\Solution.java:582:9: '}' at column 9 should be on the same line as the next part of a multi-block statement (one that directly contains multiple blocks: if/else-if/else, do/while or try/catch/finally). [RightCurly]
 Audit done.
-Checkstyle ends with 18 errors.
+Checkstyle ends with 19 errors.
