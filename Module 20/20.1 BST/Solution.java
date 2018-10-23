@@ -88,7 +88,7 @@ final class Solution {
     }
     /**
      * main method. reads input.
-     * The time complexity is O().
+     * The time complexity is O(N).
      *
      * @param      args  The arguments
      */
@@ -266,7 +266,7 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
     /**
      *
      * get method for that particular key.
-     * The time complexity is O(logN).
+     * The time complexity is O(N) -- worst case.
      *
      * @param      key   The key if bookkey class.
      *
@@ -280,7 +280,7 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
     /**
      * gets the key.
      * overloaded method.
-     * The time complexity is O(logN).
+     * The time complexity is O(N).
      * The traversal is only for logN times.
      *
      * @param      x     { Node x - root node }
@@ -305,7 +305,7 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
 
     /**
      * method to find maximum element in binary tree.
-     * The time complexity is O(logN).
+     * The time complexity is O(N).
      *
      * @return     { book object of book class }
      */
@@ -316,7 +316,7 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
 
     /**
      * The maximum node is found.
-     * The time complexity is O(logN).
+     * The time complexity is O(N).
      *
      *
      * @param      x     { Node type }
@@ -333,7 +333,7 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
     }
     /**
      * The minimum node is found.
-     * The time complexity is O(logN).
+     * The time complexity is O(N).
      *
      *
      * @return     {book class }
@@ -345,7 +345,7 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
     }
     /**
      * The minimum node is found.
-     * The time complexity is O(logN).
+     * The time complexity is O(N).
      *
      *
      * @param      x     { Node class }
@@ -363,7 +363,7 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
     /**
      * Returns the largest key in the symbol table.
      * less than or equal to key.
-     * The time complexity is O(logN).
+     * The time complexity is O(N).
      *
      *
      * @param      key   The key of book class
@@ -382,7 +382,7 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
 
     /**
      * returns less or equal to key.
-     * The time complexity is O(logN).
+     * The time complexity is O(N).
      *
      *
      * @param      x     { Node type }
@@ -411,7 +411,7 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
     }
     /**
      * returns greater than or equal to key.
-     * The time complexity is O(logN).
+     * The time complexity is O(N).
      *
      *
      * @param      key   The key of book class type.
@@ -429,7 +429,7 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
     }
     /**
      * returns greater than or equal to value.
-     * The time complexity is O(logN).
+     * The time complexity is O(N).
      *
      *
      * @param      x     { Node type }
@@ -458,7 +458,7 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
     }
     /**
      * returns value at given index.
-     * The time complexity is O(logN).
+     * The time complexity is O(N).
      *
      *
      * @param      k     { integer k }
@@ -473,7 +473,7 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
     }
     /**
      * { returns node of the select integer }
-     * The time complexity is O(logN).
+     * The time complexity is O(N).
      *
      *
      * @param      x     { Node type }
@@ -525,6 +525,7 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
     }
     /**
      * deletes the minimum element.
+     * The tome complexity is O(N) -- worst case.
      */
 
     public void deleteMin() {
@@ -532,6 +533,8 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
     }
     /**
      * returns minimum element and replaces null with it.
+     * The tome complexity is O(N) -- worst case.
+     *
      *
      * @param      x     { Node type }
      *
@@ -548,6 +551,8 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
     }
     /**
      * deletes maximum element.
+     * The tome complexity is O(N) -- worst case.
+     *
      */
 
     public void deleteMax() {
@@ -555,6 +560,8 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
     }
     /**
      * deletes maximum element.
+     * The tome complexity is O(N) -- worst case.
+     *
      *
      * @param      x     { Node type }
      *
@@ -571,6 +578,7 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
     }
     /**
      * deletes the particular key.
+     * The tome complexity is O(N) -- worst case.
      *
      * @param      key   of book class type.
      */
@@ -580,6 +588,8 @@ class BinarySearchTree<E extends Comparable<E>, Value> {
     }
     /**
      * The method deletes the given key.
+     * The tome complexity is O(N) -- worst case.
+     *
      *
      * @param      x     { Node type }
      * @param      key   key of book class type to be deleted.
