@@ -19,24 +19,33 @@ public final class Solution {
         /**
          * reads input.
          */
-        Scanner input = new Scanner(System.in);
-        int n = Integer.parseInt(input.nextLine());
-        for (int i = 0; i < n; i++) {
-            CircularQueue counter = new CircularQueue();
-            String[] tokens = input.nextLine().split(" ");
-            int number = Integer.parseInt(tokens[0]);
-            for (int j = 0; j < number; j++) {
-                counter.insert(j);
+        Scanner scan = new Scanner(System.in);
+        int num = scan.nextInt();
+        while (scan.hasNext()) {
+            Queue n = new Queue();
+            int count = scan.nextInt();
+            int cut = scan.nextInt();
+
+            for (int i = 0; i < count; i++) {
+                n.enqueue(i);
             }
-            String string = "";
-            while (!counter.isEmpty()) {
-                int element = 0;
-                for (int k = 0; k < Integer.parseInt(tokens[1]); k++) {
-                    element = counter.getElement();
+
+
+            String result = "";
+            while (!n.isEmpty()) {
+                int t2 = 0, t1 = 0;
+                for (int i = 0; i < cut; i++) {
+                    if (i != cut - 1) {
+                        t1 = n.dequeue();
+                        n.enqueue(t1);
+                    } else {
+                        t2 = n.dequeue();
+                    }
                 }
-                string += counter.remove(element) + " ";
+                result += t2 + " ";
             }
-            System.out.println(string.trim());
+            System.out.println(result.trim());
         }
     }
 }
+

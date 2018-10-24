@@ -1,10 +1,10 @@
 /**
  * class for circular queue.
  */
-class CircularQueue {
+class Queue {
 
-    Node front = null;
-    Node rear = null;
+    Node head = null;
+    Node tail = null;
     Node current = null;
     int size;
 
@@ -22,98 +22,49 @@ class CircularQueue {
      *
      * @param      data1  The data1 of integer type.
      */
-
-    Node(int data1) {
-        this.data = data1;
-        next = null;
-       }
     }
     /**
      * inserts data into queue.
      *
-     * @param      data  The data of integer type.
+     * @param      element  The data of integer type.
      */
-
-    public void insert(int data) {
-        Node n = new Node(data);
-        if(size == 0) {
-            front = n;
-            rear = n;
+     public void enqueue(final int element) {
+        if (head == null) {
+            head = new Node();
+            tail = new Node();
+            head.data = element;
+            tail = head;
+            return;
         }
-        else {
-            rear.next = n;
-            rear = rear.next;
-        }
-        size++;
+        current = new Node();
+        current.data = element;
+        tail.next = current;
+        tail = current;
     }
     /**
-     * Gets the element.
+     * removes element form queue
      *
-     * @return     The element of int type.
+     * @return     { returns the elemnet that wa removed }
      */
 
-    public int getElement() {
-        if (current == null) {
-            current = front;
-        }
-        Node n = current;
-        current = n.next;
-        return n.data;
+    public int dequeue() {
+        Node temp = new Node();
+        if (head == tail) {
+            temp = head;
+            head = null;
+            tail = null;
+            return temp.data;
+         }
+         temp = head;
+         head = head.next;
+         return temp.data;
     }
 
-    /**
-     * removes element from queue
-     *
-     * @param      element  The element of integer type
-     *
-     * @return     { returns removed element}
+     /**
+     * checks whether queue is empty or Not.
+     * @return true are flase.
      */
-    public int remove(int element) {
-
-        if (front.data == element) {
-            front = front.next;
-            rear.next = front;
-            size--;
-            return element;
-        }
-
-        if (rear.data == element) {
-            Node n = front;
-            int count = 0;
-            while(count < size-2) {
-            n = n.next;
-            count++;
-            }
-            n.next = front;
-            rear = n;
-            size--;
-            return element;
-        }
-
-        if (size == 1) {
-            int ele = front.data;
-            front = null;
-            size--;
-            return ele;
-        }
-
-        Node n = front;
-        while (n.next.data != element) {
-            n = n.next;
-        }
-        n.next = n.next.next;;
-        size--;
-        return element;
-    }
-    /**
-     * Determines if queue is empty or not.
-     *
-     * @return     True if empty, False otherwise.
-     * returns boolean
-     */
-
     public boolean isEmpty() {
-        return size == 0;
+        return head == null;
     }
-
 }
