@@ -47,7 +47,14 @@ class HashTableChain<Key, Integer> {
     public void compare(HashTableChain that) {
     	for(int i = 0; i<this.size(); i++) {
     		for(int j = 0; j<that.size(); j++) {
-    			this.st[i].compareLinked(that.st[j]);
+    			if(this.st[i].compareLinked(that.st[j]) == false) {
+                    System.out.println("No");
+                    return;
+    		    }
+    		    else {
+    		    	System.out.println("Yes");
+    		    	return;
+    		    }
     		}
     	}
     	return;
@@ -92,7 +99,7 @@ class LinkedList<String, Integer> {
 		size++;
 	}
 
-	public void compareLinked(LinkedList that) {
+	public boolean compareLinked(LinkedList that) {
 		Node nothead = this.head;
 
 		Node maghead = that.head;
@@ -108,23 +115,20 @@ class LinkedList<String, Integer> {
 					if(nothead.key.equals(maghead.key)) {
 						flag = 1;
 						if(nothead.value - maghead.value > 0) {
-							System.out.println("false");
-							return;
+							return false;
 						}
 
 					}
 					maghead = maghead.next;
 				}
 				if(flag == 0) {
-					System.out.println("false");
-					return;
+					return false;
 				}
 
 
             nothead = nothead.next;
 			}
-		System.out.println("true");
-		return;
+		return true;
 	}
 
 	public boolean contains(String key) {

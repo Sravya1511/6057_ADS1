@@ -1,72 +1,36 @@
-########## Testcase 0: Failed ##########
+########## Testcase 0: Passed ##########
 Expected Output: 
 Yes
 Your Output: 
-true
-false
-false
-false
-Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 4
-	at HashTableChain.compare(Solutions.java:50)
-	at Solutions.main(Solutions.java:169)
+Yes
 ----------------------------------------
-########## Testcase 1: Failed ##########
+########## Testcase 1: Passed ##########
 Expected Output: 
 No
 Your Output: 
-false
-false
-false
-false
-Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 4
-	at HashTableChain.compare(Solutions.java:50)
-	at Solutions.main(Solutions.java:169)
+No
 ----------------------------------------
-########## Testcase 2: Failed ##########
+########## Testcase 2: Passed ##########
 Expected Output: 
 No
 Your Output: 
-false
-false
-false
-false
-Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 4
-	at HashTableChain.compare(Solutions.java:50)
-	at Solutions.main(Solutions.java:169)
+No
 ----------------------------------------
-########## Testcase 3: Failed ##########
+########## Testcase 3: Passed ##########
 Expected Output: 
 No
 Your Output: 
-false
-false
-false
-false
-Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 4
-	at HashTableChain.compare(Solutions.java:50)
-	at Solutions.main(Solutions.java:169)
+No
 ----------------------------------------
 ########## Testcase 4: Failed ##########
 Expected Output: 
 Yes
 Your Output: 
-false
-false
-false
-false
-Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 4
-	at HashTableChain.compare(Solutions.java:50)
-	at Solutions.main(Solutions.java:169)
+No
 ----------------------------------------
-########## Testcase 5: Failed ##########
+########## Testcase 5: Passed ##########
 Expected Output: 
 Yes
 Your Output: 
-true
-true
-true
-true
-Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 4
-	at HashTableChain.compare(Solutions.java:50)
-	at Solutions.main(Solutions.java:169)
+Yes
 ----------------------------------------
