@@ -44,8 +44,6 @@ final class Solution {
                 int num = notes.get(note[j]);
                 if (notes.contains(note[j])) {
                     notes.put(note[j], num + 1);
-                } else {
-                    notes.put(note[j], 1);
                 }
                 if (notes.get(note[j]) > mag.get(note[j])) {
                     System.out.println("No");
