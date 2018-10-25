@@ -1,22 +1,72 @@
 import java.util.Scanner;
-class HashTableChain<Key, Integer> {
-	static final int capacity = 4;
-	int n;
-	int m;
-	LinkedList<Key, Integer>[] st;
-
-	HashTableChain() {
-		this(capacity);
+class Solution {
+	public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in);
+        String[] inp = sc.nextLine().split(" ");
+        int m = Integer.parseInt(inp[0]);
+        int n = Integer.parseInt(inp[1]);
+        String[] magazine = sc.nextLine().split(" ");
+        String[] note = sc.nextLine().split(" ");
+        SeparateChainingHashST<String, Integer> mag = new SeparateChainingHashST<String, Integer>();
+        SeparateChainingHashST<String, Integer> notes = new SeparateChainingHashST<String, Integer>();
+        for (int i = 0; i < m; i++) {
+            mag.put(magazine[i], 0);
+        }
+        for (int j = 0; j < n; j++) {
+            notes.put(note[j], 0);
+        }
+        for (int i = 0; i < m; i++) {
+            int count = mag.get(magazine[i]);
+            if (mag.contains(magazine[i])) {
+                mag.put(magazine[i], count + 1);
+            } else {
+                mag.put(magazine[i], 1);
+            }
+        }
+        for (int j = 0; j < n; j++) {
+            if (!mag.contains(note[j])) {
+                System.out.println("No");
+                return;
+            } else if (mag.contains(note[j])) {
+                int num = notes.get(note[j]);
+                if (notes.contains(note[j])) {
+                    notes.put(note[j], num + 1);
+                } else {
+                    notes.put(note[j], 1);
+                }
+                if (notes.get(note[j]) > mag.get(note[j])) {
+                    System.out.println("No");
+                    return;
+                }
+            }
+        }
+        System.out.println("Yes");
 	}
+}
 
-	HashTableChain(int m) {
-		this.m = m;
-        st = (LinkedList<Key, Integer>[]) new LinkedList[m];
+
+class SeparateChainingHashST<Key, Value> {
+
+    private static final int INIT_CAPACITY = 4;
+
+    private int n;
+
+    private int m;
+
+    private SequentialSearchST<Key, Value>[] st;
+
+    public SeparateChainingHashST() {
+        this(INIT_CAPACITY);
+    }
+
+    public SeparateChainingHashST(final int m) {
+        this.m = m;
+        st = (SequentialSearchST<Key, Value>[]) new SequentialSearchST[m];
         for (int i = 0; i < m; i++)
-            st[i] = new LinkedList<Key, Integer>();
-	}
+            st[i] = new SequentialSearchST<Key, Value>();
+    }
 
-	private int hash(Key key) {
+    private int hash(final Key key) {
         return (key.hashCode() & 0x7fffffff) % m;
     }
 
@@ -24,148 +74,112 @@ class HashTableChain<Key, Integer> {
         return n;
     }
 
-    // public boolean contains(Key key) {
-    //     // if (key == null) throw new IllegalArgumentException("argument to contains() is null");
-    //     return get(key) != null;
-    // }
+    public boolean contains(final Key key) {
+        return get(key) != null;
+    }
 
-     public int get(Key key) {
+    public Value get(final Key key) {
         int i = hash(key);
         return st[i].get(key);
     }
-
-    public void put(Key key, int val) {
-
-
-        // if (n >= 10*m) resize(2*m);
-
+    /**
+     * Inserts the key value pair into the hash table.
+     * @param      key   The key
+     * @param      val   The value
+     */
+    public void put(final Key key, final Value val) {
         int i = hash(key);
         if (!st[i].contains(key)) n++;
-        st[i].insertAtStart(key, val);
-    }
-
-    public boolean compare(HashTableChain that) {
-    	for(int i = 0; i<this.size(); i++) {
-    		for(int j = 0; j<that.size(); j++) {
-    			if(!this.st[i].compareLinked(that.st[j])) {
-    				return false;
-    			}
-    		}
-    	}
-    	return true;
-
+        st[i].put(key, val);
     }
 }
 
-class LinkedList<String, Integer> {
+class SequentialSearchST<Key, Value> {
+    private int n;           // number of key-value pairs
+    private Node first;      // the linked list of key-value pairs
 
-	Node head;
-	int size;
+    // a helper linked list data type
+    private class Node {
+        private Key key;
+        private Value val;
+        private Node next;
 
-	class Node {
-	String key;
-	int value;
-	Node next;
-
-	Node(String k, int v) {
-		this.key = k;
-	    this.value = v;
-	    this.next = null;
-	}
+        public Node(Key key, Value val, Node next)  {
+            this.key  = key;
+            this.val  = val;
+            this.next = next;
+        }
     }
 
-	public void insertAtStart(String key, int value) {
-		Node first = new Node(key, value);
-		if (head == null) {
-			head = first;
-			size++;
-            return;
-		}
-		Node curr = head;
-	    for(int i = 0; i<size; i++) {
-            if(curr.key.equals(key)) {
-            	curr.value +=1;
-            	return;
+    /**
+     * Initializes an empty symbol table.
+     */
+    public SequentialSearchST() {
+    }
+
+    /**
+     * Returns the number of key-value pairs in this symbol table.
+     *
+     * @return the number of key-value pairs in this symbol table
+     */
+    public int size() {
+        return n;
+    }
+
+    /**
+     * Returns true if this symbol table is empty.
+     *
+     * @return {@code true} if this symbol table is empty;
+     *         {@code false} otherwise
+     */
+    public boolean isEmpty() {
+        return size() == 0;
+    }
+
+    /**
+     * Returns true if this symbol table contains the specified key.
+     *
+     * @param  key the key
+     * @return {@code true} if this symbol table contains {@code key};
+     *         {@code false} otherwise
+     * @throws IllegalArgumentException if {@code key} is {@code null}
+     */
+    public boolean contains(Key key) {
+        if (key == null) throw new IllegalArgumentException("argument to contains() is null");
+        return get(key) != null;
+    }
+
+    /**
+     * Returns the value associated with the given key in this symbol table.
+     *
+     * @param  key the key
+     * @return the value associated with the given key if the key is in the symbol table
+     *     and {@code null} if the key is not in the symbol table
+     * @throws IllegalArgumentException if {@code key} is {@code null}
+     */
+    public Value get(Key key) {
+        if (key == null) throw new IllegalArgumentException("argument to get() is null");
+        for (Node x = first; x != null; x = x.next) {
+            if (key.equals(x.key))
+                return x.val;
+        }
+        return null;
+    }
+
+
+    public void put(Key key, Value val) {
+
+        for (Node x = first; x != null; x = x.next) {
+            if (key.equals(x.key)) {
+                x.val = val;
+                return;
             }
-            curr = curr.next;
-	    }
-		first.next = head;
-		head = first;
-		size++;
-	}
-
-	public boolean compareLinked(LinkedList that) {
-		Node nothead = this.head;
-
-		Node maghead = that.head;
-		for(int i = 0; i<this.size; i++) {
-			if(nothead == null) {
-				break;
-            }
-				int flag = 0;
-				for(int j = 0; j<that.size; j++) {
-					if(maghead == null) {
-						break;
-					}
-					if(nothead.key.equals(maghead.key)) {
-						flag = 1;
-						if(nothead.value - maghead.value > 0) {
-							return false;
-						}
-
-					}
-					maghead = maghead.next;
-				}
-				if(flag == 0)
-					return false;
-
-            nothead = nothead.next;
-			}
-		return true;
-	}
-
-	public boolean contains(String key) {
-		Node curr = head;
-		for(int i = 0; i<size; i++) {
-			if(curr.key.equals(key)) {
-                return true;
-			}
-			curr = curr.next;
-		}
-		return false;
-	}
-
-	public int get(String key) {
-		Node curr = head;
-		for(int i = 0; i<size; i++) {
-			if(curr.key.equals(key)) {
-                return curr.value;
-			}
-			curr = curr.next;
-		}
-		return -1;
-	}
+        }
+        first = new Node(key, val, first);
+        n++;
+    }
 }
 
-class Solution {
-	public static void main(String[] args) {
-		Scanner input = new Scanner(System.in);
-		String[] tokens = input.nextLine().split(" ");
-		String[] magazine = input.nextLine().split(" ");
-		String[] note = input.nextLine().split(" ");
-		HashTableChain htmag = new HashTableChain();
-		HashTableChain htnote = new HashTableChain();
-
-		for(int i = 0; i<magazine.length; i++) {
-			htmag.put(magazine[i], 1);
-		}
-		for(int i = 0; i<note.length; i++) {
-			htnote.put(note[i], 1);
-		}
-
-		System.out.println(htnote.compare(htmag));
 
 
 
-	}
-}
