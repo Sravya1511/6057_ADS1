@@ -49,6 +49,7 @@ class SeparateChainingHashST<Key, Value> {
 
     /**
      * generates hash code.
+     * The time complexity is O(N).
      *
      * @param      key   The key
      *
@@ -61,6 +62,8 @@ class SeparateChainingHashST<Key, Value> {
 
     /**
      * size of the hashtable.
+     * The time complexity is O(1).
+     *
      *
      * @return     { returns size }
      */
@@ -70,6 +73,8 @@ class SeparateChainingHashST<Key, Value> {
     }
     /**
      * determines if the key is present or not.
+     * The time complexity is O(N).
+     *
      *
      * @param      key   The key
      *
@@ -82,6 +87,8 @@ class SeparateChainingHashST<Key, Value> {
 
     /**
      * the value of that key
+     * The time complexity is O(N).
+     *
      *
      * @param      key   The key
      *
@@ -94,6 +101,8 @@ class SeparateChainingHashST<Key, Value> {
     }
     /**
      * Inserts the key value pair into the hash table.
+     * The time complexity is O(N).
+     *
      * @param      key   The key
      * @param      val   The value
      */
@@ -135,7 +144,10 @@ class SequentialSearchST<Key, Value> {
     }
 
     /**
+     *
      * Returns the number of key-value pairs in this symbol table.
+     * The time complexity is 1.
+     *
      *
      * @return the number of key-value pairs in this symbol table
      */
@@ -145,6 +157,8 @@ class SequentialSearchST<Key, Value> {
 
     /**
      * Returns true if this symbol table is empty.
+     * The time complexity is 1.
+     *
      *
      * @return {@code true} if this symbol table is empty;
      *         {@code false} otherwise
@@ -155,6 +169,8 @@ class SequentialSearchST<Key, Value> {
 
     /**
      * Returns true if this symbol table contains the specified key.
+     *
+     * The time complexity is O(N).
      *
      * @param  key the key
      * @return {@code true} if this symbol table contains {@code key};
@@ -168,6 +184,8 @@ class SequentialSearchST<Key, Value> {
 
     /**
      * Returns the value associated with the given key in this symbol table.
+     * The time complexity is O(N).
+     *
      *
      * @param  key the key
      * @return the value associated with the given key if the key is in the symbol table
@@ -181,6 +199,15 @@ class SequentialSearchST<Key, Value> {
         }
         return null;
     }
+
+    /**
+     * inserts element at begining.
+     * The time complexity is O(1).
+     *
+     *
+     * @param      key   The key
+     * @param      val   The value
+     */
 
 
     public void put(Key key, Value val) {
