@@ -4,21 +4,21 @@ import java.util.Scanner;
  *
  */
 final class Solution {
-	/**
-	 * Constructs the object.
+    /**
+     * Constructs the object.
      * The time complexity is O(N).
-	 *
-	 */
-	private Solution() {
+     *
+     */
+    private Solution() {
 
-	}
-	/**
-	 *
-	 *
-	 * @param      args  The arguments
-	 */
-	public static void main(final String[] args) {
-	    Scanner input = new Scanner(System.in);
+    }
+    /**
+     *
+     *
+     * @param      args  The arguments
+     */
+    public static void main(final String[] args) {
+        Scanner input = new Scanner(System.in);
         String[] tokens = input.nextLine().split(" ");
         int m = Integer.parseInt(tokens[0]);
         int n = Integer.parseInt(tokens[1]);
@@ -42,7 +42,7 @@ final class Solution {
         }
 
         for (int j = 0; j < n; j++) {
-        	int num = notes.get(note[j]);
+            int num = notes.get(note[j]);
                 if (notes.contains(note[j])) {
                     notes.put(note[j], num + 1);
                 }
@@ -60,6 +60,6 @@ final class Solution {
             }
         }
         System.out.println("Yes");
-	}
+    }
 }
 
