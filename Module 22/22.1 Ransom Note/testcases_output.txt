@@ -34,5 +34,5 @@ Yes
 Your Output: 
 Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 4
 	at HashTableChain.compare(Solution.java:50)
-	at Solution.main(Solution.java:161)
+	at Solution.main(Solution.java:166)
 ----------------------------------------

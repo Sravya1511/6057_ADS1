@@ -99,22 +99,27 @@ class LinkedList<String, Integer> {
 
 		Node maghead = that.head;
 		for(int i = 0; i<this.size; i++) {
-			if(this.head!=null) {
+			if(nothead == null) {
+				break;
+            }
 				int flag = 0;
 				for(int j = 0; j<that.size; j++) {
-					if(that.head!=null) {
-						if(nothead.key.equals(maghead.key)) {
-							flag = 1;
-							if(nothead.value - maghead.value > 0) {
-								return false;
-							}
-
-						}
+					if(maghead == null) {
+						break;
 					}
+					if(nothead.key.equals(maghead.key)) {
+						flag = 1;
+						if(nothead.value - maghead.value > 0) {
+							return false;
+						}
+
+					}
+					maghead = maghead.next;
 				}
 				if(flag == 0)
 					return false;
-            }
+
+            nothead = nothead.next;
 			}
 		return true;
 	}
