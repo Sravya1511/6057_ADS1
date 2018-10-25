@@ -6,6 +6,8 @@ import java.util.Scanner;
 final class Solution {
 	/**
 	 * Constructs the object.
+     * The time complexity is O(N).
+	 *
 	 */
 	private Solution() {
 
