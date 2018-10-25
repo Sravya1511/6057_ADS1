@@ -3,14 +3,25 @@ import java.util.Scanner;
  * Class for solution.
  *
  */
-class Solution {
-	public static void main(String[] args) {
-	    Scanner sc = new Scanner(System.in);
-        String[] inp = sc.nextLine().split(" ");
-        int m = Integer.parseInt(inp[0]);
-        int n = Integer.parseInt(inp[1]);
-        String[] magazine = sc.nextLine().split(" ");
-        String[] note = sc.nextLine().split(" ");
+final class Solution {
+	/**
+	 * Constructs the object.
+	 */
+	Solution() {
+
+	}
+	/**
+	 *
+	 *
+	 * @param      args  The arguments
+	 */
+	public static void main(final String[] args) {
+	    Scanner input = new Scanner(System.in);
+        String[] tokens = input.nextLine().split(" ");
+        int m = Integer.parseInt(tokens[0]);
+        int n = Integer.parseInt(tokens[1]);
+        String[] magazine = input.nextLine().split(" ");
+        String[] note = input.nextLine().split(" ");
         SeparateChainingHashST<String, Integer> mag = new SeparateChainingHashST<String, Integer>();
         SeparateChainingHashST<String, Integer> notes = new SeparateChainingHashST<String, Integer>();
         for (int i = 0; i < m; i++) {
@@ -46,20 +57,47 @@ class Solution {
 	}
 }
 
+/**
+ * Class for separate chaining hash st.
+ *
+ * @param      <Key>    The key
+ * @param      <Value>  The value
+ */
+
 
 class SeparateChainingHashST<Key, Value> {
+	/**
+	 * capacity of hash table array
+	 */
 
     private static final int INIT_CAPACITY = 4;
+    /**
+     * size of the chain
+     */
 
     private int n;
+    /**
+     * size of array.
+     */
 
     private int m;
+    /**
+     * sequential array with key and value.
+     */
 
     private SequentialSearchST<Key, Value>[] st;
+    /**
+     * overloaded construstor.
+     */
 
     public SeparateChainingHashST() {
         this(INIT_CAPACITY);
     }
+    /**
+     * overloaded constructor.
+     *
+     * @param      m     { size of the array }
+     */
 
     public SeparateChainingHashST(final int m) {
         this.m = m;
@@ -68,17 +106,46 @@ class SeparateChainingHashST<Key, Value> {
             st[i] = new SequentialSearchST<Key, Value>();
     }
 
+    /**
+     * generates hash code.
+     *
+     * @param      key   The key
+     *
+     * @return     { returns hash code }
+     */
+
     private int hash(final Key key) {
         return (key.hashCode() & 0x7fffffff) % m;
     }
 
+    /**
+     * size of the hashtable.
+     *
+     * @return     { returns size }
+     */
+
     public int size() {
         return n;
     }
+    /**
+     * determines if the key is present or not.
+     *
+     * @param      key   The key
+     *
+     * @return     { returns boolean }
+     */
 
     public boolean contains(final Key key) {
         return get(key) != null;
     }
+
+    /**
+     * the value of that key
+     *
+     * @param      key   The key
+     *
+     * @return     { returns value }
+     */
 
     public Value get(final Key key) {
         int i = hash(key);
@@ -95,6 +162,13 @@ class SeparateChainingHashST<Key, Value> {
         st[i].put(key, val);
     }
 }
+
+/**
+ * Class for sequential search st.
+ *
+ * @param      <Key>    The key
+ * @param      <Value>  The value
+ */
 
 class SequentialSearchST<Key, Value> {
     private int n;           // number of key-value pairs
