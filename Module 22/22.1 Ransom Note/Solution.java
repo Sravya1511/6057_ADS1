@@ -1,4 +1,8 @@
 import java.util.Scanner;
+/**
+ * Class for solution.
+ *
+ */
 class Solution {
 	public static void main(String[] args) {
 	    Scanner sc = new Scanner(System.in);
@@ -19,8 +23,6 @@ class Solution {
             int count = mag.get(magazine[i]);
             if (mag.contains(magazine[i])) {
                 mag.put(magazine[i], count + 1);
-            } else {
-                mag.put(magazine[i], 1);
             }
         }
         for (int j = 0; j < n; j++) {
@@ -158,8 +160,7 @@ class SequentialSearchST<Key, Value> {
      * @throws IllegalArgumentException if {@code key} is {@code null}
      */
     public Value get(Key key) {
-        if (key == null) throw new IllegalArgumentException("argument to get() is null");
-        for (Node x = first; x != null; x = x.next) {
+       for (Node x = first; x != null; x = x.next) {
             if (key.equals(x.key))
                 return x.val;
         }
