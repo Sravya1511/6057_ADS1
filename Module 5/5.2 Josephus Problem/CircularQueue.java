@@ -3,8 +3,8 @@
  */
 class Queue {
 
-    Node head = null;
-    Node tail = null;
+    Node front = null;
+    Node rear = null;
     Node current = null;
     int size;
 
@@ -22,6 +22,14 @@ class Queue {
      *
      * @param      data1  The data1 of integer type.
      */
+    Node(int data1) {
+    	this.data = data1;
+    	this.next = null;
+    }
+
+    Node() {
+
+    }
     }
     /**
      * inserts data into queue.
@@ -29,17 +37,16 @@ class Queue {
      * @param      element  The data of integer type.
      */
      public void enqueue(final int element) {
-        if (head == null) {
-            head = new Node();
-            tail = new Node();
-            head.data = element;
-            tail = head;
+        if (front == null) {
+            front = new Node(element);
+            rear = new Node(element);
+            rear = front;
             return;
         }
-        current = new Node();
-        current.data = element;
-        tail.next = current;
-        tail = current;
+        current = new Node(element);
+        // current.data = element;
+        rear.next = current;
+        rear = current;
     }
     /**
      * removes element form queue
@@ -49,14 +56,14 @@ class Queue {
 
     public int dequeue() {
         Node temp = new Node();
-        if (head == tail) {
-            temp = head;
-            head = null;
-            tail = null;
+        if (front == rear) {
+            temp = front;
+            front = null;
+            rear = null;
             return temp.data;
          }
-         temp = head;
-         head = head.next;
+         temp = front;
+         front = front.next;
          return temp.data;
     }
 
@@ -65,6 +72,6 @@ class Queue {
      * @return true are flase.
      */
     public boolean isEmpty() {
-        return head == null;
+        return front == null;
     }
 }
