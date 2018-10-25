@@ -1,7 +1,4 @@
 Starting audit...
-[ERROR] F:\6057_ADS1\Module 22\22.1 Ransom Note\Solution.java:6:1: Utility classes should not have a public or default constructor. [HideUtilityClassConstructor]
 [ERROR] F:\6057_ADS1\Module 22\22.1 Ransom Note\Solution.java:7:1: File contains tab characters (this is the first instance). [FileTabCharacter]
-[ERROR] F:\6057_ADS1\Module 22\22.1 Ransom Note\Solution.java:25: Line is longer than 80 characters (found 100). [LineLength]
-[ERROR] F:\6057_ADS1\Module 22\22.1 Ransom Note\Solution.java:26: Line is longer than 80 characters (found 102). [LineLength]
 Audit done.
-Checkstyle ends with 4 errors.
+Checkstyle ends with 1 errors.
