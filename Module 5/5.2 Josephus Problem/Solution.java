@@ -20,21 +20,22 @@ public final class Solution {
          * reads input.
          */
         Scanner input = new Scanner(System.in);
-        int count = input.nextInt();
-        for(int x = 0; x<count; x++) {
+        int line = input.nextInt();
+        for(int x = 0; x<line; x++) {
             Queue n = new Queue();
-            // int count = input.nextInt();
-            // int cut = input.nextInt();
-            String[] tokens = input.nextLine().split(" ");
+            int count = input.nextInt();
+            int cut = input.nextInt();
 
-            for (int i = 0; i < Integer.parseInt(tokens[0]); i++) {
+            for (int i = 0; i < count; i++) {
                 n.enqueue(i);
             }
+
+
             String result = "";
             while (!n.isEmpty()) {
                 int t2 = 0, t1 = 0;
-                for (int i = 0; i < Integer.parseInt(tokens[1]); i++) {
-                    if (i != Integer.parseInt(tokens[1]) - 1) {
+                for (int i = 0; i < cut; i++) {
+                    if (i != cut - 1) {
                         t1 = n.dequeue();
                         n.enqueue(t1);
                     } else {
