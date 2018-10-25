@@ -1,2 +1,6 @@
 Starting audit...
+[ERROR] F:\6057_ADS1\Module 5\5.2 Josephus Problem\Solution.java:24:12: 'for' is not followed by whitespace. [WhitespaceAfter]
+[ERROR] F:\6057_ADS1\Module 5\5.2 Josephus Problem\Solution.java:24:25: '<' is not preceded with whitespace. [WhitespaceAround]
+[ERROR] F:\6057_ADS1\Module 5\5.2 Josephus Problem\Solution.java:24:26: '<' is not followed by whitespace. [WhitespaceAround]
 Audit done.
+Checkstyle ends with 3 errors.

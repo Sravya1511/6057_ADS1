@@ -30,6 +30,7 @@ class Queue {
     Node() {
 
     }
+
     }
     /**
      * inserts data into queue.
@@ -44,7 +45,6 @@ class Queue {
             return;
         }
         current = new Node(element);
-        // current.data = element;
         rear.next = current;
         rear = current;
     }
