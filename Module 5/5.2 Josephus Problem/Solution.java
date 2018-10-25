@@ -21,7 +21,7 @@ public final class Solution {
          */
         Scanner input = new Scanner(System.in);
         int line = input.nextInt();
-        for(int x = 0; x<line; x++) {
+        for (int x = 0; x < line; x++) {
             Queue n = new Queue();
             int count = input.nextInt();
             int cut = input.nextInt();
