@@ -38,11 +38,11 @@ class LinearProbingHashing<Key, Value> {
     /**
      * constructor.
      *
-     * @param      capacity  The capacity
+     * @param      capa  The capacity
      */
 
-    public LinearProbingHashing(int capacity) {
-        m = capacity;
+    public LinearProbingHashing(int capa) {
+        m = capa;
         n = 0;
         keys = (Key[])   new Object[m];
         values = (Value[]) new Object[m];
@@ -73,7 +73,7 @@ class LinearProbingHashing<Key, Value> {
      * @return     { returns true or false }
      */
 
-    public boolean contains(Key key) {
+    public boolean contains(final Key key) {
         return get(key) != null;
     }
 
@@ -85,18 +85,19 @@ class LinearProbingHashing<Key, Value> {
      * @return     { returns hash code }
      */
 
-    private int hash(Key key) {
+    private int hash(final Key key) {
         return (key.hashCode() & 0x7fffffff) % m;
     }
 
     /**
-     * resizes the array/
+     * resizes the array.
      *
      * @param      capacity  The capacity
      */
 
-    private void resize(int capacity) {
-        LinearProbingHashing<Key, Value> temp = new LinearProbingHashing<Key, Value>(capacity);
+    private void resize(final int capacity) {
+        LinearProbingHashing<Key, Value> temp = new
+        LinearProbingHashing<Key, Value>(capacity);
         for (int i = 0; i < m; i++) {
             if (keys[i] != null) {
                 temp.put(keys[i], values[i]);
@@ -114,12 +115,14 @@ class LinearProbingHashing<Key, Value> {
      * @param      val   The value
      */
 
-    public void put(Key key, Value val) {
+    public void put(final Key key, final Value val) {
         if (val == null) {
             delete(key);
             return;
         }
-        if (n >= m/2) resize(2*m);
+        if (n >= m / 2) {
+        	 resize(2 * m);
+        }
 
         int i;
         for (i = hash(key); keys[i] != null; i = (i + 1) % m) {
@@ -187,8 +190,8 @@ class LinearProbingHashing<Key, Value> {
 
         n--;
         // halves size of array if it's 12.5% full or less
-        if (n > 0 && n <= m/8) {
-        	resize(m/2);
+        if (n > 0 && n <= m / 8) {
+        	resize(m / 2);
         }
     }
     /**
@@ -208,7 +211,7 @@ class LinearProbingHashing<Key, Value> {
     }
 }
 /**
- * class for solution
+ * class for solution.
  */
 
 final class Solution {
