@@ -86,18 +86,19 @@ class LinearProbingHashing<Key, Value> {
      */
 
     private int hash(final Key key) {
-        return (key.hashCode() & 0x7fffffff) % m;
+    	final int x = 0x7fffffff;
+        return (key.hashCode() & x) % m;
     }
 
     /**
      * resizes the array.
      *
-     * @param      capacity  The capacity
+     * @param      c  The capacity
      */
 
-    private void resize(final int capacity) {
+    private void resize(final int c) {
         LinearProbingHashing<Key, Value> temp = new
-        LinearProbingHashing<Key, Value>(capacity);
+        LinearProbingHashing<Key, Value>(c);
         for (int i = 0; i < m; i++) {
             if (keys[i] != null) {
                 temp.put(keys[i], values[i]);
@@ -190,7 +191,8 @@ class LinearProbingHashing<Key, Value> {
 
         n--;
         // halves size of array if it's 12.5% full or less
-        if (n > 0 && n <= m / 8) {
+        final int eight = 8;
+        if (n > 0 && n <= m / eight) {
         	resize(m / 2);
         }
     }
