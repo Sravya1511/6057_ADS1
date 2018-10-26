@@ -46,8 +46,8 @@ class HashTableChain<Key, Integer> {
 
     public void compare(HashTableChain that) {
     	for(int i = 0; i<this.size(); i++) {
-    		for(int j = 0; j<that.size(); j++) {
-    			if(this.st[i].compareLinked(that.st[j]) == false) {
+    		// for(int j = 0; j<that.size(); j++) {
+    			if(this.st[i].compareLinked(that.st[i]) == false) {
                     System.out.println("No");
                     return;
     		    }
@@ -55,8 +55,8 @@ class HashTableChain<Key, Integer> {
     		    	System.out.println("Yes");
     		    	return;
     		    }
-    		}
-    	}
+    		// }
+    	 }
     	return;
 
     }

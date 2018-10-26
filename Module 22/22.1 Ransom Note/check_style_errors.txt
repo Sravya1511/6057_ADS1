@@ -31,9 +31,6 @@ Starting audit...
 [ERROR] F:\6057_ADS1\Module 22\22.1 Ransom Note\Solutions.java:48:12: 'for' is not followed by whitespace. [WhitespaceAfter]
 [ERROR] F:\6057_ADS1\Module 22\22.1 Ransom Note\Solutions.java:48:25: '<' is not preceded with whitespace. [WhitespaceAround]
 [ERROR] F:\6057_ADS1\Module 22\22.1 Ransom Note\Solutions.java:48:26: '<' is not followed by whitespace. [WhitespaceAround]
-[ERROR] F:\6057_ADS1\Module 22\22.1 Ransom Note\Solutions.java:49:20: 'for' is not followed by whitespace. [WhitespaceAfter]
-[ERROR] F:\6057_ADS1\Module 22\22.1 Ransom Note\Solutions.java:49:33: '<' is not preceded with whitespace. [WhitespaceAround]
-[ERROR] F:\6057_ADS1\Module 22\22.1 Ransom Note\Solutions.java:49:34: '<' is not followed by whitespace. [WhitespaceAround]
 [ERROR] F:\6057_ADS1\Module 22\22.1 Ransom Note\Solutions.java:50:27: 'if' is not followed by whitespace. [WhitespaceAfter]
 [ERROR] F:\6057_ADS1\Module 22\22.1 Ransom Note\Solutions.java:50:65: Expression can be simplified. [SimplifyBooleanExpression]
 [ERROR] F:\6057_ADS1\Module 22\22.1 Ransom Note\Solutions.java:53:21: '}' at column 11 should be on the same line as the next part of a multi-block statement (one that directly contains multiple blocks: if/else-if/else, do/while or try/catch/finally). [RightCurly]
@@ -97,4 +94,4 @@ Starting audit...
 [ERROR] F:\6057_ADS1\Module 22\22.1 Ransom Note\Solutions.java:169:33: '<' is not preceded with whitespace. [WhitespaceAround]
 [ERROR] F:\6057_ADS1\Module 22\22.1 Ransom Note\Solutions.java:169:34: '<' is not followed by whitespace. [WhitespaceAround]
 Audit done.
-Checkstyle ends with 97 errors.
+Checkstyle ends with 94 errors.
