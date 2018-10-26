@@ -49,6 +49,7 @@ class LinearProbingHashing<Key, Value> {
     }
     /**
      * size of the array.
+     * The time complexity O(1).
      *
      * @return     { returns size }
      */
@@ -58,6 +59,8 @@ class LinearProbingHashing<Key, Value> {
     }
     /**
      * checks if empty or not.
+     * The time complexity O(1).
+     *
      *
      * @return     True if empty, False otherwise.
      */
@@ -67,6 +70,8 @@ class LinearProbingHashing<Key, Value> {
     }
     /**
      * checks if there is key in array or not.
+     * The time complexity O(N).
+     *
      *
      * @param      key   The key
      *
@@ -79,6 +84,8 @@ class LinearProbingHashing<Key, Value> {
 
     /**
      * finds hash code of the key.
+     * The time complexity O(N).
+     *
      *
      * @param      key   The key.
      *
@@ -93,6 +100,8 @@ class LinearProbingHashing<Key, Value> {
 
     /**
      * resizes the array.
+     * The time complexity O(N).
+     *
      *
      * @param      c  The capacity
      */
@@ -112,6 +121,8 @@ class LinearProbingHashing<Key, Value> {
 
     /**
      * inserts value in array.
+     * The time complexity O(N).
+     *
      *
      * @param      key   The key
      * @param      val   The value
@@ -139,6 +150,8 @@ class LinearProbingHashing<Key, Value> {
     }
     /**
      * gets the value of the key.
+     * The time complexity O(N).
+     *
      *
      * @param      key   The key
      *
@@ -157,6 +170,8 @@ class LinearProbingHashing<Key, Value> {
     }
     /**
      * deletes the key value pair.
+     * The time complexity O(N).
+     *
      *
      * @param      key   The key
      */
@@ -199,6 +214,8 @@ class LinearProbingHashing<Key, Value> {
     }
     /**
      * displays the key value pair.
+     * The time complexity O(N).
+     *
      */
 
     public void display() {
@@ -231,6 +248,8 @@ final class Solution {
     /**
      * reads input.
      * Creates object for linearProbingHashing class.
+     * The time complexity O(N).
+     *
      *
      * @param      args  The arguments
      */
