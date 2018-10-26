@@ -201,6 +201,10 @@ class LinearProbingHashing<Key, Value> {
      */
 
     public void display() {
+        if(n == 0) {
+            System.out.println("{}");
+            return;
+        }
         String str = "{";
         for (int i = 0; i < m; i++) {
             if (keys[i] != null) {

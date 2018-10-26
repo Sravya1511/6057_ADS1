@@ -4,5 +4,6 @@ Starting audit...
 [ERROR] F:\6057_ADS1\Module 23\23.1 Hashing with Linear Probing\Solution.java:90:31: '*' is not preceded with whitespace. [WhitespaceAround]
 [ERROR] F:\6057_ADS1\Module 23\23.1 Hashing with Linear Probing\Solution.java:90:32: '*' is not followed by whitespace. [WhitespaceAround]
 [ERROR] F:\6057_ADS1\Module 23\23.1 Hashing with Linear Probing\Solution.java:90:32: '11' is a magic number. [MagicNumber]
+[ERROR] F:\6057_ADS1\Module 23\23.1 Hashing with Linear Probing\Solution.java:204:11: 'if' is not followed by whitespace. [WhitespaceAfter]
 Audit done.
-Checkstyle ends with 5 errors.
+Checkstyle ends with 6 errors.
