@@ -9,7 +9,7 @@ class LinearProbingHashing<Key, Value> {
     /**
      * capacity of the linear array.
      */
-    static final int Capacity = 4;
+    static final int capacity = 4;
     /**
      * number of key value pairs.
      */
@@ -32,7 +32,7 @@ class LinearProbingHashing<Key, Value> {
      */
 
     LinearProbingHashing() {
-        this(Capacity);
+        this(capacity);
     }
 
     /**
