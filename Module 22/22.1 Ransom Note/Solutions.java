@@ -45,18 +45,22 @@ class HashTableChain<Key, Integer> {
     }
 
     public void compare(HashTableChain that) {
+    	int flag = 0;
     	for(int i = 0; i<this.size(); i++) {
-    		// for(int j = 0; j<that.size(); j++) {
     			if(this.st[i].compareLinked(that.st[i]) == false) {
-                    System.out.println("No");
-                    return;
+    				flag++;
+                }
+    		if (flag == i) {
+                System.out.println("No");
+                return;
+    		}
+
+    	    else {
+    		    System.out.println("Yes");
+    		    return;
     		    }
-    		    else {
-    		    	System.out.println("Yes");
-    		    	return;
-    		    }
-    		// }
-    	 }
+    	}
+
     	return;
 
     }
