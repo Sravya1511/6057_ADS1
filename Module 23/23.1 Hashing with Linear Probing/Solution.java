@@ -6,32 +6,32 @@ import java.util.Scanner;
  * @param      <Value>  The value
  */
 class LinearProbingHashing<Key, Value> {
-	/**
-	 * capacity of the linear array.
-	 */
-	static final int capacity = 4;
-	/**
-	 * number of key value pairs.
-	 */
-	private int n;
-	/**
-	 * size of linear probing array.
-	 */
-	private int m;
-	/**
-	 * array of keys - key type.
-	 */
-	private Key[] keys;
-	/**
-	 * array of values - value type.
-	 */
-	private Value[] values;
+    /**
+     * capacity of the linear array.
+     */
+    static final int capacity = 4;
+    /**
+     * number of key value pairs.
+     */
+    private int n;
+    /**
+     * size of linear probing array.
+     */
+    private int m;
+    /**
+     * array of keys - key type.
+     */
+    private Key[] keys;
+    /**
+     * array of values - value type.
+     */
+    private Value[] values;
 
-	/**
-	 * overloaded constructor.
-	 */
+    /**
+     * overloaded constructor.
+     */
 
-	LinearProbingHashing() {
+    LinearProbingHashing() {
         this(capacity);
     }
 
@@ -78,7 +78,7 @@ class LinearProbingHashing<Key, Value> {
     }
 
     /**
-     * finds hash code of the key
+     * finds hash code of the key.
      *
      * @param      key   The key.
      *
@@ -86,8 +86,8 @@ class LinearProbingHashing<Key, Value> {
      */
 
     private int hash(final Key key) {
-    	final int x = 0x7fffffff;
-        return (key.hashCode() & x) % m;
+        final int x = 0x7fffffff;
+        return (key.hashCode()*11) % m;
     }
 
     /**
@@ -122,7 +122,7 @@ class LinearProbingHashing<Key, Value> {
             return;
         }
         if (n >= m / 2) {
-        	 resize(2 * m);
+             resize(2 * m);
         }
 
         int i;
@@ -147,7 +147,7 @@ class LinearProbingHashing<Key, Value> {
     public Value get(final Key key) {
 
         for (int i = hash(key); keys[i] != null; i = (i + 1) % m) {
-        	if (keys[i].equals(key)) {
+            if (keys[i].equals(key)) {
                 return values[i];
             }
         }
@@ -163,7 +163,7 @@ class LinearProbingHashing<Key, Value> {
     public void delete(final Key key) {
 
         if (!contains(key)) {
-        	return;
+            return;
         }
 
         // find position i of key
@@ -193,7 +193,7 @@ class LinearProbingHashing<Key, Value> {
         // halves size of array if it's 12.5% full or less
         final int eight = 8;
         if (n > 0 && n <= m / eight) {
-        	resize(m / 2);
+            resize(m / 2);
         }
     }
     /**
@@ -201,15 +201,15 @@ class LinearProbingHashing<Key, Value> {
      */
 
     public void display() {
-    	String str = "{";
-    	for (int i = 0; i < m; i++) {
-    		if (keys[i] != null) {
-    			str += keys[i] + ":" + values[i] + ", ";
-    		}
-    	}
+        String str = "{";
+        for (int i = 0; i < m; i++) {
+            if (keys[i] != null) {
+                str += keys[i] + ":" + values[i] + ", ";
+            }
+        }
         String a = str.substring(0, str.length() - 2);
-    	a = a + "}";
-    	System.out.println(a);
+        a = a + "}";
+        System.out.println(a);
     }
 }
 /**
@@ -217,41 +217,41 @@ class LinearProbingHashing<Key, Value> {
  */
 
 final class Solution {
-	/**
-	 * Constructs the object.
-	 */
-	private Solution() {
+    /**
+     * Constructs the object.
+     */
+    private Solution() {
 
-	}
-	/**
-	 * reads input.
-	 * Creates object for linearProbingHashing class.
-	 *
-	 * @param      args  The arguments
-	 */
-	public static void main(final String[] args) {
-		Scanner input = new Scanner(System.in);
-		LinearProbingHashing lpt = new LinearProbingHashing();
-		int lines = Integer.parseInt(input.nextLine());
-		for (int i = 0; i < lines; i++) {
-			String[] tokens = input.nextLine().split(" ");
-			switch (tokens[0]) {
-				case "put":
-				lpt.put(tokens[1], Integer.parseInt(tokens[2]));
-				break;
-				case "display":
-				lpt.display();
-				break;
-				case "delete":
-				lpt.delete(tokens[1]);
-				break;
-				case "get":
-				System.out.println(lpt.get(tokens[1]));
-				break;
-				default:
-				break;
+    }
+    /**
+     * reads input.
+     * Creates object for linearProbingHashing class.
+     *
+     * @param      args  The arguments
+     */
+    public static void main(final String[] args) {
+        Scanner input = new Scanner(System.in);
+        LinearProbingHashing lpt = new LinearProbingHashing();
+        int lines = Integer.parseInt(input.nextLine());
+        for (int i = 0; i < lines; i++) {
+            String[] tokens = input.nextLine().split(" ");
+            switch (tokens[0]) {
+                case "put":
+                lpt.put(tokens[1], Integer.parseInt(tokens[2]));
+                break;
+                case "display":
+                lpt.display();
+                break;
+                case "delete":
+                lpt.delete(tokens[1]);
+                break;
+                case "get":
+                System.out.println(lpt.get(tokens[1]));
+                break;
+                default:
+                break;
 
-			}
-		}
-	}
+            }
+        }
+    }
 }
