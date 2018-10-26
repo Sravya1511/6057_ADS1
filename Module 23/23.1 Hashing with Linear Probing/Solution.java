@@ -31,7 +31,7 @@ class LinearProbingHashing<Key, Value> {
 	 * overloaded constructor.
 	 */
 
-	public LinearProbingHashing() {
+	LinearProbingHashing() {
         this(capacity);
     }
 
@@ -41,7 +41,7 @@ class LinearProbingHashing<Key, Value> {
      * @param      capa  The capacity
      */
 
-    public LinearProbingHashing(int capa) {
+    LinearProbingHashing(final int capa) {
         m = capa;
         n = 0;
         keys = (Key[])   new Object[m];
