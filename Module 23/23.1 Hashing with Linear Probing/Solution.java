@@ -88,7 +88,7 @@ class LinearProbingHashing<Key, Value> {
     private int hash(final Key key) {
         final int ele = 11;
         final int x = 0x7fffffff;
-        return (key.hashCode()*ele) % m;
+        return (key.hashCode() * ele) % m;
     }
 
     /**
