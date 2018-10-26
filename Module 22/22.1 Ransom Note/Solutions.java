@@ -1,6 +1,6 @@
 import java.util.Scanner;
 class HashTableChain<Key, Integer> {
-	static final int capacity = 30000;
+	static final int capacity = 4;
 	int n;
 	int m;
 	LinkedList<Key, Integer>[] st;
