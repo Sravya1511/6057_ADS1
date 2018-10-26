@@ -1,5 +1,4 @@
 Starting audit...
 [ERROR] F:\6057_ADS1\Module 23\23.1 Hashing with Linear Probing\Solution.java:0: File does not end with a newline. [NewlineAtEndOfFile]
-[ERROR] F:\6057_ADS1\Module 23\23.1 Hashing with Linear Probing\Solution.java:12:22: Name 'capacity' must match pattern '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'. [ConstantName]
 Audit done.
-Checkstyle ends with 2 errors.
+Checkstyle ends with 1 errors.
