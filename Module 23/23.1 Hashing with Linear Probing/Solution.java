@@ -86,8 +86,9 @@ class LinearProbingHashing<Key, Value> {
      */
 
     private int hash(final Key key) {
+        final int ele = 11;
         final int x = 0x7fffffff;
-        return (key.hashCode()*11) % m;
+        return (key.hashCode()*ele) % m;
     }
 
     /**
@@ -201,7 +202,7 @@ class LinearProbingHashing<Key, Value> {
      */
 
     public void display() {
-        if(n == 0) {
+        if (n == 0) {
             System.out.println("{}");
             return;
         }
