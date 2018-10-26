@@ -1,8 +1,8 @@
-########## Testcase 0: Failed ##########
+########## Testcase 0: Passed ##########
 Expected Output: 
 Yes
 Your Output: 
-No
+Yes
 ----------------------------------------
 ########## Testcase 1: Failed ##########
 Expected Output: 
@@ -28,9 +28,9 @@ Yes
 Your Output: 
 Yes
 ----------------------------------------
-########## Testcase 5: Failed ##########
+########## Testcase 5: Passed ##########
 Expected Output: 
 Yes
 Your Output: 
-No
+Yes
 ----------------------------------------

@@ -50,7 +50,7 @@ class HashTableChain<Key, Integer> {
     			if(this.st[i].compareLinked(that.st[i]) == false) {
     				flag++;
                 }
-    		if (flag == i) {
+    		if (flag == this.size()) {
                 System.out.println("No");
                 return;
     		}
