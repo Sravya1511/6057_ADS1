@@ -6,54 +6,59 @@ import java.util.Scanner;
  *
  */
 final class Solution {
-	/**
-	 * Constructs the object.
-	 */
-	private Solution() {
+    /**
+     * Constructs the object.
+     */
+    private Solution() {
 
-	}
-	/**
-	 * The student data has student name and marks with roll number.
-	 * The search opeartion should be performed when student roll number is given.
-	 * The search should be with an average constant time.
-	 * The hash table can search a data within constant time.
-	 * The time complexity is O(NlogN) -- worst case.
-	 * The time complexity is O(N) -- best case.
-	 *
-	 *
-	 * @param      args  The arguments
-	 */
-	public static void main(String[] args) {
-		Scanner input = new Scanner(System.in);
-		int lines = Integer.parseInt(input.nextLine());
-		LinearProbingHashing lpt = new LinearProbingHashing();
-		for (int i = 0; i < lines; i++) {
+    }
+    /**
+     * The student data has student name and marks with roll number.
+     * The search opeartion should be performed.
+     *  when student roll number is given.
+     * The search should be with an average constant time.
+     * The hash table can search a data within constant time.
+     * The time complexity is O(NlogN) -- worst case.
+     * The time complexity is O(N) -- best case.
+     *
+     *
+     * @param      args  The arguments
+     */
+    public static void main(final String[] args) {
+        Scanner input = new Scanner(System.in);
+        int lines = Integer.parseInt(input.nextLine());
+        LinearProbingHashing lpt = new LinearProbingHashing();
+        for (int i = 0; i < lines; i++) {
             String[] tokens = input.nextLine().split(",");
             lpt.put(tokens[0], tokens[1], Double.parseDouble(tokens[2]));
-		}
-		int output = Integer.parseInt(input.nextLine());
-		for (int i = 0; i < output; i++) {
-			String[] tokens = input.nextLine().split(" ");
-			switch (tokens[2]) {
-				case "1":
-				if(lpt.getName(tokens[1]) != null) {
-					System.out.println(lpt.getName(tokens[1]));
-				} else {
-					System.out.println("Student doesn't exists...");
-				}
-				break;
-				case "2":
-				if(lpt.getMarks(tokens[1]) != null) {
-					System.out.println((lpt.getMarks(tokens[1])));
-				} else {
-					System.out.println("Student doesn't exists...");
-				}
-				break;
-				default:
-				break;
-			}
-		}
-	}
+        }
+        int output = Integer.parseInt(input.nextLine());
+        for (int i = 0; i < output; i++) {
+            String[] tokens = input.nextLine().split(" ");
+            switch (tokens[2]) {
+                case "1":
+                if (lpt.getName(tokens[1]) != null) {
+                    System.out.println(lpt.
+                        getName(tokens[1]));
+                } else {
+                    System.out.
+                    println("Student doesn't exists...");
+                }
+                break;
+                case "2":
+                if (lpt.getMarks(tokens[1]) != null) {
+                    System.out.println((lpt.
+                        getMarks(tokens[1])));
+                } else {
+                    System.out.
+                    println("Student doesn't exists...");
+                }
+                break;
+                default:
+                break;
+            }
+        }
+    }
 }
 
 /**
@@ -196,8 +201,10 @@ class LinearProbingHashing<Key, ValueName, ValueMarks> {
      * The time complexity O(3.5*) -- worst case.
      *
      *
-     * @param      key   The key
-     * @param      val   The value
+     * @param      key   The key of key type
+     * @param      val   The value of value type
+     * @param      val1   The value of double type
+     *
      */
 
     public void put(final Key key, final ValueName val, final Double val1) {
