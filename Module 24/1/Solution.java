@@ -6,7 +6,7 @@ class Solution {
 		LinearProbingHashing lpt = new LinearProbingHashing();
 		for(int i = 0; i<lines; i++) {
             String[] tokens = input.nextLine().split(",");
-            lpt.put(tokens[0], tokens[1], tokens[2]);
+            lpt.put(tokens[0], tokens[1], Double.parseDouble(tokens[2]));
 		}
 		int output = Integer.parseInt(input.nextLine());
 		for(int i = 0; i<output; i++) {
@@ -22,7 +22,7 @@ class Solution {
 				break;
 				case "2":
 				if(lpt.getMarks(tokens[1]) != null) {
-					System.out.println(lpt.getMarks(tokens[1]));
+					System.out.println((lpt.getMarks(tokens[1])));
 				}
 				else {
 					System.out.println("Student doesn't exists...");
@@ -61,7 +61,7 @@ class LinearProbingHashing<Key, ValueName, ValueMarks> {
      * array of values - value type.
      */
     private ValueName[] values;
-    private ValueMarks[] values1;
+    private Double[] values1;
 
     /**
      * overloaded constructor.
@@ -82,7 +82,7 @@ class LinearProbingHashing<Key, ValueName, ValueMarks> {
         n = 0;
         keys = (Key[])   new Object[m];
         values = (ValueName[]) new Object[m];
-        values1 = (ValueMarks[]) new Object[m];
+        values1 =  new Double[m];
     }
     /**
      * size of the array.
@@ -132,7 +132,7 @@ class LinearProbingHashing<Key, ValueName, ValueMarks> {
     private int hash(final Key key) {
         // final int ele = 11;
         final int x = 0x7fffffff;
-        return (key.hashCode() * x) % m;
+        return (key.hashCode()) % m;
     }
 
     /**
@@ -144,8 +144,8 @@ class LinearProbingHashing<Key, ValueName, ValueMarks> {
      */
 
     private void resize(final int c) {
-        LinearProbingHashing<Key, ValueName, ValueMarks> temp = new
-        LinearProbingHashing<Key, ValueName, ValueMarks>(c);
+        LinearProbingHashing<Key, ValueName, Double> temp = new
+        LinearProbingHashing<Key, ValueName, Double>(c);
         for (int i = 0; i < m; i++) {
             if (keys[i] != null) {
                 temp.put(keys[i], values[i], values1[i]);
@@ -166,7 +166,7 @@ class LinearProbingHashing<Key, ValueName, ValueMarks> {
      * @param      val   The value
      */
 
-    public void put(final Key key, final ValueName val, final ValueMarks val1) {
+    public void put(final Key key, final ValueName val, final Double val1) {
         // if (val == null) {
         //     delete(key);
         //     return;
@@ -209,7 +209,7 @@ class LinearProbingHashing<Key, ValueName, ValueMarks> {
         return null;
     }
 
-    public ValueMarks getMarks(final Key key) {
+    public Double getMarks(final Key key) {
 
         for (int i = hash(key); keys[i] != null; i = (i + 1) % m) {
             if (keys[i].equals(key)) {
