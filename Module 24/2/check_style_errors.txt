@@ -44,13 +44,8 @@ Starting audit...
 [ERROR] F:\6057_ADS1\Module 24\2\Solution.java:147: 'if' construct must use '{}'s. [NeedBraces]
 [ERROR] F:\6057_ADS1\Module 24\2\Solution.java:148: 'if' construct must use '{}'s. [NeedBraces]
 [ERROR] F:\6057_ADS1\Module 24\2\Solution.java:152:5: Missing a Javadoc comment. [JavadocMethod]
-[ERROR] F:\6057_ADS1\Module 24\2\Solution.java:180: Missing a Javadoc comment. [JavadocType]
-[ERROR] F:\6057_ADS1\Module 24\2\Solution.java:180:1: Utility classes should not have a public or default constructor. [HideUtilityClassConstructor]
-[ERROR] F:\6057_ADS1\Module 24\2\Solution.java:181:1: File contains tab characters (this is the first instance). [FileTabCharacter]
-[ERROR] F:\6057_ADS1\Module 24\2\Solution.java:181:9: Missing a Javadoc comment. [JavadocMethod]
-[ERROR] F:\6057_ADS1\Module 24\2\Solution.java:181:33: Parameter args should be final. [FinalParameters]
-[ERROR] F:\6057_ADS1\Module 24\2\Solution.java:187: Line is longer than 80 characters (found 91). [LineLength]
-[ERROR] F:\6057_ADS1\Module 24\2\Solution.java:192: switch without "default" clause. [MissingSwitchDefault]
-[ERROR] F:\6057_ADS1\Module 24\2\Solution.java:194: Line is longer than 80 characters (found 95). [LineLength]
+[ERROR] F:\6057_ADS1\Module 24\2\Solution.java:184:1: File contains tab characters (this is the first instance). [FileTabCharacter]
+[ERROR] F:\6057_ADS1\Module 24\2\Solution.java:204: Line is longer than 80 characters (found 91). [LineLength]
+[ERROR] F:\6057_ADS1\Module 24\2\Solution.java:211: Line is longer than 80 characters (found 95). [LineLength]
 Audit done.
-Checkstyle ends with 53 errors.
+Checkstyle ends with 48 errors.

@@ -58,7 +58,7 @@ class BinarySearchTree<RollNum, Name, Marks> {
         if (x == null) {
             return new Node(roll, name, mark, 1);
         }
-        double cmp = mark - x.marks;
+        int cmp = roll - x.roll;
         if (cmp < 0) {
             x.left  = put(x.left,  roll, name, mark);
         } else if (cmp > 0) {
@@ -176,9 +176,26 @@ class BinarySearchTree<RollNum, Name, Marks> {
 
 
 }
+/**
+ * Class for solution.
+ */
 
-class Solution {
-	public static void main(String[] args) {
+final class Solution {
+	/**
+	 * Constructs the object.
+	 */
+	private Solution() {
+
+	}
+	/**
+	 * Reads input.
+	 * The student data is stored and to get student information.
+	 * we use binary search tree.
+	 * The time complexity is average logarathmic value.
+	 *
+	 * @param      args  The arguments
+	 */
+	public static void main(final String[] args) {
 		Scanner input = new Scanner(System.in);
 		BinarySearchTree bst = new BinarySearchTree();
         int lines = Integer.parseInt(input.nextLine());
@@ -198,6 +215,8 @@ class Solution {
             	break;
             	case "GE":
             	bst.marksGreater(Double.parseDouble(tokens[1]), bst.max());
+            	break;
+            	default:
             	break;
             }
         }
