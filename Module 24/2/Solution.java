@@ -12,26 +12,22 @@ class BinarySearchTree<RollNum, Name, Marks> {
 
     }
     /**
- * root of node type.
- */
+    * root of node type.
+    */
     private Node root;
     /**
      * Class for node.
-     * Node class has a roll, name.
+     * Node class has a roll, name, marks.
      * left node address.
      * right node address.
      */
     class Node {
 
         private Integer roll;
-
         private Name name;
-
         private Double marks;
         private Node left;
-
         private Node right;
-
         private int size;
 
         Node(final Integer k, final Name v, final Double m, final int s) {
@@ -43,6 +39,16 @@ class BinarySearchTree<RollNum, Name, Marks> {
             this.size = s;
         }
     }
+    /**
+     * inserts elements into binary tree.
+     * The time complexiy is O(1.38logN) -- average case.
+     * The time complexiy is O(N) -- worst case.
+     *
+     *
+     * @param      roll  The roll of int.
+     * @param      name  The name of Name.
+     * @param      mark  The mark of double.
+     */
 
 
 
@@ -52,13 +58,26 @@ class BinarySearchTree<RollNum, Name, Marks> {
         }
         root = put(root, roll, name, mark);
     }
+    /**
+     * inserts element.
+     * The time complexiy is O(1.38logN) -- average case.
+     * The time complexiy is O(N) -- worst case.
+     *
+     *
+     * @param      x     { parameter_description }
+     * @param      roll  The roll
+     * @param      name  The name
+     * @param      mark  The mark
+     *
+     * @return     { returns root node. }
+     */
 
     private Node put(final Node x, final Integer roll, final Name name, final Double mark) {
         size++;
         if (x == null) {
             return new Node(roll, name, mark, 1);
         }
-        int cmp = roll - x.roll;
+        double cmp = mark - x.marks;
         if (cmp < 0) {
             x.left  = put(x.left,  roll, name, mark);
         } else if (cmp > 0) {
@@ -84,7 +103,7 @@ class BinarySearchTree<RollNum, Name, Marks> {
     }
 
     /**
-     * return number of key-value pairs in BST rooted at x.
+     * return number of entries in BST rooted at x.
      * The time complexity is O(1).
      *
      *
@@ -99,6 +118,16 @@ class BinarySearchTree<RollNum, Name, Marks> {
             return x.size;
         }
     }
+    /**
+     * prints all the marks in between lo and high.
+     * The time complexiy is O(1.38logN) -- average case.
+     * The time complexiy is O(N) -- worst case.
+     *
+     *
+     * @param      lo    The lower
+     * @param      hi    The higher
+     */
+
 
     public void marksBetween(Double lo, Double hi) {
 
@@ -106,6 +135,14 @@ class BinarySearchTree<RollNum, Name, Marks> {
         marksBetween(root, lo, hi);
         // return queue;
     }
+    /**
+     * The time complexiy is O(1.38logN) -- average case.
+     * The time complexiy is O(N) -- worst case.
+     *
+     * @param      x     { Node }
+     * @param      lo    The lower
+     * @param      hi    The higher
+     */
 
     private void marksBetween(Node x, Double lo, Double hi) {
         if (x == null) return;
@@ -115,6 +152,14 @@ class BinarySearchTree<RollNum, Name, Marks> {
         if (cmplo <= 0 && cmphi >= 0) System.out.println(x.name);
         if (cmphi > 0) marksBetween(x.right, lo, hi);
     }
+    /**
+     * prints all the elements less than hi.
+     * The time complexiy is O(1.38logN) -- average case.
+     * The time complexiy is O(N) -- worst case.
+     *
+     * @param      lo    The lower
+     * @param      hi    The higher
+     */
 
     public void marksLess(Double lo, Double hi) {
 
@@ -122,6 +167,14 @@ class BinarySearchTree<RollNum, Name, Marks> {
         marksBetween(root, lo, hi);
         // return queue;
     }
+    /**
+     * The time complexiy is O(1.38logN) -- average case.
+     * The time complexiy is O(N) -- worst case.
+     *
+     * @param      x     { Node }
+     * @param      lo    The lower
+     * @param      hi    The higher
+     */
 
     private void marksLess(Node x, Double lo, Double hi) {
         if (x == null) return;
@@ -132,12 +185,29 @@ class BinarySearchTree<RollNum, Name, Marks> {
         if (cmphi > 0) marksLess(x.right, lo, hi);
     }
 
+    /**
+     * Prints marks of student greater than lo.
+     * The time complexiy is O(1.38logN) -- average case.
+     * The time complexiy is O(N) -- worst case.
+     *
+     * @param      lo    The lower
+     * @param      hi    The higher
+     */
+
     public void marksGreater(Double lo, Double hi) {
 
         // Queue<Key> queue = new Queue<Key>();
         marksBetween(root, lo, hi);
         // return queue;
     }
+    /**
+     * The time complexiy is O(1.38logN) -- average case.
+     * The time complexiy is O(N) -- worst case.
+     *
+     * @param      x     { Node }
+     * @param      lo    The lower
+     * @param      hi    The higher
+     */
 
     private void marksGreater(Node x, Double lo, Double hi) {
         if (x == null) return;
@@ -148,7 +218,11 @@ class BinarySearchTree<RollNum, Name, Marks> {
         if (cmphi > 0) marksGreater(x.right, lo, hi);
     }
 
-
+    /**
+     * { maximum marks of student list }
+     *
+     * @return     { max marks of student }
+     */
     public Double max() {
 
         return max(root);
@@ -156,7 +230,7 @@ class BinarySearchTree<RollNum, Name, Marks> {
 
     /**
      * The maximum node is found.
-     * The time complexity is O(N).
+     * The time complexity is O(N) -- worst case.
      *
      *
      * @param      x     { Node type }
@@ -171,10 +245,6 @@ class BinarySearchTree<RollNum, Name, Marks> {
             return max(x.right);
         }
     }
-
-
-
-
 }
 /**
  * Class for solution.
@@ -192,6 +262,7 @@ final class Solution {
 	 * The student data is stored and to get student information.
 	 * we use binary search tree.
 	 * The time complexity is average logarathmic value.
+	 * The time complexity is O(NlogN).
 	 *
 	 * @param      args  The arguments
 	 */
