@@ -1,34 +1,56 @@
 import java.util.Scanner;
-class Solution {
+/**
+ * Class for solution.
+ * reads input.
+ * Creates object for linear probing hashing class.
+ *
+ */
+final class Solution {
+	/**
+	 * Constructs the object.
+	 */
+	private Solution() {
+
+	}
+	/**
+	 * The student data has student name and marks with roll number.
+	 * The search opeartion should be performed when student roll number is given.
+	 * The search should be with an average constant time.
+	 * The hash table can search a data within constant time.
+	 * The time complexity is O(NlogN) -- worst case.
+	 * The time complexity is O(N) -- best case.
+	 *
+	 *
+	 * @param      args  The arguments
+	 */
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		int lines = Integer.parseInt(input.nextLine());
 		LinearProbingHashing lpt = new LinearProbingHashing();
-		for(int i = 0; i<lines; i++) {
+		for (int i = 0; i < lines; i++) {
             String[] tokens = input.nextLine().split(",");
             lpt.put(tokens[0], tokens[1], Double.parseDouble(tokens[2]));
 		}
 		int output = Integer.parseInt(input.nextLine());
-		for(int i = 0; i<output; i++) {
+		for (int i = 0; i < output; i++) {
 			String[] tokens = input.nextLine().split(" ");
-			switch(tokens[2]) {
+			switch (tokens[2]) {
 				case "1":
 				if(lpt.getName(tokens[1]) != null) {
 					System.out.println(lpt.getName(tokens[1]));
-				}
-				else {
+				} else {
 					System.out.println("Student doesn't exists...");
 				}
 				break;
 				case "2":
 				if(lpt.getMarks(tokens[1]) != null) {
 					System.out.println((lpt.getMarks(tokens[1])));
-				}
-				else {
+				} else {
 					System.out.println("Student doesn't exists...");
 				}
 				break;
-
+				default:
+				break;
 			}
 		}
 	}
@@ -36,9 +58,13 @@ class Solution {
 
 /**
  * Class for linear probing hashing.
+ * This method for searching is preferred.
+ *  because the serarch is performed in conatant time.
  *
- * @param      <Key>    The key
- * @param      <ValueName>  The value
+ * @param      <Key>    The key of generic type
+ * @param      <ValueName>  The value of generic type
+ * @param      <ValueMarks>  The valueMarks of generic type
+ *
  */
 class LinearProbingHashing<Key, ValueName, ValueMarks> {
     /**
@@ -61,6 +87,9 @@ class LinearProbingHashing<Key, ValueName, ValueMarks> {
      * array of valueNames - value type.
      */
     private ValueName[] valueNames;
+    /**
+     * array of valueMarks - Double type.
+     */
     private Double[] valueMarks;
 
     /**
@@ -74,7 +103,7 @@ class LinearProbingHashing<Key, ValueName, ValueMarks> {
     /**
      * constructor.
      *
-     * @param      capa  The capacity
+     * @param      capa  The capacity of int type.
      */
 
     LinearProbingHashing(final int capa) {
@@ -107,7 +136,9 @@ class LinearProbingHashing<Key, ValueName, ValueMarks> {
     }
     /**
      * checks if there is key in array or not.
-     * The time complexity O(N).
+     * The time complexity O(logN*) -- worst case.
+     * The time complexity O(3.5*) -- worst case.
+     *
      *
      *
      * @param      key   The key
@@ -121,7 +152,7 @@ class LinearProbingHashing<Key, ValueName, ValueMarks> {
 
     /**
      * finds hash code of the key.
-     * The time complexity O(N).
+     * The time complexity O(1).
      *
      *
      * @param      key   The key.
@@ -137,7 +168,9 @@ class LinearProbingHashing<Key, ValueName, ValueMarks> {
 
     /**
      * resizes the array.
-     * The time complexity O(N).
+     * resize calls put method.
+     * The time complexity O(logN*) -- worst case.
+     * The time complexity O(3.5*) -- worst case.
      *
      *
      * @param      c  The capacity
@@ -159,7 +192,8 @@ class LinearProbingHashing<Key, ValueName, ValueMarks> {
 
     /**
      * inserts value in array.
-     * The time complexity O(N).
+     * The time complexity O(logN*) -- worst case.
+     * The time complexity O(3.5*) -- worst case.
      *
      *
      * @param      key   The key
@@ -167,10 +201,6 @@ class LinearProbingHashing<Key, ValueName, ValueMarks> {
      */
 
     public void put(final Key key, final ValueName val, final Double val1) {
-        // if (val == null) {
-        //     delete(key);
-        //     return;
-        // }
         if (n >= m / 2) {
              resize(2 * m);
         }
@@ -189,13 +219,14 @@ class LinearProbingHashing<Key, ValueName, ValueMarks> {
         n++;
     }
     /**
-     * gets the value of the key.
-     * The time complexity O(N).
+     * gets the valueName of the key.
+     * The time complexity O(logN*) -- worst case.
+     * The time complexity O(3.5*) -- worst case.
      *
      *
-     * @param      key   The key
+     * @param      key   The key of key type.
      *
-     * @return     { returns value }
+     * @return     { returns value 0f ValueName type}
      */
 
     public ValueName getName(final Key key) {
@@ -208,6 +239,16 @@ class LinearProbingHashing<Key, ValueName, ValueMarks> {
 
         return null;
     }
+     /**
+     * gets the valueMarks of the key.
+     * The time complexity O(logN*) -- worst case.
+     * The time complexity O(3.5*) -- worst case.
+     *
+     *
+     * @param      key   The key of key type.
+     *
+     * @return     { returns value 0f Double type}
+     */
 
     public Double getMarks(final Key key) {
 
