@@ -58,7 +58,7 @@ class BinarySearchTree<RollNum, Name, Marks> {
         if (x == null) {
             return new Node(roll, name, mark, 1);
         }
-        int cmp = roll - x.roll;
+        double cmp = mark - x.marks;
         if (cmp < 0) {
             x.left  = put(x.left,  roll, name, mark);
         } else if (cmp > 0) {
