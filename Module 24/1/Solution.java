@@ -13,10 +13,21 @@ class Solution {
 			String[] tokens = input.nextLine().split(" ");
 			switch(tokens[2]) {
 				case "1":
-				System.out.println(lpt.getName(tokens[1]));
+				if(lpt.getName(tokens[1]) != null) {
+					System.out.println(lpt.getName(tokens[1]));
+				}
+				else {
+					System.out.println("Student doesn't exists...");
+				}
 				break;
 				case "2":
-				System.out.println(lpt.getMarks(tokens[1]));
+				if(lpt.getMarks(tokens[1]) != null) {
+					System.out.println(lpt.getMarks(tokens[1]));
+				}
+				else {
+					System.out.println("Student doesn't exists...");
+				}
+				// System.out.println(lpt.getMarks(tokens[1]));
 				break;
 
 			}
