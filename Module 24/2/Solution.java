@@ -116,37 +116,63 @@ class BinarySearchTree<RollNum, Name, Marks> {
         if (cmphi > 0) marksBetween(x.right, lo, hi);
     }
 
-    public void marksLess(Double mark) {
+    public void marksLess(Double lo, Double hi) {
 
         // Queue<Key> queue = new Queue<Key>();
-        marksLess(root, mark);
+        marksBetween(root, lo, hi);
         // return queue;
     }
 
-    private void marksLess(Node x, Double lo) {
+    private void marksLess(Node x, Double lo, Double hi) {
         if (x == null) return;
         Double cmplo = lo - x.marks;
-        // Double cmphi = hi - x.marks;
-        if (cmplo < 0) marksLess(x.left, lo);
-        if (cmplo <= 0) System.out.println(x.name);
-        if (cmplo > 0) marksLess(x.right, lo);
+        Double cmphi = hi - x.marks;
+        if (cmplo < 0) marksLess(x.left, lo, hi);
+        if (cmplo <= 0 && cmphi >= 0) System.out.println(x.name);
+        if (cmphi > 0) marksLess(x.right, lo, hi);
     }
 
-    public void marksGreater(Double mark) {
+    public void marksGreater(Double lo, Double hi) {
 
         // Queue<Key> queue = new Queue<Key>();
-        marksGreater(root, mark);
+        marksBetween(root, lo, hi);
         // return queue;
     }
 
-    private void marksGreater(Node x, Double hi) {
+    private void marksGreater(Node x, Double lo, Double hi) {
         if (x == null) return;
-        // Double cmplo = lo - x.marks;
+        Double cmplo = lo - x.marks;
         Double cmphi = hi - x.marks;
-        if (cmphi < 0) marksGreater(x.left, hi);
-        if (cmphi >= 0) System.out.println(x.name);
-        if (cmphi > 0) marksGreater(x.right, hi);
+        if (cmplo < 0) marksGreater(x.left, lo, hi);
+        if (cmplo <= 0 && cmphi >= 0) System.out.println(x.name);
+        if (cmphi > 0) marksGreater(x.right, lo, hi);
     }
+
+
+    public Double max() {
+
+        return max(root);
+    }
+
+    /**
+     * The maximum node is found.
+     * The time complexity is O(N).
+     *
+     *
+     * @param      x     { Node type }
+     *
+     * @return     { returns maximum node}
+     */
+
+    private Double max(final Node x) {
+        if (x.right == null) {
+            return x.marks;
+        } else {
+            return max(x.right);
+        }
+    }
+
+
 
 
 }
@@ -168,10 +194,10 @@ class Solution {
             	bst.marksBetween(Double.parseDouble(tokens[1]), Double.parseDouble(tokens[2]));
             	break;
             	case "LE":
-            	bst.marksLess(Double.parseDouble(tokens[1]));
+            	bst.marksLess(0.0, Double.parseDouble(tokens[1]));
             	break;
             	case "GE":
-            	bst.marksGreater(Double.parseDouble(tokens[1]));
+            	bst.marksGreater(Double.parseDouble(tokens[1]), bst.max());
             	break;
             }
         }
