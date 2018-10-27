@@ -13,7 +13,10 @@ class Solution {
 			String[] tokens = input.nextLine().split(" ");
 			switch(tokens[2]) {
 				case "1":
-				System.out.println(lpt.get(tokens[1]));
+				System.out.println(lpt.getName(tokens[1]));
+				break;
+				case "2":
+				System.out.println(lpt.getMarks(tokens[1]));
 				break;
 
 			}
@@ -103,7 +106,7 @@ class LinearProbingHashing<Key, ValueName, ValueMarks> {
      */
 
     public boolean contains(final Key key) {
-        return get(key) != null;
+        return getName(key) != null;
     }
 
     /**
@@ -185,11 +188,22 @@ class LinearProbingHashing<Key, ValueName, ValueMarks> {
      * @return     { returns value }
      */
 
-    public ValueName get(final Key key) {
+    public ValueName getName(final Key key) {
 
         for (int i = hash(key); keys[i] != null; i = (i + 1) % m) {
             if (keys[i].equals(key)) {
                 return values[i];
+            }
+        }
+
+        return null;
+    }
+
+    public ValueMarks getMarks(final Key key) {
+
+        for (int i = hash(key); keys[i] != null; i = (i + 1) % m) {
+            if (keys[i].equals(key)) {
+                return values1[i];
             }
         }
 

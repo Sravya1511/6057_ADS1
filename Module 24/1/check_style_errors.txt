@@ -13,8 +13,9 @@ Starting audit...
 [ERROR] F:\6057_ADS1\Module 24\1\Solution.java:12:34: '<' is not followed by whitespace. [WhitespaceAround]
 [ERROR] F:\6057_ADS1\Module 24\1\Solution.java:14: switch without "default" clause. [MissingSwitchDefault]
 [ERROR] F:\6057_ADS1\Module 24\1\Solution.java:14:31: 'switch' is not followed by whitespace. [WhitespaceAround]
-[ERROR] F:\6057_ADS1\Module 24\1\Solution.java:30: Type Javadoc comment is missing @param <ValueMarks> tag. [JavadocType]
-[ERROR] F:\6057_ADS1\Module 24\1\Solution.java:51:5: Missing a Javadoc comment. [JavadocVariable]
-[ERROR] F:\6057_ADS1\Module 24\1\Solution.java:156:74: Expected @param tag for 'val1'. [JavadocMethod]
+[ERROR] F:\6057_ADS1\Module 24\1\Solution.java:33: Type Javadoc comment is missing @param <ValueMarks> tag. [JavadocType]
+[ERROR] F:\6057_ADS1\Module 24\1\Solution.java:54:5: Missing a Javadoc comment. [JavadocVariable]
+[ERROR] F:\6057_ADS1\Module 24\1\Solution.java:159:74: Expected @param tag for 'val1'. [JavadocMethod]
+[ERROR] F:\6057_ADS1\Module 24\1\Solution.java:202:5: Missing a Javadoc comment. [JavadocMethod]
 Audit done.
-Checkstyle ends with 17 errors.
+Checkstyle ends with 18 errors.
