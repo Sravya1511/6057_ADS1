@@ -58,7 +58,13 @@ Tim Cahill
 Abegg
 Brian Caffrey
 Your Output: 
-
+Megon
+John
+Abegg
+Brian Caffrey
+Clark
+Rivest
+Alice
 ----------------------------------------
 ########## Testcase 2: Failed ##########
 Expected Output: 
@@ -125,7 +131,18 @@ Neil Cadigan
 Megon
 Meili Cady
 Your Output: 
-
+Clark
+Rivest
+Alice
+Access
+Alice
+Daniel
+Simon
+Tony
+Douglas
+John
+Rivest
+Alice
 ----------------------------------------
 ########## Testcase 3: Failed ##########
 Expected Output: 
@@ -844,6 +861,42 @@ Marianna Palk
 Thelma Page
 Vicky Hales-Dutton
 Your Output: 
+Michael Haag
+Todd Haberkorn
+Keach Hagey
+Terrence J
+Shane Jacobson
+Hannah Paasch
+Helen Palmer
+Marina Palmer
+David Jacobs
+Jeannette Haien
+Daniel Hahn
+Mark Haddon
+Jessie Haas
+Michael Haag
+H3CZ
+Pamela Haag
+Charlie Haas
+Auston Habershaw
+Taylor Hackford
+Daniel Hahn
+Sara Palacios
+Charles Panati
+Pamela Palmer
+Nathan Hale
+Pamela Haag
+Michael Haag
+H3CZ
+Pamela Haag
+Charlie Haas
+Auston Habershaw
+David H. Hackworth
+Anthony Haden-Guest
+William Haefeli
+Jennifer Haigh
+Gordon Jack
+Amanda Maciel
 Ruby Jackson
 Charles B. Macdonald
 Greg Page
@@ -854,6 +907,11 @@ David Jacobs
 Jeannette Haien
 Daniel Hahn
 Sara Palacios
+Saskia Maarleveld
+Marylin Hafner
+Charlie Haas
+Michael Haag
+H3CZ
 Charles Panati
 Fiona MacKenzie
 Mark Haddon
@@ -889,6 +947,10 @@ Kinley MacGregor
 Liza Palmer
 Libby Jackson
 Kristin Halbrook
+Brad Haddin
+Charlie Haas
+Michael Haag
+H3CZ
 Auston Habershaw
 Chris Packham
 Nafisa Haji

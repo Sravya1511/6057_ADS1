@@ -100,21 +100,55 @@ class BinarySearchTree<RollNum, Name, Marks> {
         }
     }
 
-    public void keys(Double lo, Double hi) {
+    public void marksBetween(Double lo, Double hi) {
 
         // Queue<Key> queue = new Queue<Key>();
-        keys(root, lo, hi);
+        marksBetween(root, lo, hi);
         // return queue;
     }
 
-    private void keys(Node x, Double lo, Double hi) {
+    private void marksBetween(Node x, Double lo, Double hi) {
         if (x == null) return;
         Double cmplo = lo - x.marks;
         Double cmphi = hi - x.marks;
-        if (cmplo < 0) keys(x.left, lo, hi);
+        if (cmplo < 0) marksBetween(x.left, lo, hi);
         if (cmplo <= 0 && cmphi >= 0) System.out.println(x.name);
-        if (cmphi > 0) keys(x.right, lo, hi);
+        if (cmphi > 0) marksBetween(x.right, lo, hi);
     }
+
+    public void marksLess(Double mark) {
+
+        // Queue<Key> queue = new Queue<Key>();
+        marksLess(root, mark);
+        // return queue;
+    }
+
+    private void marksLess(Node x, Double lo) {
+        if (x == null) return;
+        Double cmplo = lo - x.marks;
+        // Double cmphi = hi - x.marks;
+        if (cmplo < 0) marksLess(x.left, lo);
+        if (cmplo <= 0) System.out.println(x.name);
+        if (cmplo > 0) marksLess(x.right, lo);
+    }
+
+    public void marksGreater(Double mark) {
+
+        // Queue<Key> queue = new Queue<Key>();
+        marksGreater(root, mark);
+        // return queue;
+    }
+
+    private void marksGreater(Node x, Double hi) {
+        if (x == null) return;
+        // Double cmplo = lo - x.marks;
+        Double cmphi = hi - x.marks;
+        if (cmphi < 0) marksGreater(x.left, hi);
+        if (cmphi >= 0) System.out.println(x.name);
+        if (cmphi > 0) marksGreater(x.right, hi);
+    }
+
+
 }
 
 class Solution {
@@ -131,7 +165,14 @@ class Solution {
             String[] tokens = input.nextLine().split(" ");
             switch (tokens[0]) {
             	case "BE":
-            	bst.keys(Double.parseDouble(tokens[1]), Double.parseDouble(tokens[2]));
+            	bst.marksBetween(Double.parseDouble(tokens[1]), Double.parseDouble(tokens[2]));
+            	break;
+            	case "LE":
+            	bst.marksLess(Double.parseDouble(tokens[1]));
+            	break;
+            	case "GE":
+            	bst.marksGreater(Double.parseDouble(tokens[1]));
+            	break;
             }
         }
 	}
