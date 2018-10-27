@@ -58,10 +58,10 @@ class LinearProbingHashing<Key, ValueName, ValueMarks> {
      */
     private Key[] keys;
     /**
-     * array of values - value type.
+     * array of valueNames - value type.
      */
-    private ValueName[] values;
-    private Double[] values1;
+    private ValueName[] valueNames;
+    private Double[] valueMarks;
 
     /**
      * overloaded constructor.
@@ -81,8 +81,8 @@ class LinearProbingHashing<Key, ValueName, ValueMarks> {
         m = capa;
         n = 0;
         keys = (Key[])   new Object[m];
-        values = (ValueName[]) new Object[m];
-        values1 =  new Double[m];
+        valueNames = (ValueName[]) new Object[m];
+        valueMarks =  new Double[m];
     }
     /**
      * size of the array.
@@ -148,12 +148,12 @@ class LinearProbingHashing<Key, ValueName, ValueMarks> {
         LinearProbingHashing<Key, ValueName, Double>(c);
         for (int i = 0; i < m; i++) {
             if (keys[i] != null) {
-                temp.put(keys[i], values[i], values1[i]);
+                temp.put(keys[i], valueNames[i], valueMarks[i]);
             }
         }
         keys = temp.keys;
-        values = temp.values;
-        values1 = temp.values1;
+        valueNames = temp.valueNames;
+        valueMarks = temp.valueMarks;
         m    = temp.m;
     }
 
@@ -178,14 +178,14 @@ class LinearProbingHashing<Key, ValueName, ValueMarks> {
         int i;
         for (i = hash(key); keys[i] != null; i = (i + 1) % m) {
             if (keys[i].equals(key)) {
-                values[i] = val;
-                values1[i] = val1;
+                valueNames[i] = val;
+                valueMarks[i] = val1;
                 return;
             }
         }
         keys[i] = key;
-        values[i] = val;
-        values1[i] = val1;
+        valueNames[i] = val;
+        valueMarks[i] = val1;
         n++;
     }
     /**
@@ -202,7 +202,7 @@ class LinearProbingHashing<Key, ValueName, ValueMarks> {
 
         for (int i = hash(key); keys[i] != null; i = (i + 1) % m) {
             if (keys[i].equals(key)) {
-                return values[i];
+                return valueNames[i];
             }
         }
 
@@ -213,7 +213,7 @@ class LinearProbingHashing<Key, ValueName, ValueMarks> {
 
         for (int i = hash(key); keys[i] != null; i = (i + 1) % m) {
             if (keys[i].equals(key)) {
-                return values1[i];
+                return valueMarks[i];
             }
         }
 
