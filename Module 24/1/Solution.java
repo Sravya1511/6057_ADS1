@@ -27,7 +27,6 @@ class Solution {
 				else {
 					System.out.println("Student doesn't exists...");
 				}
-				// System.out.println(lpt.getMarks(tokens[1]));
 				break;
 
 			}
@@ -219,70 +218,5 @@ class LinearProbingHashing<Key, ValueName, ValueMarks> {
         }
 
         return null;
-    }
-    /**
-     * deletes the key value pair.
-     * The time complexity O(N).
-     *
-     *
-     * @param      key   The key
-     */
-
-    // public void delete(final Key key) {
-
-    //     if (!contains(key)) {
-    //         return;
-    //     }
-
-    //     // find position i of key
-    //     int i = hash(key);
-    //     while (!key.equals(keys[i])) {
-    //         i = (i + 1) % m;
-    //     }
-
-    //     // delete key and associated value
-    //     keys[i] = null;
-    //     values[i] = null;
-
-    //     // rehash all keys in same cluster
-    //     i = (i + 1) % m;
-    //     while (keys[i] != null) {
-    //         // delete keys[i] an vals[i] and reinsert
-    //         Key   keyToRehash = keys[i];
-    //         ValueName valToRehash = values[i];
-    //         keys[i] = null;
-    //         values[i] = null;
-    //         n--;
-    //         put(keyToRehash, valToRehash);
-    //         i = (i + 1) % m;
-    //     }
-
-    //     n--;
-    //     // halves size of array if it's 12.5% full or less
-    //     final int eight = 8;
-    //     if (n > 0 && n <= m / eight) {
-    //         resize(m / 2);
-    //     }
-    // }
-    /**
-     * displays the key value pair.
-     * The time complexity O(N).
-     *
-     */
-
-    public void display() {
-        if (n == 0) {
-            System.out.println("{}");
-            return;
-        }
-        String str = "{";
-        for (int i = 0; i < m; i++) {
-            if (keys[i] != null) {
-                str += keys[i] + ":" + values[i] + ", ";
-            }
-        }
-        String a = str.substring(0, str.length() - 2);
-        a = a + "}";
-        System.out.println(a);
     }
 }
