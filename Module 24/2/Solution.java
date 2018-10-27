@@ -23,7 +23,7 @@ class BinarySearchTree<RollNum, Name, Marks> {
      */
     class Node {
 
-        private RollNum roll;
+        private Integer roll;
 
         private Name name;
 
@@ -34,7 +34,7 @@ class BinarySearchTree<RollNum, Name, Marks> {
 
         private int size;
 
-        Node(final RollNum k, final Name v, final Double m, final int s) {
+        Node(final Integer k, final Name v, final Double m, final int s) {
             this.roll = k;
             this.name = v;
             this.marks = m;
@@ -46,19 +46,19 @@ class BinarySearchTree<RollNum, Name, Marks> {
 
 
 
-    public void put(final RollNum roll, final Name name, final Double mark) {
+    public void put(final Integer roll, final Name name, final Double mark) {
         if (roll == null) {
             return;
         }
         root = put(root, roll, name, mark);
     }
 
-    private Node put(final Node x, final RollNum roll, final Name name, final Double mark) {
+    private Node put(final Node x, final Integer roll, final Name name, final Double mark) {
         size++;
         if (x == null) {
             return new Node(roll, name, mark, 1);
         }
-        Double cmp = mark - x.marks;
+        int cmp = roll - x.roll;
         if (cmp < 0) {
             x.left  = put(x.left,  roll, name, mark);
         } else if (cmp > 0) {
@@ -184,7 +184,7 @@ class Solution {
         int lines = Integer.parseInt(input.nextLine());
         for (int i = 0; i < lines; i++) {
             String[] tokens = input.nextLine().split(",");
-            bst.put(tokens[0], tokens[1], Double.parseDouble(tokens[2]));
+            bst.put(Integer.parseInt(tokens[0]), tokens[1], Double.parseDouble(tokens[2]));
         }
         int output = Integer.parseInt(input.nextLine());
         for (int i = 0; i < output; i++) {
