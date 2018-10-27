@@ -132,7 +132,7 @@ class LinearProbingHashing<Key, ValueName, ValueMarks> {
     private int hash(final Key key) {
         // final int ele = 11;
         final int x = 0x7fffffff;
-        return (key.hashCode()) % m;
+        return (key.hashCode() * x) % m;
     }
 
     /**
