@@ -1,0 +1,20 @@
+Starting audit...
+[ERROR] F:\6057_ADS1\Module 24\1\Solution.java:0: File does not end with a newline. [NewlineAtEndOfFile]
+[ERROR] F:\6057_ADS1\Module 24\1\Solution.java:2: Missing a Javadoc comment. [JavadocType]
+[ERROR] F:\6057_ADS1\Module 24\1\Solution.java:2:1: Utility classes should not have a public or default constructor. [HideUtilityClassConstructor]
+[ERROR] F:\6057_ADS1\Module 24\1\Solution.java:3:1: File contains tab characters (this is the first instance). [FileTabCharacter]
+[ERROR] F:\6057_ADS1\Module 24\1\Solution.java:3:9: Missing a Javadoc comment. [JavadocMethod]
+[ERROR] F:\6057_ADS1\Module 24\1\Solution.java:3:33: Parameter args should be final. [FinalParameters]
+[ERROR] F:\6057_ADS1\Module 24\1\Solution.java:7:20: 'for' is not followed by whitespace. [WhitespaceAfter]
+[ERROR] F:\6057_ADS1\Module 24\1\Solution.java:7:33: '<' is not preceded with whitespace. [WhitespaceAround]
+[ERROR] F:\6057_ADS1\Module 24\1\Solution.java:7:34: '<' is not followed by whitespace. [WhitespaceAround]
+[ERROR] F:\6057_ADS1\Module 24\1\Solution.java:12:20: 'for' is not followed by whitespace. [WhitespaceAfter]
+[ERROR] F:\6057_ADS1\Module 24\1\Solution.java:12:33: '<' is not preceded with whitespace. [WhitespaceAround]
+[ERROR] F:\6057_ADS1\Module 24\1\Solution.java:12:34: '<' is not followed by whitespace. [WhitespaceAround]
+[ERROR] F:\6057_ADS1\Module 24\1\Solution.java:14: switch without "default" clause. [MissingSwitchDefault]
+[ERROR] F:\6057_ADS1\Module 24\1\Solution.java:14:31: 'switch' is not followed by whitespace. [WhitespaceAround]
+[ERROR] F:\6057_ADS1\Module 24\1\Solution.java:30: Type Javadoc comment is missing @param <ValueMarks> tag. [JavadocType]
+[ERROR] F:\6057_ADS1\Module 24\1\Solution.java:51:5: Missing a Javadoc comment. [JavadocVariable]
+[ERROR] F:\6057_ADS1\Module 24\1\Solution.java:156:74: Expected @param tag for 'val1'. [JavadocMethod]
+Audit done.
+Checkstyle ends with 17 errors.
